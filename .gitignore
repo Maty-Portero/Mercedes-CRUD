@@ -1,0 +1,32 @@
+# Caches de Python y directorios de entorno
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+
+# Archivos de distribución y empaquetado
+dist/
+build/
+*.egg-info
+.tox/
+.coverage
+
+# Archivos de editor/IDE
+.idea/
+.vscode/
+*.swp
+
+# Bases de datos y archivos sensibles
+*.sqlite3
+db.sqlite3
+/data/
+/media/
+
+# Archivos de Jupyter
+.ipynb_checkpoints
+
+# Archivos de PyInstaller (para crear ejecutables)
+/build/
+/dist/
