@@ -1,0 +1,9 @@
+{
+    "files": [
+        "widget.py",
+        "login.ui",
+        "rrhh.ui",
+        "produccion.ui",
+        "ceohome.ui"
+    ]
+}
