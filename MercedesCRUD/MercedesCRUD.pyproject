@@ -1,15 +1,24 @@
 {
     "files": [
-        "widget.py",
+        "main_login.py",
         "login.ui",
+        "main_rrhh.py",
         "rrhh.ui",
+        "main_produccion.py",
         "produccion.ui",
-        "eMovilidad.ui",
+        "main_e_movilidad.py",
+        "e_movilidad.ui",
+        "main_ventas.py",
         "ventas.ui",
+        "main_compras.py",
         "compras.ui",
+        "main_logistica.py",
         "logistica.ui",
+        "main_marketing.py",
         "marketing.ui",
+        "main_mantenimiento.py",
         "mantenimiento.ui",
-        "ceohome.ui"
+        "main_ceo_home.py",
+        "ceo_home.ui"
     ]
 }
