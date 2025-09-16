@@ -119,7 +119,7 @@ border-radius: 15px; /* Bordes redondeados */
 padding: 5px;</string>
    </property>
    <property name="text">
-    <string>   Agregar empleados</string>
+    <string>   Agregar Empleados</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_12">

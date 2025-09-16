@@ -138,6 +138,12 @@ class Ui_Widget(object):
         self.label_13.setFont(font4)
         self.label_13.setStyleSheet(u"color: white;")
         self.label_13.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+        self.label_14 = QLabel(Widget)
+        self.label_14.setObjectName(u"label_14")
+        self.label_14.setGeometry(QRect(1340, 810, 20, 26))
+        self.label_14.setStyleSheet(u"")
+        self.label_14.setPixmap(QPixmap(u"../a.png"))
+        self.label_14.setScaledContents(True)
         self.label_4.raise_()
         self.label.raise_()
         self.label_2.raise_()
@@ -155,6 +161,7 @@ class Ui_Widget(object):
         self.label_11.raise_()
         self.label_12.raise_()
         self.label_13.raise_()
+        self.label_14.raise_()
 
         self.retranslateUi(Widget)
 
@@ -172,7 +179,7 @@ class Ui_Widget(object):
         self.label_7.setText(QCoreApplication.translate("Widget", u"Acceso", None))
         self.label_8.setText(QCoreApplication.translate("Widget", u"Correo electr\u00f3nico / usuario", None))
         self.label_9.setText(QCoreApplication.translate("Widget", u"Contrase\u00f1a", None))
-        self.pushButton.setText(QCoreApplication.translate("Widget", u"Registrar \u25b6\ufe0f", None))
+        self.pushButton.setText(QCoreApplication.translate("Widget", u"Registrar  ", None))
         self.pushButton_2.setText(QCoreApplication.translate("Widget", u"Iniciar sesi\u00f3n", None))
         self.label_10.setText(QCoreApplication.translate("Widget", u"Mercedes-CRUD", None))
         self.label_11.setText(QCoreApplication.translate("Widget", u"- Acced\u00e9 a tu cuenta para utilizar las \n"
@@ -181,5 +188,6 @@ class Ui_Widget(object):
 "una solicitud de registro", None))
         self.label_12.setText(QCoreApplication.translate("Widget", u"INICIO", None))
         self.label_13.setText(QCoreApplication.translate("Widget", u"Sesi\u00f3n no iniciada", None))
+        self.label_14.setText("")
     # retranslateUi
 

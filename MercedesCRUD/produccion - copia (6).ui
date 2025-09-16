@@ -116,7 +116,7 @@ border-radius: 15px; /* Bordes redondeados */
 padding: 5px;</string>
    </property>
    <property name="text">
-    <string>Agregar Vehículo</string>
+    <string>Agregar vehículo</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_12">

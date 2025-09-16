@@ -4,6 +4,12 @@
         "login.ui",
         "rrhh.ui",
         "produccion.ui",
+        "eMovilidad.ui",
+        "ventas.ui",
+        "compras.ui",
+        "logistica.ui",
+        "marketing.ui",
+        "mantenimiento.ui",
         "ceohome.ui"
     ]
 }
