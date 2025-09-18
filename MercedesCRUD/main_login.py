@@ -10,9 +10,40 @@ class MyWidget(QWidget):
         # Configura la interfaz en tu widget principal
         self.ui.setupUi(self)
 
-        # Conecta el botón 'Iniciar sesión' a una función (ejemplo)
-        # Observa que el nombre del botón en tu UI es 'pushButton_2'
+        # AQUI AGREGAMOS EL ESTILO HOVER PARA EL BOTON 'Registrar' (pushButton)
+        self.ui.pushButton.setStyleSheet("""
+            QPushButton#pushButton {
+                border: 2px solid #000000;
+                border-radius: 15px;
+                padding: 5px;
+                color: black;
+                background-color: #ebebeb;
+            }
+            QPushButton#pushButton:hover {
+                border: 3px solid #000000;
+                background-color: #d1d1d1;
+            }
+        """)
+        
+        # AQUI AGREGAMOS EL ESTILO HOVER PARA EL BOTON 'Iniciar sesion' (pushButton_2)
+        self.ui.pushButton_2.setStyleSheet("""
+            QPushButton#pushButton_2 {
+                background-color: rgb(0, 45, 107);
+                color: white;
+                border: 2px solid #002d6b;
+                border-radius: 15px;
+                padding: 5px;
+            }
+            QPushButton#pushButton_2:hover {
+                background-color: rgb(0, 30, 80);
+                border: 2px solid #001f52;
+            }
+        """)
+
+        # Conecta el botón 'Registrar' a una función
         self.ui.pushButton.clicked.connect(self.registrarme)
+        
+        # Conecta el botón 'Iniciar sesión' a una función
         self.ui.pushButton_2.clicked.connect(self.iniciar_sesion)
 
     def iniciar_sesion(self):
