@@ -1,13 +1,17 @@
 import sys
-from PySide6.QtWidgets import QApplication, QWidget
-from ui_login import Ui_Widget # Asegúrate de que este sea el nombre correcto del archivo generado.
+from PySide6.QtWidgets import QWidget, QMessageBox
+from PySide6.QtCore import Signal, Slot
+from ui_login import Ui_Widget 
 
-class MyWidget(QWidget):
+# La clase MyWidget es tu vista de Login
+class LoginWidget(QWidget):
+    # Define la señal que se emitirá cuando el login sea exitoso. 
+    # Le pasamos el nombre de usuario (str) como argumento.
+    login_successful = Signal(str) 
+
     def __init__(self):
         super().__init__()
-        # Crea una instancia de la clase de interfaz de usuario generada
         self.ui = Ui_Widget()
-        # Configura la interfaz en tu widget principal
         self.ui.setupUi(self)
 
         # AQUI AGREGAMOS EL ESTILO HOVER PARA EL BOTON 'Registrar' (pushButton)
@@ -43,25 +47,31 @@ class MyWidget(QWidget):
         # Conecta el botón 'Registrar' a una función
         self.ui.pushButton.clicked.connect(self.registrarme)
         
-        # Conecta el botón 'Iniciar sesión' a una función
+        # Conecta el botón 'Iniciar sesión' a la función
         self.ui.pushButton_2.clicked.connect(self.iniciar_sesion)
 
+    @Slot()
     def iniciar_sesion(self):
-        # Esta es la función que se ejecutará cuando el botón sea clickeado
-        usuario = self.ui.lineEdit.text()
-        contrasena = self.ui.lineEdit_2.text()
-        print(f"Intento de inicio de sesión - Usuario: {usuario}, Contraseña: {contrasena}")
-        # Aquí puedes agregar la lógica de validación o conexión a base de datos.
+        usuario = self.ui.lineEdit.text().strip()
+        contrasena = self.ui.lineEdit_2.text().strip()
         
-    def registrarme(self):
-        # Esta es la función que se ejecutará cuando el botón sea clickeado
-        usuario = self.ui.lineEdit.text()
-        contrasena = self.ui.lineEdit_2.text()
-        print(f"Intento de registro de usuario - Usuario: {usuario}, Contraseña: {contrasena}")
-        # Aquí puedes agregar la lógica de validación o conexión a base de datos.
+        if not usuario or not contrasena:
+            QMessageBox.warning(self, "Error", "Por favor, complete todos los campos.")
+            return
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = MyWidget()
-    window.show()
-    sys.exit(app.exec())
+        # >>> LÓGICA DE VALIDACIÓN DE CREDENCIALES <<<
+        # Aquí se conectaría a la base de datos o API. Usamos una simple validación de ejemplo:
+        if usuario == "admin" and contrasena == "123":
+            # Si el login es exitoso:
+            self.login_successful.emit(usuario) # EMITIMOS la señal con el nombre de usuario
+        else:
+            # Si falla:
+            QMessageBox.critical(self, "Error", "Usuario o contraseña incorrectos.")
+            
+    @Slot()
+    def registrarme(self):
+        # Aquí puedes agregar la lógica para cambiar a la vista de registro si existiera,
+        # o simplemente el proceso de registro.
+        QMessageBox.information(self, "Registro", "Iniciando proceso de registro...")
+        # Por ahora, solo imprime.
+        print(f"Intento de registro de usuario - Usuario: {self.ui.lineEdit.text()}")

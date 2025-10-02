@@ -1,37 +1,47 @@
 import sys
-from PySide6.QtWidgets import QApplication, QWidget
+from PySide6.QtWidgets import QWidget, QMessageBox
+from PySide6.QtCore import Signal, Slot
 from ui_rrhh import Ui_Widget
 
-class MyWidget(QWidget):
+# La clase MyWidget es tu vista de RRHH
+class RRHHWidget(QWidget):
+    # Señal para notificar al manager que el usuario quiere cerrar sesión
+    logout_requested = Signal()
+    # Asumo que tienes un QLabel para mostrar el saludo de bienvenida en tu UI
+    # Si no lo tienes, puedes agregarlo en el diseñador de Qt.
+
     def __init__(self):
         super().__init__()
         self.ui = Ui_Widget()
         self.ui.setupUi(self)
 
-        # Conecta el botón 'Iniciar sesión' a una función (ejemplo)
-        # Observa que el nombre del botón en tu UI es 'pushButton_1'
-        self.ui.pushButton_1.clicked.connect(self.agregar_empleado)        
+        # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
+        self.ui.pushButton_1.clicked.connect(self.agregar_empleado)
         self.ui.pushButton_2.clicked.connect(self.editar_empleado)
         self.ui.pushButton_3.clicked.connect(self.editar_empleado)
         self.ui.pushButton_4.clicked.connect(self.editar_empleado)
         self.ui.pushButton_5.clicked.connect(self.eliminar_empleado)
         self.ui.pushButton_6.clicked.connect(self.eliminar_empleado)
-        self.ui.pushButton_7.clicked.connect(self.eliminar_empleado)
+        
+        # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
+        # Asumo que el botón 7 es el de Cerrar Sesión
+        self.ui.pushButton_7.clicked.connect(self.logout_requested.emit)
+        
+    # Método para recibir y establecer el nombre de usuario (Llamado desde AppManager)
+    def set_welcome_message(self, username):
+        """Muestra el mensaje de bienvenida en un QLabel (asumiendo que tienes uno)."""
+        # Si tienes un QLabel con objectName 'label_welcome', lo usarías así:
+        # self.ui.label_welcome.setText(f"Bienvenido, {username}")
+        print(f"Usuario {username} ha ingresado a RRHH.") # Impresión de prueba
 
+    @Slot()
     def agregar_empleado(self):
-        print(f"Intento de agrego de empleado")
-        # Aquí puedes agregar la lógica de validación o conexión a base de datos.
+        QMessageBox.information(self, "RRHH", "Función: Agregar empleado.")
 
+    @Slot()
     def editar_empleado(self):
-            print(f"Intento para editar un empleado")
-            # Aquí puedes agregar la lógica de validación o conexión a base de datos.
+        QMessageBox.information(self, "RRHH", "Función: Editar empleado.")
 
+    @Slot()
     def eliminar_empleado(self):
-            print(f"Intento para eliminar un empleado")
-            # Aquí puedes agregar la lógica de validación o conexión a base de datos.
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = MyWidget()
-    window.show()
-    sys.exit(app.exec())
+        QMessageBox.information(self, "RRHH", "Función: Eliminar empleado.")
