@@ -29,7 +29,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../mercedes.png</pixmap>
+    <pixmap>mercedes.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -108,7 +108,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../logo.png</pixmap>
+    <pixmap>logo.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -148,6 +148,9 @@
      <pointsize>48</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: black;</string>
+   </property>
    <property name="text">
     <string>Acceso</string>
    </property>
@@ -169,6 +172,9 @@
      <family>icon-ui</family>
      <pointsize>20</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:black;</string>
    </property>
    <property name="text">
     <string>Correo electrónico / usuario</string>
@@ -192,6 +198,9 @@
      <pointsize>20</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color:black;</string>
+   </property>
    <property name="text">
     <string>Contraseña</string>
    </property>
@@ -209,7 +218,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">
+    <string notr="true">color:black;
 background-color: rgb(235, 235, 235);</string>
    </property>
   </widget>
@@ -223,10 +232,11 @@ background-color: rgb(235, 235, 235);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(235, 235, 235);</string>
+    <string notr="true">background-color: rgb(235, 235, 235);
+color:black;</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="botonRegistrar">
    <property name="geometry">
     <rect>
      <x>1206</x>
@@ -253,7 +263,7 @@ background-color: #ebebeb;</string>
     <string>Registrar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="botonIniciar">
    <property name="geometry">
     <rect>
      <x>1493</x>
@@ -392,10 +402,10 @@ una solicitud de registro</string>
   <zorder>label_7</zorder>
   <zorder>lineEdit</zorder>
   <zorder>lineEdit_2</zorder>
-  <zorder>pushButton</zorder>
+  <zorder>botonRegistrar</zorder>
   <zorder>label_8</zorder>
   <zorder>label_9</zorder>
-  <zorder>pushButton_2</zorder>
+  <zorder>botonIniciar</zorder>
   <zorder>label_10</zorder>
   <zorder>label_11</zorder>
   <zorder>label_12</zorder>

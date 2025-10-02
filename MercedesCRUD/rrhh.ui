@@ -95,7 +95,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_1">
+  <widget class="QPushButton" name="botonAgregar">
    <property name="geometry">
     <rect>
      <x>81</x>
@@ -605,7 +605,7 @@ padding: 5px;
     <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="botonEditar1">
    <property name="geometry">
     <rect>
      <x>1734</x>
@@ -635,7 +635,7 @@ padding: 5px;</string>
      <normaloff>../edit.png</normaloff>../edit.png</iconset>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="botonEditar2">
    <property name="geometry">
     <rect>
      <x>1734</x>
@@ -665,7 +665,7 @@ padding: 5px;</string>
      <normaloff>../edit.png</normaloff>../edit.png</iconset>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="botonEditar3">
    <property name="geometry">
     <rect>
      <x>1734</x>
@@ -695,7 +695,7 @@ padding: 5px;</string>
      <normaloff>../edit.png</normaloff>../edit.png</iconset>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_5">
+  <widget class="QPushButton" name="botonSacar2">
    <property name="geometry">
     <rect>
      <x>1791</x>
@@ -725,7 +725,7 @@ padding: 5px;</string>
      <normaloff>../close.png</normaloff>../close.png</iconset>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_6">
+  <widget class="QPushButton" name="botonSacar1">
    <property name="geometry">
     <rect>
      <x>1791</x>
@@ -755,7 +755,7 @@ padding: 5px;</string>
      <normaloff>../close.png</normaloff>../close.png</iconset>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_7">
+  <widget class="QPushButton" name="botonSacar3">
    <property name="geometry">
     <rect>
      <x>1791</x>
@@ -789,7 +789,7 @@ padding: 5px;</string>
   <zorder>label_6</zorder>
   <zorder>label_3</zorder>
   <zorder>label_5</zorder>
-  <zorder>pushButton_1</zorder>
+  <zorder>botonAgregar</zorder>
   <zorder>label_12</zorder>
   <zorder>label_13</zorder>
   <zorder>label_7</zorder>
@@ -812,12 +812,12 @@ padding: 5px;</string>
   <zorder>label_38</zorder>
   <zorder>label_39</zorder>
   <zorder>label_40</zorder>
-  <zorder>pushButton_2</zorder>
-  <zorder>pushButton_3</zorder>
-  <zorder>pushButton_4</zorder>
-  <zorder>pushButton_5</zorder>
-  <zorder>pushButton_6</zorder>
-  <zorder>pushButton_7</zorder>
+  <zorder>botonEditar1</zorder>
+  <zorder>botonEditar2</zorder>
+  <zorder>botonEditar3</zorder>
+  <zorder>botonSacar2</zorder>
+  <zorder>botonSacar1</zorder>
+  <zorder>botonSacar3</zorder>
  </widget>
  <resources/>
  <connections/>

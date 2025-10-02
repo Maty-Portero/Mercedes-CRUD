@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'login.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.1
+## Created by: Qt User Interface Compiler version 6.9.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -27,7 +27,7 @@ class Ui_Widget(object):
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(0, 113, 960, 967))
         self.label.setStyleSheet(u"background-color: rgba(0, 0, 0, 1); ")
-        self.label.setPixmap(QPixmap(u"../mercedes.png"))
+        self.label.setPixmap(QPixmap(u"mercedes.png"))
         self.label.setScaledContents(True)
         self.label_2 = QLabel(Widget)
         self.label_2.setObjectName(u"label_2")
@@ -48,7 +48,7 @@ class Ui_Widget(object):
         self.label_5.setObjectName(u"label_5")
         self.label_5.setGeometry(QRect(918, 14, 85, 85))
         self.label_5.setStyleSheet(u"")
-        self.label_5.setPixmap(QPixmap(u"../logo.png"))
+        self.label_5.setPixmap(QPixmap(u"logo.png"))
         self.label_5.setScaledContents(True)
         self.label_6 = QLabel(Widget)
         self.label_6.setObjectName(u"label_6")
@@ -62,8 +62,8 @@ class Ui_Widget(object):
         font.setFamilies([u"icon-ui"])
         font.setPointSize(48)
         self.label_7.setFont(font)
-        self.label_7.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_7.setStyleSheet(u"color: black;")
+        self.label_7.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_8 = QLabel(Widget)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setGeometry(QRect(1206, 444, 355, 32))
@@ -71,47 +71,47 @@ class Ui_Widget(object):
         font1.setFamilies([u"icon-ui"])
         font1.setPointSize(20)
         self.label_8.setFont(font1)
+        self.label_8.setStyleSheet(u"color:black;")
         self.label_8.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
-        self.label_8.setStyleSheet(u"color: black;")
         self.label_9 = QLabel(Widget)
         self.label_9.setObjectName(u"label_9")
         self.label_9.setGeometry(QRect(1206, 603, 355, 32))
         self.label_9.setFont(font1)
-        self.label_9.setStyleSheet(u"color: black;")
+        self.label_9.setStyleSheet(u"color:black;")
         self.label_9.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
-        
-        font5 = QFont()
-        font5.setFamilies([u"icon-ui"])
-        font5.setPointSize(15)
-
         self.lineEdit = QLineEdit(Widget)
         self.lineEdit.setObjectName(u"lineEdit")
         self.lineEdit.setGeometry(QRect(1208, 482, 436, 58))
-        self.lineEdit.setStyleSheet(u"\n"
-"background-color: rgb(235, 235, 235); color: black;")
-        self.lineEdit.setFont(font5)
+        self.lineEdit.setStyleSheet(u"color:black;\n"
+"background-color: rgb(235, 235, 235);")
         self.lineEdit_2 = QLineEdit(Widget)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
         self.lineEdit_2.setGeometry(QRect(1208, 640, 436, 58))
-        self.lineEdit_2.setStyleSheet(u"background-color: rgb(235, 235, 235); color: black;")
-        self.lineEdit_2.setFont(font5)
-        self.pushButton = QPushButton(Widget)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(1206, 790, 180, 63))
+        self.lineEdit_2.setStyleSheet(u"background-color: rgb(235, 235, 235);\n"
+"color:black;")
+        self.botonRegistrar = QPushButton(Widget)
+        self.botonRegistrar.setObjectName(u"botonRegistrar")
+        self.botonRegistrar.setGeometry(QRect(1206, 790, 180, 63))
         font2 = QFont()
         font2.setFamilies([u"icon-ui"])
         font2.setPointSize(19)
-        self.pushButton.setFont(font2)
-        # ESTILO CON HOVER PARA EL BOTON "Registrar"
-        self.pushButton.setStyleSheet(u"QPushButton#pushButton {border: 2px solid #000000; border-radius: 15px; padding: 5px; color: black; background-color: #ebebeb;}\n"
-"QPushButton#pushButton:hover {border: 3px solid #000000; background-color: #d1d1d1;}")
-        self.pushButton_2 = QPushButton(Widget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(1493, 790, 180, 63))
-        self.pushButton_2.setFont(font2)
-        # ESTILO CON HOVER PARA EL BOTON "Iniciar Sesion"
-        self.pushButton_2.setStyleSheet(u"QPushButton#pushButton_2 {background-color: rgb(0, 45, 107); color: white; border: 2px solid #002d6b; border-radius: 15px; padding: 5px;}\n"
-"QPushButton#pushButton_2:hover {background-color: rgb(0, 30, 80); border: 2px solid #001f52;}")
+        self.botonRegistrar.setFont(font2)
+        self.botonRegistrar.setStyleSheet(u"border: 2px solid #000000;\n"
+"border-radius: 15px; /* Bordes redondeados */\n"
+"padding: 5px;\n"
+"\n"
+"color: black;\n"
+"background-color: #ebebeb;")
+        self.botonIniciar = QPushButton(Widget)
+        self.botonIniciar.setObjectName(u"botonIniciar")
+        self.botonIniciar.setGeometry(QRect(1493, 790, 180, 63))
+        self.botonIniciar.setFont(font2)
+        self.botonIniciar.setStyleSheet(u"background-color: rgb(0, 45, 107);\n"
+"color: white;\n"
+"\n"
+"border: 2px solid #002d6b;\n"
+"border-radius: 15px; /* Bordes redondeados */\n"
+"padding: 5px;")
         self.label_10 = QLabel(Widget)
         self.label_10.setObjectName(u"label_10")
         self.label_10.setGeometry(QRect(328, 340, 304, 47))
@@ -151,10 +151,10 @@ class Ui_Widget(object):
         self.label_7.raise_()
         self.lineEdit.raise_()
         self.lineEdit_2.raise_()
-        self.pushButton.raise_()
+        self.botonRegistrar.raise_()
         self.label_8.raise_()
         self.label_9.raise_()
-        self.pushButton_2.raise_()
+        self.botonIniciar.raise_()
         self.label_10.raise_()
         self.label_11.raise_()
         self.label_12.raise_()
@@ -176,8 +176,8 @@ class Ui_Widget(object):
         self.label_7.setText(QCoreApplication.translate("Widget", u"Acceso", None))
         self.label_8.setText(QCoreApplication.translate("Widget", u"Correo electr\u00f3nico / usuario", None))
         self.label_9.setText(QCoreApplication.translate("Widget", u"Contrase\u00f1a", None))
-        self.pushButton.setText(QCoreApplication.translate("Widget", u"Registrar", None))
-        self.pushButton_2.setText(QCoreApplication.translate("Widget", u"Iniciar sesi\u00f3n", None))
+        self.botonRegistrar.setText(QCoreApplication.translate("Widget", u"Registrar", None))
+        self.botonIniciar.setText(QCoreApplication.translate("Widget", u"Iniciar sesi\u00f3n", None))
         self.label_10.setText(QCoreApplication.translate("Widget", u"Mercedes-CRUD", None))
         self.label_11.setText(QCoreApplication.translate("Widget", u"- Acced\u00e9 a tu cuenta para utilizar las \n"
 "funciones de tu rol \n"
@@ -186,3 +186,4 @@ class Ui_Widget(object):
         self.label_12.setText(QCoreApplication.translate("Widget", u"INICIO", None))
         self.label_13.setText(QCoreApplication.translate("Widget", u"Sesi\u00f3n no iniciada", None))
     # retranslateUi
+

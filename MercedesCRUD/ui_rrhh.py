@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'rrhh.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.1
+## Created by: Qt User Interface Compiler version 6.9.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -47,19 +47,26 @@ class Ui_Widget(object):
 "    border-radius: 30px; /* Bordes redondeados */\n"
 "    padding: 5px;")
         self.label_6.setScaledContents(False)
-        self.pushButton_1 = QPushButton(Widget)
-        self.pushButton_1.setObjectName(u"pushButton_1")
-        self.pushButton_1.setGeometry(QRect(81, 175, 278, 63))
+        self.botonAgregar = QPushButton(Widget)
+        self.botonAgregar.setObjectName(u"botonAgregar")
+        self.botonAgregar.setGeometry(QRect(81, 175, 278, 63))
         font = QFont()
         font.setFamilies([u"icon-ui"])
         font.setPointSize(19)
-        self.pushButton_1.setFont(font)
-        # ESTILO CON HOVER PARA EL BOTON "Agregar Empleados"
-        self.pushButton_1.setStyleSheet(u"QPushButton#pushButton_1 {background-color: rgb(0, 45, 107); color: white; border: 2px solid #002d6b; border-radius: 15px; padding: 5px;}\n"
-"QPushButton#pushButton_1:hover {background-color: rgb(0, 35, 90);}")
+        self.botonAgregar.setFont(font)
+        self.botonAgregar.setStyleSheet(u"background-color: rgb(0, 45, 107);\n"
+"color: white;\n"
+"\n"
+"border: 2px solid #002d6b;\n"
+"border-radius: 15px; /* Bordes redondeados */\n"
+"padding: 5px;\n"
+"\n"
+"\n"
+"\n"
+"")
         icon = QIcon()
         icon.addFile(u"../c.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_1.setIcon(icon)
+        self.botonAgregar.setIcon(icon)
         self.label_12 = QLabel(Widget)
         self.label_12.setObjectName(u"label_12")
         self.label_12.setGeometry(QRect(30, 36, 361, 41))
@@ -213,63 +220,75 @@ class Ui_Widget(object):
 "padding: 5px;\n"
 "")
         self.label_40.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.pushButton_2 = QPushButton(Widget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(1734, 266, 42, 42))
-        self.pushButton_2.setFont(font)
-        # ESTILO CON HOVER PARA EL BOTON "Editar"
-        self.pushButton_2.setStyleSheet(u"QPushButton#pushButton_2 {background-color: black; border: 2px solid black; border-radius: 20px; padding: 5px;}\n"
-"QPushButton#pushButton_2:hover {background-color: rgb(50, 50, 50);}")
+        self.botonEditar1 = QPushButton(Widget)
+        self.botonEditar1.setObjectName(u"botonEditar1")
+        self.botonEditar1.setGeometry(QRect(1734, 266, 42, 42))
+        self.botonEditar1.setFont(font)
+        self.botonEditar1.setStyleSheet(u"background-color: black;\n"
+"\n"
+"border: 2px solid black;\n"
+"border-radius: 20px; /* Bordes redondeados */\n"
+"padding: 5px;")
         icon1 = QIcon()
         icon1.addFile(u"../edit.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_2.setIcon(icon1)
-        self.pushButton_3 = QPushButton(Widget)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setGeometry(QRect(1734, 331, 42, 42))
-        self.pushButton_3.setFont(font)
-        # ESTILO CON HOVER PARA EL BOTON "Editar"
-        self.pushButton_3.setStyleSheet(u"QPushButton#pushButton_3 {background-color: black; border: 2px solid black; border-radius: 20px; padding: 5px;}\n"
-"QPushButton#pushButton_3:hover {background-color: rgb(50, 50, 50);}")
-        self.pushButton_3.setIcon(icon1)
-        self.pushButton_4 = QPushButton(Widget)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-        self.pushButton_4.setGeometry(QRect(1734, 399, 42, 42))
-        self.pushButton_4.setFont(font)
-        # ESTILO CON HOVER PARA EL BOTON "Editar"
-        self.pushButton_4.setStyleSheet(u"QPushButton#pushButton_4 {background-color: black; border: 2px solid black; border-radius: 20px; padding: 5px;}\n"
-"QPushButton#pushButton_4:hover {background-color: rgb(50, 50, 50);}")
-        self.pushButton_4.setIcon(icon1)
-        self.pushButton_5 = QPushButton(Widget)
-        self.pushButton_5.setObjectName(u"pushButton_5")
-        self.pushButton_5.setGeometry(QRect(1791, 331, 42, 42))
-        self.pushButton_5.setFont(font)
-        # ESTILO CON HOVER PARA EL BOTON "Eliminar"
-        self.pushButton_5.setStyleSheet(u"QPushButton#pushButton_5 {background-color: black; border: 2px solid black; border-radius: 20px; padding: 5px;}\n"
-"QPushButton#pushButton_5:hover {background-color: rgb(50, 50, 50);}")
+        self.botonEditar1.setIcon(icon1)
+        self.botonEditar2 = QPushButton(Widget)
+        self.botonEditar2.setObjectName(u"botonEditar2")
+        self.botonEditar2.setGeometry(QRect(1734, 331, 42, 42))
+        self.botonEditar2.setFont(font)
+        self.botonEditar2.setStyleSheet(u"background-color: black;\n"
+"\n"
+"border: 2px solid black;\n"
+"border-radius: 20px; /* Bordes redondeados */\n"
+"padding: 5px;")
+        self.botonEditar2.setIcon(icon1)
+        self.botonEditar3 = QPushButton(Widget)
+        self.botonEditar3.setObjectName(u"botonEditar3")
+        self.botonEditar3.setGeometry(QRect(1734, 399, 42, 42))
+        self.botonEditar3.setFont(font)
+        self.botonEditar3.setStyleSheet(u"background-color: black;\n"
+"\n"
+"border: 2px solid black;\n"
+"border-radius: 20px; /* Bordes redondeados */\n"
+"padding: 5px;")
+        self.botonEditar3.setIcon(icon1)
+        self.botonSacar2 = QPushButton(Widget)
+        self.botonSacar2.setObjectName(u"botonSacar2")
+        self.botonSacar2.setGeometry(QRect(1791, 331, 42, 42))
+        self.botonSacar2.setFont(font)
+        self.botonSacar2.setStyleSheet(u"background-color: black;\n"
+"\n"
+"border: 2px solid black;\n"
+"border-radius: 20px; /* Bordes redondeados */\n"
+"padding: 5px;")
         icon2 = QIcon()
         icon2.addFile(u"../close.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_5.setIcon(icon2)
-        self.pushButton_6 = QPushButton(Widget)
-        self.pushButton_6.setObjectName(u"pushButton_6")
-        self.pushButton_6.setGeometry(QRect(1791, 266, 42, 42))
-        self.pushButton_6.setFont(font)
-        # ESTILO CON HOVER PARA EL BOTON "Eliminar"
-        self.pushButton_6.setStyleSheet(u"QPushButton#pushButton_6 {background-color: black; border: 2px solid black; border-radius: 20px; padding: 5px;}\n"
-"QPushButton#pushButton_6:hover {background-color: rgb(50, 50, 50);}")
-        self.pushButton_6.setIcon(icon2)
-        self.pushButton_7 = QPushButton(Widget)
-        self.pushButton_7.setObjectName(u"pushButton_7")
-        self.pushButton_7.setGeometry(QRect(1791, 399, 42, 42))
-        self.pushButton_7.setFont(font)
-        # ESTILO CON HOVER PARA EL BOTON "Eliminar"
-        self.pushButton_7.setStyleSheet(u"QPushButton#pushButton_7 {background-color: black; border: 2px solid black; border-radius: 20px; padding: 5px;}\n"
-"QPushButton#pushButton_7:hover {background-color: rgb(50, 50, 50);}")
-        self.pushButton_7.setIcon(icon2)
+        self.botonSacar2.setIcon(icon2)
+        self.botonSacar1 = QPushButton(Widget)
+        self.botonSacar1.setObjectName(u"botonSacar1")
+        self.botonSacar1.setGeometry(QRect(1791, 266, 42, 42))
+        self.botonSacar1.setFont(font)
+        self.botonSacar1.setStyleSheet(u"background-color: black;\n"
+"\n"
+"border: 2px solid black;\n"
+"border-radius: 20px; /* Bordes redondeados */\n"
+"padding: 5px;")
+        self.botonSacar1.setIcon(icon2)
+        self.botonSacar3 = QPushButton(Widget)
+        self.botonSacar3.setObjectName(u"botonSacar3")
+        self.botonSacar3.setGeometry(QRect(1791, 399, 42, 42))
+        self.botonSacar3.setFont(font)
+        self.botonSacar3.setStyleSheet(u"background-color: black;\n"
+"\n"
+"border: 2px solid black;\n"
+"border-radius: 20px; /* Bordes redondeados */\n"
+"padding: 5px;")
+        self.botonSacar3.setIcon(icon2)
         self.label_4.raise_()
         self.label_6.raise_()
         self.label_3.raise_()
         self.label_5.raise_()
-        self.pushButton_1.raise_()
+        self.botonAgregar.raise_()
         self.label_12.raise_()
         self.label_13.raise_()
         self.label_7.raise_()
@@ -292,12 +311,12 @@ class Ui_Widget(object):
         self.label_38.raise_()
         self.label_39.raise_()
         self.label_40.raise_()
-        self.pushButton_2.raise_()
-        self.pushButton_3.raise_()
-        self.pushButton_4.raise_()
-        self.pushButton_5.raise_()
-        self.pushButton_6.raise_()
-        self.pushButton_7.raise_()
+        self.botonEditar1.raise_()
+        self.botonEditar2.raise_()
+        self.botonEditar3.raise_()
+        self.botonSacar2.raise_()
+        self.botonSacar1.raise_()
+        self.botonSacar3.raise_()
 
         self.retranslateUi(Widget)
 
@@ -310,7 +329,7 @@ class Ui_Widget(object):
         self.label_4.setText("")
         self.label_5.setText("")
         self.label_6.setText("")
-        self.pushButton_1.setText(QCoreApplication.translate("Widget", u" Agregar Empleados", None))
+        self.botonAgregar.setText(QCoreApplication.translate("Widget", u" Agregar Empleados", None))
         self.label_12.setText(QCoreApplication.translate("Widget", u"RECURSOS HUMANOS", None))
         self.label_13.setText(QCoreApplication.translate("Widget", u"Usuario", None))
         self.label_7.setText("")
@@ -333,10 +352,11 @@ class Ui_Widget(object):
         self.label_38.setText(QCoreApplication.translate("Widget", u"Chingui Lin", None))
         self.label_39.setText(QCoreApplication.translate("Widget", u"Bebe Lin", None))
         self.label_40.setText(QCoreApplication.translate("Widget", u"Choco Lin", None))
-        self.pushButton_2.setText("")
-        self.pushButton_3.setText("")
-        self.pushButton_4.setText("")
-        self.pushButton_5.setText("")
-        self.pushButton_6.setText("")
-        self.pushButton_7.setText("")
+        self.botonEditar1.setText("")
+        self.botonEditar2.setText("")
+        self.botonEditar3.setText("")
+        self.botonSacar2.setText("")
+        self.botonSacar1.setText("")
+        self.botonSacar3.setText("")
     # retranslateUi
+

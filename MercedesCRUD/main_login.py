@@ -1,6 +1,8 @@
 import sys
+import os
 from PySide6.QtWidgets import QWidget, QMessageBox
 from PySide6.QtCore import Signal, Slot
+from PySide6.QtGui import QPixmap 
 from ui_login import Ui_Widget 
 
 # La clase MyWidget es tu vista de Login
@@ -15,40 +17,87 @@ class LoginWidget(QWidget):
         self.ui.setupUi(self)
 
         # AQUI AGREGAMOS EL ESTILO HOVER PARA EL BOTON 'Registrar' (pushButton)
-        self.ui.pushButton.setStyleSheet("""
-            QPushButton#pushButton {
+        self.ui.botonRegistrar.setStyleSheet("""
+            QPushButton#botonRegistrar {
                 border: 2px solid #000000;
                 border-radius: 15px;
                 padding: 5px;
                 color: black;
                 background-color: #ebebeb;
             }
-            QPushButton#pushButton:hover {
+            QPushButton#botonRegistrar:hover {
                 border: 3px solid #000000;
                 background-color: #d1d1d1;
             }
         """)
         
         # AQUI AGREGAMOS EL ESTILO HOVER PARA EL BOTON 'Iniciar sesion' (pushButton_2)
-        self.ui.pushButton_2.setStyleSheet("""
-            QPushButton#pushButton_2 {
+        self.ui.botonIniciar.setStyleSheet("""
+            QPushButton#botonIniciar {
                 background-color: rgb(0, 45, 107);
                 color: white;
                 border: 2px solid #002d6b;
                 border-radius: 15px;
                 padding: 5px;
             }
-            QPushButton#pushButton_2:hover {
+            QPushButton#botonIniciar:hover {
                 background-color: rgb(0, 30, 80);
                 border: 2px solid #001f52;
             }
         """)
 
+        # 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        # 2. Construye la ruta completa al archivo (Ej: C:/MiProyecto/mercedes.png)
+        image_path = os.path.join(script_dir, "mercedes.png") 
+        
+        # 3. Crea el QPixmap
+        pixmap = QPixmap(image_path)
+
+        # 4. COMPRUEBA si la carga fue exitosa
+        if pixmap.isNull():
+            print(f"\n[ERROR DE IMAGEN] NO SE PUDO CARGAR LA IMAGEN.")
+            print(f"Ruta COMPLETA intentada: {image_path}")
+            print(f"Asegúrate de que el nombre de archivo sea exactamente 'mercedes.png' y que el archivo exista en esa ubicación.")
+        else:
+            print(f"Imagen cargada OK desde: {image_path}")
+        # ----------------------------------------------------
+
+        # 5. Asigna el pixmap al QLabel 'label'
+        self.ui.label.setPixmap(pixmap)
+        self.ui.label.setScaledContents(True) # Aseguramos que escale
+
+        # 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        # 2. Construye la ruta completa al archivo (Ej: C:/MiProyecto/mercedes.png)
+        image_path = os.path.join(script_dir, "logo.png") 
+        
+        # 3. Crea el QPixmap
+        pixmap = QPixmap(image_path)
+
+        # 4. COMPRUEBA si la carga fue exitosa
+        if pixmap.isNull():
+            print(f"\n[ERROR DE IMAGEN] NO SE PUDO CARGAR LA IMAGEN.")
+            print(f"Ruta COMPLETA intentada: {image_path}")
+            print(f"Asegúrate de que el nombre de archivo sea exactamente 'logo.png' y que el archivo exista en esa ubicación.")
+        else:
+            print(f"Imagen cargada OK desde: {image_path}")
+        # ----------------------------------------------------
+
+        # 5. Asigna el pixmap al QLabel 'label'
+        self.ui.label_5.setPixmap(pixmap)
+        self.ui.label_5.setScaledContents(True) # Aseguramos que escale
+
         # Conecta el botón 'Registrar' a una función
-        self.ui.pushButton.clicked.connect(self.registrarme)
+        self.ui.botonRegistrar.clicked.connect(self.registrarme)
+
+        # Conecta el botón 'Registrar' a una función
+        self.ui.botonRegistrar.clicked.connect(self.registrarme)
         
         # Conecta el botón 'Iniciar sesión' a la función
-        self.ui.pushButton_2.clicked.connect(self.iniciar_sesion)
+        self.ui.botonIniciar.clicked.connect(self.iniciar_sesion)
 
     @Slot()
     def iniciar_sesion(self):

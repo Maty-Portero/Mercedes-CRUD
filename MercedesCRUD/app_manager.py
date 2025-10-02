@@ -16,7 +16,7 @@ class AppManager(QMainWindow):
         super().__init__()
         self.setWindowTitle("Sistema de Gestión Centralizada")
         self.setGeometry(100, 100, 800, 600) 
-        self.showFullScreen()
+        #self.showFullScreen()
 
         # 1. Crear el contenedor de vistas (QStackedWidget)
         self.stack = QStackedWidget()

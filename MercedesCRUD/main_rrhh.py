@@ -16,16 +16,17 @@ class RRHHWidget(QWidget):
         self.ui.setupUi(self)
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
-        self.ui.pushButton_1.clicked.connect(self.agregar_empleado)
-        self.ui.pushButton_2.clicked.connect(self.editar_empleado)
-        self.ui.pushButton_3.clicked.connect(self.editar_empleado)
-        self.ui.pushButton_4.clicked.connect(self.editar_empleado)
-        self.ui.pushButton_5.clicked.connect(self.eliminar_empleado)
-        self.ui.pushButton_6.clicked.connect(self.eliminar_empleado)
+        self.ui.botonAgregar.clicked.connect(self.agregar_empleado)
+        self.ui.botonEditar1.clicked.connect(self.editar_empleado)
+        self.ui.botonEditar2.clicked.connect(self.editar_empleado)
+        self.ui.botonEditar3.clicked.connect(self.editar_empleado)
+        self.ui.botonSacar1.clicked.connect(self.eliminar_empleado)
+        self.ui.botonSacar2.clicked.connect(self.eliminar_empleado)
+        self.ui.botonSacar3.clicked.connect(self.eliminar_empleado)
         
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión
-        self.ui.pushButton_7.clicked.connect(self.logout_requested.emit)
+        # self.ui.pushButton_7.clicked.connect(self.logout_requested.emit)
         
     # Método para recibir y establecer el nombre de usuario (Llamado desde AppManager)
     def set_welcome_message(self, username):
