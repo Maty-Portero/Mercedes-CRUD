@@ -6,6 +6,7 @@ from PySide6.QtCore import Slot
 # Asegúrate de que los archivos main_login.py y main_rrhh.py estén en la misma carpeta.
 from main_login import LoginWidget 
 from main_rrhh import RRHHWidget
+from main_ceo import CEOWidget
 
 class AppManager(QMainWindow):
     """
@@ -16,7 +17,7 @@ class AppManager(QMainWindow):
         super().__init__()
         self.setWindowTitle("Sistema de Gestión Centralizada")
         self.setGeometry(100, 100, 800, 600) 
-        #self.showFullScreen()
+        self.showFullScreen()
 
         # 1. Crear el contenedor de vistas (QStackedWidget)
         self.stack = QStackedWidget()
@@ -26,15 +27,20 @@ class AppManager(QMainWindow):
         # Cada vista ahora es un objeto Widget que se gestiona aquí
         self.login_view = LoginWidget()
         self.rrhh_view = RRHHWidget()
+        self.ceo_view = CEOWidget()
         
         # Añadir las vistas y guardar sus índices
         self.LOGIN_INDEX = self.stack.addWidget(self.login_view) # Índice 0
         self.RRHH_INDEX = self.stack.addWidget(self.rrhh_view)   # Índice 1
+        self.CEO_INDEX = self.stack.addWidget(self.ceo_view)   # Índice 2
 
         # 3. Conectar la lógica de navegación
         
         # Si la vista de Login EMITE la señal 'login_successful', llamamos a show_rrhh_view
         self.login_view.login_successful.connect(self.show_rrhh_view)
+
+        # Si la vista de Login EMITE la señal 'login_successful', llamamos a show_rrhh_view
+        self.login_view.ceo.connect(self.show_ceo_view)
         
         # Si la vista de RRHH EMITE la señal 'logout_requested', volvemos al login
         self.rrhh_view.logout_requested.connect(self.show_login_view)
@@ -57,6 +63,16 @@ class AppManager(QMainWindow):
         
         self.stack.setCurrentIndex(self.RRHH_INDEX)
         self.setWindowTitle(f"Sistema de Gestión - RRHH de {username}")
+
+    @Slot(str) 
+    def show_ceo_view(self, username):
+        """Muestra el widget Principal de CEO y le envía el nombre del usuario."""
+        
+        # Llama a un método en la vista de RRHH para actualizar su contenido
+        self.ceo_view.set_welcome_message(username)
+        
+        self.stack.setCurrentIndex(self.CEO_INDEX)
+        self.setWindowTitle(f"Sistema de Gestión - CEO de {username}")
 
 
 if __name__ == "__main__":

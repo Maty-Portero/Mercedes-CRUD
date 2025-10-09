@@ -632,7 +632,7 @@ padding: 5px;</string>
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../edit.png</normaloff>../edit.png</iconset>
+     <normaloff>edit.png</normaloff>edit.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="botonEditar2">
@@ -662,7 +662,7 @@ padding: 5px;</string>
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../edit.png</normaloff>../edit.png</iconset>
+     <normaloff>edit.png</normaloff>edit.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="botonEditar3">
@@ -692,7 +692,7 @@ padding: 5px;</string>
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../edit.png</normaloff>../edit.png</iconset>
+     <normaloff>edit.png</normaloff>edit.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="botonSacar2">
@@ -722,7 +722,7 @@ padding: 5px;</string>
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../close.png</normaloff>../close.png</iconset>
+     <normaloff>close.png</normaloff>close.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="botonSacar1">
@@ -752,7 +752,7 @@ padding: 5px;</string>
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../close.png</normaloff>../close.png</iconset>
+     <normaloff>close.png</normaloff>close.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="botonSacar3">
@@ -782,7 +782,7 @@ padding: 5px;</string>
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../close.png</normaloff>../close.png</iconset>
+     <normaloff>close.png</normaloff>close.png</iconset>
    </property>
   </widget>
   <zorder>label_4</zorder>

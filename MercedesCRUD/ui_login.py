@@ -83,12 +83,12 @@ class Ui_Widget(object):
         self.lineEdit.setObjectName(u"lineEdit")
         self.lineEdit.setGeometry(QRect(1208, 482, 436, 58))
         self.lineEdit.setStyleSheet(u"color:black;\n"
-"background-color: rgb(235, 235, 235);")
+"background-color: rgb(235, 235, 235); font-size: 15px;")
         self.lineEdit_2 = QLineEdit(Widget)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
         self.lineEdit_2.setGeometry(QRect(1208, 640, 436, 58))
         self.lineEdit_2.setStyleSheet(u"background-color: rgb(235, 235, 235);\n"
-"color:black;")
+"color:black; font-size: 15px;")
         self.botonRegistrar = QPushButton(Widget)
         self.botonRegistrar.setObjectName(u"botonRegistrar")
         self.botonRegistrar.setGeometry(QRect(1206, 790, 180, 63))
