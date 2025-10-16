@@ -3,10 +3,10 @@ import os
 from PySide6.QtWidgets import QWidget, QMessageBox
 from PySide6.QtCore import Signal, Slot
 from PySide6.QtGui import QPixmap 
-from ui_mantenimiento import Ui_Widget 
+from ui_e_movilidad import Ui_Widget 
 
 # La clase MyWidget es tu vista de RRHH
-class MantenimientoWidget(QWidget):
+class E_MovilidadWidget(QWidget):
     # Señal para notificar al manager que el usuario quiere cerrar sesión
     logout_requested = Signal()
     # Asumo que tienes un QLabel para mostrar el saludo de bienvenida en tu UI
@@ -120,11 +120,17 @@ class MantenimientoWidget(QWidget):
             self.ui.botonSacar5.clicked.connect(self.eliminar_equipo)
             self.ui.botonBuscar.clicked.connect(self.buscar_equipo)
             self.ui.botonBorrar.clicked.connect(self.borrar_busqueda)
-            self.ui.botonEstado1.clicked.connect(self.estado_equipo)
-            self.ui.botonEstado2.clicked.connect(self.estado_equipo)
-            self.ui.botonEstado3.clicked.connect(self.estado_equipo)
-            self.ui.botonEstado4.clicked.connect(self.estado_equipo)
-            self.ui.botonEstado5.clicked.connect(self.estado_equipo)
+            self.ui.botonOrdenar1.clicked.connect(self.ordenar_equipo)
+            self.ui.botonProgreso1.clicked.connect(self.progreso_equipo)
+            self.ui.botonProgreso2.clicked.connect(self.progreso_equipo)
+            self.ui.botonProgreso3.clicked.connect(self.progreso_equipo)
+            self.ui.botonProgreso4.clicked.connect(self.progreso_equipo)
+            self.ui.botonProgreso5.clicked.connect(self.progreso_equipo)
+            self.ui.botonTemp1.clicked.connect(self.temperatura_equipo)
+            self.ui.botonTemp2.clicked.connect(self.temperatura_equipo)
+            self.ui.botonTemp3.clicked.connect(self.temperatura_equipo)
+            self.ui.botonTemp4.clicked.connect(self.temperatura_equipo)
+            self.ui.botonTemp5.clicked.connect(self.temperatura_equipo) 
             
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión
@@ -135,7 +141,7 @@ class MantenimientoWidget(QWidget):
         """Muestra el mensaje de bienvenida en un QLabel (asumiendo que tienes uno)."""
         # Si tienes un QLabel con objectName 'label_welcome', lo usarías así:
         # self.ui.label_welcome.setText(f"Bienvenido, {username}")
-        print(f"Usuario {username} ha ingresado a Mantenimiento.") # Impresión de prueba
+        print(f"Usuario {username} ha ingresado a E-Movilidad.") # Impresión de prueba
 
         
 
@@ -157,8 +163,12 @@ def buscar_equipo(self):
     QMessageBox.information(self, "Mantenimiento", "Función: Buscar equipo.")
 
 @Slot()
-def estado_equipo(self):
-    QMessageBox.information(self, "Mantenimiento", "Función: Chequear estado del equipo.")
+def temperatura_equipo(self):
+    QMessageBox.information(self, "Mantenimiento", "Función: Chequear temperatura del equipo.")
+
+@Slot()
+def progreso_equipo(self):
+    QMessageBox.information(self, "Mantenimiento", "Función: Chequear progreso del equipo.")
 
 @Slot()
 def borrar_busqueda(self):

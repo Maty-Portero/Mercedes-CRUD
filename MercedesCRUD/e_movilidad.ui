@@ -76,20 +76,17 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>36</x>
-     <y>145</y>
-     <width>1856</width>
-     <height>909</height>
+     <x>60</x>
+     <y>147</y>
+     <width>1800</width>
+     <height>900</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>Agency FB</family>
-     <pointsize>19</pointsize>
-    </font>
-   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: white;</string>
+    <string notr="true">background-color: white;
+    border: 2px solid #ffffff;
+    border-radius: 30px; /* Bordes redondeados */
+    padding: 5px;</string>
    </property>
    <property name="text">
     <string/>
@@ -101,9 +98,9 @@
   <widget class="QPushButton" name="botonAgregar">
    <property name="geometry">
     <rect>
-     <x>52</x>
+     <x>81</x>
      <y>175</y>
-     <width>221</width>
+     <width>278</width>
      <height>63</height>
     </rect>
    </property>
@@ -119,10 +116,18 @@ color: white;
 
 border: 2px solid #002d6b;
 border-radius: 15px; /* Bordes redondeados */
-padding: 5px;</string>
+padding: 5px;
+
+
+
+</string>
    </property>
    <property name="text">
-    <string>Agregar</string>
+    <string> Agregar Equipos</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>c.png</normaloff>c.png</iconset>
    </property>
   </widget>
   <widget class="QLabel" name="label_12">
@@ -130,7 +135,7 @@ padding: 5px;</string>
     <rect>
      <x>30</x>
      <y>36</y>
-     <width>226</width>
+     <width>361</width>
      <height>41</height>
     </rect>
    </property>
@@ -197,209 +202,218 @@ padding: 5px;</string>
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="label_8">
+  <widget class="QLabel" name="label_14">
    <property name="geometry">
     <rect>
      <x>391</x>
      <y>190</y>
-     <width>707</width>
+     <width>381</width>
      <height>32</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">font: icon-ui;
-font-size:19px;</string>
+    <string notr="true">color: black;</string>
    </property>
    <property name="text">
-    <string>Baterías seguidas por telemetría: 6 (3 en línea)</string>
+    <string>Equipos: {total} (? conectados)</string>
    </property>
-   <property name="scaledContents">
-    <bool>true</bool>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="Line" name="line">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>36</x>
-     <y>250</y>
-     <width>1892</width>
+     <x>60</x>
+     <y>255</y>
+     <width>1920</width>
      <height>3</height>
     </rect>
    </property>
-   <property name="orientation">
-    <enum>Qt::Orientation::Horizontal</enum>
-   </property>
-  </widget>
-  <widget class="Line" name="line_2">
-   <property name="geometry">
-    <rect>
-     <x>958</x>
-     <y>250</y>
-     <width>3</width>
-     <height>1054</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Orientation::Vertical</enum>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="botonBateria1">
-   <property name="geometry">
-    <rect>
-     <x>108</x>
-     <y>272</y>
-     <width>250</width>
-     <height>250</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>icon-ui</family>
-     <pointsize>19</pointsize>
-    </font>
-   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 45, 107);
-color: white;
-
-border: 2px solid #002d6b;
-border-radius: 15px; /* Bordes redondeados */
-padding: 5px;</string>
+    <string notr="true">background-color: rgb(0, 45, 107);</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="botonBateria2">
+  <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>374</x>
-     <y>272</y>
-     <width>250</width>
-     <height>250</height>
+     <x>60</x>
+     <y>320</y>
+     <width>1920</width>
+     <height>3</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>icon-ui</family>
-     <pointsize>19</pointsize>
-    </font>
-   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 45, 107);
-color: white;
-
-border: 2px solid #002d6b;
-border-radius: 15px; /* Bordes redondeados */
-padding: 5px;</string>
+    <string notr="true">background-color: rgb(232, 232, 232);</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="botonBateria3">
+  <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>272</y>
-     <width>250</width>
-     <height>250</height>
+     <x>60</x>
+     <y>385</y>
+     <width>1920</width>
+     <height>3</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>icon-ui</family>
-     <pointsize>19</pointsize>
-    </font>
-   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 45, 107);
-color: white;
-
-border: 2px solid #002d6b;
-border-radius: 15px; /* Bordes redondeados */
-padding: 5px;</string>
+    <string notr="true">background-color: rgb(232, 232, 232);</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="botonBateria4">
+  <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>108</x>
-     <y>532</y>
-     <width>250</width>
-     <height>250</height>
+     <x>60</x>
+     <y>515</y>
+     <width>1920</width>
+     <height>3</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>icon-ui</family>
-     <pointsize>19</pointsize>
-    </font>
-   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 45, 107);
-color: white;
-
-border: 2px solid #002d6b;
-border-radius: 15px; /* Bordes redondeados */
-padding: 5px;</string>
+    <string notr="true">background-color: rgb(232, 232, 232);</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="botonBateria5">
+  <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>374</x>
-     <y>532</y>
-     <width>250</width>
-     <height>250</height>
+     <x>60</x>
+     <y>450</y>
+     <width>1920</width>
+     <height>3</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>icon-ui</family>
-     <pointsize>19</pointsize>
-    </font>
-   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 45, 107);
-color: white;
-
-border: 2px solid #002d6b;
-border-radius: 15px; /* Bordes redondeados */
-padding: 5px;</string>
+    <string notr="true">background-color: rgb(232, 232, 232);</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="botonBateria6">
+  <widget class="QLabel" name="label_15">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>532</y>
-     <width>250</width>
-     <height>250</height>
+     <x>60</x>
+     <y>645</y>
+     <width>1920</width>
+     <height>3</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>icon-ui</family>
-     <pointsize>19</pointsize>
-    </font>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(232, 232, 232);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_16">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>580</y>
+     <width>1920</width>
+     <height>3</height>
+    </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 45, 107);
-color: white;
-
-border: 2px solid #002d6b;
-border-radius: 15px; /* Bordes redondeados */
-padding: 5px;</string>
+    <string notr="true">background-color: rgb(232, 232, 232);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_17">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>710</y>
+     <width>1920</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(232, 232, 232);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_18">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>775</y>
+     <width>1920</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(232, 232, 232);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_19">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>840</y>
+     <width>1920</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(232, 232, 232);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_20">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>970</y>
+     <width>1920</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 45, 107);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_21">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>905</y>
+     <width>1920</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(232, 232, 232);</string>
    </property>
    <property name="text">
     <string/>
@@ -408,10 +422,10 @@ padding: 5px;</string>
   <widget class="QLabel" name="label_35">
    <property name="geometry">
     <rect>
-     <x>116</x>
-     <y>288</y>
-     <width>67</width>
-     <height>67</height>
+     <x>63</x>
+     <y>262</y>
+     <width>90</width>
+     <height>50</height>
     </rect>
    </property>
    <property name="font">
@@ -421,16 +435,16 @@ padding: 5px;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: white;
-color: black;
+    <string notr="true">background-color: green;
+color: rgb(255, 255, 255);
 
-border: 2px solid white;
+border: 2px solid green;
 border-radius: 25px; /* Bordes redondeados */
 padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>#1</string>
+    <string>#0001</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -439,10 +453,10 @@ padding: 5px;
   <widget class="QLabel" name="label_36">
    <property name="geometry">
     <rect>
-     <x>382</x>
-     <y>288</y>
-     <width>67</width>
-     <height>67</height>
+     <x>63</x>
+     <y>328</y>
+     <width>90</width>
+     <height>50</height>
     </rect>
    </property>
    <property name="font">
@@ -452,16 +466,16 @@ padding: 5px;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: white;
-color: black;
+    <string notr="true">background-color: green;
+color: rgb(255, 255, 255);
 
-border: 2px solid white;
+border: 2px solid green;
 border-radius: 25px; /* Bordes redondeados */
 padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>#1</string>
+    <string>#0002</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -470,10 +484,10 @@ padding: 5px;
   <widget class="QLabel" name="label_37">
    <property name="geometry">
     <rect>
-     <x>648</x>
-     <y>1020</y>
-     <width>67</width>
-     <height>67</height>
+     <x>63</x>
+     <y>393</y>
+     <width>90</width>
+     <height>50</height>
     </rect>
    </property>
    <property name="font">
@@ -483,41 +497,1052 @@ padding: 5px;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: white;
-color: black;
+    <string notr="true">background-color: green;
+color: rgb(255, 255, 255);
 
-border: 2px solid white;
+border: 2px solid green;
 border-radius: 25px; /* Bordes redondeados */
 padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>#1</string>
+    <string>#0003</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
+  <widget class="QLabel" name="label_38">
+   <property name="geometry">
+    <rect>
+     <x>177</x>
+     <y>262</y>
+     <width>248</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #e8e8e8;
+color: black;
+
+border: 2px solid #e8e8e8;
+border-radius: 25px; /* Bordes redondeados */
+padding: 5px;
+</string>
+   </property>
+   <property name="text">
+    <string>Bateria 1</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_39">
+   <property name="geometry">
+    <rect>
+     <x>177</x>
+     <y>328</y>
+     <width>248</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #e8e8e8;
+color: black;
+
+border: 2px solid #e8e8e8;
+border-radius: 25px; /* Bordes redondeados */
+padding: 5px;
+</string>
+   </property>
+   <property name="text">
+    <string>Bateria 2</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_40">
+   <property name="geometry">
+    <rect>
+     <x>177</x>
+     <y>393</y>
+     <width>248</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #e8e8e8;
+color: black;
+
+border: 2px solid #e8e8e8;
+border-radius: 25px; /* Bordes redondeados */
+padding: 5px;
+</string>
+   </property>
+   <property name="text">
+    <string>Bateria 3</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonEditar1">
+   <property name="geometry">
+    <rect>
+     <x>1734</x>
+     <y>266</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>edit.png</normaloff>edit.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonEditar2">
+   <property name="geometry">
+    <rect>
+     <x>1734</x>
+     <y>331</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>edit.png</normaloff>edit.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonEditar3">
+   <property name="geometry">
+    <rect>
+     <x>1734</x>
+     <y>399</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>edit.png</normaloff>edit.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonSacar2">
+   <property name="geometry">
+    <rect>
+     <x>1791</x>
+     <y>331</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>close.png</normaloff>close.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonSacar1">
+   <property name="geometry">
+    <rect>
+     <x>1791</x>
+     <y>266</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>close.png</normaloff>close.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonSacar3">
+   <property name="geometry">
+    <rect>
+     <x>1791</x>
+     <y>399</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>close.png</normaloff>close.png</iconset>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_42">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>458</y>
+     <width>248</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #e8e8e8;
+color: black;
+
+border: 2px solid #e8e8e8;
+border-radius: 25px; /* Bordes redondeados */
+padding: 5px;
+</string>
+   </property>
+   <property name="text">
+    <string>Bateria 4</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonEditar5">
+   <property name="geometry">
+    <rect>
+     <x>1734</x>
+     <y>522</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>edit.png</normaloff>edit.png</iconset>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_43">
+   <property name="geometry">
+    <rect>
+     <x>63</x>
+     <y>522</y>
+     <width>90</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+
+border: 2px solid #00000;
+border-radius: 25px; /* Bordes redondeados */
+padding: 5px;
+</string>
+   </property>
+   <property name="text">
+    <string>#0005</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonSacar5">
+   <property name="geometry">
+    <rect>
+     <x>1791</x>
+     <y>522</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>close.png</normaloff>close.png</iconset>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_44">
+   <property name="geometry">
+    <rect>
+     <x>63</x>
+     <y>458</y>
+     <width>90</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: green;
+color: rgb(255, 255, 255);
+
+border: 2px solid green;
+border-radius: 25px; /* Bordes redondeados */
+padding: 5px;
+</string>
+   </property>
+   <property name="text">
+    <string>#0004</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonSacar4">
+   <property name="geometry">
+    <rect>
+     <x>1791</x>
+     <y>458</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>close.png</normaloff>close.png</iconset>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_46">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>522</y>
+     <width>248</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #e8e8e8;
+color: black;
+
+border: 2px solid #e8e8e8;
+border-radius: 25px; /* Bordes redondeados */
+padding: 5px;
+</string>
+   </property>
+   <property name="text">
+    <string>Bateria 5</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonEditar4">
+   <property name="geometry">
+    <rect>
+     <x>1734</x>
+     <y>458</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>edit.png</normaloff>edit.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonTemp5">
+   <property name="geometry">
+    <rect>
+     <x>1631</x>
+     <y>523</y>
+     <width>91</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: red;
+color:white;
+
+border: 2px solid red;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string>81°</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonTemp2">
+   <property name="geometry">
+    <rect>
+     <x>1631</x>
+     <y>332</y>
+     <width>91</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: blue;
+color:white;
+
+border: 2px solid blue;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string>48°</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonTemp4">
+   <property name="geometry">
+    <rect>
+     <x>1631</x>
+     <y>459</y>
+     <width>91</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: red;
+color:white;
+
+border: 2px solid red;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string>79°</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonTemp3">
+   <property name="geometry">
+    <rect>
+     <x>1631</x>
+     <y>400</y>
+     <width>91</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: orange;
+color:white;
+
+border: 2px solid orange;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string>60°</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonTemp1">
+   <property name="geometry">
+    <rect>
+     <x>1631</x>
+     <y>267</y>
+     <width>91</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: blue;
+color:white;
+
+border: 2px solid blue;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string>34°</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonProgreso4">
+   <property name="geometry">
+    <rect>
+     <x>1490</x>
+     <y>459</y>
+     <width>91</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: red;
+color:white;
+
+border: 2px solid red;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string>34%</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonProgreso2">
+   <property name="geometry">
+    <rect>
+     <x>1490</x>
+     <y>332</y>
+     <width>91</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: green;
+color:white;
+
+border: 2px solid green;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string>90%</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonProgreso5">
+   <property name="geometry">
+    <rect>
+     <x>1490</x>
+     <y>523</y>
+     <width>91</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: red;
+color:white;
+
+border: 2px solid red;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string>10%</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonProgreso3">
+   <property name="geometry">
+    <rect>
+     <x>1490</x>
+     <y>400</y>
+     <width>91</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: orange;
+color:white;
+
+border: 2px solid orange;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string>50%</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonProgreso1">
+   <property name="geometry">
+    <rect>
+     <x>1490</x>
+     <y>267</y>
+     <width>91</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: green;
+color:white;
+
+border: 2px solid green;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string>100%</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_22">
+   <property name="geometry">
+    <rect>
+     <x>765</x>
+     <y>174</y>
+     <width>421</width>
+     <height>63</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+background-color: rgb(0, 45, 107);
+
+border: 2px solid #002d6b;
+border-radius: 15px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string>Ordenar por:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>1261</x>
+     <y>192</y>
+     <width>501</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: black;
+background-color: white;
+
+border: 2px solid white;
+border-radius: 25px; /* Bordes redondeados */
+padding: 5px;
+
+font-size:15px;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonBorrar">
+   <property name="geometry">
+    <rect>
+     <x>1771</x>
+     <y>192</y>
+     <width>21</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+background-color: white;
+
+border: 2px solid white;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>close2.png</normaloff>close2.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonOrdenar1">
+   <property name="geometry">
+    <rect>
+     <x>990</x>
+     <y>180</y>
+     <width>141</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #e8e8e8;
+font-size:20px;
+color:black;
+
+
+border: 2px solid #e8e8e8;
+border-radius: 25px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string>Seleccionar</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>down_arrow.png</normaloff>down_arrow.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonBuscar">
+   <property name="geometry">
+    <rect>
+     <x>1221</x>
+     <y>187</y>
+     <width>31</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+background-color: white;
+
+border: 2px solid white;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>search.png</normaloff>search.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>31</width>
+     <height>31</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_24">
+   <property name="geometry">
+    <rect>
+     <x>1210</x>
+     <y>174</y>
+     <width>598</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+background-color: white;
+
+border: 2px solid black;
+border-radius: 25px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+   </property>
+  </widget>
   <zorder>label_4</zorder>
+  <zorder>label_6</zorder>
   <zorder>label_3</zorder>
   <zorder>label_5</zorder>
-  <zorder>label_6</zorder>
   <zorder>botonAgregar</zorder>
   <zorder>label_12</zorder>
   <zorder>label_13</zorder>
   <zorder>label_7</zorder>
-  <zorder>label_8</zorder>
-  <zorder>line</zorder>
-  <zorder>line_2</zorder>
-  <zorder>botonBateria1</zorder>
-  <zorder>botonBateria2</zorder>
-  <zorder>botonBateria3</zorder>
-  <zorder>botonBateria4</zorder>
-  <zorder>botonBateria5</zorder>
-  <zorder>botonBateria6</zorder>
+  <zorder>label_14</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_10</zorder>
+  <zorder>label_11</zorder>
+  <zorder>label_9</zorder>
+  <zorder>label_15</zorder>
+  <zorder>label_16</zorder>
+  <zorder>label_17</zorder>
+  <zorder>label_18</zorder>
+  <zorder>label_19</zorder>
+  <zorder>label_20</zorder>
+  <zorder>label_21</zorder>
   <zorder>label_35</zorder>
   <zorder>label_36</zorder>
   <zorder>label_37</zorder>
+  <zorder>label_38</zorder>
+  <zorder>label_39</zorder>
+  <zorder>label_40</zorder>
+  <zorder>botonEditar1</zorder>
+  <zorder>botonEditar2</zorder>
+  <zorder>botonEditar3</zorder>
+  <zorder>botonSacar2</zorder>
+  <zorder>botonSacar1</zorder>
+  <zorder>botonSacar3</zorder>
+  <zorder>label_42</zorder>
+  <zorder>botonEditar5</zorder>
+  <zorder>label_43</zorder>
+  <zorder>botonSacar5</zorder>
+  <zorder>label_44</zorder>
+  <zorder>botonSacar4</zorder>
+  <zorder>label_46</zorder>
+  <zorder>botonEditar4</zorder>
+  <zorder>botonTemp5</zorder>
+  <zorder>botonTemp2</zorder>
+  <zorder>botonTemp4</zorder>
+  <zorder>botonTemp3</zorder>
+  <zorder>botonTemp1</zorder>
+  <zorder>botonProgreso4</zorder>
+  <zorder>botonProgreso2</zorder>
+  <zorder>botonProgreso5</zorder>
+  <zorder>botonProgreso3</zorder>
+  <zorder>botonProgreso1</zorder>
+  <zorder>label_22</zorder>
+  <zorder>botonOrdenar1</zorder>
+  <zorder>label_24</zorder>
+  <zorder>botonBorrar</zorder>
+  <zorder>botonBuscar</zorder>
+  <zorder>lineEdit</zorder>
  </widget>
  <resources/>
  <connections/>

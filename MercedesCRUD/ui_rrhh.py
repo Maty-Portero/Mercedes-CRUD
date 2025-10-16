@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'rrhh.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.10.0
+## Created by: Qt User Interface Compiler version 6.9.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -15,8 +15,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QLineEdit,
-    QPushButton, QSizePolicy, QWidget)
+from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QPushButton,
+    QSizePolicy, QWidget)
 
 class Ui_Widget(object):
     def setupUi(self, Widget):
@@ -286,7 +286,7 @@ class Ui_Widget(object):
         self.botonSacar3.setIcon(icon2)
         self.label_22 = QLabel(Widget)
         self.label_22.setObjectName(u"label_22")
-        self.label_22.setGeometry(QRect(636, 172, 777, 63))
+        self.label_22.setGeometry(QRect(625, 172, 495, 63))
         self.label_22.setFont(font2)
         self.label_22.setStyleSheet(u"color: white;\n"
 "background-color: rgb(0, 45, 107);\n"
@@ -297,29 +297,24 @@ class Ui_Widget(object):
         self.label_22.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
         self.botonOrdenar1 = QPushButton(Widget)
         self.botonOrdenar1.setObjectName(u"botonOrdenar1")
-        self.botonOrdenar1.setGeometry(QRect(816, 178, 50, 50))
+        self.botonOrdenar1.setGeometry(QRect(890, 178, 141, 50))
         font4 = QFont()
         font4.setFamilies([u"icon-ui"])
         self.botonOrdenar1.setFont(font4)
         self.botonOrdenar1.setStyleSheet(u"background-color: #e8e8e8;\n"
-"font-size:15px;\n"
+"font-size:20px;\n"
+"color:black;\n"
+"\n"
 "\n"
 "border: 2px solid #e8e8e8;\n"
 "border-radius: 25px; /* Bordes redondeados */\n"
 "padding: 5px;")
-        self.botonOrdenar2 = QPushButton(Widget)
-        self.botonOrdenar2.setObjectName(u"botonOrdenar2")
-        self.botonOrdenar2.setGeometry(QRect(877, 178, 50, 50))
-        self.botonOrdenar2.setFont(font4)
-        self.botonOrdenar2.setStyleSheet(u"background-color: #e8e8e8;\n"
-"font-size:15px;\n"
-"\n"
-"border: 2px solid #e8e8e8;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;")
+        icon3 = QIcon()
+        icon3.addFile(u"down_arrow.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.botonOrdenar1.setIcon(icon3)
         self.label_23 = QLabel(Widget)
         self.label_23.setObjectName(u"label_23")
-        self.label_23.setGeometry(QRect(1487, 180, 325, 56))
+        self.label_23.setGeometry(QRect(1239, 172, 598, 61))
         self.label_23.setFont(font2)
         self.label_23.setStyleSheet(u"color: white;\n"
 "background-color: white;\n"
@@ -328,14 +323,9 @@ class Ui_Widget(object):
 "border-radius: 25px; /* Bordes redondeados */\n"
 "padding: 5px;")
         self.label_23.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
-        self.line = QFrame(Widget)
-        self.line.setObjectName(u"line")
-        self.line.setGeometry(QRect(1550, 195, 3, 30))
-        self.line.setFrameShape(QFrame.Shape.VLine)
-        self.line.setFrameShadow(QFrame.Shadow.Sunken)
         self.lineEdit = QLineEdit(Widget)
         self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setGeometry(QRect(1551, 195, 251, 31))
+        self.lineEdit.setGeometry(QRect(1290, 190, 501, 31))
         self.lineEdit.setStyleSheet(u"color: black;\n"
 "background-color: white;\n"
 "\n"
@@ -346,7 +336,7 @@ class Ui_Widget(object):
 "font-size:15px;")
         self.botonBuscar = QPushButton(Widget)
         self.botonBuscar.setObjectName(u"botonBuscar")
-        self.botonBuscar.setGeometry(QRect(1500, 190, 31, 41))
+        self.botonBuscar.setGeometry(QRect(1250, 185, 31, 41))
         self.botonBuscar.setFont(font)
         self.botonBuscar.setStyleSheet(u"color: white;\n"
 "background-color: white;\n"
@@ -354,10 +344,24 @@ class Ui_Widget(object):
 "border: 2px solid white;\n"
 "border-radius: 20px; /* Bordes redondeados */\n"
 "padding: 5px;")
-        icon3 = QIcon()
-        icon3.addFile(u"search.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.botonBuscar.setIcon(icon3)
+        icon4 = QIcon()
+        icon4.addFile(u"search.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.botonBuscar.setIcon(icon4)
         self.botonBuscar.setIconSize(QSize(31, 31))
+        self.botonBorrar = QPushButton(Widget)
+        self.botonBorrar.setObjectName(u"botonBorrar")
+        self.botonBorrar.setGeometry(QRect(1800, 190, 21, 31))
+        self.botonBorrar.setFont(font)
+        self.botonBorrar.setStyleSheet(u"color: white;\n"
+"background-color: white;\n"
+"\n"
+"border: 2px solid white;\n"
+"border-radius: 20px; /* Bordes redondeados */\n"
+"padding: 5px;")
+        icon5 = QIcon()
+        icon5.addFile(u"close2.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.botonBorrar.setIcon(icon5)
+        self.botonBorrar.setIconSize(QSize(16, 16))
         self.label_4.raise_()
         self.label_6.raise_()
         self.label_3.raise_()
@@ -393,11 +397,10 @@ class Ui_Widget(object):
         self.botonSacar3.raise_()
         self.label_22.raise_()
         self.botonOrdenar1.raise_()
-        self.botonOrdenar2.raise_()
         self.label_23.raise_()
-        self.line.raise_()
         self.lineEdit.raise_()
         self.botonBuscar.raise_()
+        self.botonBorrar.raise_()
 
         self.retranslateUi(Widget)
 
@@ -440,9 +443,9 @@ class Ui_Widget(object):
         self.botonSacar1.setText("")
         self.botonSacar3.setText("")
         self.label_22.setText(QCoreApplication.translate("Widget", u"Ordenar por:", None))
-        self.botonOrdenar1.setText(QCoreApplication.translate("Widget", u"ID", None))
-        self.botonOrdenar2.setText(QCoreApplication.translate("Widget", u"A-Z", None))
+        self.botonOrdenar1.setText(QCoreApplication.translate("Widget", u"Seleccionar", None))
         self.label_23.setText("")
         self.botonBuscar.setText("")
+        self.botonBorrar.setText("")
     # retranslateUi
 
