@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'ceo_home.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.1
+## Created by: Qt User Interface Compiler version 6.10.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -74,89 +74,19 @@ class Ui_Widget(object):
         self.label_10.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.pushButton_2 = QPushButton(Widget)
         self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(1051, 364, 199, 63))
+        self.pushButton_2.setGeometry(QRect(980, 178, 277, 258))
         self.pushButton_2.setFont(font)
         self.pushButton_2.setStyleSheet(u"border: 2px solid #000000;\n"
 "border-radius: 15px; /* Bordes redondeados */\n"
 "padding: 5px;\n"
 "\n"
 "color: white;\n"
-"background-color: black;")
-        self.pushButton_3 = QPushButton(Widget)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setGeometry(QRect(1358, 364, 199, 63))
-        self.pushButton_3.setFont(font)
-        self.pushButton_3.setStyleSheet(u"border: 2px solid #000000;\n"
-"border-radius: 15px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"\n"
-"color: white;\n"
-"background-color: black;")
-        self.pushButton_4 = QPushButton(Widget)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-        self.pushButton_4.setGeometry(QRect(1665, 364, 199, 63))
-        self.pushButton_4.setFont(font)
-        self.pushButton_4.setStyleSheet(u"border: 2px solid #000000;\n"
-"border-radius: 15px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"\n"
-"color: white;\n"
-"background-color: black;")
-        self.pushButton_5 = QPushButton(Widget)
-        self.pushButton_5.setObjectName(u"pushButton_5")
-        self.pushButton_5.setGeometry(QRect(1051, 540, 199, 63))
-        self.pushButton_5.setFont(font)
-        self.pushButton_5.setStyleSheet(u"border: 2px solid #000000;\n"
-"border-radius: 15px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"\n"
-"color: white;\n"
-"background-color: black;")
-        self.pushButton_6 = QPushButton(Widget)
-        self.pushButton_6.setObjectName(u"pushButton_6")
-        self.pushButton_6.setGeometry(QRect(1358, 540, 199, 63))
-        self.pushButton_6.setFont(font)
-        self.pushButton_6.setStyleSheet(u"border: 2px solid #000000;\n"
-"border-radius: 15px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"\n"
-"color: white;\n"
-"background-color: black;")
-        self.pushButton_7 = QPushButton(Widget)
-        self.pushButton_7.setObjectName(u"pushButton_7")
-        self.pushButton_7.setGeometry(QRect(1665, 540, 199, 63))
-        self.pushButton_7.setFont(font)
-        self.pushButton_7.setStyleSheet(u"border: 2px solid #000000;\n"
-"border-radius: 15px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"\n"
-"color: white;\n"
-"background-color: black;")
-        self.pushButton_8 = QPushButton(Widget)
-        self.pushButton_8.setObjectName(u"pushButton_8")
-        self.pushButton_8.setGeometry(QRect(1204, 716, 199, 63))
-        self.pushButton_8.setFont(font)
-        self.pushButton_8.setStyleSheet(u"border: 2px solid #000000;\n"
-"border-radius: 15px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"\n"
-"color: white;\n"
-"background-color: black;")
-        self.pushButton_9 = QPushButton(Widget)
-        self.pushButton_9.setObjectName(u"pushButton_9")
-        self.pushButton_9.setGeometry(QRect(1511, 716, 199, 63))
-        self.pushButton_9.setFont(font)
-        self.pushButton_9.setStyleSheet(u"border: 2px solid #000000;\n"
-"border-radius: 15px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"\n"
-"color: white;\n"
-"background-color: black;")
+"background-color: #002d6b;")
         self.label_7 = QLabel(Widget)
         self.label_7.setObjectName(u"label_7")
         self.label_7.setGeometry(QRect(1836, 29, 56, 56))
         self.label_7.setStyleSheet(u"")
-        self.label_7.setPixmap(QPixmap(u"../ola K\u00e4llenius.png"))
+        self.label_7.setPixmap(QPixmap(u"ola K\u00e4llenius.png"))
         self.label_7.setScaledContents(True)
         self.label_13 = QLabel(Widget)
         self.label_13.setObjectName(u"label_13")
@@ -167,6 +97,82 @@ class Ui_Widget(object):
         self.label_13.setFont(font2)
         self.label_13.setStyleSheet(u"color: white;")
         self.label_13.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+        self.pushButton_3 = QPushButton(Widget)
+        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.pushButton_3.setGeometry(QRect(1306, 178, 277, 258))
+        self.pushButton_3.setFont(font)
+        self.pushButton_3.setStyleSheet(u"border: 2px solid #000000;\n"
+"border-radius: 15px; /* Bordes redondeados */\n"
+"padding: 5px;\n"
+"\n"
+"color: white;\n"
+"background-color: #002d6b;")
+        self.pushButton_4 = QPushButton(Widget)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.pushButton_4.setGeometry(QRect(1624, 178, 277, 258))
+        self.pushButton_4.setFont(font)
+        self.pushButton_4.setStyleSheet(u"border: 2px solid #000000;\n"
+"border-radius: 15px; /* Bordes redondeados */\n"
+"padding: 5px;\n"
+"\n"
+"color: white;\n"
+"background-color: #002d6b;")
+        self.pushButton_5 = QPushButton(Widget)
+        self.pushButton_5.setObjectName(u"pushButton_5")
+        self.pushButton_5.setGeometry(QRect(1624, 480, 277, 258))
+        self.pushButton_5.setFont(font)
+        self.pushButton_5.setStyleSheet(u"border: 2px solid #000000;\n"
+"border-radius: 15px; /* Bordes redondeados */\n"
+"padding: 5px;\n"
+"\n"
+"color: white;\n"
+"background-color: #002d6b;")
+        self.pushButton_6 = QPushButton(Widget)
+        self.pushButton_6.setObjectName(u"pushButton_6")
+        self.pushButton_6.setGeometry(QRect(1306, 480, 277, 258))
+        self.pushButton_6.setFont(font)
+        self.pushButton_6.setStyleSheet(u"border: 2px solid #000000;\n"
+"border-radius: 15px; /* Bordes redondeados */\n"
+"padding: 5px;\n"
+"\n"
+"color: white;\n"
+"background-color: #002d6b;")
+        self.pushButton_7 = QPushButton(Widget)
+        self.pushButton_7.setObjectName(u"pushButton_7")
+        self.pushButton_7.setGeometry(QRect(980, 480, 277, 258))
+        self.pushButton_7.setFont(font)
+        self.pushButton_7.setStyleSheet(u"border: 2px solid #000000;\n"
+"border-radius: 15px; /* Bordes redondeados */\n"
+"padding: 5px;\n"
+"\n"
+"color: white;\n"
+"background-color: #002d6b;")
+        self.pushButton_8 = QPushButton(Widget)
+        self.pushButton_8.setObjectName(u"pushButton_8")
+        self.pushButton_8.setGeometry(QRect(1466, 783, 277, 258))
+        self.pushButton_8.setFont(font)
+        self.pushButton_8.setStyleSheet(u"border: 2px solid #000000;\n"
+"border-radius: 15px; /* Bordes redondeados */\n"
+"padding: 5px;\n"
+"\n"
+"color: white;\n"
+"background-color: #002d6b;")
+        self.pushButton_9 = QPushButton(Widget)
+        self.pushButton_9.setObjectName(u"pushButton_9")
+        self.pushButton_9.setGeometry(QRect(1140, 783, 277, 258))
+        self.pushButton_9.setFont(font)
+        self.pushButton_9.setStyleSheet(u"border: 2px solid #000000;\n"
+"border-radius: 15px; /* Bordes redondeados */\n"
+"padding: 5px;\n"
+"\n"
+"color: white;\n"
+"background-color: #002d6b;")
+        self.label_12 = QLabel(Widget)
+        self.label_12.setObjectName(u"label_12")
+        self.label_12.setGeometry(QRect(30, 36, 111, 41))
+        self.label_12.setFont(font2)
+        self.label_12.setStyleSheet(u"color: white;")
+        self.label_12.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
         self.label_4.raise_()
         self.label.raise_()
         self.label_2.raise_()
@@ -175,6 +181,8 @@ class Ui_Widget(object):
         self.pushButton.raise_()
         self.label_10.raise_()
         self.pushButton_2.raise_()
+        self.label_7.raise_()
+        self.label_13.raise_()
         self.pushButton_3.raise_()
         self.pushButton_4.raise_()
         self.pushButton_5.raise_()
@@ -182,8 +190,7 @@ class Ui_Widget(object):
         self.pushButton_7.raise_()
         self.pushButton_8.raise_()
         self.pushButton_9.raise_()
-        self.label_7.raise_()
-        self.label_13.raise_()
+        self.label_12.raise_()
 
         self.retranslateUi(Widget)
 
@@ -200,14 +207,15 @@ class Ui_Widget(object):
         self.pushButton.setText(QCoreApplication.translate("Widget", u"Administraci\u00f3n", None))
         self.label_10.setText(QCoreApplication.translate("Widget", u"Mercedes-CRUD", None))
         self.pushButton_2.setText(QCoreApplication.translate("Widget", u"E-Movilidad", None))
-        self.pushButton_3.setText(QCoreApplication.translate("Widget", u"Producci\u00f3n", None))
-        self.pushButton_4.setText(QCoreApplication.translate("Widget", u"Ventas", None))
-        self.pushButton_5.setText(QCoreApplication.translate("Widget", u"Compras", None))
-        self.pushButton_6.setText(QCoreApplication.translate("Widget", u"Log\u00edstica", None))
-        self.pushButton_7.setText(QCoreApplication.translate("Widget", u"RRHH", None))
-        self.pushButton_8.setText(QCoreApplication.translate("Widget", u"Marketing", None))
-        self.pushButton_9.setText(QCoreApplication.translate("Widget", u"Mantenimiento", None))
         self.label_7.setText("")
         self.label_13.setText(QCoreApplication.translate("Widget", u"Ola K\u00e4llenius", None))
+        self.pushButton_3.setText(QCoreApplication.translate("Widget", u"Producci\u00f3n", None))
+        self.pushButton_4.setText(QCoreApplication.translate("Widget", u"Ventas", None))
+        self.pushButton_5.setText(QCoreApplication.translate("Widget", u"RR.HH.", None))
+        self.pushButton_6.setText(QCoreApplication.translate("Widget", u"Log\u00edstica", None))
+        self.pushButton_7.setText(QCoreApplication.translate("Widget", u"Compras", None))
+        self.pushButton_8.setText(QCoreApplication.translate("Widget", u"Mantenimiento", None))
+        self.pushButton_9.setText(QCoreApplication.translate("Widget", u"Marketing", None))
+        self.label_12.setText(QCoreApplication.translate("Widget", u"INICIO", None))
     # retranslateUi
 
