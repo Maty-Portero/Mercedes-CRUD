@@ -123,7 +123,7 @@ padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string> Agregar Tareas</string>
+    <string> Agregar Recurso</string>
    </property>
    <property name="icon">
     <iconset>
@@ -221,9 +221,8 @@ padding: 5px;
     <string notr="true">color: black;</string>
    </property>
    <property name="text">
-    <string>Tareas: 6
-(4 completadas)
-(2 en curso)</string>
+    <string>Recursos: 6
+(1 completadas)</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -437,16 +436,16 @@ padding: 5px;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: green;
+    <string notr="true">background-color: black;
 color: rgb(255, 255, 255);
 
-border: 2px solid green;
+border: 2px solid black;
 border-radius: 25px; /* Bordes redondeados */
 padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>#W168-1</string>
+    <string>#ACEGA</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -468,16 +467,16 @@ padding: 5px;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: green;
+    <string notr="true">background-color: black;
 color: rgb(255, 255, 255);
 
-border: 2px solid green;
+border: 2px solid black;
 border-radius: 25px; /* Bordes redondeados */
 padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>#W168-2</string>
+    <string>#TORNI</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -499,16 +498,16 @@ padding: 5px;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: green;
+    <string notr="true">background-color: black;
 color: rgb(255, 255, 255);
 
-border: 2px solid green;
+border: 2px solid black;
 border-radius: 25px; /* Bordes redondeados */
 padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>#W177-1</string>
+    <string>#OM654</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -539,7 +538,7 @@ padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>A-Class 1st Gen</string>
+    <string>Acero Galvanizado</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -570,7 +569,7 @@ padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>A-Class 1st Gen</string>
+    <string>Tornillo</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -601,7 +600,7 @@ padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>A-Class 4th Gen</string>
+    <string>Motor Diesel</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -812,7 +811,7 @@ padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>SL 7th Gen</string>
+    <string>Motor Diesel</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -873,7 +872,7 @@ padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>#C236-1</string>
+    <string>#M282</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -925,16 +924,16 @@ padding: 5px;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: green;
+    <string notr="true">background-color: black;
 color: rgb(255, 255, 255);
 
-border: 2px solid green;
+border: 2px solid black;
 border-radius: 25px; /* Bordes redondeados */
 padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>#R232-1</string>
+    <string>#OM668</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -995,7 +994,7 @@ padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>CLE (Coupe)</string>
+    <string>Motor Hibrido</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1031,141 +1030,6 @@ padding: 5px;</string>
      <normaloff>edit.png</normaloff>edit.png</iconset>
    </property>
   </widget>
-  <widget class="QPushButton" name="botonTemp5">
-   <property name="geometry">
-    <rect>
-     <x>1631</x>
-     <y>523</y>
-     <width>91</width>
-     <height>42</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>icon-ui</family>
-     <pointsize>19</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: red;
-color:white;
-
-border: 2px solid red;
-border-radius: 20px; /* Bordes redondeados */
-padding: 5px;</string>
-   </property>
-   <property name="text">
-    <string>81°</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="botonTemp2">
-   <property name="geometry">
-    <rect>
-     <x>1631</x>
-     <y>332</y>
-     <width>91</width>
-     <height>42</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>icon-ui</family>
-     <pointsize>19</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: blue;
-color:white;
-
-border: 2px solid blue;
-border-radius: 20px; /* Bordes redondeados */
-padding: 5px;</string>
-   </property>
-   <property name="text">
-    <string>48°</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="botonTemp4">
-   <property name="geometry">
-    <rect>
-     <x>1631</x>
-     <y>459</y>
-     <width>91</width>
-     <height>42</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>icon-ui</family>
-     <pointsize>19</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: red;
-color:white;
-
-border: 2px solid red;
-border-radius: 20px; /* Bordes redondeados */
-padding: 5px;</string>
-   </property>
-   <property name="text">
-    <string>79°</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="botonTemp3">
-   <property name="geometry">
-    <rect>
-     <x>1631</x>
-     <y>400</y>
-     <width>91</width>
-     <height>42</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>icon-ui</family>
-     <pointsize>19</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: orange;
-color:white;
-
-border: 2px solid orange;
-border-radius: 20px; /* Bordes redondeados */
-padding: 5px;</string>
-   </property>
-   <property name="text">
-    <string>60°</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="botonTemp1">
-   <property name="geometry">
-    <rect>
-     <x>1631</x>
-     <y>267</y>
-     <width>91</width>
-     <height>42</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>icon-ui</family>
-     <pointsize>19</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: blue;
-color:white;
-
-border: 2px solid blue;
-border-radius: 20px; /* Bordes redondeados */
-padding: 5px;</string>
-   </property>
-   <property name="text">
-    <string>34°</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="botonProgreso4">
    <property name="geometry">
     <rect>
@@ -1190,7 +1054,7 @@ border-radius: 20px; /* Bordes redondeados */
 padding: 5px;</string>
    </property>
    <property name="text">
-    <string>9/9</string>
+    <string>100u</string>
    </property>
   </widget>
   <widget class="QPushButton" name="botonProgreso2">
@@ -1217,7 +1081,7 @@ border-radius: 20px; /* Bordes redondeados */
 padding: 5px;</string>
    </property>
    <property name="text">
-    <string>10/10</string>
+    <string>20mU</string>
    </property>
   </widget>
   <widget class="QPushButton" name="botonProgreso5">
@@ -1244,7 +1108,7 @@ border-radius: 20px; /* Bordes redondeados */
 padding: 5px;</string>
    </property>
    <property name="text">
-    <string>8/9</string>
+    <string>90u</string>
    </property>
   </widget>
   <widget class="QPushButton" name="botonProgreso3">
@@ -1271,7 +1135,7 @@ border-radius: 20px; /* Bordes redondeados */
 padding: 5px;</string>
    </property>
    <property name="text">
-    <string>12/12</string>
+    <string>100u</string>
    </property>
   </widget>
   <widget class="QPushButton" name="botonProgreso1">
@@ -1298,7 +1162,7 @@ border-radius: 20px; /* Bordes redondeados */
 padding: 5px;</string>
    </property>
    <property name="text">
-    <string>10/10</string>
+    <string>200kg</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_22">
@@ -1633,7 +1497,7 @@ padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>EQS SUV</string>
+    <string>Bateria de Litio</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1664,7 +1528,7 @@ padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>#X296-1</string>
+    <string>#BATLIT</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1724,7 +1588,7 @@ border-radius: 20px; /* Bordes redondeados */
 padding: 5px;</string>
    </property>
    <property name="text">
-    <string>1/10</string>
+    <string>3u</string>
    </property>
   </widget>
   <widget class="QPushButton" name="botonSacar5_2">
@@ -1798,11 +1662,6 @@ padding: 5px;</string>
   <zorder>botonSacar4</zorder>
   <zorder>label_46</zorder>
   <zorder>botonEditar4</zorder>
-  <zorder>botonTemp5</zorder>
-  <zorder>botonTemp2</zorder>
-  <zorder>botonTemp4</zorder>
-  <zorder>botonTemp3</zorder>
-  <zorder>botonTemp1</zorder>
   <zorder>botonProgreso4</zorder>
   <zorder>botonProgreso2</zorder>
   <zorder>botonProgreso5</zorder>
