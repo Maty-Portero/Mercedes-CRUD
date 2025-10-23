@@ -161,7 +161,7 @@
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>1206</x>
+     <x>1220</x>
      <y>444</y>
      <width>355</width>
      <height>32</height>
@@ -186,7 +186,7 @@
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>1206</x>
+     <x>1220</x>
      <y>603</y>
      <width>355</width>
      <height>32</height>
@@ -211,7 +211,7 @@
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>1208</x>
+     <x>1222</x>
      <y>482</y>
      <width>436</width>
      <height>58</height>
@@ -225,7 +225,7 @@ background-color: rgb(235, 235, 235);</string>
   <widget class="QLineEdit" name="lineEdit_2">
    <property name="geometry">
     <rect>
-     <x>1208</x>
+     <x>1222</x>
      <y>640</y>
      <width>436</width>
      <height>58</height>
@@ -236,39 +236,12 @@ background-color: rgb(235, 235, 235);</string>
 color:black;</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="botonRegistrar">
-   <property name="geometry">
-    <rect>
-     <x>1206</x>
-     <y>790</y>
-     <width>180</width>
-     <height>63</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>icon-ui</family>
-     <pointsize>19</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border: 2px solid #000000;
-border-radius: 15px; /* Bordes redondeados */
-padding: 5px;
-
-color: black;
-background-color: #ebebeb;</string>
-   </property>
-   <property name="text">
-    <string>Registrar</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="botonIniciar">
    <property name="geometry">
     <rect>
-     <x>1493</x>
+     <x>1224</x>
      <y>790</y>
-     <width>180</width>
+     <width>431</width>
      <height>63</height>
     </rect>
    </property>
@@ -402,7 +375,6 @@ una solicitud de registro</string>
   <zorder>label_7</zorder>
   <zorder>lineEdit</zorder>
   <zorder>lineEdit_2</zorder>
-  <zorder>botonRegistrar</zorder>
   <zorder>label_8</zorder>
   <zorder>label_9</zorder>
   <zorder>botonIniciar</zorder>

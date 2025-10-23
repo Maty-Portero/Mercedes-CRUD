@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'login.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.3
+## Created by: Qt User Interface Compiler version 6.9.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -66,7 +66,7 @@ class Ui_Widget(object):
         self.label_7.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_8 = QLabel(Widget)
         self.label_8.setObjectName(u"label_8")
-        self.label_8.setGeometry(QRect(1206, 444, 355, 32))
+        self.label_8.setGeometry(QRect(1220, 444, 355, 32))
         font1 = QFont()
         font1.setFamilies([u"icon-ui"])
         font1.setPointSize(20)
@@ -75,36 +75,26 @@ class Ui_Widget(object):
         self.label_8.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
         self.label_9 = QLabel(Widget)
         self.label_9.setObjectName(u"label_9")
-        self.label_9.setGeometry(QRect(1206, 603, 355, 32))
+        self.label_9.setGeometry(QRect(1220, 603, 355, 32))
         self.label_9.setFont(font1)
         self.label_9.setStyleSheet(u"color:black;")
         self.label_9.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
         self.lineEdit = QLineEdit(Widget)
         self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setGeometry(QRect(1208, 482, 436, 58))
+        self.lineEdit.setGeometry(QRect(1222, 482, 436, 58))
         self.lineEdit.setStyleSheet(u"color:black;\n"
-"background-color: rgb(235, 235, 235); font-size: 15px;")
+"background-color: rgb(235, 235, 235);")
         self.lineEdit_2 = QLineEdit(Widget)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setGeometry(QRect(1208, 640, 436, 58))
+        self.lineEdit_2.setGeometry(QRect(1222, 640, 436, 58))
         self.lineEdit_2.setStyleSheet(u"background-color: rgb(235, 235, 235);\n"
-"color:black; font-size: 15px;")
-        self.botonRegistrar = QPushButton(Widget)
-        self.botonRegistrar.setObjectName(u"botonRegistrar")
-        self.botonRegistrar.setGeometry(QRect(1206, 790, 180, 63))
+"color:black;")
+        self.botonIniciar = QPushButton(Widget)
+        self.botonIniciar.setObjectName(u"botonIniciar")
+        self.botonIniciar.setGeometry(QRect(1224, 790, 431, 63))
         font2 = QFont()
         font2.setFamilies([u"icon-ui"])
         font2.setPointSize(19)
-        self.botonRegistrar.setFont(font2)
-        self.botonRegistrar.setStyleSheet(u"border: 2px solid #000000;\n"
-"border-radius: 15px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"\n"
-"color: black;\n"
-"background-color: #ebebeb;")
-        self.botonIniciar = QPushButton(Widget)
-        self.botonIniciar.setObjectName(u"botonIniciar")
-        self.botonIniciar.setGeometry(QRect(1493, 790, 180, 63))
         self.botonIniciar.setFont(font2)
         self.botonIniciar.setStyleSheet(u"background-color: rgb(0, 45, 107);\n"
 "color: white;\n"
@@ -151,7 +141,6 @@ class Ui_Widget(object):
         self.label_7.raise_()
         self.lineEdit.raise_()
         self.lineEdit_2.raise_()
-        self.botonRegistrar.raise_()
         self.label_8.raise_()
         self.label_9.raise_()
         self.botonIniciar.raise_()
@@ -176,7 +165,6 @@ class Ui_Widget(object):
         self.label_7.setText(QCoreApplication.translate("Widget", u"Acceso", None))
         self.label_8.setText(QCoreApplication.translate("Widget", u"Correo electr\u00f3nico / usuario", None))
         self.label_9.setText(QCoreApplication.translate("Widget", u"Contrase\u00f1a", None))
-        self.botonRegistrar.setText(QCoreApplication.translate("Widget", u"Registrar", None))
         self.botonIniciar.setText(QCoreApplication.translate("Widget", u"Iniciar sesi\u00f3n", None))
         self.label_10.setText(QCoreApplication.translate("Widget", u"Mercedes-CRUD", None))
         self.label_11.setText(QCoreApplication.translate("Widget", u"- Acced\u00e9 a tu cuenta para utilizar las \n"

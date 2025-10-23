@@ -119,12 +119,3 @@ class LoginWidget(QWidget):
         else:
             # Si falla:
             QMessageBox.critical(self, "Error", "Usuario o contraseña incorrectos.")
-        
-            
-    @Slot()
-    def registrarme(self):
-        # Aquí puedes agregar la lógica para cambiar a la vista de registro si existiera,
-        # o simplemente el proceso de registro.
-        QMessageBox.information(self, "Registro", "Iniciando proceso de registro...")
-        # Por ahora, solo imprime.
-        print(f"Intento de registro de usuario - Usuario: {self.ui.lineEdit.text()}")
