@@ -118,4 +118,4 @@ class LoginWidget(QWidget):
             self.login_successful.emit(usuario)
         else:
             # Si falla:
-            QMessageBox.critical(self, "Error", "Usuario o contraseña incorrectos.")
+            QMessageBox.critical(self, "Error", "Usuario o contraseña incorrectos.") 

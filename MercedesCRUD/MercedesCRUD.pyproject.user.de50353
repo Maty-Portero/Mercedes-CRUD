@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 15.0.1, 2025-10-23T17:19:13. -->
+<!-- Written by QtCreator 15.0.1, 2025-09-22T10:23:39. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{e0d2aff9-2bcb-4d29-8b95-be4d0a436b96}</value>
+  <value type="QByteArray">{de50353b-5f89-4818-aef8-2cc855552ded}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -79,7 +79,7 @@
     <value type="bool" key="ClangTools.AnalyzeOpenFiles">true</value>
     <value type="bool" key="ClangTools.BuildBeforeAnalysis">true</value>
     <value type="QString" key="ClangTools.DiagnosticConfig">Builtin.DefaultTidyAndClazy</value>
-    <value type="int" key="ClangTools.ParallelJobs">4</value>
+    <value type="int" key="ClangTools.ParallelJobs">10</value>
     <value type="bool" key="ClangTools.PreferConfigFile">true</value>
     <valuelist type="QVariantList" key="ClangTools.SelectedDirs"/>
     <valuelist type="QVariantList" key="ClangTools.SelectedFiles"/>
@@ -94,18 +94,18 @@
    <value type="QString" key="DeviceType">Desktop</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Python 3.13.5</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Python 3.13.5</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{d7b6ff2e-2b3b-484e-832d-7dfcc605bda4}</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{96d29c31-6466-40c1-93d3-7b5d68a16bba}</value>
    <value type="qlonglong" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="qlonglong" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="qlonglong" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\F-03\Documents\Mercedes-CRUD\MercedesCRUD</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\admin\OneDrive\Escritorio\Mati\Mercedes-CRUD\MercedesCRUD</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Python.PysideBuildStep</value>
-      <value type="QString" key="Python.PySideProjectTool">C:\Users\F-03\AppData\Local\Programs\Python\Python313\Scripts\pyside6-project.exe</value>
-      <value type="QString" key="Python.PySideUic">C:\Users\F-03\AppData\Local\Programs\Python\Python313\Scripts\pyside6-uic.exe</value>
+      <value type="QString" key="Python.PySideProjectTool">C:\Users\admin\AppData\Local\Programs\Python\Python313\Scripts\pyside6-project.exe</value>
+      <value type="QString" key="Python.PySideUic">C:\Users\admin\AppData\Local\Programs\Python\Python313\Scripts\pyside6-uic.exe</value>
      </valuemap>
      <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Build</value>
@@ -125,7 +125,7 @@
     <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Python 3.13.5</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Python.PySideBuildConfiguration</value>
-    <value type="QString" key="python">C:/Users/F-03/AppData/Local/Programs/Python/Python313/python.exe</value>
+    <value type="QString" key="python">C:/Users/admin/AppData/Local/Programs/Python/Python313/python.exe</value>
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.BuildConfigurationCount">1</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.DeployConfiguration.0">
