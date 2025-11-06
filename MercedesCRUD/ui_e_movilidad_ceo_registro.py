@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'rrhh.ui'
+## Form generated from reading UI file 'e_movilidad_ceo_registro.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.1
 ##
@@ -69,25 +69,13 @@ class Ui_Widget(object):
         self.botonAgregar.setIcon(icon)
         self.label_12 = QLabel(Widget)
         self.label_12.setObjectName(u"label_12")
-        self.label_12.setGeometry(QRect(30, 36, 361, 41))
+        self.label_12.setGeometry(QRect(30, 36, 381, 41))
         font1 = QFont()
         font1.setFamilies([u"icon-ui"])
         font1.setPointSize(26)
         self.label_12.setFont(font1)
         self.label_12.setStyleSheet(u"color: white;")
         self.label_12.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
-        self.label_13 = QLabel(Widget)
-        self.label_13.setObjectName(u"label_13")
-        self.label_13.setGeometry(QRect(1700, 36, 126, 41))
-        self.label_13.setFont(font1)
-        self.label_13.setStyleSheet(u"color: white;")
-        self.label_13.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
-        self.label_7 = QLabel(Widget)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setGeometry(QRect(1836, 29, 56, 56))
-        self.label_7.setStyleSheet(u"")
-        self.label_7.setPixmap(QPixmap(u"perfil-de-usuario.png"))
-        self.label_7.setScaledContents(True)
         self.label_14 = QLabel(Widget)
         self.label_14.setObjectName(u"label_14")
         self.label_14.setGeometry(QRect(391, 190, 355, 32))
@@ -374,7 +362,7 @@ class Ui_Widget(object):
         icon6 = QIcon()
         icon6.addFile(u"eye.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.botonVer3.setIcon(icon6)
-        self.botonVer3.setIconSize(QSize(30, 30))
+        self.botonVer3.setIconSize(QSize(25, 25))
         self.botonVer1 = QPushButton(Widget)
         self.botonVer1.setObjectName(u"botonVer1")
         self.botonVer1.setGeometry(QRect(1670, 265, 42, 42))
@@ -385,7 +373,7 @@ class Ui_Widget(object):
 "border-radius: 20px; /* Bordes redondeados */\n"
 "padding: 5px;")
         self.botonVer1.setIcon(icon6)
-        self.botonVer1.setIconSize(QSize(30, 30))
+        self.botonVer1.setIconSize(QSize(25, 25))
         self.botonVer2 = QPushButton(Widget)
         self.botonVer2.setObjectName(u"botonVer2")
         self.botonVer2.setGeometry(QRect(1670, 330, 42, 42))
@@ -396,15 +384,35 @@ class Ui_Widget(object):
 "border-radius: 20px; /* Bordes redondeados */\n"
 "padding: 5px;")
         self.botonVer2.setIcon(icon6)
-        self.botonVer2.setIconSize(QSize(30, 30))
+        self.botonVer2.setIconSize(QSize(25, 25))
+        self.label_24 = QLabel(Widget)
+        self.label_24.setObjectName(u"label_24")
+        self.label_24.setGeometry(QRect(1621, 37, 209, 41))
+        self.label_24.setFont(font1)
+        self.label_24.setStyleSheet(u"color: white;")
+        self.label_24.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+        self.botonAdmin = QPushButton(Widget)
+        self.botonAdmin.setObjectName(u"botonAdmin")
+        self.botonAdmin.setGeometry(QRect(1344, 26, 199, 63))
+        self.botonAdmin.setFont(font)
+        self.botonAdmin.setStyleSheet(u"border: 2px solid #000000;\n"
+"border-radius: 15px; /* Bordes redondeados */\n"
+"padding: 5px;\n"
+"\n"
+"color: black;\n"
+"background-color: #ebebeb;")
+        self.label_8 = QLabel(Widget)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setGeometry(QRect(1840, 30, 56, 56))
+        self.label_8.setStyleSheet(u"")
+        self.label_8.setPixmap(QPixmap(u"ola K\u00e4llenius.png"))
+        self.label_8.setScaledContents(True)
         self.label_4.raise_()
         self.label_6.raise_()
         self.label_3.raise_()
         self.label_5.raise_()
         self.botonAgregar.raise_()
         self.label_12.raise_()
-        self.label_13.raise_()
-        self.label_7.raise_()
         self.label_14.raise_()
         self.label.raise_()
         self.label_2.raise_()
@@ -439,6 +447,9 @@ class Ui_Widget(object):
         self.botonVer3.raise_()
         self.botonVer1.raise_()
         self.botonVer2.raise_()
+        self.label_24.raise_()
+        self.botonAdmin.raise_()
+        self.label_8.raise_()
 
         self.retranslateUi(Widget)
 
@@ -452,9 +463,7 @@ class Ui_Widget(object):
         self.label_5.setText("")
         self.label_6.setText("")
         self.botonAgregar.setText(QCoreApplication.translate("Widget", u" Agregar Empleados", None))
-        self.label_12.setText(QCoreApplication.translate("Widget", u"RECURSOS HUMANOS", None))
-        self.label_13.setText(QCoreApplication.translate("Widget", u"Usuario", None))
-        self.label_7.setText("")
+        self.label_12.setText(QCoreApplication.translate("Widget", u"E-MOVILIDAD (ADMIN)", None))
         self.label_14.setText(QCoreApplication.translate("Widget", u"Empleados: {total}", None))
         self.label.setText("")
         self.label_2.setText("")
@@ -488,5 +497,8 @@ class Ui_Widget(object):
         self.botonVer3.setText("")
         self.botonVer1.setText("")
         self.botonVer2.setText("")
+        self.label_24.setText(QCoreApplication.translate("Widget", u"Ola K\u00e4llenius", None))
+        self.botonAdmin.setText(QCoreApplication.translate("Widget", u"Administraci\u00f3n", None))
+        self.label_8.setText("")
     # retranslateUi
 

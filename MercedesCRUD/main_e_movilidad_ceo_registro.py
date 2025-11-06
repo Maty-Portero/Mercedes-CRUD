@@ -2,10 +2,10 @@ import sys, os
 from PySide6.QtWidgets import QWidget, QMessageBox
 from PySide6.QtCore import Signal, Slot
 from PySide6.QtGui import QPixmap 
-from ui_rrhh import Ui_Widget
+from ui_e_movilidad_ceo_registro import Ui_Widget
 
 # La clase MyWidget es tu vista de RRHH
-class RRHHWidget(QWidget):
+class E_movilidad_ceo_registroWidget(QWidget):
     # Señal para notificar al manager que el usuario quiere cerrar sesión
     logout_requested = Signal()
     # Asumo que tienes un QLabel para mostrar el saludo de bienvenida en tu UI

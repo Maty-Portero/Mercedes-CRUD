@@ -82,6 +82,16 @@ class CEOWidget(QWidget):
         self.ui.label.setPixmap(pixmap)
         self.ui.label.setScaledContents(True) # Aseguramos que escale
 
+        # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
+        self.ui.botonCompras.clicked.connect(self.ir_compras)
+        self.ui.botonLogistica.clicked.connect(self.ir_logistica)
+        self.ui.botonE_movilidad.clicked.connect(self.ir_E_movilidad)
+        self.ui.botonMantenimiento.clicked.connect(self.ir_Mantenimiento)
+        self.ui.botonMarketing.clicked.connect(self.ir_Marketing)
+        self.ui.botonProduccion.clicked.connect(self.ir_Produccion)
+        self.ui.botonVentas.clicked.connect(self.ir_Ventas)
+        self.ui.botonRRHH.clicked.connect(self.ir_RRHH)
+
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión
         # self.ui.pushButton_7.clicked.connect(self.logout_requested.emit)
@@ -91,19 +101,4 @@ class CEOWidget(QWidget):
         """Muestra el mensaje de bienvenida en un QLabel (asumiendo que tienes uno)."""
         # Si tienes un QLabel con objectName 'label_welcome', lo usarías así:
         # self.ui.label_welcome.setText(f"Bienvenido, {username}")
-        print(f"Usuario {username} ha ingresado a RRHH.") # Impresión de prueba
-
-    
-        
-
-    #@Slot()
-    #def agregar_empleado(self):
-        #QMessageBox.information(self, "RRHH", "Función: Agregar empleado.")
-
-    #@Slot()
-    #def editar_empleado(self):
-        #QMessageBox.information(self, "RRHH", "Función: Editar empleado.")
-
-    #@Slot()
-    #def eliminar_empleado(self):
-        #QMessageBox.information(self, "RRHH", "Función: Eliminar empleado.")
+        print(f"Usuario {username} ha ingresado a CEO.") # Impresión de prueba

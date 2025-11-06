@@ -1534,7 +1534,7 @@ padding: 5px;
     <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="botonEditar5_2">
+  <widget class="QPushButton" name="botonEditar6">
    <property name="geometry">
     <rect>
      <x>1734</x>
@@ -1564,7 +1564,7 @@ padding: 5px;</string>
      <normaloff>edit.png</normaloff>edit.png</iconset>
    </property>
   </widget>
-  <widget class="QPushButton" name="botonProgreso5_2">
+  <widget class="QPushButton" name="botonProgreso6">
    <property name="geometry">
     <rect>
      <x>1490</x>
@@ -1591,7 +1591,7 @@ padding: 5px;</string>
     <string>3u</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="botonSacar5_2">
+  <widget class="QPushButton" name="botonSacar6">
    <property name="geometry">
     <rect>
      <x>1791</x>
@@ -1679,9 +1679,9 @@ padding: 5px;</string>
   <zorder>botonAlerta2</zorder>
   <zorder>label_47</zorder>
   <zorder>label_45</zorder>
-  <zorder>botonEditar5_2</zorder>
-  <zorder>botonProgreso5_2</zorder>
-  <zorder>botonSacar5_2</zorder>
+  <zorder>botonEditar6</zorder>
+  <zorder>botonProgreso6</zorder>
+  <zorder>botonSacar6</zorder>
  </widget>
  <resources/>
  <connections/>

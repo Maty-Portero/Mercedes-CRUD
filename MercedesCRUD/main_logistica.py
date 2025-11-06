@@ -2,10 +2,10 @@ import sys, os
 from PySide6.QtWidgets import QWidget, QMessageBox
 from PySide6.QtCore import Signal, Slot
 from PySide6.QtGui import QPixmap 
-from ui_rrhh import Ui_Widget
+from ui_logistica import Ui_Widget
 
 # La clase MyWidget es tu vista de RRHH
-class RRHHWidget(QWidget):
+class LogisticaWidget(QWidget):
     # Señal para notificar al manager que el usuario quiere cerrar sesión
     logout_requested = Signal()
     # Asumo que tienes un QLabel para mostrar el saludo de bienvenida en tu UI
@@ -173,16 +173,16 @@ class RRHHWidget(QWidget):
         self.ui.botonOrdenar1.setIcon(pixmap)
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
-        self.ui.botonAgregar.clicked.connect(self.agregar_empleado)
-        self.ui.botonEditar1.clicked.connect(self.editar_empleado)
-        self.ui.botonEditar2.clicked.connect(self.editar_empleado)
-        self.ui.botonEditar3.clicked.connect(self.editar_empleado)
-        self.ui.botonSacar1.clicked.connect(self.eliminar_empleado)
-        self.ui.botonSacar2.clicked.connect(self.eliminar_empleado)
-        self.ui.botonSacar3.clicked.connect(self.eliminar_empleado)
-        self.ui.botonVer1.clicked.connect(self.ver_empleado)
-        self.ui.botonVer2.clicked.connect(self.ver_empleado)
-        self.ui.botonVer3.clicked.connect(self.ver_empleado)
+        self.ui.botonAgregar.clicked.connect(self.agregar_pedido)
+        self.ui.botonEditar1.clicked.connect(self.editar_pedido)
+        self.ui.botonEditar2.clicked.connect(self.editar_pedido)
+        self.ui.botonEditar3.clicked.connect(self.editar_pedido)
+        self.ui.botonSacar1.clicked.connect(self.eliminar_pedido)
+        self.ui.botonSacar2.clicked.connect(self.eliminar_pedido)
+        self.ui.botonSacar3.clicked.connect(self.eliminar_pedido)
+        self.ui.botonVer1.clicked.connect(self.ver_pedido)
+        self.ui.botonVer2.clicked.connect(self.ver_pedido)
+        self.ui.botonVer3.clicked.connect(self.ver_pedido)
 
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión
@@ -193,22 +193,22 @@ class RRHHWidget(QWidget):
         """Muestra el mensaje de bienvenida en un QLabel (asumiendo que tienes uno)."""
         # Si tienes un QLabel con objectName 'label_welcome', lo usarías así:
         # self.ui.label_welcome.setText(f"Bienvenido, {username}")
-        print(f"Usuario {username} ha ingresado a RRHH.") # Impresión de prueba
+        print(f"Usuario {username} ha ingresado a Logistica.") # Impresión de prueba
 
         
 
     @Slot()
-    def agregar_empleado(self):
-        QMessageBox.information(self, "RRHH", "Función: Agregar empleado.")
+    def agregar_pedido(self):
+        QMessageBox.information(self, "Logistica", "Función: Agregar Pedido.")
 
     @Slot()
-    def editar_empleado(self):
-        QMessageBox.information(self, "RRHH", "Función: Editar empleado.")
+    def editar_pedido(self):
+        QMessageBox.information(self, "Logistica", "Función: Editar Pedido.")
 
     @Slot()
-    def eliminar_empleado(self):
-        QMessageBox.information(self, "RRHH", "Función: Eliminar empleado.")
+    def eliminar_pedido(self):
+        QMessageBox.information(self, "Logistica", "Función: Eliminar Pedido.")
         
     @Slot()
-    def ver_empleado(self):
-        QMessageBox.information(self, "RRHH", "Función: Ver empleado.")
+    def ver_pedido(self):
+        QMessageBox.information(self, "Logistica", "Función: Ver Pedido.")

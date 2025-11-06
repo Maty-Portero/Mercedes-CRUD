@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'e-movilidad.ui'
+## Form generated from reading UI file 'e_movilidad.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.1
 ##
@@ -374,7 +374,7 @@ class Ui_Widget(object):
         self.botonEditar4.setIcon(icon1)
         self.botonTemp5 = QPushButton(Widget)
         self.botonTemp5.setObjectName(u"botonTemp5")
-        self.botonTemp5.setGeometry(QRect(1631, 523, 91, 42))
+        self.botonTemp5.setGeometry(QRect(1550, 523, 91, 42))
         self.botonTemp5.setFont(font)
         self.botonTemp5.setStyleSheet(u"background-color: red;\n"
 "color:white;\n"
@@ -384,7 +384,7 @@ class Ui_Widget(object):
 "padding: 5px;")
         self.botonTemp2 = QPushButton(Widget)
         self.botonTemp2.setObjectName(u"botonTemp2")
-        self.botonTemp2.setGeometry(QRect(1631, 332, 91, 42))
+        self.botonTemp2.setGeometry(QRect(1550, 332, 91, 42))
         self.botonTemp2.setFont(font)
         self.botonTemp2.setStyleSheet(u"background-color: blue;\n"
 "color:white;\n"
@@ -394,7 +394,7 @@ class Ui_Widget(object):
 "padding: 5px;")
         self.botonTemp4 = QPushButton(Widget)
         self.botonTemp4.setObjectName(u"botonTemp4")
-        self.botonTemp4.setGeometry(QRect(1631, 459, 91, 42))
+        self.botonTemp4.setGeometry(QRect(1550, 459, 91, 42))
         self.botonTemp4.setFont(font)
         self.botonTemp4.setStyleSheet(u"background-color: red;\n"
 "color:white;\n"
@@ -404,7 +404,7 @@ class Ui_Widget(object):
 "padding: 5px;")
         self.botonTemp3 = QPushButton(Widget)
         self.botonTemp3.setObjectName(u"botonTemp3")
-        self.botonTemp3.setGeometry(QRect(1631, 400, 91, 42))
+        self.botonTemp3.setGeometry(QRect(1550, 400, 91, 42))
         self.botonTemp3.setFont(font)
         self.botonTemp3.setStyleSheet(u"background-color: orange;\n"
 "color:white;\n"
@@ -414,7 +414,7 @@ class Ui_Widget(object):
 "padding: 5px;")
         self.botonTemp1 = QPushButton(Widget)
         self.botonTemp1.setObjectName(u"botonTemp1")
-        self.botonTemp1.setGeometry(QRect(1631, 267, 91, 42))
+        self.botonTemp1.setGeometry(QRect(1550, 267, 91, 42))
         self.botonTemp1.setFont(font)
         self.botonTemp1.setStyleSheet(u"background-color: blue;\n"
 "color:white;\n"
@@ -424,7 +424,7 @@ class Ui_Widget(object):
 "padding: 5px;")
         self.botonProgreso4 = QPushButton(Widget)
         self.botonProgreso4.setObjectName(u"botonProgreso4")
-        self.botonProgreso4.setGeometry(QRect(1490, 459, 91, 42))
+        self.botonProgreso4.setGeometry(QRect(1409, 459, 91, 42))
         self.botonProgreso4.setFont(font)
         self.botonProgreso4.setStyleSheet(u"background-color: red;\n"
 "color:white;\n"
@@ -434,7 +434,7 @@ class Ui_Widget(object):
 "padding: 5px;")
         self.botonProgreso2 = QPushButton(Widget)
         self.botonProgreso2.setObjectName(u"botonProgreso2")
-        self.botonProgreso2.setGeometry(QRect(1490, 332, 91, 42))
+        self.botonProgreso2.setGeometry(QRect(1409, 332, 91, 42))
         self.botonProgreso2.setFont(font)
         self.botonProgreso2.setStyleSheet(u"background-color: green;\n"
 "color:white;\n"
@@ -444,7 +444,7 @@ class Ui_Widget(object):
 "padding: 5px;")
         self.botonProgreso5 = QPushButton(Widget)
         self.botonProgreso5.setObjectName(u"botonProgreso5")
-        self.botonProgreso5.setGeometry(QRect(1490, 523, 91, 42))
+        self.botonProgreso5.setGeometry(QRect(1409, 523, 91, 42))
         self.botonProgreso5.setFont(font)
         self.botonProgreso5.setStyleSheet(u"background-color: red;\n"
 "color:white;\n"
@@ -454,7 +454,7 @@ class Ui_Widget(object):
 "padding: 5px;")
         self.botonProgreso3 = QPushButton(Widget)
         self.botonProgreso3.setObjectName(u"botonProgreso3")
-        self.botonProgreso3.setGeometry(QRect(1490, 400, 91, 42))
+        self.botonProgreso3.setGeometry(QRect(1409, 400, 91, 42))
         self.botonProgreso3.setFont(font)
         self.botonProgreso3.setStyleSheet(u"background-color: orange;\n"
 "color:white;\n"
@@ -464,7 +464,7 @@ class Ui_Widget(object):
 "padding: 5px;")
         self.botonProgreso1 = QPushButton(Widget)
         self.botonProgreso1.setObjectName(u"botonProgreso1")
-        self.botonProgreso1.setGeometry(QRect(1490, 267, 91, 42))
+        self.botonProgreso1.setGeometry(QRect(1409, 267, 91, 42))
         self.botonProgreso1.setFont(font)
         self.botonProgreso1.setStyleSheet(u"background-color: green;\n"
 "color:white;\n"
@@ -550,6 +550,63 @@ class Ui_Widget(object):
 "border-radius: 25px; /* Bordes redondeados */\n"
 "padding: 5px;")
         self.label_24.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+        self.botonVer4 = QPushButton(Widget)
+        self.botonVer4.setObjectName(u"botonVer4")
+        self.botonVer4.setGeometry(QRect(1670, 458, 42, 42))
+        self.botonVer4.setFont(font)
+        self.botonVer4.setStyleSheet(u"background-color: black;\n"
+"\n"
+"border: 2px solid black;\n"
+"border-radius: 20px; /* Bordes redondeados */\n"
+"padding: 5px;")
+        icon6 = QIcon()
+        icon6.addFile(u"eye.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.botonVer4.setIcon(icon6)
+        self.botonVer4.setIconSize(QSize(30, 30))
+        self.botonVer5 = QPushButton(Widget)
+        self.botonVer5.setObjectName(u"botonVer5")
+        self.botonVer5.setGeometry(QRect(1670, 522, 42, 42))
+        self.botonVer5.setFont(font)
+        self.botonVer5.setStyleSheet(u"background-color: black;\n"
+"\n"
+"border: 2px solid black;\n"
+"border-radius: 20px; /* Bordes redondeados */\n"
+"padding: 5px;")
+        self.botonVer5.setIcon(icon6)
+        self.botonVer5.setIconSize(QSize(30, 30))
+        self.botonVer3 = QPushButton(Widget)
+        self.botonVer3.setObjectName(u"botonVer3")
+        self.botonVer3.setGeometry(QRect(1670, 400, 42, 42))
+        self.botonVer3.setFont(font)
+        self.botonVer3.setStyleSheet(u"background-color: black;\n"
+"\n"
+"border: 2px solid black;\n"
+"border-radius: 20px; /* Bordes redondeados */\n"
+"padding: 5px;")
+        self.botonVer3.setIcon(icon6)
+        self.botonVer3.setIconSize(QSize(30, 30))
+        self.botonVer2 = QPushButton(Widget)
+        self.botonVer2.setObjectName(u"botonVer2")
+        self.botonVer2.setGeometry(QRect(1670, 331, 42, 42))
+        self.botonVer2.setFont(font)
+        self.botonVer2.setStyleSheet(u"background-color: black;\n"
+"\n"
+"border: 2px solid black;\n"
+"border-radius: 20px; /* Bordes redondeados */\n"
+"padding: 5px;")
+        self.botonVer2.setIcon(icon6)
+        self.botonVer2.setIconSize(QSize(30, 30))
+        self.botonVer1 = QPushButton(Widget)
+        self.botonVer1.setObjectName(u"botonVer1")
+        self.botonVer1.setGeometry(QRect(1670, 266, 42, 42))
+        self.botonVer1.setFont(font)
+        self.botonVer1.setStyleSheet(u"background-color: black;\n"
+"\n"
+"border: 2px solid black;\n"
+"border-radius: 20px; /* Bordes redondeados */\n"
+"padding: 5px;")
+        self.botonVer1.setIcon(icon6)
+        self.botonVer1.setIconSize(QSize(30, 30))
         self.label_4.raise_()
         self.label_6.raise_()
         self.label_3.raise_()
@@ -607,6 +664,11 @@ class Ui_Widget(object):
         self.botonBorrar.raise_()
         self.botonBuscar.raise_()
         self.lineEdit.raise_()
+        self.botonVer4.raise_()
+        self.botonVer5.raise_()
+        self.botonVer3.raise_()
+        self.botonVer2.raise_()
+        self.botonVer1.raise_()
 
         self.retranslateUi(Widget)
 
@@ -671,5 +733,10 @@ class Ui_Widget(object):
         self.botonOrdenar1.setText(QCoreApplication.translate("Widget", u"Seleccionar", None))
         self.botonBuscar.setText("")
         self.label_24.setText("")
+        self.botonVer4.setText("")
+        self.botonVer5.setText("")
+        self.botonVer3.setText("")
+        self.botonVer2.setText("")
+        self.botonVer1.setText("")
     # retranslateUi
 

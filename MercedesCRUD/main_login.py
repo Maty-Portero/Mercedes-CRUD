@@ -16,21 +16,6 @@ class LoginWidget(QWidget):
         super().__init__()
         self.ui = Ui_Widget()
         self.ui.setupUi(self)
-
-        # AQUI AGREGAMOS EL ESTILO HOVER PARA EL BOTON 'Registrar' (pushButton)
-        self.ui.botonRegistrar.setStyleSheet("""
-            QPushButton#botonRegistrar {
-                border: 2px solid #000000;
-                border-radius: 15px;
-                padding: 5px;
-                color: black;
-                background-color: #ebebeb;
-            }
-            QPushButton#botonRegistrar:hover {
-                border: 3px solid #000000;
-                background-color: #d1d1d1;
-            }
-        """)
         
         # AQUI AGREGAMOS EL ESTILO HOVER PARA EL BOTON 'Iniciar sesion' (pushButton_2)
         self.ui.botonIniciar.setStyleSheet("""
@@ -90,12 +75,6 @@ class LoginWidget(QWidget):
         # 5. Asigna el pixmap al QLabel 'label'
         self.ui.label_5.setPixmap(pixmap)
         self.ui.label_5.setScaledContents(True) # Aseguramos que escale
-
-        # Conecta el botón 'Registrar' a una función
-        self.ui.botonRegistrar.clicked.connect(self.registrarme)
-
-        # Conecta el botón 'Registrar' a una función
-        self.ui.botonRegistrar.clicked.connect(self.registrarme)
         
         # Conecta el botón 'Iniciar sesión' a la función
         self.ui.botonIniciar.clicked.connect(self.iniciar_sesion)

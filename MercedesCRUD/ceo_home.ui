@@ -114,7 +114,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="botonAdmin">
    <property name="geometry">
     <rect>
      <x>1340</x>
@@ -166,7 +166,7 @@ background-color: #ebebeb;</string>
     <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="botonE_movilidad">
    <property name="geometry">
     <rect>
      <x>980</x>
@@ -240,7 +240,7 @@ background-color: #002d6b;</string>
     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="botonProduccion">
    <property name="geometry">
     <rect>
      <x>1306</x>
@@ -267,7 +267,7 @@ background-color: #002d6b;</string>
     <string>Producción</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="botonVentas">
    <property name="geometry">
     <rect>
      <x>1624</x>
@@ -294,7 +294,7 @@ background-color: #002d6b;</string>
     <string>Ventas</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_5">
+  <widget class="QPushButton" name="botonRRHH">
    <property name="geometry">
     <rect>
      <x>1624</x>
@@ -321,7 +321,7 @@ background-color: #002d6b;</string>
     <string>RR.HH.</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_6">
+  <widget class="QPushButton" name="botonLogistica">
    <property name="geometry">
     <rect>
      <x>1306</x>
@@ -348,7 +348,7 @@ background-color: #002d6b;</string>
     <string>Logística</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_7">
+  <widget class="QPushButton" name="botonCompras">
    <property name="geometry">
     <rect>
      <x>980</x>
@@ -375,7 +375,7 @@ background-color: #002d6b;</string>
     <string>Compras</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_8">
+  <widget class="QPushButton" name="botonMantenimiento">
    <property name="geometry">
     <rect>
      <x>1466</x>
@@ -402,7 +402,7 @@ background-color: #002d6b;</string>
     <string>Mantenimiento</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_9">
+  <widget class="QPushButton" name="botonMarketing">
    <property name="geometry">
     <rect>
      <x>1140</x>
@@ -459,18 +459,18 @@ background-color: #002d6b;</string>
   <zorder>label_2</zorder>
   <zorder>label_3</zorder>
   <zorder>label_5</zorder>
-  <zorder>pushButton</zorder>
+  <zorder>botonAdmin</zorder>
   <zorder>label_10</zorder>
-  <zorder>pushButton_2</zorder>
+  <zorder>botonE_movilidad</zorder>
   <zorder>label_7</zorder>
   <zorder>label_13</zorder>
-  <zorder>pushButton_3</zorder>
-  <zorder>pushButton_4</zorder>
-  <zorder>pushButton_5</zorder>
-  <zorder>pushButton_6</zorder>
-  <zorder>pushButton_7</zorder>
-  <zorder>pushButton_8</zorder>
-  <zorder>pushButton_9</zorder>
+  <zorder>botonProduccion</zorder>
+  <zorder>botonVentas</zorder>
+  <zorder>botonRRHH</zorder>
+  <zorder>botonLogistica</zorder>
+  <zorder>botonCompras</zorder>
+  <zorder>botonMantenimiento</zorder>
+  <zorder>botonMarketing</zorder>
   <zorder>label_12</zorder>
  </widget>
  <resources/>

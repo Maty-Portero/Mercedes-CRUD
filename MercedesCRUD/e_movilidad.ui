@@ -1032,7 +1032,7 @@ padding: 5px;</string>
   <widget class="QPushButton" name="botonTemp5">
    <property name="geometry">
     <rect>
-     <x>1631</x>
+     <x>1550</x>
      <y>523</y>
      <width>91</width>
      <height>42</height>
@@ -1059,7 +1059,7 @@ padding: 5px;</string>
   <widget class="QPushButton" name="botonTemp2">
    <property name="geometry">
     <rect>
-     <x>1631</x>
+     <x>1550</x>
      <y>332</y>
      <width>91</width>
      <height>42</height>
@@ -1086,7 +1086,7 @@ padding: 5px;</string>
   <widget class="QPushButton" name="botonTemp4">
    <property name="geometry">
     <rect>
-     <x>1631</x>
+     <x>1550</x>
      <y>459</y>
      <width>91</width>
      <height>42</height>
@@ -1113,7 +1113,7 @@ padding: 5px;</string>
   <widget class="QPushButton" name="botonTemp3">
    <property name="geometry">
     <rect>
-     <x>1631</x>
+     <x>1550</x>
      <y>400</y>
      <width>91</width>
      <height>42</height>
@@ -1140,7 +1140,7 @@ padding: 5px;</string>
   <widget class="QPushButton" name="botonTemp1">
    <property name="geometry">
     <rect>
-     <x>1631</x>
+     <x>1550</x>
      <y>267</y>
      <width>91</width>
      <height>42</height>
@@ -1167,7 +1167,7 @@ padding: 5px;</string>
   <widget class="QPushButton" name="botonProgreso4">
    <property name="geometry">
     <rect>
-     <x>1490</x>
+     <x>1409</x>
      <y>459</y>
      <width>91</width>
      <height>42</height>
@@ -1194,7 +1194,7 @@ padding: 5px;</string>
   <widget class="QPushButton" name="botonProgreso2">
    <property name="geometry">
     <rect>
-     <x>1490</x>
+     <x>1409</x>
      <y>332</y>
      <width>91</width>
      <height>42</height>
@@ -1221,7 +1221,7 @@ padding: 5px;</string>
   <widget class="QPushButton" name="botonProgreso5">
    <property name="geometry">
     <rect>
-     <x>1490</x>
+     <x>1409</x>
      <y>523</y>
      <width>91</width>
      <height>42</height>
@@ -1248,7 +1248,7 @@ padding: 5px;</string>
   <widget class="QPushButton" name="botonProgreso3">
    <property name="geometry">
     <rect>
-     <x>1490</x>
+     <x>1409</x>
      <y>400</y>
      <width>91</width>
      <height>42</height>
@@ -1275,7 +1275,7 @@ padding: 5px;</string>
   <widget class="QPushButton" name="botonProgreso1">
    <property name="geometry">
     <rect>
-     <x>1490</x>
+     <x>1409</x>
      <y>267</y>
      <width>91</width>
      <height>42</height>
@@ -1486,6 +1486,186 @@ padding: 5px;</string>
     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
    </property>
   </widget>
+  <widget class="QPushButton" name="botonVer4">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>458</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>eye.png</normaloff>eye.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonVer5">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>522</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>eye.png</normaloff>eye.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonVer3">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>400</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>eye.png</normaloff>eye.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonVer2">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>331</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>eye.png</normaloff>eye.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonVer1">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>266</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>eye.png</normaloff>eye.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
   <zorder>label_4</zorder>
   <zorder>label_6</zorder>
   <zorder>label_3</zorder>
@@ -1543,6 +1723,11 @@ padding: 5px;</string>
   <zorder>botonBorrar</zorder>
   <zorder>botonBuscar</zorder>
   <zorder>lineEdit</zorder>
+  <zorder>botonVer4</zorder>
+  <zorder>botonVer5</zorder>
+  <zorder>botonVer3</zorder>
+  <zorder>botonVer2</zorder>
+  <zorder>botonVer1</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'produccion2.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.10.0
+## Created by: Qt User Interface Compiler version 6.9.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -576,36 +576,36 @@ class Ui_Widget(object):
 "padding: 5px;\n"
 "")
         self.label_45.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.botonEditar5_2 = QPushButton(Widget)
-        self.botonEditar5_2.setObjectName(u"botonEditar5_2")
-        self.botonEditar5_2.setGeometry(QRect(1734, 590, 42, 42))
-        self.botonEditar5_2.setFont(font)
-        self.botonEditar5_2.setStyleSheet(u"background-color: black;\n"
+        self.botonEditar6 = QPushButton(Widget)
+        self.botonEditar6.setObjectName(u"botonEditar6")
+        self.botonEditar6.setGeometry(QRect(1734, 590, 42, 42))
+        self.botonEditar6.setFont(font)
+        self.botonEditar6.setStyleSheet(u"background-color: black;\n"
 "\n"
 "border: 2px solid black;\n"
 "border-radius: 20px; /* Bordes redondeados */\n"
 "padding: 5px;")
-        self.botonEditar5_2.setIcon(icon1)
-        self.botonProgreso5_2 = QPushButton(Widget)
-        self.botonProgreso5_2.setObjectName(u"botonProgreso5_2")
-        self.botonProgreso5_2.setGeometry(QRect(1490, 590, 91, 42))
-        self.botonProgreso5_2.setFont(font)
-        self.botonProgreso5_2.setStyleSheet(u"background-color: red;\n"
+        self.botonEditar6.setIcon(icon1)
+        self.botonProgreso6 = QPushButton(Widget)
+        self.botonProgreso6.setObjectName(u"botonProgreso6")
+        self.botonProgreso6.setGeometry(QRect(1490, 590, 91, 42))
+        self.botonProgreso6.setFont(font)
+        self.botonProgreso6.setStyleSheet(u"background-color: red;\n"
 "color:white;\n"
 "\n"
 "border: 2px solid red;\n"
 "border-radius: 20px; /* Bordes redondeados */\n"
 "padding: 5px;")
-        self.botonSacar5_2 = QPushButton(Widget)
-        self.botonSacar5_2.setObjectName(u"botonSacar5_2")
-        self.botonSacar5_2.setGeometry(QRect(1791, 590, 42, 42))
-        self.botonSacar5_2.setFont(font)
-        self.botonSacar5_2.setStyleSheet(u"background-color: black;\n"
+        self.botonSacar6 = QPushButton(Widget)
+        self.botonSacar6.setObjectName(u"botonSacar6")
+        self.botonSacar6.setGeometry(QRect(1791, 590, 42, 42))
+        self.botonSacar6.setFont(font)
+        self.botonSacar6.setStyleSheet(u"background-color: black;\n"
 "\n"
 "border: 2px solid black;\n"
 "border-radius: 20px; /* Bordes redondeados */\n"
 "padding: 5px;")
-        self.botonSacar5_2.setIcon(icon2)
+        self.botonSacar6.setIcon(icon2)
         self.label_4.raise_()
         self.label_6.raise_()
         self.label_3.raise_()
@@ -664,9 +664,9 @@ class Ui_Widget(object):
         self.botonAlerta2.raise_()
         self.label_47.raise_()
         self.label_45.raise_()
-        self.botonEditar5_2.raise_()
-        self.botonProgreso5_2.raise_()
-        self.botonSacar5_2.raise_()
+        self.botonEditar6.raise_()
+        self.botonProgreso6.raise_()
+        self.botonSacar6.raise_()
 
         self.retranslateUi(Widget)
 
@@ -733,8 +733,8 @@ class Ui_Widget(object):
         self.botonAlerta2.setText(QCoreApplication.translate("Widget", u"1", None))
         self.label_47.setText(QCoreApplication.translate("Widget", u"Bateria de Litio", None))
         self.label_45.setText(QCoreApplication.translate("Widget", u"#BATLIT", None))
-        self.botonEditar5_2.setText("")
-        self.botonProgreso5_2.setText(QCoreApplication.translate("Widget", u"3u", None))
-        self.botonSacar5_2.setText("")
+        self.botonEditar6.setText("")
+        self.botonProgreso6.setText(QCoreApplication.translate("Widget", u"3u", None))
+        self.botonSacar6.setText("")
     # retranslateUi
 
