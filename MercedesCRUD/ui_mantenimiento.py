@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'mantenimiento.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.1
+## Created by: Qt User Interface Compiler version 6.9.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -611,6 +611,16 @@ class Ui_Widget(object):
         icon5.addFile(u"search.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.botonBuscar.setIcon(icon5)
         self.botonBuscar.setIconSize(QSize(31, 31))
+        self.botonLogOut = QPushButton(Widget)
+        self.botonLogOut.setObjectName(u"botonLogOut")
+        self.botonLogOut.setGeometry(QRect(1420, 30, 199, 63))
+        self.botonLogOut.setFont(font)
+        self.botonLogOut.setStyleSheet(u"border: 2px solid #000000;\n"
+"border-radius: 15px; /* Bordes redondeados */\n"
+"padding: 5px;\n"
+"\n"
+"color: black;\n"
+"background-color: #ebebeb;")
         self.label_4.raise_()
         self.label_6.raise_()
         self.label_3.raise_()
@@ -673,6 +683,7 @@ class Ui_Widget(object):
         self.botonOrdenar1.raise_()
         self.botonBorrar.raise_()
         self.botonBuscar.raise_()
+        self.botonLogOut.raise_()
 
         self.retranslateUi(Widget)
 
@@ -742,5 +753,6 @@ class Ui_Widget(object):
         self.botonOrdenar1.setText(QCoreApplication.translate("Widget", u"Seleccionar", None))
         self.botonBorrar.setText("")
         self.botonBuscar.setText("")
+        self.botonLogOut.setText(QCoreApplication.translate("Widget", u"Cerrar Sesi\u00f3n", None))
     # retranslateUi
 

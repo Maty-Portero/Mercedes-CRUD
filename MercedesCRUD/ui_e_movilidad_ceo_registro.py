@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'e_movilidad_ceo_registro.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.1
+## Created by: Qt User Interface Compiler version 6.9.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -393,7 +393,7 @@ class Ui_Widget(object):
         self.label_24.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.botonAdmin = QPushButton(Widget)
         self.botonAdmin.setObjectName(u"botonAdmin")
-        self.botonAdmin.setGeometry(QRect(1344, 26, 199, 63))
+        self.botonAdmin.setGeometry(QRect(710, 26, 199, 63))
         self.botonAdmin.setFont(font)
         self.botonAdmin.setStyleSheet(u"border: 2px solid #000000;\n"
 "border-radius: 15px; /* Bordes redondeados */\n"
@@ -407,6 +407,16 @@ class Ui_Widget(object):
         self.label_8.setStyleSheet(u"")
         self.label_8.setPixmap(QPixmap(u"ola K\u00e4llenius.png"))
         self.label_8.setScaledContents(True)
+        self.botonLogOut = QPushButton(Widget)
+        self.botonLogOut.setObjectName(u"botonLogOut")
+        self.botonLogOut.setGeometry(QRect(1420, 30, 199, 63))
+        self.botonLogOut.setFont(font)
+        self.botonLogOut.setStyleSheet(u"border: 2px solid #000000;\n"
+"border-radius: 15px; /* Bordes redondeados */\n"
+"padding: 5px;\n"
+"\n"
+"color: black;\n"
+"background-color: #ebebeb;")
         self.label_4.raise_()
         self.label_6.raise_()
         self.label_3.raise_()
@@ -450,6 +460,7 @@ class Ui_Widget(object):
         self.label_24.raise_()
         self.botonAdmin.raise_()
         self.label_8.raise_()
+        self.botonLogOut.raise_()
 
         self.retranslateUi(Widget)
 
@@ -500,5 +511,6 @@ class Ui_Widget(object):
         self.label_24.setText(QCoreApplication.translate("Widget", u"Ola K\u00e4llenius", None))
         self.botonAdmin.setText(QCoreApplication.translate("Widget", u"Administraci\u00f3n", None))
         self.label_8.setText("")
+        self.botonLogOut.setText(QCoreApplication.translate("Widget", u"Cerrar Sesi\u00f3n", None))
     # retranslateUi
 

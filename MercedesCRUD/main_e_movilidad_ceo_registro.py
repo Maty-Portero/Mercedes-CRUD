@@ -183,6 +183,8 @@ class E_movilidad_ceo_registroWidget(QWidget):
         self.ui.botonVer1.clicked.connect(self.ver_empleado)
         self.ui.botonVer2.clicked.connect(self.ver_empleado)
         self.ui.botonVer3.clicked.connect(self.ver_empleado)
+        self.ui.botonBuscar.clicked.connect(self.buscar_empleado)
+        self.ui.botonOrdenar1.clicked.connect(self.ordenar_empleado)
 
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión
@@ -212,3 +214,11 @@ class E_movilidad_ceo_registroWidget(QWidget):
     @Slot()
     def ver_empleado(self):
         QMessageBox.information(self, "RRHH", "Función: Ver empleado.")
+
+    @Slot()
+    def buscar_empleado(self):
+        QMessageBox.information(self, "Compras", "Función: Buscar empleado.")
+    
+    @Slot()
+    def ordenar_empleado(self):
+        QMessageBox.information(self, "Compras", "Función: Ordenar empleado.")

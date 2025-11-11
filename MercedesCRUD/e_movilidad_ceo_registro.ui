@@ -1061,7 +1061,7 @@ padding: 5px;</string>
   <widget class="QPushButton" name="botonAdmin">
    <property name="geometry">
     <rect>
-     <x>1344</x>
+     <x>710</x>
      <y>26</y>
      <width>199</width>
      <height>63</height>
@@ -1107,6 +1107,33 @@ background-color: #ebebeb;</string>
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QPushButton" name="botonLogOut">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>30</y>
+     <width>199</width>
+     <height>63</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid #000000;
+border-radius: 15px; /* Bordes redondeados */
+padding: 5px;
+
+color: black;
+background-color: #ebebeb;</string>
+   </property>
+   <property name="text">
+    <string>Cerrar Sesión</string>
+   </property>
+  </widget>
   <zorder>label_4</zorder>
   <zorder>label_6</zorder>
   <zorder>label_3</zorder>
@@ -1150,6 +1177,7 @@ background-color: #ebebeb;</string>
   <zorder>label_24</zorder>
   <zorder>botonAdmin</zorder>
   <zorder>label_8</zorder>
+  <zorder>botonLogOut</zorder>
  </widget>
  <resources/>
  <connections/>

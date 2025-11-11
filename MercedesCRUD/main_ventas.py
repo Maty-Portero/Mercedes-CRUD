@@ -2,10 +2,10 @@ import sys, os
 from PySide6.QtWidgets import QWidget, QMessageBox
 from PySide6.QtCore import Signal, Slot
 from PySide6.QtGui import QPixmap 
-from ui_compras import Ui_Widget
+from ui_ventas import Ui_Widget
 
 # La clase MyWidget es tu vista de RRHH
-class ComprasWidget(QWidget):
+class VentasWidget(QWidget):
     # Señal para notificar al manager que el usuario quiere cerrar sesión
     logout_requested = Signal()
     # Asumo que tienes un QLabel para mostrar el saludo de bienvenida en tu UI
@@ -130,19 +130,27 @@ class ComprasWidget(QWidget):
         self.ui.botonVer3.setIcon(pixmap)
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
-        self.ui.botonAgregar.clicked.connect(self.agregar_orden)
-        self.ui.botonEditar1.clicked.connect(self.editar_orden)
-        self.ui.botonEditar2.clicked.connect(self.editar_orden)
-        self.ui.botonEditar3.clicked.connect(self.editar_orden)
-        self.ui.botonSacar1.clicked.connect(self.eliminar_orden)
-        self.ui.botonSacar2.clicked.connect(self.eliminar_orden)
-        self.ui.botonSacar3.clicked.connect(self.eliminar_orden)
-        self.ui.botonVer1.clicked.connect(self.ver_orden)
-        self.ui.botonVer2.clicked.connect(self.ver_orden)
-        self.ui.botonVer3.clicked.connect(self.ver_orden)
-        self.ui.botonBuscar.clicked.connect(self.buscar_orden)
-        self.ui.botonOrdenar1.clicked.connect(self.ordenar_orden)
-
+        self.ui.botonAgregar.clicked.connect(self.agregar_venta)
+        self.ui.botonEditar1.clicked.connect(self.editar_venta)
+        self.ui.botonEditar2.clicked.connect(self.editar_venta)
+        self.ui.botonEditar3.clicked.connect(self.editar_venta)
+        self.ui.botonEditar4.clicked.connect(self.editar_venta)
+        self.ui.botonEditar5.clicked.connect(self.editar_venta)
+        self.ui.botonEditar6.clicked.connect(self.editar_venta)
+        self.ui.botonSacar1.clicked.connect(self.eliminar_venta)
+        self.ui.botonSacar2.clicked.connect(self.eliminar_venta)
+        self.ui.botonSacar3.clicked.connect(self.eliminar_venta)
+        self.ui.botonSacar4.clicked.connect(self.eliminar_venta)
+        self.ui.botonSacar5.clicked.connect(self.eliminar_venta)
+        self.ui.botonSacar6.clicked.connect(self.eliminar_venta)
+        self.ui.botonVer1.clicked.connect(self.ver_venta)
+        self.ui.botonVer2.clicked.connect(self.ver_venta)
+        self.ui.botonVer3.clicked.connect(self.ver_venta)
+        self.ui.botonVer4.clicked.connect(self.ver_venta)
+        self.ui.botonVer5.clicked.connect(self.ver_venta)
+        self.ui.botonVer6.clicked.connect(self.ver_venta)
+        self.ui.botonBuscar.clicked.connect(self.buscar_venta)
+        self.ui.botonOrdenar1.clicked.connect(self.ordenar_venta)
         
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión
@@ -153,30 +161,30 @@ class ComprasWidget(QWidget):
         """Muestra el mensaje de bienvenida en un QLabel (asumiendo que tienes uno)."""
         # Si tienes un QLabel con objectName 'label_welcome', lo usarías así:
         # self.ui.label_welcome.setText(f"Bienvenido, {username}")
-        print(f"Usuario {username} ha ingresado a Compras.") # Impresión de prueba
+        print(f"Usuario {username} ha ingresado a Ventas.") # Impresión de prueba
 
         
 
     @Slot()
-    def agregar_orden(self):
-        QMessageBox.information(self, "Compras", "Función: Agregar orden.")
+    def agregar_venta(self):
+        QMessageBox.information(self, "Ventas", "Función: Agregar venta.")
 
     @Slot()
-    def editar_orden(self):
-        QMessageBox.information(self, "Compras", "Función: Editar orden.")
+    def editar_venta(self):
+        QMessageBox.information(self, "Ventas", "Función: Editar venta.")
 
     @Slot()
-    def eliminar_orden(self):
-        QMessageBox.information(self, "Compras", "Función: Eliminar orden.")
+    def eliminar_venta(self):
+        QMessageBox.information(self, "Ventas", "Función: Eliminar venta.")
 
     @Slot()
-    def ver_orden(self):
-        QMessageBox.information(self, "Compras", "Función: Ver orden.")
+    def ver_venta(self):
+        QMessageBox.information(self, "Ventas", "Función: Ver venta.")
 
     @Slot()
-    def buscar_orden(self):
-        QMessageBox.information(self, "Compras", "Función: Buscar orden.")
+    def buscar_venta(self):
+        QMessageBox.information(self, "Compras", "Función: Buscar venta.")
     
     @Slot()
-    def ordenar_orden(self):
-        QMessageBox.information(self, "Compras", "Función: Ordenar orden.")
+    def ordenar_venta(self):
+        QMessageBox.information(self, "Compras", "Función: Ordenar venta.")

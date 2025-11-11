@@ -119,6 +119,7 @@ class MantenimientoWidget(QWidget):
             self.ui.botonSacar4.clicked.connect(self.eliminar_equipo)
             self.ui.botonSacar5.clicked.connect(self.eliminar_equipo)
             self.ui.botonBuscar.clicked.connect(self.buscar_equipo)
+            self.ui.botonOrdenar1.clicked.connect(self.ordenar_equipo)
             self.ui.botonBorrar.clicked.connect(self.borrar_busqueda)
             self.ui.botonEstado1.clicked.connect(self.estado_equipo)
             self.ui.botonEstado2.clicked.connect(self.estado_equipo)
@@ -145,8 +146,7 @@ class MantenimientoWidget(QWidget):
 
     @Slot()
     def editar_equipo(self):
-        QMessageBox.information(self, "Mantenimiento", "Función: Editar equipo"
-        ".")
+        QMessageBox.information(self, "Mantenimiento", "Función: Editar equipo.")
 
     @Slot()
     def eliminar_equipo(self):
@@ -163,3 +163,7 @@ class MantenimientoWidget(QWidget):
     @Slot()
     def borrar_busqueda(self):
         QMessageBox.information(self, "Mantenimiento", "Función: Borrar búsqueda.")
+
+    @Slot()
+    def ordenar_equipo(self):
+        QMessageBox.information(self, "Mantenimiento", "Función: Ordenar equipo.")

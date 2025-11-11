@@ -117,7 +117,7 @@
   <widget class="QPushButton" name="botonAdmin">
    <property name="geometry">
     <rect>
-     <x>1340</x>
+     <x>680</x>
      <y>25</y>
      <width>199</width>
      <height>63</height>
@@ -454,6 +454,33 @@ background-color: #002d6b;</string>
     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
    </property>
   </widget>
+  <widget class="QPushButton" name="botonLogOut">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>30</y>
+     <width>199</width>
+     <height>63</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid #000000;
+border-radius: 15px; /* Bordes redondeados */
+padding: 5px;
+
+color: black;
+background-color: #ebebeb;</string>
+   </property>
+   <property name="text">
+    <string>Cerrar Sesión</string>
+   </property>
+  </widget>
   <zorder>label_4</zorder>
   <zorder>label</zorder>
   <zorder>label_2</zorder>
@@ -472,6 +499,7 @@ background-color: #002d6b;</string>
   <zorder>botonMantenimiento</zorder>
   <zorder>botonMarketing</zorder>
   <zorder>label_12</zorder>
+  <zorder>botonLogOut</zorder>
  </widget>
  <resources/>
  <connections/>

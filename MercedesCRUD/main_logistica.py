@@ -183,6 +183,8 @@ class LogisticaWidget(QWidget):
         self.ui.botonVer1.clicked.connect(self.ver_pedido)
         self.ui.botonVer2.clicked.connect(self.ver_pedido)
         self.ui.botonVer3.clicked.connect(self.ver_pedido)
+        self.ui.botonBuscar.clicked.connect(self.buscar_pedido)
+        self.ui.botonOrdenar1.clicked.connect(self.ordenar_pedido)
 
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión
@@ -212,3 +214,11 @@ class LogisticaWidget(QWidget):
     @Slot()
     def ver_pedido(self):
         QMessageBox.information(self, "Logistica", "Función: Ver Pedido.")
+    
+    @Slot()
+    def buscar_pedido(self):
+        QMessageBox.information(self, "Compras", "Función: Buscar Pedido.")
+    
+    @Slot()
+    def ordenar_pedido(self):
+        QMessageBox.information(self, "Compras", "Función: Ordenar Pedido.")

@@ -83,14 +83,14 @@ class CEOWidget(QWidget):
         self.ui.label.setScaledContents(True) # Aseguramos que escale
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
-        self.ui.botonCompras.clicked.connect(self.ir_compras)
-        self.ui.botonLogistica.clicked.connect(self.ir_logistica)
-        self.ui.botonE_movilidad.clicked.connect(self.ir_E_movilidad)
-        self.ui.botonMantenimiento.clicked.connect(self.ir_Mantenimiento)
-        self.ui.botonMarketing.clicked.connect(self.ir_Marketing)
-        self.ui.botonProduccion.clicked.connect(self.ir_Produccion)
-        self.ui.botonVentas.clicked.connect(self.ir_Ventas)
-        self.ui.botonRRHH.clicked.connect(self.ir_RRHH)
+        #self.ui.botonCompras.clicked.connect(self.ir_compras)
+        #self.ui.botonLogistica.clicked.connect(self.ir_logistica)
+        #self.ui.botonE_movilidad.clicked.connect(self.ir_E_movilidad)
+        #self.ui.botonMantenimiento.clicked.connect(self.ir_Mantenimiento)
+        #self.ui.botonMarketing.clicked.connect(self.ir_Marketing)
+        #self.ui.botonProduccion.clicked.connect(self.ir_Produccion)
+        #self.ui.botonVentas.clicked.connect(self.ir_Ventas)
+        #self.ui.botonRRHH.clicked.connect(self.ir_RRHH)
 
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión

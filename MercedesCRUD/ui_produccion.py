@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'produccion.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.1
+## Created by: Qt User Interface Compiler version 6.9.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -606,6 +606,16 @@ class Ui_Widget(object):
 "border-radius: 20px; /* Bordes redondeados */\n"
 "padding: 5px;")
         self.botonSacar6.setIcon(icon2)
+        self.botonLogOut = QPushButton(Widget)
+        self.botonLogOut.setObjectName(u"botonLogOut")
+        self.botonLogOut.setGeometry(QRect(1420, 30, 199, 63))
+        self.botonLogOut.setFont(font)
+        self.botonLogOut.setStyleSheet(u"border: 2px solid #000000;\n"
+"border-radius: 15px; /* Bordes redondeados */\n"
+"padding: 5px;\n"
+"\n"
+"color: black;\n"
+"background-color: #ebebeb;")
         self.label_4.raise_()
         self.label_6.raise_()
         self.label_3.raise_()
@@ -667,6 +677,7 @@ class Ui_Widget(object):
         self.botonEditar6.raise_()
         self.botonProgreso6.raise_()
         self.botonSacar6.raise_()
+        self.botonLogOut.raise_()
 
         self.retranslateUi(Widget)
 
@@ -737,5 +748,6 @@ class Ui_Widget(object):
         self.botonEditar6.setText("")
         self.botonProgreso6.setText(QCoreApplication.translate("Widget", u"1/10", None))
         self.botonSacar6.setText("")
+        self.botonLogOut.setText(QCoreApplication.translate("Widget", u"Cerrar Sesi\u00f3n", None))
     # retranslateUi
 

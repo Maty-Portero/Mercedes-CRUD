@@ -123,6 +123,7 @@ class ProduccionWidget(QWidget):
             self.ui.botonSacar5.clicked.connect(self.eliminar_equipo)
             self.ui.botonSacar6.clicked.connect(self.eliminar_equipo)
             self.ui.botonBuscar.clicked.connect(self.buscar_equipo)
+            self.ui.botonOrdenar1.clicked.connect(self.ordenar_equipo)
             self.ui.botonBorrar.clicked.connect(self.borrar_busqueda)
             self.ui.botonProgreso1.clicked.connect(self.progreso_equipo)
             self.ui.botonProgreso2.clicked.connect(self.progreso_equipo)
@@ -172,3 +173,7 @@ class ProduccionWidget(QWidget):
     @Slot()
     def abrir_alerta(self):
         QMessageBox.information(self, "Produccion", "Función: Abrir Alerta.")
+
+    @Slot()
+    def ordenar_equipo(self):
+        QMessageBox.information(self, "Produccion", "Función: Ordenar equipo.")
