@@ -616,6 +616,16 @@ class Ui_Widget(object):
 "\n"
 "color: black;\n"
 "background-color: #ebebeb;")
+        self.botonAdmin = QPushButton(Widget)
+        self.botonAdmin.setObjectName(u"botonAdmin")
+        self.botonAdmin.setGeometry(QRect(1020, 25, 199, 63))
+        self.botonAdmin.setFont(font)
+        self.botonAdmin.setStyleSheet(u"border: 2px solid #000000;\n"
+"border-radius: 15px; /* Bordes redondeados */\n"
+"padding: 5px;\n"
+"\n"
+"color: black;\n"
+"background-color: #ebebeb;")
         self.label_4.raise_()
         self.label_6.raise_()
         self.label_3.raise_()
@@ -678,6 +688,7 @@ class Ui_Widget(object):
         self.botonProgreso6.raise_()
         self.botonSacar6.raise_()
         self.botonLogOut.raise_()
+        self.botonAdmin.raise_()
 
         self.retranslateUi(Widget)
 
@@ -749,5 +760,6 @@ class Ui_Widget(object):
         self.botonProgreso6.setText(QCoreApplication.translate("Widget", u"1/10", None))
         self.botonSacar6.setText("")
         self.botonLogOut.setText(QCoreApplication.translate("Widget", u"Cerrar Sesi\u00f3n", None))
+        self.botonAdmin.setText(QCoreApplication.translate("Widget", u"Administraci\u00f3n", None))
     # retranslateUi
 
