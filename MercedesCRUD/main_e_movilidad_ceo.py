@@ -5,7 +5,7 @@ from PySide6.QtGui import QPixmap
 from ui_e_movilidad_ceo import Ui_Widget
 
 # La clase MyWidget es tu vista de RRHH
-class E_movilidad_ceoWidget(QWidget):
+class E_MovilidadCEOWidget(QWidget):
     # Señal para notificar al manager que el usuario quiere cerrar sesión
     # Asumo que tienes un QLabel para mostrar el saludo de bienvenida en tu UI
     # Si no lo tienes, puedes agregarlo en el diseñador de Qt.
@@ -57,8 +57,8 @@ class E_movilidad_ceoWidget(QWidget):
         # ----------------------------------------------------
 
         # 5. Asigna el pixmap al QLabel 'label'
-        self.ui.label_7.setPixmap(pixmap)
-        self.ui.label_7.setScaledContents(True) # Aseguramos que escale
+        self.ui.label_3.setPixmap(pixmap)
+        self.ui.label_3.setScaledContents(True) # Aseguramos que escale
 
         # 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
         script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -79,8 +79,8 @@ class E_movilidad_ceoWidget(QWidget):
         # ----------------------------------------------------
 
         # 5. Asigna el pixmap al QLabel 'label'
-        self.ui.label.setPixmap(pixmap)
-        self.ui.label.setScaledContents(True) # Aseguramos que escale
+        self.ui.label_3.setPixmap(pixmap)
+        self.ui.label_3.setScaledContents(True) # Aseguramos que escale
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
         #self.ui.botonCompras.clicked.connect(self.ir_db)

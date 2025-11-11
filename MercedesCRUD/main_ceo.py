@@ -9,7 +9,14 @@ class CEOWidget(QWidget):
     # Señal para notificar al manager que el usuario quiere cerrar sesión
     # Asumo que tienes un QLabel para mostrar el saludo de bienvenida en tu UI
     # Si no lo tienes, puedes agregarlo en el diseñador de Qt.
-    
+    RRHH = Signal(str)
+    Compras = Signal(str)
+    Ventas = Signal(str)
+    Produccion = Signal(str)
+    Mantenimiento = Signal(str)
+    Marketing = Signal(str)
+    E_movilidad = Signal(str)
+    Logistica = Signal(str)
 
     def __init__(self):
         super().__init__()
@@ -83,18 +90,35 @@ class CEOWidget(QWidget):
         self.ui.label.setScaledContents(True) # Aseguramos que escale
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
-        #self.ui.botonCompras.clicked.connect(self.ir_compras)
-        #self.ui.botonLogistica.clicked.connect(self.ir_logistica)
-        #self.ui.botonE_movilidad.clicked.connect(self.ir_E_movilidad)
-        #self.ui.botonMantenimiento.clicked.connect(self.ir_Mantenimiento)
-        #self.ui.botonMarketing.clicked.connect(self.ir_Marketing)
-        #self.ui.botonProduccion.clicked.connect(self.ir_Produccion)
-        #self.ui.botonVentas.clicked.connect(self.ir_Ventas)
-        #self.ui.botonRRHH.clicked.connect(self.ir_RRHH)
+        self.ui.botonCompras.clicked.connect(self.IrCompras)
+        self.ui.botonLogistica.clicked.connect(self.IrLogistica)
+        self.ui.botonE_movilidad.clicked.connect(self.IrE_movilidad)
+        self.ui.botonMantenimiento.clicked.connect(self.IrMantenimiento)
+        self.ui.botonMarketing.clicked.connect(self.IrMarketing)
+        self.ui.botonProduccion.clicked.connect(self.IrProduccion)
+        self.ui.botonVentas.clicked.connect(self.IrVentas)
+        self.ui.botonRRHH.clicked.connect(self.IrRRHH)
 
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión
         # self.ui.pushButton_7.clicked.connect(self.logout_requested.emit)
+    
+    def IrCompras(self):
+        self.Compras.emit("CEO")
+    def IrLogistica(self):
+        self.Logistica.emit("CEO")
+    def IrProduccion(self):
+        self.Produccion.emit("CEO")
+    def IrE_movilidad(self):
+        self.E_movilidad.emit("CEO")
+    def IrMantenimiento(self):
+        self.Mantenimiento.emit("CEO")
+    def IrMarketing(self):
+        self.Marketing.emit("CEO")
+    def IrVentas(self):
+        self.Ventas.emit("CEO")
+    def IrRRHH(self):
+        self.RRHH.emit("CEO")
         
     # Método para recibir y establecer el nombre de usuario (Llamado desde AppManager)
     def set_welcome_message(self, username):

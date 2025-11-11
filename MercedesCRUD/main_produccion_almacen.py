@@ -6,7 +6,7 @@ from PySide6.QtGui import QPixmap
 from ui_produccion2 import Ui_Widget 
 
 # La clase MyWidget es tu vista de RRHH
-class Produccion2Widget(QWidget):
+class ProduccionAlmacenWidget(QWidget):
     # Señal para notificar al manager que el usuario quiere cerrar sesión
     logout_requested = Signal()
     # Asumo que tienes un QLabel para mostrar el saludo de bienvenida en tu UI
@@ -123,7 +123,7 @@ class Produccion2Widget(QWidget):
             self.ui.botonSacar5.clicked.connect(self.eliminar_equipo)
             self.ui.botonSacar6.clicked.connect(self.eliminar_equipo)
             self.ui.botonBuscar.clicked.connect(self.buscar_equipo)
-            self.ui.botonOrdenar1.clicked.connect(self.ordenar_orden)
+            self.ui.botonOrdenar1.clicked.connect(self.Ordenar_equipo)
             self.ui.botonBorrar.clicked.connect(self.borrar_busqueda)
             self.ui.botonProgreso1.clicked.connect(self.progreso_equipo)
             self.ui.botonProgreso2.clicked.connect(self.progreso_equipo)
