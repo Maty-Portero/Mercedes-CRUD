@@ -10,7 +10,14 @@ class LoginWidget(QWidget):
     # Define la señal que se emitirá cuando el login sea exitoso. 
     # Le pasamos el nombre de usuario (str) como argumento.
     ceo = Signal(str)
-    login_successful = Signal(str)
+    RRHH = Signal(str)
+    Compras = Signal(str)
+    Ventas = Signal(str)
+    Produccion = Signal(str)
+    Mantenimiento = Signal(str)
+    Marketing = Signal(str)
+    E_movilidad = Signal(str)
+    Logistica = Signal(str)
 
     def __init__(self):
         super().__init__()
@@ -90,11 +97,25 @@ class LoginWidget(QWidget):
 
         # >>> LÓGICA DE VALIDACIÓN DE CREDENCIALES <<<
         # Aquí se conectaría a la base de datos o API. Usamos una simple validación de ejemplo:
-        if usuario == "admin" and contrasena == "123":
+        if usuario == "CEO" and contrasena == "prueba":
             # Si el login es exitoso:
             self.ceo.emit(usuario) # EMITIMOS la señal con el nombre de usuario
-        elif usuario == "juan" and contrasena == "456":
-            self.login_successful.emit(usuario)
+        elif usuario == "RRHH" and contrasena == "prueba":
+            self.RRHH.emit(usuario)
+        elif usuario == "Mantenimiento" and contrasena == "prueba":
+            self.Mantenimiento.emit(usuario)
+        elif usuario == "Logistica" and contrasena == "prueba":
+            self.Logistica.emit(usuario)
+        elif usuario == "Produccion" and contrasena == "prueba":
+            self.Produccion.emit(usuario)
+        elif usuario == "Ventas" and contrasena == "prueba":
+            self.Ventas.emit(usuario)
+        elif usuario == "Compras" and contrasena == "prueba":
+            self.Compras.emit(usuario)
+        elif usuario == "E_Movilidad" and contrasena == "prueba":
+            self.E_movilidad.emit(usuario)
+        elif usuario == "Marketing" and contrasena == "prueba":
+            self.Marketing.emit(usuario)
         else:
             # Si falla:
             QMessageBox.critical(self, "Error", "Usuario o contraseña incorrectos.") 

@@ -6,7 +6,7 @@ from PySide6.QtGui import QPixmap
 from ui_produccion import Ui_Widget 
 
 # La clase MyWidget es tu vista de RRHH
-class ProduccionWidget(QWidget):
+class ProduccionTareasWidget(QWidget):
     # Señal para notificar al manager que el usuario quiere cerrar sesión
     logout_requested = Signal()
     # Asumo que tienes un QLabel para mostrar el saludo de bienvenida en tu UI
