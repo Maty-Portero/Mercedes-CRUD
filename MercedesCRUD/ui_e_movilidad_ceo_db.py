@@ -660,7 +660,7 @@ class Ui_Widget(object):
         self.label_8.setScaledContents(True)
         self.botonAdmin = QPushButton(Widget)
         self.botonAdmin.setObjectName(u"botonAdmin")
-        self.botonAdmin.setGeometry(QRect(1020, 25, 199, 63))
+        self.botonAdmin.setGeometry(QRect(1200, 30, 199, 63))
         self.botonAdmin.setFont(font)
         self.botonAdmin.setStyleSheet(u"border: 2px solid #000000;\n"
 "border-radius: 15px; /* Bordes redondeados */\n"

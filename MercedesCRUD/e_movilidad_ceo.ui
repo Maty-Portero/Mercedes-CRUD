@@ -145,8 +145,8 @@
   <widget class="QPushButton" name="botonAdmin">
    <property name="geometry">
     <rect>
-     <x>1020</x>
-     <y>25</y>
+     <x>1200</x>
+     <y>30</y>
      <width>199</width>
      <height>63</height>
     </rect>

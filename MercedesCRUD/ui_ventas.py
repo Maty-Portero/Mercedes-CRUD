@@ -644,6 +644,16 @@ class Ui_Widget(object):
 "border-radius: 20px; /* Bordes redondeados */\n"
 "padding: 5px;")
         self.botonEditar4.setIcon(icon1)
+        self.botonAdmin = QPushButton(Widget)
+        self.botonAdmin.setObjectName(u"botonAdmin")
+        self.botonAdmin.setGeometry(QRect(1200, 30, 199, 63))
+        self.botonAdmin.setFont(font)
+        self.botonAdmin.setStyleSheet(u"border: 2px solid #000000;\n"
+"border-radius: 15px; /* Bordes redondeados */\n"
+"padding: 5px;\n"
+"\n"
+"color: black;\n"
+"background-color: #ebebeb;")
         self.label_4.raise_()
         self.label_6.raise_()
         self.label_3.raise_()
@@ -708,6 +718,7 @@ class Ui_Widget(object):
         self.botonEditar6.raise_()
         self.botonSacar4.raise_()
         self.botonEditar4.raise_()
+        self.botonAdmin.raise_()
 
         self.retranslateUi(Widget)
 
@@ -779,5 +790,6 @@ class Ui_Widget(object):
         self.botonEditar6.setText("")
         self.botonSacar4.setText("")
         self.botonEditar4.setText("")
+        self.botonAdmin.setText(QCoreApplication.translate("Widget", u"Administraci\u00f3n", None))
     # retranslateUi
 

@@ -64,7 +64,7 @@ class Ui_Widget(object):
         self.label_8.setScaledContents(True)
         self.botonAdmin = QPushButton(Widget)
         self.botonAdmin.setObjectName(u"botonAdmin")
-        self.botonAdmin.setGeometry(QRect(1020, 25, 199, 63))
+        self.botonAdmin.setGeometry(QRect(1200, 30, 199, 63))
         font1 = QFont()
         font1.setFamilies([u"icon-ui"])
         font1.setPointSize(19)
