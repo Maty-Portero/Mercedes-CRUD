@@ -528,30 +528,6 @@ class Ui_Widget(object):
 "\n"
 "\n"
 "")
-        self.botonAlerta = QPushButton(Widget)
-        self.botonAlerta.setObjectName(u"botonAlerta")
-        self.botonAlerta.setGeometry(QRect(1463, 25, 209, 63))
-        self.botonAlerta.setFont(font)
-        self.botonAlerta.setStyleSheet(u"background-color: #e8e8e8;\n"
-"color: black;\n"
-"\n"
-"border: 2px solid #002d6b;\n"
-"border-radius: 15px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"\n"
-"\n"
-"\n"
-"")
-        self.botonAlerta2 = QPushButton(Widget)
-        self.botonAlerta2.setObjectName(u"botonAlerta2")
-        self.botonAlerta2.setGeometry(QRect(1480, 35, 42, 42))
-        self.botonAlerta2.setFont(font)
-        self.botonAlerta2.setStyleSheet(u"background-color: red;\n"
-"color: white;\n"
-"\n"
-"border: 2px solid red;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
         self.label_47 = QLabel(Widget)
         self.label_47.setObjectName(u"label_47")
         self.label_47.setGeometry(QRect(320, 588, 370, 50))
@@ -680,8 +656,6 @@ class Ui_Widget(object):
         self.lineEdit.raise_()
         self.botonTareas.raise_()
         self.botonAlmacen.raise_()
-        self.botonAlerta.raise_()
-        self.botonAlerta2.raise_()
         self.label_47.raise_()
         self.label_45.raise_()
         self.botonEditar6.raise_()
@@ -752,8 +726,6 @@ class Ui_Widget(object):
         self.label_24.setText("")
         self.botonTareas.setText(QCoreApplication.translate("Widget", u"Tareas", None))
         self.botonAlmacen.setText(QCoreApplication.translate("Widget", u"Almac\u00e9n", None))
-        self.botonAlerta.setText(QCoreApplication.translate("Widget", u"   Alertas", None))
-        self.botonAlerta2.setText(QCoreApplication.translate("Widget", u"1", None))
         self.label_47.setText(QCoreApplication.translate("Widget", u"EQS SUV", None))
         self.label_45.setText(QCoreApplication.translate("Widget", u"#X296-1", None))
         self.botonEditar6.setText("")

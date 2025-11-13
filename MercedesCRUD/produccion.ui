@@ -1415,64 +1415,6 @@ padding: 5px;
     <string>Almacén</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="botonAlerta">
-   <property name="geometry">
-    <rect>
-     <x>1463</x>
-     <y>25</y>
-     <width>209</width>
-     <height>63</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>icon-ui</family>
-     <pointsize>19</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: #e8e8e8;
-color: black;
-
-border: 2px solid #002d6b;
-border-radius: 15px; /* Bordes redondeados */
-padding: 5px;
-
-
-
-</string>
-   </property>
-   <property name="text">
-    <string>   Alertas</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="botonAlerta2">
-   <property name="geometry">
-    <rect>
-     <x>1480</x>
-     <y>35</y>
-     <width>42</width>
-     <height>42</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>icon-ui</family>
-     <pointsize>19</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: red;
-color: white;
-
-border: 2px solid red;
-border-radius: 20px; /* Bordes redondeados */
-padding: 5px;</string>
-   </property>
-   <property name="text">
-    <string>1</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_47">
    <property name="geometry">
     <rect>
@@ -1730,8 +1672,6 @@ background-color: #ebebeb;</string>
   <zorder>lineEdit</zorder>
   <zorder>botonTareas</zorder>
   <zorder>botonAlmacen</zorder>
-  <zorder>botonAlerta</zorder>
-  <zorder>botonAlerta2</zorder>
   <zorder>label_47</zorder>
   <zorder>label_45</zorder>
   <zorder>botonEditar6</zorder>

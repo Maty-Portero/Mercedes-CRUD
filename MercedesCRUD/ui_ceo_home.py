@@ -50,32 +50,22 @@ class Ui_Widget(object):
         self.label_5.setStyleSheet(u"")
         self.label_5.setPixmap(QPixmap(u"logo.png"))
         self.label_5.setScaledContents(True)
-        self.botonAdmin = QPushButton(Widget)
-        self.botonAdmin.setObjectName(u"botonAdmin")
-        self.botonAdmin.setGeometry(QRect(680, 25, 199, 63))
-        font = QFont()
-        font.setFamilies([u"icon-ui"])
-        font.setPointSize(19)
-        self.botonAdmin.setFont(font)
-        self.botonAdmin.setStyleSheet(u"border: 2px solid #000000;\n"
-"border-radius: 15px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"\n"
-"color: black;\n"
-"background-color: #ebebeb;")
         self.label_10 = QLabel(Widget)
         self.label_10.setObjectName(u"label_10")
         self.label_10.setGeometry(QRect(328, 340, 304, 47))
-        font1 = QFont()
-        font1.setFamilies([u"icon-ui"])
-        font1.setPointSize(30)
-        self.label_10.setFont(font1)
+        font = QFont()
+        font.setFamilies([u"icon-ui"])
+        font.setPointSize(30)
+        self.label_10.setFont(font)
         self.label_10.setStyleSheet(u"color: white;")
         self.label_10.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.botonE_movilidad = QPushButton(Widget)
         self.botonE_movilidad.setObjectName(u"botonE_movilidad")
         self.botonE_movilidad.setGeometry(QRect(980, 178, 277, 258))
-        self.botonE_movilidad.setFont(font)
+        font1 = QFont()
+        font1.setFamilies([u"icon-ui"])
+        font1.setPointSize(19)
+        self.botonE_movilidad.setFont(font1)
         self.botonE_movilidad.setStyleSheet(u"border: 2px solid #000000;\n"
 "border-radius: 15px; /* Bordes redondeados */\n"
 "padding: 5px;\n"
@@ -100,7 +90,7 @@ class Ui_Widget(object):
         self.botonProduccion = QPushButton(Widget)
         self.botonProduccion.setObjectName(u"botonProduccion")
         self.botonProduccion.setGeometry(QRect(1306, 178, 277, 258))
-        self.botonProduccion.setFont(font)
+        self.botonProduccion.setFont(font1)
         self.botonProduccion.setStyleSheet(u"border: 2px solid #000000;\n"
 "border-radius: 15px; /* Bordes redondeados */\n"
 "padding: 5px;\n"
@@ -110,7 +100,7 @@ class Ui_Widget(object):
         self.botonVentas = QPushButton(Widget)
         self.botonVentas.setObjectName(u"botonVentas")
         self.botonVentas.setGeometry(QRect(1624, 178, 277, 258))
-        self.botonVentas.setFont(font)
+        self.botonVentas.setFont(font1)
         self.botonVentas.setStyleSheet(u"border: 2px solid #000000;\n"
 "border-radius: 15px; /* Bordes redondeados */\n"
 "padding: 5px;\n"
@@ -120,7 +110,7 @@ class Ui_Widget(object):
         self.botonRRHH = QPushButton(Widget)
         self.botonRRHH.setObjectName(u"botonRRHH")
         self.botonRRHH.setGeometry(QRect(1624, 480, 277, 258))
-        self.botonRRHH.setFont(font)
+        self.botonRRHH.setFont(font1)
         self.botonRRHH.setStyleSheet(u"border: 2px solid #000000;\n"
 "border-radius: 15px; /* Bordes redondeados */\n"
 "padding: 5px;\n"
@@ -130,7 +120,7 @@ class Ui_Widget(object):
         self.botonLogistica = QPushButton(Widget)
         self.botonLogistica.setObjectName(u"botonLogistica")
         self.botonLogistica.setGeometry(QRect(1306, 480, 277, 258))
-        self.botonLogistica.setFont(font)
+        self.botonLogistica.setFont(font1)
         self.botonLogistica.setStyleSheet(u"border: 2px solid #000000;\n"
 "border-radius: 15px; /* Bordes redondeados */\n"
 "padding: 5px;\n"
@@ -140,7 +130,7 @@ class Ui_Widget(object):
         self.botonCompras = QPushButton(Widget)
         self.botonCompras.setObjectName(u"botonCompras")
         self.botonCompras.setGeometry(QRect(980, 480, 277, 258))
-        self.botonCompras.setFont(font)
+        self.botonCompras.setFont(font1)
         self.botonCompras.setStyleSheet(u"border: 2px solid #000000;\n"
 "border-radius: 15px; /* Bordes redondeados */\n"
 "padding: 5px;\n"
@@ -150,7 +140,7 @@ class Ui_Widget(object):
         self.botonMantenimiento = QPushButton(Widget)
         self.botonMantenimiento.setObjectName(u"botonMantenimiento")
         self.botonMantenimiento.setGeometry(QRect(1466, 783, 277, 258))
-        self.botonMantenimiento.setFont(font)
+        self.botonMantenimiento.setFont(font1)
         self.botonMantenimiento.setStyleSheet(u"border: 2px solid #000000;\n"
 "border-radius: 15px; /* Bordes redondeados */\n"
 "padding: 5px;\n"
@@ -160,7 +150,7 @@ class Ui_Widget(object):
         self.botonMarketing = QPushButton(Widget)
         self.botonMarketing.setObjectName(u"botonMarketing")
         self.botonMarketing.setGeometry(QRect(1140, 783, 277, 258))
-        self.botonMarketing.setFont(font)
+        self.botonMarketing.setFont(font1)
         self.botonMarketing.setStyleSheet(u"border: 2px solid #000000;\n"
 "border-radius: 15px; /* Bordes redondeados */\n"
 "padding: 5px;\n"
@@ -176,7 +166,7 @@ class Ui_Widget(object):
         self.botonLogOut = QPushButton(Widget)
         self.botonLogOut.setObjectName(u"botonLogOut")
         self.botonLogOut.setGeometry(QRect(1420, 30, 199, 63))
-        self.botonLogOut.setFont(font)
+        self.botonLogOut.setFont(font1)
         self.botonLogOut.setStyleSheet(u"border: 2px solid #000000;\n"
 "border-radius: 15px; /* Bordes redondeados */\n"
 "padding: 5px;\n"
@@ -188,7 +178,6 @@ class Ui_Widget(object):
         self.label_2.raise_()
         self.label_3.raise_()
         self.label_5.raise_()
-        self.botonAdmin.raise_()
         self.label_10.raise_()
         self.botonE_movilidad.raise_()
         self.label_7.raise_()
@@ -215,7 +204,6 @@ class Ui_Widget(object):
         self.label_3.setText("")
         self.label_4.setText("")
         self.label_5.setText("")
-        self.botonAdmin.setText(QCoreApplication.translate("Widget", u"Administraci\u00f3n", None))
         self.label_10.setText(QCoreApplication.translate("Widget", u"Mercedes-CRUD", None))
         self.botonE_movilidad.setText(QCoreApplication.translate("Widget", u"E-Movilidad", None))
         self.label_7.setText("")
