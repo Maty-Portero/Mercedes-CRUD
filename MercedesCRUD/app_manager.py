@@ -1,7 +1,7 @@
 import sys
-from PySide6.QtWidgets import QApplication, QMainWindow, QStackedWidget, QMessageBox
+from PySide6.QtWidgets import QApplication, QMainWindow, QStackedWidget
 from PySide6.QtCore import Slot
-from PySide6.QtSql import QSqlDatabase
+from db_manager import get_db_connection
 
 # IMPORTANTE: Importamos las clases renombradas de los archivos
 # Asegúrate de que los archivos main_login.py y main_rrhh.py estén en la misma carpeta.
@@ -28,11 +28,16 @@ class AppManager(QMainWindow):
     """
     def __init__(self):
         super().__init__()
+
+        if not get_db_connection():
+            print("Fallo crítico: La aplicación no puede iniciar sin la base de datos.")
+            sys.exit(-1)
+
         self.setWindowTitle("Sistema de Gestión Centralizada")
         self.setGeometry(100, 100, 800, 600) 
         self.showFullScreen()
 
-        # 1. Crear el contenedor de vistas (QStackedWidget)
+        # 1. Crear el contenesdor de vistas (QStackedWidget)
         self.stack = QStackedWidget()
         self.setCentralWidget(self.stack)
 

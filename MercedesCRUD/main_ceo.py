@@ -50,7 +50,7 @@ class CEOWidget(QWidget):
         script_dir = os.path.dirname(os.path.abspath(__file__))
         
         # 2. Construye la ruta completa al archivo (Ej: C:/MiProyecto/mercedes.png)
-        image_path = os.path.join(script_dir, "ola Källenius.png") 
+        image_path = os.path.join(script_dir, "perfil-de-usuario.png") 
         
         # 3. Crea el QPixmap
         pixmap = QPixmap(image_path)
@@ -59,7 +59,7 @@ class CEOWidget(QWidget):
         if pixmap.isNull():
             print(f"\n[ERROR DE IMAGEN] NO SE PUDO CARGAR LA IMAGEN.")
             print(f"Ruta COMPLETA intentada: {image_path}")
-            print(f"Asegúrate de que el nombre de archivo sea exactamente 'ola Källenius.png' y que el archivo exista en esa ubicación.")
+            print(f"Asegúrate de que el nombre de archivo sea exactamente 'perfil-de-usuario.png' y que el archivo exista en esa ubicación.")
         else:
             print(f"Imagen cargada OK desde: {image_path}")
         # ----------------------------------------------------

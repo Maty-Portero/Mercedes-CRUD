@@ -46,7 +46,7 @@ class E_MovilidadCEOWidget(QWidget):
         script_dir = os.path.dirname(os.path.abspath(__file__))
         
         # 2. Construye la ruta completa al archivo (Ej: C:/MiProyecto/mercedes.png)
-        image_path = os.path.join(script_dir, "ola Källenius.png") 
+        image_path = os.path.join(script_dir, "perfil-de-usuario.png") 
         
         # 3. Crea el QPixmap
         pixmap = QPixmap(image_path)
@@ -55,36 +55,14 @@ class E_MovilidadCEOWidget(QWidget):
         if pixmap.isNull():
             print(f"\n[ERROR DE IMAGEN] NO SE PUDO CARGAR LA IMAGEN.")
             print(f"Ruta COMPLETA intentada: {image_path}")
-            print(f"Asegúrate de que el nombre de archivo sea exactamente 'ola Källenius.png' y que el archivo exista en esa ubicación.")
+            print(f"Asegúrate de que el nombre de archivo sea exactamente 'perfil-de-usuario.png' y que el archivo exista en esa ubicación.")
         else:
             print(f"Imagen cargada OK desde: {image_path}")
         # ----------------------------------------------------
 
         # 5. Asigna el pixmap al QLabel 'label'
-        self.ui.label_3.setPixmap(pixmap)
-        self.ui.label_3.setScaledContents(True) # Aseguramos que escale
-
-        # 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        
-        # 2. Construye la ruta completa al archivo (Ej: C:/MiProyecto/mercedes.png)
-        image_path = os.path.join(script_dir, "mercedes.png") 
-        
-        # 3. Crea el QPixmap
-        pixmap = QPixmap(image_path)
-
-        # 4. COMPRUEBA si la carga fue exitosa
-        if pixmap.isNull():
-            print(f"\n[ERROR DE IMAGEN] NO SE PUDO CARGAR LA IMAGEN.")
-            print(f"Ruta COMPLETA intentada: {image_path}")
-            print(f"Asegúrate de que el nombre de archivo sea exactamente 'mercedes.png' y que el archivo exista en esa ubicación.")
-        else:
-            print(f"Imagen cargada OK desde: {image_path}")
-        # ----------------------------------------------------
-
-        # 5. Asigna el pixmap al QLabel 'label'
-        self.ui.label_3.setPixmap(pixmap)
-        self.ui.label_3.setScaledContents(True) # Aseguramos que escale
+        self.ui.label_8.setPixmap(pixmap)
+        self.ui.label_8.setScaledContents(True) # Aseguramos que escale
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
         #self.ui.botonCompras.clicked.connect(self.ir_db)

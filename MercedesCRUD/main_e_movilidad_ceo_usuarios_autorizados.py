@@ -39,7 +39,7 @@ class E_MovilidadCEOUsuariosAutorizadosWidget(QWidget):
         self.ui.label_5.setPixmap(pixmap)
         self.ui.label_5.setScaledContents(True) # Aseguramos que escale
 
-# 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
+        # 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
         script_dir = os.path.dirname(os.path.abspath(__file__))
         
         # 2. Construye la ruta completa al archivo (Ej: C:/MiProyecto/mercedes.png)
@@ -58,8 +58,8 @@ class E_MovilidadCEOUsuariosAutorizadosWidget(QWidget):
         # ----------------------------------------------------
 
         # 5. Asigna el pixmap al QLabel 'label'
-        self.ui.label_17.setPixmap(pixmap)
-        self.ui.label_17.setScaledContents(True) # Aseguramos que escale
+        self.ui.label_8.setPixmap(pixmap)
+        self.ui.label_8.setScaledContents(True) # Aseguramos que escale
 
         # 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
         script_dir = os.path.dirname(os.path.abspath(__file__))
