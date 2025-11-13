@@ -9,7 +9,7 @@ from ui_login import Ui_Widget
 class LoginWidget(QWidget):
     # Define la señal que se emitirá cuando el login sea exitoso. 
     # Le pasamos el nombre de usuario (str) como argumento.
-    ceo = Signal(str)
+    CEO = Signal(str)
     RRHH = Signal(str)
     Compras = Signal(str)
     Ventas = Signal(str)
@@ -99,7 +99,7 @@ class LoginWidget(QWidget):
         # Aquí se conectaría a la base de datos o API. Usamos una simple validación de ejemplo:
         if usuario == "CEO" and contrasena == "prueba":
             # Si el login es exitoso:
-            self.ceo.emit(usuario) # EMITIMOS la señal con el nombre de usuario
+            self.CEO.emit(usuario) # EMITIMOS la señal con el nombre de usuario
         elif usuario == "RRHH" and contrasena == "prueba":
             self.RRHH.emit(usuario)
         elif usuario == "Mantenimiento" and contrasena == "prueba":

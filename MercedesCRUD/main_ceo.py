@@ -2,7 +2,7 @@ import sys, os
 from PySide6.QtWidgets import QWidget, QMessageBox
 from PySide6.QtCore import Signal, Slot
 from PySide6.QtGui import QPixmap 
-from ui_ceo import Ui_Widget
+from ui_ceo_home import Ui_Widget
 
 # La clase MyWidget es tu vista de RRHH
 class CEOWidget(QWidget):
@@ -17,6 +17,7 @@ class CEOWidget(QWidget):
     Marketing = Signal(str)
     E_movilidad = Signal(str)
     Logistica = Signal(str)
+    logout_requested = Signal()
 
     def __init__(self):
         super().__init__()
@@ -98,6 +99,7 @@ class CEOWidget(QWidget):
         self.ui.botonProduccion.clicked.connect(self.IrProduccion)
         self.ui.botonVentas.clicked.connect(self.IrVentas)
         self.ui.botonRRHH.clicked.connect(self.IrRRHH)
+        self.ui.botonLogOut.clicked.connect(self.IrRRHH)
 
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión
@@ -119,6 +121,8 @@ class CEOWidget(QWidget):
         self.Ventas.emit("CEO")
     def IrRRHH(self):
         self.RRHH.emit("CEO")
+    def Logout_requested(self):
+        self.logout_requested.emit()
         
     # Método para recibir y establecer el nombre de usuario (Llamado desde AppManager)
     def set_welcome_message(self, username):

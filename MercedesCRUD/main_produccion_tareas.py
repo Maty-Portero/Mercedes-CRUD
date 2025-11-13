@@ -9,6 +9,7 @@ from ui_produccion import Ui_Widget
 class ProduccionTareasWidget(QWidget):
     # Señal para notificar al manager que el usuario quiere cerrar sesión
     logout_requested = Signal()
+    CEO=Signal(str)
     # Asumo que tienes un QLabel para mostrar el saludo de bienvenida en tu UI
     # Si no lo tienes, puedes agregarlo en el diseñador de Qt.
     def __init__(self):
@@ -131,6 +132,7 @@ class ProduccionTareasWidget(QWidget):
             self.ui.botonProgreso4.clicked.connect(self.progreso_equipo)
             self.ui.botonProgreso5.clicked.connect(self.progreso_equipo)
             self.ui.botonProgreso6.clicked.connect(self.progreso_equipo)
+            self.ui.botonAdmin.clicked.connect(self.admin_view)
             
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión
@@ -141,6 +143,7 @@ class ProduccionTareasWidget(QWidget):
         """Muestra el mensaje de bienvenida en un QLabel (asumiendo que tienes uno)."""
         # Si tienes un QLabel con objectName 'label_welcome', lo usarías así:
         # self.ui.label_welcome.setText(f"Bienvenido, {username}")
+        self.current_user = username
         print(f"Usuario {username} ha ingresado a Produccion.") # Impresión de prueba
 
         
@@ -177,3 +180,13 @@ class ProduccionTareasWidget(QWidget):
     @Slot()
     def ordenar_equipo(self):
         QMessageBox.information(self, "Produccion", "Función: Ordenar equipo.")
+    
+    @Slot()
+    def admin_view(self):
+        # Solo permitir acceder a la vista CEO si el usuario que pulsa es el CEO
+        usuario = getattr(self, "current_user", None)
+        if usuario == "CEO":
+            # emitimos la señal con el nombre del usuario (AppManager lo recibirá)
+            self.CEO.emit(usuario)
+        else:
+            QMessageBox.warning(self, "Acceso denegado", "Solo el CEO puede usar este botón.")
