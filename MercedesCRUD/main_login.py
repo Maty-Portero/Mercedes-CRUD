@@ -4,6 +4,7 @@ from PySide6.QtWidgets import QWidget, QMessageBox
 from PySide6.QtCore import Signal, Slot
 from PySide6.QtGui import QPixmap 
 from ui_login import Ui_Widget 
+from db_manager import execute_query
 
 # La clase MyWidget es tu vista de Login
 class LoginWidget(QWidget):
@@ -95,27 +96,34 @@ class LoginWidget(QWidget):
             QMessageBox.warning(self, "Error", "Por favor, complete todos los campos.")
             return
 
-        # >>> LÓGICA DE VALIDACIÓN DE CREDENCIALES <<<
-        # Aquí se conectaría a la base de datos o API. Usamos una simple validación de ejemplo:
         if usuario == "CEO" and contrasena == "prueba":
-            # Si el login es exitoso:
-            self.CEO.emit(usuario) # EMITIMOS la señal con el nombre de usuario
-        elif usuario == "RRHH" and contrasena == "prueba":
-            self.RRHH.emit(usuario)
-        elif usuario == "Mantenimiento" and contrasena == "prueba":
-            self.Mantenimiento.emit(usuario)
-        elif usuario == "Logistica" and contrasena == "prueba":
-            self.Logistica.emit(usuario)
-        elif usuario == "Produccion" and contrasena == "prueba":
-            self.Produccion.emit(usuario)
-        elif usuario == "Ventas" and contrasena == "prueba":
-            self.Ventas.emit(usuario)
-        elif usuario == "Compras" and contrasena == "prueba":
-            self.Compras.emit(usuario)
-        elif usuario == "E_Movilidad" and contrasena == "prueba":
-            self.E_movilidad.emit(usuario)
-        elif usuario == "Marketing" and contrasena == "prueba":
-            self.Marketing.emit(usuario)
+            self.CEO.emit(usuario)
+
+        # >>> CONSULTA A LA BASE DE DATOS PARA VALIDAR CREDENCIALES Y OBTENER SECTOR <<<
+        sql_query = f"SELECT sector FROM usuarios WHERE usuario = '{usuario}' AND contrasena = '{contrasena}'"
+        query = execute_query(sql_query)
+        
+        if query and query.next():
+            # Si el usuario existe y la contraseña es correcta
+            sector = query.value(0)  # Obtiene el sector del usuario
+            
+            # Mapeo de sectores a sus respectivas señales
+            sector_signal_map = {
+                "RRHH": self.RRHH,
+                "Compras": self.Compras,
+                "Ventas": self.Ventas,
+                "Produccion": self.Produccion,
+                "Mantenimiento": self.Mantenimiento,
+                "Marketing": self.Marketing,
+                "E_movilidad": self.E_movilidad,
+                "Logistica": self.Logistica
+            }
+            
+            # Obtiene la señal correspondiente al sector y la emite
+            if sector in sector_signal_map:
+                sector_signal_map[sector].emit(usuario)
+            else:
+                QMessageBox.critical(self, "Error", f"Sector desconocido: {sector}")
         else:
             # Si falla:
             QMessageBox.critical(self, "Error", "Usuario o contraseña incorrectos.") 
