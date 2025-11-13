@@ -182,7 +182,7 @@ background-color: #002d6b;</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>ola Källenius.png</pixmap>
+    <pixmap>perfil-de-usuario.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -207,7 +207,7 @@ background-color: #002d6b;</string>
     <string notr="true">color: white;</string>
    </property>
    <property name="text">
-    <string>Ola Källenius</string>
+    <string>Usuario</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>

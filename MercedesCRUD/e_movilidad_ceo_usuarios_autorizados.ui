@@ -490,7 +490,7 @@ padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>11/11/2011 13:51</string>
+    <string>Emo Vilidad</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -521,7 +521,7 @@ padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>11/9/2001 12:00</string>
+    <string>Mernuel</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -552,7 +552,7 @@ padding: 5px;
 </string>
    </property>
    <property name="text">
-    <string>18/04/2007 3:40</string>
+    <string>Coscu</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>

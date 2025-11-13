@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'e_movilidad_ceo_registro.ui'
+## Form generated from reading UI file 'e_movilidad_ceo_usuarios_autorizados.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.2
 ##
@@ -491,9 +491,9 @@ class Ui_Widget(object):
         self.label_35.setText(QCoreApplication.translate("Widget", u"#0001", None))
         self.label_36.setText(QCoreApplication.translate("Widget", u"#0001", None))
         self.label_37.setText(QCoreApplication.translate("Widget", u"#0001", None))
-        self.label_38.setText(QCoreApplication.translate("Widget", u"11/11/2011 13:51", None))
-        self.label_39.setText(QCoreApplication.translate("Widget", u"11/9/2001 12:00", None))
-        self.label_40.setText(QCoreApplication.translate("Widget", u"18/04/2007 3:40", None))
+        self.label_38.setText(QCoreApplication.translate("Widget", u"Emo Vilidad", None))
+        self.label_39.setText(QCoreApplication.translate("Widget", u"Mernuel", None))
+        self.label_40.setText(QCoreApplication.translate("Widget", u"Coscu", None))
         self.botonEditar1.setText("")
         self.botonEditar2.setText("")
         self.botonEditar3.setText("")

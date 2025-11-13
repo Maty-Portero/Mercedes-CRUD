@@ -656,7 +656,7 @@ class Ui_Widget(object):
         self.label_8.setObjectName(u"label_8")
         self.label_8.setGeometry(QRect(1836, 34, 56, 56))
         self.label_8.setStyleSheet(u"")
-        self.label_8.setPixmap(QPixmap(u"ola K\u00e4llenius.png"))
+        self.label_8.setPixmap(QPixmap(u"perfil-de-usuario.png"))
         self.label_8.setScaledContents(True)
         self.botonAdmin = QPushButton(Widget)
         self.botonAdmin.setObjectName(u"botonAdmin")
@@ -827,7 +827,7 @@ class Ui_Widget(object):
         self.botonDoc2.setText("")
         self.label_8.setText("")
         self.botonAdmin.setText(QCoreApplication.translate("Widget", u"Administraci\u00f3n", None))
-        self.label_23.setText(QCoreApplication.translate("Widget", u"Ola K\u00e4llenius", None))
+        self.label_23.setText(QCoreApplication.translate("Widget", u"Usuario", None))
         self.botonLogOut.setText(QCoreApplication.translate("Widget", u"Cerrar Sesi\u00f3n", None))
     # retranslateUi
 
