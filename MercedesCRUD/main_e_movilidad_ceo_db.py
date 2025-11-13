@@ -9,6 +9,7 @@ from ui_e_movilidad_ceo_db import Ui_Widget
 class E_MovilidadCEOdbWidget(QWidget):
     # Señal para notificar al manager que el usuario quiere cerrar sesión
     logout_requested = Signal()
+    CEO=Signal(str)
     # Asumo que tienes un QLabel para mostrar el saludo de bienvenida en tu UI
     # Si no lo tienes, puedes agregarlo en el diseñador de Qt.
     def __init__(self):
@@ -187,12 +188,14 @@ class E_MovilidadCEOdbWidget(QWidget):
             self.ui.botonDoc3.clicked.connect(self.abrir_registro)
             self.ui.botonDoc4.clicked.connect(self.abrir_registro)
             self.ui.botonDoc5.clicked.connect(self.abrir_registro)
+            self.ui.botonAdmin.clicked.connect(self.admin_view)
 
     # Método para recibir y establecer el nombre de usuario (Llamado desde AppManager)
     def set_welcome_message(self, username):
         """Muestra el mensaje de bienvenida en un QLabel (asumiendo que tienes uno)."""
         # Si tienes un QLabel con objectName 'label_welcome', lo usarías así:
         # self.ui.label_welcome.setText(f"Bienvenido, {username}")
+        self.current_user = username
         print(f"Usuario {username} ha ingresado a E-Movilidad CEO.") # Impresión de prueba
 
             
@@ -237,3 +240,13 @@ class E_MovilidadCEOdbWidget(QWidget):
     @Slot()
     def abrir_registro(self):
         QMessageBox.information(self, "E-Movilidad CEO", "Función: Abrir Registro.")
+    
+    @Slot()
+    def admin_view(self):
+        # Solo permitir acceder a la vista CEO si el usuario que pulsa es el CEO
+        usuario = getattr(self, "current_user", None)
+        if usuario == "CEO":
+            # emitimos la señal con el nombre del usuario (AppManager lo recibirá)
+            self.CEO.emit(usuario)
+        else:
+            QMessageBox.warning(self, "Acceso denegado", "Solo el CEO puede usar este botón.")

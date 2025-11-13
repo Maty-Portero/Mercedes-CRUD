@@ -1,6 +1,7 @@
 import sys
-from PySide6.QtWidgets import QApplication, QMainWindow, QStackedWidget
+from PySide6.QtWidgets import QApplication, QMainWindow, QStackedWidget, QMessageBox
 from PySide6.QtCore import Slot
+from PySide6.QtSql import QSqlDatabase
 
 # IMPORTANTE: Importamos las clases renombradas de los archivos
 # Asegúrate de que los archivos main_login.py y main_rrhh.py estén en la misma carpeta.
@@ -68,8 +69,21 @@ class AppManager(QMainWindow):
         self.MANTENIMIENTO_INDEX = self.stack.addWidget(self.mantenimiento_view)
 
         # 3. Conectar la lógica de navegación
+        self.mantenimiento_view.logout_requested.connect(self.show_login_view)
+        self.rrhh_view.logout_requested.connect(self.show_login_view)
+        self.ceo_view.logout_requested.connect(self.show_login_view)
+        self.e_movilidad_view.logout_requested.connect(self.show_login_view)
+        self.e_movilidad_ceo_db_view.logout_requested.connect(self.show_login_view)
+        self.e_movilidad_ceo_registro_view.logout_requested.connect(self.show_login_view)
+        self.e_movilidad_ceo_view.logout_requested.connect(self.show_login_view)
+        self.compras_view.logout_requested.connect(self.show_login_view)
+        self.marketing_view.logout_requested.connect(self.show_login_view)
+        self.produccion_tareas_view.logout_requested.connect(self.show_login_view)
+        self.produccion_almacen_view.logout_requested.connect(self.show_login_view)
+        self.ventas_view.logout_requested.connect(self.show_login_view)
+        self.logistica_view.logout_requested.connect(self.show_login_view)
+
         
-        # Si la vista de Login EMITE la señal 'login_successful', llamamos a show_rrhh_view
         self.login_view.RRHH.connect(self.show_rrhh_view)
 
         self.login_view.Mantenimiento.connect(self.show_mantenimiento_view)
@@ -86,8 +100,7 @@ class AppManager(QMainWindow):
 
         self.login_view.Logistica.connect(self.show_logistica_view)
 
-        # Si la vista de Login EMITE la señal 'login_successful', llamamos a show_rrhh_view
-        self.login_view.ceo.connect(self.show_ceo_view)
+        self.login_view.CEO.connect(self.show_ceo_view)
         
         self.ceo_view.Mantenimiento.connect(self.show_mantenimiento_view)
 
@@ -105,6 +118,22 @@ class AppManager(QMainWindow):
         
         self.ceo_view.E_movilidad.connect(self.show_e_movilidad_view)
         
+        self.rrhh_view.CEO.connect(self.show_ceo_view)
+
+        self.mantenimiento_view.CEO.connect(self.show_ceo_view)
+
+        self.marketing_view.CEO.connect(self.show_ceo_view)
+
+        self.logistica_view.CEO.connect(self.show_ceo_view)
+
+        self.compras_view.CEO.connect(self.show_ceo_view)
+
+        self.ventas_view.CEO.connect(self.show_ceo_view)
+
+        self.e_movilidad_view.CEO.connect(self.show_ceo_view)
+
+        self.produccion_tareas_view.CEO.connect(self.show_ceo_view)
+
         # 4. Iniciar la aplicación en la vista de Login
         self.show_login_view() 
 
@@ -117,37 +146,44 @@ class AppManager(QMainWindow):
     # ...existing code...
     @Slot(str)
     def show_mantenimiento_view(self, username):
+        self.mantenimiento_view.set_welcome_message(username)
         self.stack.setCurrentIndex(self.MANTENIMIENTO_INDEX)
         self.setWindowTitle(f"Sistema de Gestión - Mantenimiento ({username})")
 
     @Slot(str)
     def show_logistica_view(self, username):
+        self.logistica_view.set_welcome_message(username)
         self.stack.setCurrentIndex(self.LOGISTICA_INDEX)
         self.setWindowTitle(f"Sistema de Gestión - Logística ({username})")
 
     @Slot(str)
     def show_marketing_view(self, username):
+        self.marketing_view.set_welcome_message(username)
         self.stack.setCurrentIndex(self.MARKETING_INDEX)
         self.setWindowTitle(f"Sistema de Gestión - Marketing ({username})")
 
     @Slot(str)
     def show_ventas_view(self, username):
+        self.ventas_view.set_welcome_message(username)
         self.stack.setCurrentIndex(self.VENTAS_INDEX)
         self.setWindowTitle(f"Sistema de Gestión - Ventas ({username})")
 
     @Slot(str)
     def show_compras_view(self, username):
+        self.compras_view.set_welcome_message(username)
         self.stack.setCurrentIndex(self.COMPRAS_INDEX)
         self.setWindowTitle(f"Sistema de Gestión - Compras ({username})")
 
     @Slot(str)
     def show_e_movilidad_view(self, username):
+        self.e_movilidad_view.set_welcome_message(username)
         self.stack.setCurrentIndex(self.E_MOVILIDAD_INDEX)
         self.setWindowTitle(f"Sistema de Gestión - E-Movilidad ({username})")
 
     @Slot(str)
     def show_produccion_view(self, username):
         # Si tienes dos vistas de producción (tareas/almacén) ajusta según necesites
+        self.produccion_tareas_view.set_welcome_message(username)
         self.stack.setCurrentIndex(self.PRODUCCION_TAREAS_INDEX)
         self.setWindowTitle(f"Sistema de Gestión - Producción ({username})")
 
