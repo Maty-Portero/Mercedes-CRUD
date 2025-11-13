@@ -187,6 +187,7 @@ class LogisticaWidget(QWidget):
         self.ui.botonBuscar.clicked.connect(self.buscar_pedido)
         self.ui.botonOrdenar1.clicked.connect(self.ordenar_pedido)
         self.ui.botonAdmin.clicked.connect(self.admin_view)
+        self.ui.botonLogOut.clicked.connect(self.Logout_requested)
 
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión
@@ -235,3 +236,6 @@ class LogisticaWidget(QWidget):
             self.CEO.emit(usuario)
         else:
             QMessageBox.warning(self, "Acceso denegado", "Solo el CEO puede usar este botón.")
+    
+    def Logout_requested(self):
+        self.logout_requested.emit()

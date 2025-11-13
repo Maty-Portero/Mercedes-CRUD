@@ -159,6 +159,7 @@ class E_MovilidadWidget(QWidget):
             self.ui.botonVer2.clicked.connect(self.ver_equipo)
             self.ui.botonVer3.clicked.connect(self.ver_equipo)
             self.ui.botonAdmin.clicked.connect(self.admin_view)
+            self.ui.botonLogOut.clicked.connect(self.Logout_requested)
 
     # Método para recibir y establecer el nombre de usuario (Llamado desde AppManager)
     def set_welcome_message(self, username):
@@ -216,3 +217,6 @@ class E_MovilidadWidget(QWidget):
             self.CEO.emit(usuario)
         else:
             QMessageBox.warning(self, "Acceso denegado", "Solo el CEO puede usar este botón.")
+    
+    def Logout_requested(self):
+        self.logout_requested.emit()

@@ -69,20 +69,25 @@ class AppManager(QMainWindow):
         self.MANTENIMIENTO_INDEX = self.stack.addWidget(self.mantenimiento_view)
 
         # 3. Conectar la lógica de navegación
-        self.mantenimiento_view.logout_requested.connect(self.show_login_view)
-        self.rrhh_view.logout_requested.connect(self.show_login_view)
-        self.ceo_view.logout_requested.connect(self.show_login_view)
-        self.e_movilidad_view.logout_requested.connect(self.show_login_view)
-        self.e_movilidad_ceo_db_view.logout_requested.connect(self.show_login_view)
-        self.e_movilidad_ceo_registro_view.logout_requested.connect(self.show_login_view)
-        self.e_movilidad_ceo_view.logout_requested.connect(self.show_login_view)
-        self.compras_view.logout_requested.connect(self.show_login_view)
-        self.marketing_view.logout_requested.connect(self.show_login_view)
-        self.produccion_tareas_view.logout_requested.connect(self.show_login_view)
-        self.produccion_almacen_view.logout_requested.connect(self.show_login_view)
-        self.ventas_view.logout_requested.connect(self.show_login_view)
-        self.logistica_view.logout_requested.connect(self.show_login_view)
+        for v in (
+            self.rrhh_view, self.ceo_view, self.e_movilidad_view,
+            self.e_movilidad_ceo_db_view, self.e_movilidad_ceo_registro_view,
+            self.e_movilidad_ceo_view, self.compras_view, self.marketing_view,
+            self.produccion_tareas_view, self.produccion_almacen_view,
+            self.ventas_view, self.logistica_view, self.mantenimiento_view,
+        ):
+            if hasattr(v, "logout_requested"):
+                v.logout_requested.connect(self.show_login_view)
 
+        for v in (
+            self.rrhh_view, self.ceo_view, self.e_movilidad_view,
+            self.e_movilidad_ceo_db_view, self.e_movilidad_ceo_registro_view,
+            self.e_movilidad_ceo_view, self.compras_view, self.marketing_view,
+            self.produccion_tareas_view, self.produccion_almacen_view,
+            self.ventas_view, self.logistica_view, self.mantenimiento_view,
+        ):
+            if hasattr(v, "CEO"):
+                v.CEO.connect(self.show_ceo_view)
         
         self.login_view.RRHH.connect(self.show_rrhh_view)
 
@@ -116,23 +121,19 @@ class AppManager(QMainWindow):
         
         self.ceo_view.Marketing.connect(self.show_marketing_view)
         
-        self.ceo_view.E_movilidad.connect(self.show_e_movilidad_view)
+        self.ceo_view.E_movilidad.connect(self.show_e_movilidad_ceo_view)
         
-        self.rrhh_view.CEO.connect(self.show_ceo_view)
+        self.e_movilidad_ceo_view.e_movilidad_ceo_registro.connect(self.show_e_movilidad_ceo_registro_view)
+        
+        self.e_movilidad_ceo_view.e_movilidad_ceo_db.connect(self.show_e_movilidad_ceo_db_view)
 
-        self.mantenimiento_view.CEO.connect(self.show_ceo_view)
+        self.e_movilidad_ceo_view.E_movilidad.connect(self.show_e_movilidad_view)
 
-        self.marketing_view.CEO.connect(self.show_ceo_view)
+        self.produccion_tareas_view.produccion_almacen.connect(self.show_produccion_almacen_view)
 
-        self.logistica_view.CEO.connect(self.show_ceo_view)
+        self.produccion_almacen_view.produccion_tareas.connect(self.show_produccion_tareas_view)
+        
 
-        self.compras_view.CEO.connect(self.show_ceo_view)
-
-        self.ventas_view.CEO.connect(self.show_ceo_view)
-
-        self.e_movilidad_view.CEO.connect(self.show_ceo_view)
-
-        self.produccion_tareas_view.CEO.connect(self.show_ceo_view)
 
         # 4. Iniciar la aplicación en la vista de Login
         self.show_login_view() 
@@ -181,6 +182,12 @@ class AppManager(QMainWindow):
         self.setWindowTitle(f"Sistema de Gestión - E-Movilidad ({username})")
 
     @Slot(str)
+    def show_e_movilidad_ceo_view(self, username):
+        self.e_movilidad_ceo_view.set_welcome_message(username)
+        self.stack.setCurrentIndex(self.E_MOVILIDAD_CEO_INDEX)
+        self.setWindowTitle(f"Sistema de Gestión - E-Movilidad ({username})")
+
+    @Slot(str)
     def show_produccion_view(self, username):
         # Si tienes dos vistas de producción (tareas/almacén) ajusta según necesites
         self.produccion_tareas_view.set_welcome_message(username)
@@ -206,6 +213,30 @@ class AppManager(QMainWindow):
         
         self.stack.setCurrentIndex(self.CEO_INDEX)
         self.setWindowTitle(f"Sistema de Gestión - CEO de {username}")
+    
+    @Slot(str)
+    def show_produccion_almacen_view(self, username):
+        self.produccion_almacen_view.set_welcome_message(username)
+        self.stack.setCurrentIndex(self.PRODUCCION_ALMACEN_INDEX)
+        self.setWindowTitle(f"Sistema de Gestión - Producción Almacén ({username})")
+
+    @Slot(str)
+    def show_produccion_tareas_view(self, username):
+        self.produccion_tareas_view.set_welcome_message(username)
+        self.stack.setCurrentIndex(self.PRODUCCION_TAREAS_INDEX)
+        self.setWindowTitle(f"Sistema de Gestión - Producción Tareas ({username})")
+    
+    @Slot()
+    def show_e_movilidad_ceo_db_view(self, username):
+        self.e_movilidad_ceo_db_view.set_welcome_message(username)
+        self.stack.setCurrentIndex(self.E_MOVILIDAD_CEO_DB_INDEX)
+        self.setWindowTitle(f"Sistema de Gestión - E-Movilidad CEO DB ({username})")
+    
+    @Slot()
+    def show_e_movilidad_ceo_registro_view(self, username):
+        self.e_movilidad_ceo_registro_view.set_welcome_message(username)
+        self.stack.setCurrentIndex(self.E_MOVILIDAD_CEO_REG_INDEX)
+        self.setWindowTitle(f"Sistema de Gestión - E-Movilidad CEO Registro ({username})")
 
 
 if __name__ == "__main__":

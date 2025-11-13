@@ -144,6 +144,7 @@ class ComprasWidget(QWidget):
         self.ui.botonBuscar.clicked.connect(self.buscar_orden)
         self.ui.botonOrdenar1.clicked.connect(self.ordenar_orden)
         self.ui.botonAdmin.clicked.connect(self.admin_view)
+        self.ui.botonLogOut.clicked.connect(self.Logout_requested)
 
         
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
@@ -193,3 +194,6 @@ class ComprasWidget(QWidget):
             self.CEO.emit(usuario)
         else:
             QMessageBox.warning(self, "Acceso denegado", "Solo el CEO puede usar este botón.")
+
+    def Logout_requested(self):
+        self.logout_requested.emit()

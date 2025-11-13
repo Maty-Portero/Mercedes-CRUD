@@ -10,7 +10,10 @@ class E_MovilidadCEOWidget(QWidget):
     # Asumo que tienes un QLabel para mostrar el saludo de bienvenida en tu UI
     # Si no lo tienes, puedes agregarlo en el diseñador de Qt.
     CEO=Signal(str)
+    e_movilidad_ceo_registro=Signal(str)
+    e_movilidad_ceo_db=Signal(str)
     logout_requested = Signal()
+    E_movilidad = Signal(str)
 
     def __init__(self):
         super().__init__()
@@ -92,7 +95,10 @@ class E_MovilidadCEOWidget(QWidget):
         # Asumo que el botón 7 es el de Cerrar Sesión
         # self.ui.pushButton_7.clicked.connect(self.logout_requested.emit)
         self.ui.botonAdmin.clicked.connect(self.admin_view)
-        self.ui.botonLogOut.clicked.connect(self.admin_view)
+        self.ui.botonAdmin.clicked.connect(self.admin_view)
+        self.ui.botonLogOut.clicked.connect(self.Logout_requested)
+        self.ui.botonRegistro.clicked.connect(self.ir_registro)
+        self.ui.botonUsuarioAutorizados.clicked.connect(self.ir_db)
         
     # Método para recibir y establecer el nombre de usuario (Llamado desde AppManager)
     def set_welcome_message(self, username):
@@ -114,3 +120,21 @@ class E_MovilidadCEOWidget(QWidget):
             self.CEO.emit(usuario)
         else:
             QMessageBox.warning(self, "Acceso denegado", "Solo el CEO puede usar este botón.")
+    
+    @Slot()
+    def ir_registro(self):
+        usuario = getattr(self, "current_user", None)
+        self.e_movilidad_ceo_registro.emit(usuario)
+    
+    @Slot()
+    def ir_db(self):
+        usuario = getattr(self, "current_user", None)
+        self.e_movilidad_ceo_db.emit(usuario)
+    
+    @Slot()
+    def ir_e_movilidad(self):
+        usuario = getattr(self, "current_user", None)
+        self.E_movilidad.emit(usuario)
+    
+    def Logout_requested(self):
+        self.logout_requested.emit()

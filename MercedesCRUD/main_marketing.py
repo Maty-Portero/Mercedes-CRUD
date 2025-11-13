@@ -122,6 +122,7 @@ class MarketingWidget(QWidget):
             self.ui.botonVer2.clicked.connect(self.ver_campana)
             self.ui.botonVer3.clicked.connect(self.ver_campana)
             self.ui.botonAdmin.clicked.connect(self.admin_view)
+            self.ui.botonLogOut.clicked.connect(self.Logout_requested)
 
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión
@@ -175,3 +176,6 @@ class MarketingWidget(QWidget):
             self.CEO.emit(usuario)
         else:
             QMessageBox.warning(self, "Acceso denegado", "Solo el CEO puede usar este botón.")
+        
+    def Logout_requested(self):
+        self.logout_requested.emit()

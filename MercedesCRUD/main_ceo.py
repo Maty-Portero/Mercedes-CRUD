@@ -99,7 +99,7 @@ class CEOWidget(QWidget):
         self.ui.botonProduccion.clicked.connect(self.IrProduccion)
         self.ui.botonVentas.clicked.connect(self.IrVentas)
         self.ui.botonRRHH.clicked.connect(self.IrRRHH)
-        self.ui.botonLogOut.clicked.connect(self.IrRRHH)
+        self.ui.botonLogOut.clicked.connect(self.Logout_requested)
 
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión
@@ -130,3 +130,4 @@ class CEOWidget(QWidget):
         # Si tienes un QLabel con objectName 'label_welcome', lo usarías así:
         # self.ui.label_welcome.setText(f"Bienvenido, {username}")
         print(f"Usuario {username} ha ingresado a CEO.") # Impresión de prueba
+    

@@ -10,6 +10,7 @@ class ProduccionAlmacenWidget(QWidget):
     # Señal para notificar al manager que el usuario quiere cerrar sesión
     logout_requested = Signal()
     CEO=Signal(str)
+    produccion_tareas=Signal(str)
     # Asumo que tienes un QLabel para mostrar el saludo de bienvenida en tu UI
     # Si no lo tienes, puedes agregarlo en el diseñador de Qt.
     def __init__(self):
@@ -108,8 +109,6 @@ class ProduccionAlmacenWidget(QWidget):
             self.ui.botonSacar3.setIcon(pixmap)
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
-            self.ui.botonAlerta.clicked.connect(self.abrir_alerta)
-            self.ui.botonAlerta2.clicked.connect(self.abrir_alerta)
             self.ui.botonAgregar.clicked.connect(self.agregar_equipo)
             self.ui.botonEditar1.clicked.connect(self.editar_equipo)
             self.ui.botonEditar2.clicked.connect(self.editar_equipo)
@@ -134,6 +133,7 @@ class ProduccionAlmacenWidget(QWidget):
             self.ui.botonProgreso6.clicked.connect(self.progreso_equipo)
             self.ui.botonAdmin.clicked.connect(self.admin_view)
             self.ui.botonLogOut.clicked.connect(self.Logout_requested)
+            self.ui.botonTareas.clicked.connect(self.IrTareas)
             
             
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
@@ -192,6 +192,11 @@ class ProduccionAlmacenWidget(QWidget):
             self.CEO.emit(usuario)
         else:
             QMessageBox.warning(self, "Acceso denegado", "Solo el CEO puede usar este botón.")
-    @Slot()
+    
+    def IrTareas(self):
+        usuario = getattr(self, "current_user", None)
+        self.produccion_tareas.emit(usuario)
+
     def Logout_requested(self):
         self.logout_requested.emit()
+        
