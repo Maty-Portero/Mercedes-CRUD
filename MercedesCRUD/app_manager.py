@@ -19,6 +19,7 @@ from main_produccion_almacen import ProduccionAlmacenWidget
 from main_ventas import VentasWidget
 from main_logistica import LogisticaWidget
 from main_mantenimiento import MantenimientoWidget
+from main_e_movilidad_ceo_usuarios_autorizados import E_MovilidadCEOUsuariosAutorizadosWidget
 
 class AppManager(QMainWindow):
     """
@@ -51,6 +52,7 @@ class AppManager(QMainWindow):
         self.ventas_view = VentasWidget()
         self.logistica_view = LogisticaWidget()
         self.mantenimiento_view = MantenimientoWidget()
+        self.e_movilidad_ceo_usuarios_autorizados_view = E_MovilidadCEOUsuariosAutorizadosWidget()
         
         # Añadir las vistas y guardar sus índices
         self.LOGIN_INDEX = self.stack.addWidget(self.login_view)
@@ -67,6 +69,7 @@ class AppManager(QMainWindow):
         self.VENTAS_INDEX = self.stack.addWidget(self.ventas_view)
         self.LOGISTICA_INDEX = self.stack.addWidget(self.logistica_view)
         self.MANTENIMIENTO_INDEX = self.stack.addWidget(self.mantenimiento_view)
+        self.E_MOVILIDAD_CEO_USUARIOS_AUTORIZADOS_INDEX = self.stack.addWidget(self.e_movilidad_ceo_usuarios_autorizados_view)
 
         # 3. Conectar la lógica de navegación
         for v in (
@@ -74,7 +77,7 @@ class AppManager(QMainWindow):
             self.e_movilidad_ceo_db_view, self.e_movilidad_ceo_registro_view,
             self.e_movilidad_ceo_view, self.compras_view, self.marketing_view,
             self.produccion_tareas_view, self.produccion_almacen_view,
-            self.ventas_view, self.logistica_view, self.mantenimiento_view,
+            self.ventas_view, self.logistica_view, self.mantenimiento_view,self.e_movilidad_ceo_usuarios_autorizados_view,
         ):
             if hasattr(v, "logout_requested"):
                 v.logout_requested.connect(self.show_login_view)
@@ -84,7 +87,7 @@ class AppManager(QMainWindow):
             self.e_movilidad_ceo_db_view, self.e_movilidad_ceo_registro_view,
             self.e_movilidad_ceo_view, self.compras_view, self.marketing_view,
             self.produccion_tareas_view, self.produccion_almacen_view,
-            self.ventas_view, self.logistica_view, self.mantenimiento_view,
+            self.ventas_view, self.logistica_view, self.mantenimiento_view,self.e_movilidad_ceo_usuarios_autorizados_view,
         ):
             if hasattr(v, "CEO"):
                 v.CEO.connect(self.show_ceo_view)
@@ -125,7 +128,7 @@ class AppManager(QMainWindow):
         
         self.e_movilidad_ceo_view.e_movilidad_ceo_registro.connect(self.show_e_movilidad_ceo_registro_view)
         
-        self.e_movilidad_ceo_view.e_movilidad_ceo_db.connect(self.show_e_movilidad_ceo_db_view)
+        self.e_movilidad_ceo_view.e_movilidad_ceo_usuarios_autorizados.connect(self.show_e_movilidad_ceo_usuarios_autorizados_view)
 
         self.e_movilidad_ceo_view.E_movilidad.connect(self.show_e_movilidad_view)
 
@@ -227,9 +230,9 @@ class AppManager(QMainWindow):
         self.setWindowTitle(f"Sistema de Gestión - Producción Tareas ({username})")
     
     @Slot()
-    def show_e_movilidad_ceo_db_view(self, username):
-        self.e_movilidad_ceo_db_view.set_welcome_message(username)
-        self.stack.setCurrentIndex(self.E_MOVILIDAD_CEO_DB_INDEX)
+    def show_e_movilidad_ceo_usuarios_autorizados_view(self, username):
+        self.e_movilidad_ceo_usuarios_autorizados_view.set_welcome_message(username)
+        self.stack.setCurrentIndex(self.E_MOVILIDAD_CEO_USUARIOS_AUTORIZADOS_INDEX)
         self.setWindowTitle(f"Sistema de Gestión - E-Movilidad CEO DB ({username})")
     
     @Slot()

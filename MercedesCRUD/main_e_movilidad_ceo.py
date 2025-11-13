@@ -11,7 +11,7 @@ class E_MovilidadCEOWidget(QWidget):
     # Si no lo tienes, puedes agregarlo en el diseñador de Qt.
     CEO=Signal(str)
     e_movilidad_ceo_registro=Signal(str)
-    e_movilidad_ceo_db=Signal(str)
+    e_movilidad_ceo_usuarios_autorizados=Signal(str)
     logout_requested = Signal()
     E_movilidad = Signal(str)
 
@@ -98,7 +98,8 @@ class E_MovilidadCEOWidget(QWidget):
         self.ui.botonAdmin.clicked.connect(self.admin_view)
         self.ui.botonLogOut.clicked.connect(self.Logout_requested)
         self.ui.botonRegistro.clicked.connect(self.ir_registro)
-        self.ui.botonUsuarioAutorizados.clicked.connect(self.ir_db)
+        self.ui.botonUsuarioAutorizados.clicked.connect(self.ir_usuarios_autorizados)
+        self.ui.botonDB.clicked.connect(self.ir_db)
         
     # Método para recibir y establecer el nombre de usuario (Llamado desde AppManager)
     def set_welcome_message(self, username):
@@ -127,12 +128,12 @@ class E_MovilidadCEOWidget(QWidget):
         self.e_movilidad_ceo_registro.emit(usuario)
     
     @Slot()
-    def ir_db(self):
+    def ir_usuarios_autorizados(self):
         usuario = getattr(self, "current_user", None)
-        self.e_movilidad_ceo_db.emit(usuario)
+        self.e_movilidad_ceo_usuarios_autorizados.emit(usuario)
     
     @Slot()
-    def ir_e_movilidad(self):
+    def ir_db(self):
         usuario = getattr(self, "current_user", None)
         self.E_movilidad.emit(usuario)
     
