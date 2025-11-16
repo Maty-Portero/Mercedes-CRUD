@@ -21,15 +21,31 @@ def get_db_connection(db_name="database.db"):
     print("Conexión a la DB establecida.")
     return _db
 
-def execute_query(sql_query):
-    """Función de utilidad para ejecutar consultas en cualquier módulo."""
+def execute_query(sql_query, params=None):
+    """Función de utilidad para ejecutar consultas con parámetros opcionales."""
     db = get_db_connection()
     if not db:
         return None
         
     query = QSqlQuery(db)
-    if not query.exec(sql_query):
-        print(f"Error en consulta: {query.lastError().text()}")
-        return None
+    
+    if params:
+        # Usar prepared statement con placeholders (?)
+        if not query.prepare(sql_query):
+            print(f"Error preparando consulta: {query.lastError().text()}")
+            return None
+        
+        # Agregar los parámetros
+        for param in params:
+            query.addBindValue(param)
+        
+        if not query.exec():
+            print(f"Error en consulta: {query.lastError().text()}")
+            return None
+    else:
+        # Sin parámetros, ejecutar directamente
+        if not query.exec(sql_query):
+            print(f"Error en consulta: {query.lastError().text()}")
+            return None
         
     return query
