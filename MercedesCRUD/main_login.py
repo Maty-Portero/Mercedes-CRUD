@@ -3,6 +3,7 @@ import os
 from PySide6.QtWidgets import QWidget, QMessageBox
 from PySide6.QtCore import Signal, Slot
 from PySide6.QtGui import QPixmap 
+from PySide6.QtCore import Qt
 from ui_login import Ui_Widget 
 from db_manager import execute_query
 
@@ -86,6 +87,15 @@ class LoginWidget(QWidget):
         
         # Conecta el botón 'Iniciar sesión' a la función
         self.ui.botonIniciar.clicked.connect(self.iniciar_sesion)
+        
+        # Conectar eventos de tecla Enter en los campos de texto
+        self.ui.lineEdit.returnPressed.connect(self.on_email_return_pressed)
+        self.ui.lineEdit_2.returnPressed.connect(self.iniciar_sesion)
+
+    @Slot()
+    def on_email_return_pressed(self):
+        """Al presionar Enter en el email, enfocarse en la contraseña"""
+        self.ui.lineEdit_2.setFocus()
 
     @Slot()
     def iniciar_sesion(self):
