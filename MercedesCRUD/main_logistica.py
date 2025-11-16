@@ -25,16 +25,10 @@ class LogisticaWidget(QWidget):
         self.ui.label_7.setScaledContents(True)
         icon_edit = load_pixmap("edit.png")
         self.ui.botonEditar1.setIcon(icon_edit)
-        self.ui.botonEditar2.setIcon(icon_edit)
-        self.ui.botonEditar3.setIcon(icon_edit)
         icon_close = load_pixmap("close.png")
         self.ui.botonSacar1.setIcon(icon_close)
-        self.ui.botonSacar2.setIcon(icon_close)
-        self.ui.botonSacar3.setIcon(icon_close)
         icon_eye = load_pixmap("eye.png")
         self.ui.botonVer1.setIcon(icon_eye)
-        self.ui.botonVer2.setIcon(icon_eye)
-        self.ui.botonVer3.setIcon(icon_eye)
         self.ui.botonAgregar.setIcon(load_pixmap("c.png"))
         self.ui.botonOrdenar1.setIcon(load_pixmap("down_arrow.png"))
         # 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
@@ -61,7 +55,7 @@ class LogisticaWidget(QWidget):
 
         TABLE_NAME = "SEGUIMIENTO_LOGISTICO"
         HEADERS = ["ID_Seguimiento", "Tipo_Logistica", "Origen", "Destino", "Estado_Actual", "ID_Pedido_OC"]
-        UI_TABLE = self.ui.label_6 # Asegúrate de que este sea el objectName correcto
+        UI_TABLE = self.ui.tableWidget # Asegúrate de que este sea el objectName correcto
         
         # Llamada para cargar los datos
         self.load_sector_data(TABLE_NAME, HEADERS, UI_TABLE)
@@ -147,8 +141,6 @@ class LogisticaWidget(QWidget):
 
         # 5. Asigna el pixmap al QLabel 'label'
         self.ui.botonEditar1.setIcon(pixmap)
-        self.ui.botonEditar2.setIcon(pixmap)
-        self.ui.botonEditar3.setIcon(pixmap)
 
         # 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
         script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -170,8 +162,6 @@ class LogisticaWidget(QWidget):
 
         # 5. Asigna el pixmap al QLabel 'label'
         self.ui.botonSacar1.setIcon(pixmap)
-        self.ui.botonSacar2.setIcon(pixmap)
-        self.ui.botonSacar3.setIcon(pixmap)
 
         # 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
         script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -193,8 +183,6 @@ class LogisticaWidget(QWidget):
 
         # 5. Asigna el pixmap al QLabel 'label'
         self.ui.botonVer1.setIcon(pixmap)
-        self.ui.botonVer2.setIcon(pixmap)
-        self.ui.botonVer3.setIcon(pixmap)
 
 
         # 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
@@ -242,14 +230,8 @@ class LogisticaWidget(QWidget):
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
         self.ui.botonAgregar.clicked.connect(self.agregar_pedido)
         self.ui.botonEditar1.clicked.connect(self.editar_pedido)
-        self.ui.botonEditar2.clicked.connect(self.editar_pedido)
-        self.ui.botonEditar3.clicked.connect(self.editar_pedido)
         self.ui.botonSacar1.clicked.connect(self.eliminar_pedido)
-        self.ui.botonSacar2.clicked.connect(self.eliminar_pedido)
-        self.ui.botonSacar3.clicked.connect(self.eliminar_pedido)
         self.ui.botonVer1.clicked.connect(self.ver_pedido)
-        self.ui.botonVer2.clicked.connect(self.ver_pedido)
-        self.ui.botonVer3.clicked.connect(self.ver_pedido)
         self.ui.botonBuscar.clicked.connect(self.buscar_pedido)
         self.ui.botonOrdenar1.clicked.connect(self.ordenar_pedido)
         self.ui.botonAdmin.clicked.connect(self.admin_view)
