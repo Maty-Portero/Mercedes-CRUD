@@ -766,9 +766,9 @@ background-color: #ebebeb;</string>
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>147</y>
+     <y>256</y>
      <width>1800</width>
-     <height>900</height>
+     <height>791</height>
     </rect>
    </property>
    <property name="styleSheet">

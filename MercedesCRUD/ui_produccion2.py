@@ -290,7 +290,7 @@ class Ui_Widget(object):
 "background-color: #ebebeb;")
         self.tableWidget = QTableWidget(Widget)
         self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(60, 147, 1800, 900))
+        self.tableWidget.setGeometry(QRect(60, 256, 1800, 791))
         self.tableWidget.setStyleSheet(u"background-color: white;\n"
 "    border: 2px solid #ffffff;\n"
 "    border-radius: 30px; /* Bordes redondeados */\n"
