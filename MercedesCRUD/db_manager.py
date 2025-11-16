@@ -49,3 +49,42 @@ def execute_query(sql_query, params=None):
             return None
         
     return query
+
+def fetch_all_data(sql_query, params=None):
+    """
+    Ejecuta una consulta SELECT y retorna los resultados como una lista de listas (filas).
+    """
+    query = execute_query(sql_query, params)
+    
+    if query is None:
+        # Error al ejecutar o preparar la consulta.
+        return None
+        
+    results = []
+    
+    # Recorrer los resultados de QSqlQuery
+    while query.next():
+        row = []
+        # QSqlQuery no tiene un método directo para obtener todas las columnas de una vez.
+        # Recorremos los índices de columna (desde 0 hasta el número total de columnas - 1)
+        for i in range(query.record().count()):
+            # .value(i) obtiene el valor de la columna en el índice i
+            row.append(query.value(i))
+        results.append(row)
+        
+    return results
+
+def get_data_for_sector(table_name, columns):
+    """
+    Función generalizada para obtener datos de una tabla específica.
+    :param table_name: Nombre de la tabla de la BD (ej: "SEGUIMIENTO_LOGISTICO").
+    :param columns: Lista de nombres de las columnas a seleccionar.
+    :return: Lista de listas con los datos.
+    """
+    columns_str = ", ".join(columns)
+    
+    # IMPORTANTE: Activar Foreign Keys si no se hace al abrir la conexión (solo para QSQLITE)
+    execute_query("PRAGMA foreign_keys = ON;")
+    
+    query = f"SELECT {columns_str} FROM {table_name};"
+    return fetch_all_data(query)
