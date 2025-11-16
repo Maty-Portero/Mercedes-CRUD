@@ -15,8 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QPushButton,
-    QSizePolicy, QWidget)
+from PySide6.QtWidgets import (QApplication, QHeaderView, QLabel, QLineEdit,
+    QPushButton, QSizePolicy, QTableWidget, QTableWidgetItem,
+    QWidget)
 
 class Ui_Widget(object):
     def setupUi(self, Widget):
@@ -39,14 +40,6 @@ class Ui_Widget(object):
         self.label_5.setStyleSheet(u"")
         self.label_5.setPixmap(QPixmap(u"logo.png"))
         self.label_5.setScaledContents(True)
-        self.label_6 = QLabel(Widget)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setGeometry(QRect(60, 147, 1800, 900))
-        self.label_6.setStyleSheet(u"background-color: white;\n"
-"    border: 2px solid #ffffff;\n"
-"    border-radius: 30px; /* Bordes redondeados */\n"
-"    padding: 5px;")
-        self.label_6.setScaledContents(False)
         self.botonAgregar = QPushButton(Widget)
         self.botonAgregar.setObjectName(u"botonAgregar")
         self.botonAgregar.setGeometry(QRect(81, 175, 278, 63))
@@ -145,84 +138,9 @@ class Ui_Widget(object):
         self.label_21.setObjectName(u"label_21")
         self.label_21.setGeometry(QRect(60, 905, 1920, 3))
         self.label_21.setStyleSheet(u"background-color: rgb(232, 232, 232);")
-        self.label_35 = QLabel(Widget)
-        self.label_35.setObjectName(u"label_35")
-        self.label_35.setGeometry(QRect(63, 262, 90, 50))
-        font3 = QFont()
-        font3.setFamilies([u"Segoe UI"])
-        font3.setPointSize(19)
-        self.label_35.setFont(font3)
-        self.label_35.setStyleSheet(u"background-color: green;\n"
-"color: rgb(255, 255, 255);\n"
-"\n"
-"border: 2px solid #00000;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_35.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_36 = QLabel(Widget)
-        self.label_36.setObjectName(u"label_36")
-        self.label_36.setGeometry(QRect(63, 328, 90, 50))
-        self.label_36.setFont(font3)
-        self.label_36.setStyleSheet(u"background-color: green;\n"
-"color: rgb(255, 255, 255);\n"
-"\n"
-"border: 2px solid #00000;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_36.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_37 = QLabel(Widget)
-        self.label_37.setObjectName(u"label_37")
-        self.label_37.setGeometry(QRect(63, 393, 90, 50))
-        self.label_37.setFont(font3)
-        self.label_37.setStyleSheet(u"background-color: rgb(0, 0, 0);\n"
-"color: rgb(255, 255, 255);\n"
-"\n"
-"border: 2px solid #00000;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_37.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_38 = QLabel(Widget)
-        self.label_38.setObjectName(u"label_38")
-        self.label_38.setGeometry(QRect(177, 262, 321, 50))
-        self.label_38.setFont(font3)
-        self.label_38.setStyleSheet(u"background-color: #e8e8e8;\n"
-"color: black;\n"
-"\n"
-"border: 2px solid #e8e8e8;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_38.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_39 = QLabel(Widget)
-        self.label_39.setObjectName(u"label_39")
-        self.label_39.setGeometry(QRect(177, 328, 321, 50))
-        self.label_39.setFont(font3)
-        self.label_39.setStyleSheet(u"background-color: #e8e8e8;\n"
-"color: black;\n"
-"\n"
-"border: 2px solid #e8e8e8;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_39.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_40 = QLabel(Widget)
-        self.label_40.setObjectName(u"label_40")
-        self.label_40.setGeometry(QRect(177, 393, 321, 50))
-        self.label_40.setFont(font3)
-        self.label_40.setStyleSheet(u"background-color: #e8e8e8;\n"
-"color: black;\n"
-"\n"
-"border: 2px solid #e8e8e8;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_40.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.botonEditar1 = QPushButton(Widget)
         self.botonEditar1.setObjectName(u"botonEditar1")
-        self.botonEditar1.setGeometry(QRect(1734, 266, 42, 42))
+        self.botonEditar1.setGeometry(QRect(150, 990, 42, 42))
         self.botonEditar1.setFont(font)
         self.botonEditar1.setStyleSheet(u"background-color: black;\n"
 "\n"
@@ -232,58 +150,18 @@ class Ui_Widget(object):
         icon1 = QIcon()
         icon1.addFile(u"edit.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.botonEditar1.setIcon(icon1)
-        self.botonEditar2 = QPushButton(Widget)
-        self.botonEditar2.setObjectName(u"botonEditar2")
-        self.botonEditar2.setGeometry(QRect(1734, 331, 42, 42))
-        self.botonEditar2.setFont(font)
-        self.botonEditar2.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        self.botonEditar2.setIcon(icon1)
-        self.botonEditar3 = QPushButton(Widget)
-        self.botonEditar3.setObjectName(u"botonEditar3")
-        self.botonEditar3.setGeometry(QRect(1734, 399, 42, 42))
-        self.botonEditar3.setFont(font)
-        self.botonEditar3.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        self.botonEditar3.setIcon(icon1)
-        self.botonSacar2 = QPushButton(Widget)
-        self.botonSacar2.setObjectName(u"botonSacar2")
-        self.botonSacar2.setGeometry(QRect(1791, 331, 42, 42))
-        self.botonSacar2.setFont(font)
-        self.botonSacar2.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        icon2 = QIcon()
-        icon2.addFile(u"close.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.botonSacar2.setIcon(icon2)
         self.botonSacar1 = QPushButton(Widget)
         self.botonSacar1.setObjectName(u"botonSacar1")
-        self.botonSacar1.setGeometry(QRect(1791, 266, 42, 42))
+        self.botonSacar1.setGeometry(QRect(207, 990, 42, 42))
         self.botonSacar1.setFont(font)
         self.botonSacar1.setStyleSheet(u"background-color: black;\n"
 "\n"
 "border: 2px solid black;\n"
 "border-radius: 20px; /* Bordes redondeados */\n"
 "padding: 5px;")
+        icon2 = QIcon()
+        icon2.addFile(u"close.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.botonSacar1.setIcon(icon2)
-        self.botonSacar3 = QPushButton(Widget)
-        self.botonSacar3.setObjectName(u"botonSacar3")
-        self.botonSacar3.setGeometry(QRect(1791, 399, 42, 42))
-        self.botonSacar3.setFont(font)
-        self.botonSacar3.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        self.botonSacar3.setIcon(icon2)
         self.label_22 = QLabel(Widget)
         self.label_22.setObjectName(u"label_22")
         self.label_22.setGeometry(QRect(725, 172, 495, 63))
@@ -298,9 +176,9 @@ class Ui_Widget(object):
         self.botonOrdenar1 = QPushButton(Widget)
         self.botonOrdenar1.setObjectName(u"botonOrdenar1")
         self.botonOrdenar1.setGeometry(QRect(990, 178, 141, 50))
-        font4 = QFont()
-        font4.setFamilies([u"icon-ui"])
-        self.botonOrdenar1.setFont(font4)
+        font3 = QFont()
+        font3.setFamilies([u"icon-ui"])
+        self.botonOrdenar1.setFont(font3)
         self.botonOrdenar1.setStyleSheet(u"background-color: #e8e8e8;\n"
 "font-size:20px;\n"
 "color:black;\n"
@@ -362,41 +240,19 @@ class Ui_Widget(object):
         icon5.addFile(u"close2.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.botonBorrar.setIcon(icon5)
         self.botonBorrar.setIconSize(QSize(16, 16))
-        self.botonVer3 = QPushButton(Widget)
-        self.botonVer3.setObjectName(u"botonVer3")
-        self.botonVer3.setGeometry(QRect(1670, 398, 42, 42))
-        self.botonVer3.setFont(font)
-        self.botonVer3.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        icon6 = QIcon()
-        icon6.addFile(u"eye.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.botonVer3.setIcon(icon6)
-        self.botonVer3.setIconSize(QSize(25, 25))
         self.botonVer1 = QPushButton(Widget)
         self.botonVer1.setObjectName(u"botonVer1")
-        self.botonVer1.setGeometry(QRect(1670, 265, 42, 42))
+        self.botonVer1.setGeometry(QRect(86, 989, 42, 42))
         self.botonVer1.setFont(font)
         self.botonVer1.setStyleSheet(u"background-color: black;\n"
 "\n"
 "border: 2px solid black;\n"
 "border-radius: 20px; /* Bordes redondeados */\n"
 "padding: 5px;")
+        icon6 = QIcon()
+        icon6.addFile(u"eye.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.botonVer1.setIcon(icon6)
         self.botonVer1.setIconSize(QSize(25, 25))
-        self.botonVer2 = QPushButton(Widget)
-        self.botonVer2.setObjectName(u"botonVer2")
-        self.botonVer2.setGeometry(QRect(1670, 330, 42, 42))
-        self.botonVer2.setFont(font)
-        self.botonVer2.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        self.botonVer2.setIcon(icon6)
-        self.botonVer2.setIconSize(QSize(25, 25))
         self.botonLogOut = QPushButton(Widget)
         self.botonLogOut.setObjectName(u"botonLogOut")
         self.botonLogOut.setGeometry(QRect(1420, 30, 199, 63))
@@ -407,243 +263,6 @@ class Ui_Widget(object):
 "\n"
 "color: black;\n"
 "background-color: #ebebeb;")
-        self.label_41 = QLabel(Widget)
-        self.label_41.setObjectName(u"label_41")
-        self.label_41.setGeometry(QRect(180, 591, 321, 50))
-        self.label_41.setFont(font3)
-        self.label_41.setStyleSheet(u"background-color: #e8e8e8;\n"
-"color: black;\n"
-"\n"
-"border: 2px solid #e8e8e8;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_41.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_42 = QLabel(Widget)
-        self.label_42.setObjectName(u"label_42")
-        self.label_42.setGeometry(QRect(66, 591, 90, 50))
-        self.label_42.setFont(font3)
-        self.label_42.setStyleSheet(u"background-color: rgb(0, 0, 0);\n"
-"color: rgb(255, 255, 255);\n"
-"\n"
-"border: 2px solid #00000;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_42.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_43 = QLabel(Widget)
-        self.label_43.setObjectName(u"label_43")
-        self.label_43.setGeometry(QRect(180, 526, 321, 50))
-        self.label_43.setFont(font3)
-        self.label_43.setStyleSheet(u"background-color: #e8e8e8;\n"
-"color: black;\n"
-"\n"
-"border: 2px solid #e8e8e8;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_43.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_44 = QLabel(Widget)
-        self.label_44.setObjectName(u"label_44")
-        self.label_44.setGeometry(QRect(66, 460, 90, 50))
-        self.label_44.setFont(font3)
-        self.label_44.setStyleSheet(u"background-color: green;\n"
-"color: rgb(255, 255, 255);\n"
-"\n"
-"border: 2px solid #00000;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_44.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_45 = QLabel(Widget)
-        self.label_45.setObjectName(u"label_45")
-        self.label_45.setGeometry(QRect(66, 526, 90, 50))
-        self.label_45.setFont(font3)
-        self.label_45.setStyleSheet(u"background-color: green;\n"
-"color: rgb(255, 255, 255);\n"
-"\n"
-"border: 2px solid #00000;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_45.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_46 = QLabel(Widget)
-        self.label_46.setObjectName(u"label_46")
-        self.label_46.setGeometry(QRect(180, 460, 321, 50))
-        self.label_46.setFont(font3)
-        self.label_46.setStyleSheet(u"background-color: #e8e8e8;\n"
-"color: black;\n"
-"\n"
-"border: 2px solid #e8e8e8;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_46.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_47 = QLabel(Widget)
-        self.label_47.setObjectName(u"label_47")
-        self.label_47.setGeometry(QRect(520, 460, 200, 50))
-        self.label_47.setFont(font3)
-        self.label_47.setStyleSheet(u"background-color: rgb(0, 45, 107);\n"
-"color: white;\n"
-"\n"
-"border: 2px solid #e8e8e8;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_47.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_48 = QLabel(Widget)
-        self.label_48.setObjectName(u"label_48")
-        self.label_48.setGeometry(QRect(520, 525, 200, 50))
-        self.label_48.setFont(font3)
-        self.label_48.setStyleSheet(u"background-color: rgb(0, 45, 107);\n"
-"color: white;\n"
-"\n"
-"border: 2px solid #e8e8e8;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_48.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_49 = QLabel(Widget)
-        self.label_49.setObjectName(u"label_49")
-        self.label_49.setGeometry(QRect(520, 395, 200, 50))
-        self.label_49.setFont(font3)
-        self.label_49.setStyleSheet(u"background-color: rgb(0, 45, 107);\n"
-"color: white;\n"
-"\n"
-"border: 2px solid #e8e8e8;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_49.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_50 = QLabel(Widget)
-        self.label_50.setObjectName(u"label_50")
-        self.label_50.setGeometry(QRect(520, 330, 200, 50))
-        self.label_50.setFont(font3)
-        self.label_50.setStyleSheet(u"background-color: rgb(0, 45, 107);\n"
-"color: white;\n"
-"\n"
-"border: 2px solid #e8e8e8;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_50.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_51 = QLabel(Widget)
-        self.label_51.setObjectName(u"label_51")
-        self.label_51.setGeometry(QRect(520, 590, 200, 50))
-        self.label_51.setFont(font3)
-        self.label_51.setStyleSheet(u"background-color: rgb(0, 45, 107);\n"
-"color: white;\n"
-"\n"
-"border: 2px solid #e8e8e8;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_51.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_52 = QLabel(Widget)
-        self.label_52.setObjectName(u"label_52")
-        self.label_52.setGeometry(QRect(520, 260, 200, 50))
-        self.label_52.setFont(font3)
-        self.label_52.setStyleSheet(u"background-color: rgb(0, 45, 107);\n"
-"color: white;\n"
-"\n"
-"border: 2px solid #e8e8e8;\n"
-"border-radius: 25px; /* Bordes redondeados */\n"
-"padding: 5px;\n"
-"")
-        self.label_52.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.botonVer5 = QPushButton(Widget)
-        self.botonVer5.setObjectName(u"botonVer5")
-        self.botonVer5.setGeometry(QRect(1670, 525, 42, 42))
-        self.botonVer5.setFont(font)
-        self.botonVer5.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        self.botonVer5.setIcon(icon6)
-        self.botonVer5.setIconSize(QSize(25, 25))
-        self.botonSacar6 = QPushButton(Widget)
-        self.botonSacar6.setObjectName(u"botonSacar6")
-        self.botonSacar6.setGeometry(QRect(1791, 594, 42, 42))
-        self.botonSacar6.setFont(font)
-        self.botonSacar6.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        self.botonSacar6.setIcon(icon2)
-        self.botonEditar5 = QPushButton(Widget)
-        self.botonEditar5.setObjectName(u"botonEditar5")
-        self.botonEditar5.setGeometry(QRect(1734, 526, 42, 42))
-        self.botonEditar5.setFont(font)
-        self.botonEditar5.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        self.botonEditar5.setIcon(icon1)
-        self.botonVer4 = QPushButton(Widget)
-        self.botonVer4.setObjectName(u"botonVer4")
-        self.botonVer4.setGeometry(QRect(1670, 460, 42, 42))
-        self.botonVer4.setFont(font)
-        self.botonVer4.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        self.botonVer4.setIcon(icon6)
-        self.botonVer4.setIconSize(QSize(25, 25))
-        self.botonSacar5 = QPushButton(Widget)
-        self.botonSacar5.setObjectName(u"botonSacar5")
-        self.botonSacar5.setGeometry(QRect(1791, 526, 42, 42))
-        self.botonSacar5.setFont(font)
-        self.botonSacar5.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        self.botonSacar5.setIcon(icon2)
-        self.botonVer6 = QPushButton(Widget)
-        self.botonVer6.setObjectName(u"botonVer6")
-        self.botonVer6.setGeometry(QRect(1670, 593, 42, 42))
-        self.botonVer6.setFont(font)
-        self.botonVer6.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        self.botonVer6.setIcon(icon6)
-        self.botonVer6.setIconSize(QSize(25, 25))
-        self.botonEditar6 = QPushButton(Widget)
-        self.botonEditar6.setObjectName(u"botonEditar6")
-        self.botonEditar6.setGeometry(QRect(1734, 594, 42, 42))
-        self.botonEditar6.setFont(font)
-        self.botonEditar6.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        self.botonEditar6.setIcon(icon1)
-        self.botonSacar4 = QPushButton(Widget)
-        self.botonSacar4.setObjectName(u"botonSacar4")
-        self.botonSacar4.setGeometry(QRect(1791, 461, 42, 42))
-        self.botonSacar4.setFont(font)
-        self.botonSacar4.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        self.botonSacar4.setIcon(icon2)
-        self.botonEditar4 = QPushButton(Widget)
-        self.botonEditar4.setObjectName(u"botonEditar4")
-        self.botonEditar4.setGeometry(QRect(1734, 461, 42, 42))
-        self.botonEditar4.setFont(font)
-        self.botonEditar4.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        self.botonEditar4.setIcon(icon1)
         self.botonAdmin = QPushButton(Widget)
         self.botonAdmin.setObjectName(u"botonAdmin")
         self.botonAdmin.setGeometry(QRect(1200, 30, 199, 63))
@@ -654,8 +273,15 @@ class Ui_Widget(object):
 "\n"
 "color: black;\n"
 "background-color: #ebebeb;")
+        self.tableWidget = QTableWidget(Widget)
+        self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setGeometry(QRect(60, 147, 1800, 900))
+        self.tableWidget.setStyleSheet(u"background-color: white;\n"
+"    border: 2px solid #ffffff;\n"
+"    border-radius: 30px; /* Bordes redondeados */\n"
+"    padding: 5px;")
         self.label_4.raise_()
-        self.label_6.raise_()
+        self.tableWidget.raise_()
         self.label_3.raise_()
         self.label_5.raise_()
         self.botonAgregar.raise_()
@@ -675,49 +301,16 @@ class Ui_Widget(object):
         self.label_19.raise_()
         self.label_20.raise_()
         self.label_21.raise_()
-        self.label_35.raise_()
-        self.label_36.raise_()
-        self.label_37.raise_()
-        self.label_38.raise_()
-        self.label_39.raise_()
-        self.label_40.raise_()
         self.botonEditar1.raise_()
-        self.botonEditar2.raise_()
-        self.botonEditar3.raise_()
-        self.botonSacar2.raise_()
         self.botonSacar1.raise_()
-        self.botonSacar3.raise_()
         self.label_22.raise_()
         self.botonOrdenar1.raise_()
         self.label_23.raise_()
         self.lineEdit.raise_()
         self.botonBuscar.raise_()
         self.botonBorrar.raise_()
-        self.botonVer3.raise_()
         self.botonVer1.raise_()
-        self.botonVer2.raise_()
         self.botonLogOut.raise_()
-        self.label_41.raise_()
-        self.label_42.raise_()
-        self.label_43.raise_()
-        self.label_44.raise_()
-        self.label_45.raise_()
-        self.label_46.raise_()
-        self.label_47.raise_()
-        self.label_48.raise_()
-        self.label_49.raise_()
-        self.label_50.raise_()
-        self.label_51.raise_()
-        self.label_52.raise_()
-        self.botonVer5.raise_()
-        self.botonSacar6.raise_()
-        self.botonEditar5.raise_()
-        self.botonVer4.raise_()
-        self.botonSacar5.raise_()
-        self.botonVer6.raise_()
-        self.botonEditar6.raise_()
-        self.botonSacar4.raise_()
-        self.botonEditar4.raise_()
         self.botonAdmin.raise_()
 
         self.retranslateUi(Widget)
@@ -730,7 +323,6 @@ class Ui_Widget(object):
         self.label_3.setText("")
         self.label_4.setText("")
         self.label_5.setText("")
-        self.label_6.setText("")
         self.botonAgregar.setText(QCoreApplication.translate("Widget", u" Agregar Venta", None))
         self.label_12.setText(QCoreApplication.translate("Widget", u"VENTAS", None))
         self.label_13.setText(QCoreApplication.translate("Widget", u"Usuario", None))
@@ -748,48 +340,15 @@ class Ui_Widget(object):
         self.label_19.setText("")
         self.label_20.setText("")
         self.label_21.setText("")
-        self.label_35.setText(QCoreApplication.translate("Widget", u"#0001", None))
-        self.label_36.setText(QCoreApplication.translate("Widget", u"#0002", None))
-        self.label_37.setText(QCoreApplication.translate("Widget", u"#0003", None))
-        self.label_38.setText(QCoreApplication.translate("Widget", u"Mercedes Benz Maybach", None))
-        self.label_39.setText(QCoreApplication.translate("Widget", u"Mercedes AMG", None))
-        self.label_40.setText(QCoreApplication.translate("Widget", u"Mercedes Benz Classic", None))
         self.botonEditar1.setText("")
-        self.botonEditar2.setText("")
-        self.botonEditar3.setText("")
-        self.botonSacar2.setText("")
         self.botonSacar1.setText("")
-        self.botonSacar3.setText("")
         self.label_22.setText(QCoreApplication.translate("Widget", u"Ordenar por:", None))
         self.botonOrdenar1.setText(QCoreApplication.translate("Widget", u"Seleccionar", None))
         self.label_23.setText("")
         self.botonBuscar.setText("")
         self.botonBorrar.setText("")
-        self.botonVer3.setText("")
         self.botonVer1.setText("")
-        self.botonVer2.setText("")
         self.botonLogOut.setText(QCoreApplication.translate("Widget", u"Cerrar Sesi\u00f3n", None))
-        self.label_41.setText(QCoreApplication.translate("Widget", u"Servicio Postventa", None))
-        self.label_42.setText(QCoreApplication.translate("Widget", u"#0003", None))
-        self.label_43.setText(QCoreApplication.translate("Widget", u"Mercedes AMG", None))
-        self.label_44.setText(QCoreApplication.translate("Widget", u"#0001", None))
-        self.label_45.setText(QCoreApplication.translate("Widget", u"#0002", None))
-        self.label_46.setText(QCoreApplication.translate("Widget", u"Servicio Postventa", None))
-        self.label_47.setText(QCoreApplication.translate("Widget", u"SERVICIO", None))
-        self.label_48.setText(QCoreApplication.translate("Widget", u"PRODUCTO", None))
-        self.label_49.setText(QCoreApplication.translate("Widget", u"PRODUCTO", None))
-        self.label_50.setText(QCoreApplication.translate("Widget", u"PRODUCTO", None))
-        self.label_51.setText(QCoreApplication.translate("Widget", u"SERVICIO", None))
-        self.label_52.setText(QCoreApplication.translate("Widget", u"PRODUCTO", None))
-        self.botonVer5.setText("")
-        self.botonSacar6.setText("")
-        self.botonEditar5.setText("")
-        self.botonVer4.setText("")
-        self.botonSacar5.setText("")
-        self.botonVer6.setText("")
-        self.botonEditar6.setText("")
-        self.botonSacar4.setText("")
-        self.botonEditar4.setText("")
         self.botonAdmin.setText(QCoreApplication.translate("Widget", u"Administraci\u00f3n", None))
     # retranslateUi
 
