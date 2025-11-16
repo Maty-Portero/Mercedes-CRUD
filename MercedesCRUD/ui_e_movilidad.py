@@ -15,8 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QPushButton,
-    QSizePolicy, QWidget)
+from PySide6.QtWidgets import (
+    QApplication, QLabel, QLineEdit, QPushButton,
+    QSizePolicy, QWidget, QTableWidget, QTableWidgetItem
+)
 
 class Ui_Widget(object):
     def setupUi(self, Widget):
@@ -627,6 +629,13 @@ class Ui_Widget(object):
 "\n"
 "color: black;\n"
 "background-color: #ebebeb;")
+        self.tableWidget = QTableWidget(Widget)
+        self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setGeometry(QRect(60, 256, 1800, 791))
+        self.tableWidget.setStyleSheet(u"background-color: white;\n"
+"    border: 2px solid #ffffff;\n"
+"    border-radius: 30px; /* Bordes redondeados */\n"
+"    padding: 5px;")
         self.label_4.raise_()
         self.label_6.raise_()
         self.label_3.raise_()

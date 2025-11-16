@@ -1618,6 +1618,22 @@ background-color: #ebebeb;</string>
     <string>Administración</string>
    </property>
   </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>256</y>
+     <width>1800</width>
+     <height>791</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+    border: 2px solid #ffffff;
+    border-radius: 30px; /* Bordes redondeados */
+    padding: 5px;</string>
+   </property>
+  </widget>
   <zorder>label_4</zorder>
   <zorder>label_6</zorder>
   <zorder>label_3</zorder>
