@@ -73,6 +73,28 @@
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>147</y>
+     <width>1800</width>
+     <height>900</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+    border: 2px solid #ffffff;
+    border-radius: 30px; /* Bordes redondeados */
+    padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+  </widget>
   <widget class="QPushButton" name="botonAgregar">
    <property name="geometry">
     <rect>
@@ -397,11 +419,197 @@ padding: 5px;
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="label_35">
+   <property name="geometry">
+    <rect>
+     <x>63</x>
+     <y>262</y>
+     <width>90</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 0);
+   color: rgb(255, 255, 255);
+    
+   border: 2px solid #000000;
+   border-radius: 25px; /* Bordes redondeados */
+   padding: 5px;
+   </string>
+   </property>
+   <property name="text">
+    <string>#0001</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_36">
+   <property name="geometry">
+    <rect>
+     <x>63</x>
+     <y>328</y>
+     <width>90</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+
+border: 2px solid #000000;
+border-radius: 25px; /* Bordes redondeados */
+padding: 5px;
+</string>
+   </property>
+   <property name="text">
+    <string>#0001</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_37">
+   <property name="geometry">
+    <rect>
+     <x>63</x>
+     <y>393</y>
+     <width>90</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+
+border: 2px solid #000000;
+border-radius: 25px; /* Bordes redondeados */
+padding: 5px;
+</string>
+   </property>
+   <property name="text">
+    <string>#0001</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_38">
+   <property name="geometry">
+    <rect>
+     <x>177</x>
+     <y>262</y>
+     <width>248</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #e8e8e8;
+color: black;
+
+border: 2px solid #e8e8e8;
+border-radius: 25px; /* Bordes redondeados */
+padding: 5px;
+</string>
+   </property>
+   <property name="text">
+    <string>Chingui Lin</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_39">
+   <property name="geometry">
+    <rect>
+     <x>177</x>
+     <y>328</y>
+     <width>248</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #e8e8e8;
+color: black;
+
+border: 2px solid #e8e8e8;
+border-radius: 25px; /* Bordes redondeados */
+padding: 5px;
+</string>
+   </property>
+   <property name="text">
+    <string>Bebe Lin</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_40">
+   <property name="geometry">
+    <rect>
+     <x>177</x>
+     <y>393</y>
+     <width>248</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #e8e8e8;
+color: black;
+
+border: 2px solid #e8e8e8;
+border-radius: 25px; /* Bordes redondeados */
+padding: 5px;
+</string>
+   </property>
+   <property name="text">
+    <string>Choco Lin</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
   <widget class="QPushButton" name="botonEditar1">
    <property name="geometry">
     <rect>
-     <x>153</x>
-     <y>990</y>
+     <x>1734</x>
+     <y>266</y>
      <width>42</width>
      <height>42</height>
     </rect>
@@ -427,11 +635,131 @@ padding: 5px;</string>
      <normaloff>edit.png</normaloff>edit.png</iconset>
    </property>
   </widget>
+  <widget class="QPushButton" name="botonEditar2">
+   <property name="geometry">
+    <rect>
+     <x>1734</x>
+     <y>331</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 0);
+   color: rgb(255, 255, 255);
+    
+   border: 2px solid #000000;
+   border-radius: 25px; /* Bordes redondeados */
+   padding: 5px;
+   </string>
+  <widget class="QPushButton" name="botonEditar3">
+   <property name="geometry">
+    <rect>
+     <x>1734</x>
+     <y>399</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>edit.png</normaloff>edit.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonSacar2">
+   <property name="geometry">
+    <rect>
+     <x>1791</x>
+     <y>331</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>close.png</normaloff>close.png</iconset>
+   </property>
+  </widget>
   <widget class="QPushButton" name="botonSacar1">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>990</y>
+     <x>1791</x>
+     <y>266</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>close.png</normaloff>close.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonSacar3">
+   <property name="geometry">
+    <rect>
+     <x>1791</x>
+     <y>399</y>
      <width>42</width>
      <height>42</height>
     </rect>
@@ -644,11 +972,83 @@ padding: 5px;</string>
     </size>
    </property>
   </widget>
+  <widget class="QPushButton" name="botonVer3">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>398</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>eye.png</normaloff>eye.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+  </widget>
   <widget class="QPushButton" name="botonVer1">
    <property name="geometry">
     <rect>
-     <x>89</x>
-     <y>989</y>
+     <x>1670</x>
+     <y>265</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>icon-ui</family>
+     <pointsize>19</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+
+border: 2px solid black;
+border-radius: 20px; /* Bordes redondeados */
+padding: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>eye.png</normaloff>eye.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="botonVer2">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>330</y>
      <width>42</width>
      <height>42</height>
     </rect>
@@ -734,24 +1134,8 @@ background-color: #ebebeb;</string>
     <string>Administración</string>
    </property>
   </widget>
-  <widget class="QTableWidget" name="tableWidget">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>147</y>
-     <width>1800</width>
-     <height>900</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;
-    border: 2px solid #ffffff;
-    border-radius: 30px; /* Bordes redondeados */
-    padding: 5px;</string>
-   </property>
-  </widget>
   <zorder>label_4</zorder>
-  <zorder>tableWidget</zorder>
+  <zorder>label_6</zorder>
   <zorder>label_3</zorder>
   <zorder>label_5</zorder>
   <zorder>botonAgregar</zorder>
@@ -771,15 +1155,27 @@ background-color: #ebebeb;</string>
   <zorder>label_19</zorder>
   <zorder>label_20</zorder>
   <zorder>label_21</zorder>
+  <zorder>label_35</zorder>
+  <zorder>label_36</zorder>
+  <zorder>label_37</zorder>
+  <zorder>label_38</zorder>
+  <zorder>label_39</zorder>
+  <zorder>label_40</zorder>
   <zorder>botonEditar1</zorder>
+  <zorder>botonEditar2</zorder>
+  <zorder>botonEditar3</zorder>
+  <zorder>botonSacar2</zorder>
   <zorder>botonSacar1</zorder>
+  <zorder>botonSacar3</zorder>
   <zorder>label_22</zorder>
   <zorder>botonOrdenar1</zorder>
   <zorder>label_23</zorder>
   <zorder>lineEdit</zorder>
   <zorder>botonBuscar</zorder>
   <zorder>botonBorrar</zorder>
+  <zorder>botonVer3</zorder>
   <zorder>botonVer1</zorder>
+  <zorder>botonVer2</zorder>
   <zorder>botonLogOut</zorder>
   <zorder>botonAdmin</zorder>
  </widget>
