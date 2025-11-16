@@ -1,8 +1,10 @@
 import sys, os
-from PySide6.QtWidgets import QWidget, QMessageBox
-from PySide6.QtCore import Signal, Slot
+from PySide6.QtWidgets import QWidget, QMessageBox, QTableWidgetItem
+from PySide6.QtCore import Signal, Slot, Qt
+from PySide6.QtGui import QPixmap 
 from ui_logistica import Ui_Widget
 from image_loader import load_pixmap
+import db_manager
 
 # La clase MyWidget es tu vista de RRHH
 class LogisticaWidget(QWidget):
@@ -17,7 +19,6 @@ class LogisticaWidget(QWidget):
         self.ui = Ui_Widget()
         self.ui.setupUi(self)
 
-        # Carga de imágenes optimizada
         self.ui.label_5.setPixmap(load_pixmap("logo.png"))
         self.ui.label_5.setScaledContents(True)
         self.ui.label_7.setPixmap(load_pixmap("perfil-de-usuario.png"))
@@ -36,6 +37,207 @@ class LogisticaWidget(QWidget):
         self.ui.botonVer3.setIcon(icon_eye)
         self.ui.botonAgregar.setIcon(load_pixmap("c.png"))
         self.ui.botonOrdenar1.setIcon(load_pixmap("down_arrow.png"))
+        # 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        # 2. Construye la ruta completa al archivo (Ej: C:/MiProyecto/mercedes.png)
+        image_path = os.path.join(script_dir, "logo.png") 
+        
+        # 3. Crea el QPixmap
+        pixmap = QPixmap(image_path)
+
+        # 4. COMPRUEBA si la carga fue exitosa
+        if pixmap.isNull():
+            print(f"\n[ERROR DE IMAGEN] NO SE PUDO CARGAR LA IMAGEN.")
+            print(f"Ruta COMPLETA intentada: {image_path}")
+            print(f"Asegúrate de que el nombre de archivo sea exactamente 'logo.png' y que el archivo exista en esa ubicación.")
+        else:
+            print(f"Imagen cargada OK desde: {image_path}")
+        # ----------------------------------------------------
+
+        # 5. Asigna el pixmap al QLabel 'label'
+        self.ui.label_5.setPixmap(pixmap)
+        self.ui.label_5.setScaledContents(True) # Aseguramos que escale
+
+        TABLE_NAME = "SEGUIMIENTO_LOGISTICO"
+        HEADERS = ["ID_Seguimiento", "Tipo_Logistica", "Origen", "Destino", "Estado_Actual", "ID_Pedido_OC"]
+        UI_TABLE = self.ui.label_6 # Asegúrate de que este sea el objectName correcto
+        
+        # Llamada para cargar los datos
+        self.load_sector_data(TABLE_NAME, HEADERS, UI_TABLE)
+    
+    def load_sector_data(self, table_name, headers, table_widget):
+        """
+        Función reutilizable para cargar datos en la QTableWidget del sector.
+        Utiliza el módulo db_manager para obtener los datos.
+        """
+        
+        # 1. Obtener los datos usando la función del manager
+        try:
+            # Llamamos a la función generalizada en el módulo db_manager
+            data = db_manager.get_data_for_sector(table_name, headers)
+            
+            if data is None:
+                 QMessageBox.critical(self, "Error de BD", f"La consulta a la tabla '{table_name}' falló o no devolvió datos.")
+                 return
+                 
+        except Exception as e:
+            QMessageBox.critical(self, "Error de BD", f"Error al cargar datos de {table_name}: {e}")
+            return
+
+        # 2. Configurar la QTableWidget
+        table_widget.setColumnCount(len(headers))
+        # Mostrar los nombres de las columnas en la cabecera de la tabla
+        table_widget.setHorizontalHeaderLabels(headers) 
+        
+        table_widget.setRowCount(0) 
+        table_widget.setRowCount(len(data)) 
+
+        # 3. Poblar la tabla
+        for row_idx, row_data in enumerate(data):
+            for col_idx, item in enumerate(row_data):
+                cell_item = QTableWidgetItem(str(item))
+                cell_item.setTextAlignment(Qt.AlignCenter)
+                table_widget.setItem(row_idx, col_idx, cell_item)
+                
+        # Estilo final
+        table_widget.horizontalHeader().setStretchLastSection(True)
+        table_widget.resizeColumnsToContents()
+        print(f"Sector {table_name}: {len(data)} registros cargados.")
+
+# 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        # 2. Construye la ruta completa al archivo (Ej: C:/MiProyecto/mercedes.png)
+        image_path = os.path.join(script_dir, "perfil-de-usuario.png") 
+        
+        # 3. Crea el QPixmap
+        pixmap = QPixmap(image_path)
+
+        # 4. COMPRUEBA si la carga fue exitosa
+        if pixmap.isNull():
+            print(f"\n[ERROR DE IMAGEN] NO SE PUDO CARGAR LA IMAGEN.")
+            print(f"Ruta COMPLETA intentada: {image_path}")
+            print(f"Asegúrate de que el nombre de archivo sea exactamente 'perfil-de-usuario.png' y que el archivo exista en esa ubicación.")
+        else:
+            print(f"Imagen cargada OK desde: {image_path}")
+        # ----------------------------------------------------
+
+        # 5. Asigna el pixmap al QLabel 'label'
+        self.ui.label_7.setPixmap(pixmap)
+        self.ui.label_7.setScaledContents(True) # Aseguramos que escale
+
+        # 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        # 2. Construye la ruta completa al archivo (Ej: C:/MiProyecto/mercedes.png)
+        image_path = os.path.join(script_dir, "edit.png") 
+        
+        # 3. Crea el QPixmap
+        pixmap = QPixmap(image_path)
+
+        # 4. COMPRUEBA si la carga fue exitosa
+        if pixmap.isNull():
+            print(f"\n[ERROR DE IMAGEN] NO SE PUDO CARGAR LA IMAGEN.")
+            print(f"Ruta COMPLETA intentada: {image_path}")
+            print(f"Asegúrate de que el nombre de archivo sea exactamente 'edit.png' y que el archivo exista en esa ubicación.")
+        else:
+            print(f"Imagen cargada OK desde: {image_path}")
+        # ----------------------------------------------------
+
+        # 5. Asigna el pixmap al QLabel 'label'
+        self.ui.botonEditar1.setIcon(pixmap)
+        self.ui.botonEditar2.setIcon(pixmap)
+        self.ui.botonEditar3.setIcon(pixmap)
+
+        # 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        # 2. Construye la ruta completa al archivo (Ej: C:/MiProyecto/mercedes.png)
+        image_path = os.path.join(script_dir, "close.png") 
+        
+        # 3. Crea el QPixmap
+        pixmap = QPixmap(image_path)
+
+        # 4. COMPRUEBA si la carga fue exitosa
+        if pixmap.isNull():
+            print(f"\n[ERROR DE IMAGEN] NO SE PUDO CARGAR LA IMAGEN.")
+            print(f"Ruta COMPLETA intentada: {image_path}")
+            print(f"Asegúrate de que el nombre de archivo sea exactamente 'close.png' y que el archivo exista en esa ubicación.")
+        else:
+            print(f"Imagen cargada OK desde: {image_path}")
+        # ----------------------------------------------------
+
+        # 5. Asigna el pixmap al QLabel 'label'
+        self.ui.botonSacar1.setIcon(pixmap)
+        self.ui.botonSacar2.setIcon(pixmap)
+        self.ui.botonSacar3.setIcon(pixmap)
+
+        # 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        # 2. Construye la ruta completa al archivo (Ej: C:/MiProyecto/mercedes.png)
+        image_path = os.path.join(script_dir, "eye.png") 
+        
+        # 3. Crea el QPixmap
+        pixmap = QPixmap(image_path)
+
+        # 4. COMPRUEBA si la carga fue exitosa
+        if pixmap.isNull():
+            print(f"\n[ERROR DE IMAGEN] NO SE PUDO CARGAR LA IMAGEN.")
+            print(f"Ruta COMPLETA intentada: {image_path}")
+            print(f"Asegúrate de que el nombre de archivo sea exactamente 'eye.png' y que el archivo exista en esa ubicación.")
+        else:
+            print(f"Imagen cargada OK desde: {image_path}")
+        # ----------------------------------------------------
+
+        # 5. Asigna el pixmap al QLabel 'label'
+        self.ui.botonVer1.setIcon(pixmap)
+        self.ui.botonVer2.setIcon(pixmap)
+        self.ui.botonVer3.setIcon(pixmap)
+
+
+        # 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        # 2. Construye la ruta completa al archivo (Ej: C:/MiProyecto/mercedes.png)
+        image_path = os.path.join(script_dir, "c.png") 
+        
+        # 3. Crea el QPixmap
+        pixmap = QPixmap(image_path)
+
+        # 4. COMPRUEBA si la carga fue exitosa
+        if pixmap.isNull():
+            print(f"\n[ERROR DE IMAGEN] NO SE PUDO CARGAR LA IMAGEN.")
+            print(f"Ruta COMPLETA intentada: {image_path}")
+            print(f"Asegúrate de que el nombre de archivo sea exactamente 'c.png' y que el archivo exista en esa ubicación.")
+        else:
+            print(f"Imagen cargada OK desde: {image_path}")
+        # ----------------------------------------------------
+
+        # 5. Asigna el pixmap al QLabel 'label'
+        self.ui.botonAgregar.setIcon(pixmap)
+
+        # 1. Obtiene la ruta del directorio donde se encuentra este archivo de código (LoginWidget)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        # 2. Construye la ruta completa al archivo (Ej: C:/MiProyecto/mercedes.png)
+        image_path = os.path.join(script_dir, "down_arrow.png") 
+        
+        # 3. Crea el QPixmap
+        pixmap = QPixmap(image_path)
+
+        # 4. COMPRUEBA si la carga fue exitosa
+        if pixmap.isNull():
+            print(f"\n[ERROR DE IMAGEN] NO SE PUDO CARGAR LA IMAGEN.")
+            print(f"Ruta COMPLETA intentada: {image_path}")
+            print(f"Asegúrate de que el nombre de archivo sea exactamente 'down_arrow.png' y que el archivo exista en esa ubicación.")
+        else:
+            print(f"Imagen cargada OK desde: {image_path}")
+        # ----------------------------------------------------
+
+        # 5. Asigna el pixmap al QLabel 'label'
+        self.ui.botonOrdenar1.setIcon(pixmap)
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
         self.ui.botonAgregar.clicked.connect(self.agregar_pedido)
