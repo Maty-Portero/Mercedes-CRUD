@@ -1134,7 +1134,6 @@ background-color: #ebebeb;</string>
     <string>Administración</string>
    </property>
   </widget>
-<<<<<<< HEAD
   <widget class="QTableWidget" name="tableWidget">
    <property name="geometry">
     <rect>
@@ -1151,8 +1150,6 @@ background-color: #ebebeb;</string>
     padding: 5px;</string>
    </property>
   </widget>
-=======
->>>>>>> 8d5a7b8089c1c1362aee43bffde91a4b8f963bdd
   <zorder>label_4</zorder>
   <zorder>label_6</zorder>
   <zorder>label_3</zorder>

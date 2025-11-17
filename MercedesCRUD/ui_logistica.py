@@ -418,7 +418,6 @@ class Ui_Widget(object):
 "\n"
 "color: black;\n"
 "background-color: #ebebeb;")
-<<<<<<< HEAD
         self.tableWidget = QTableWidget(Widget)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setGeometry(QRect(60, 256, 1800, 791))
@@ -426,8 +425,6 @@ class Ui_Widget(object):
 "    border: 2px solid #ffffff;\n"
 "    border-radius: 30px; /* Bordes redondeados */\n"
 "    padding: 5px;")
-=======
->>>>>>> 8d5a7b8089c1c1362aee43bffde91a4b8f963bdd
         self.label_4.raise_()
         self.table_logistica.raise_()
         self.label_3.raise_()
