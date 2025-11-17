@@ -34,7 +34,7 @@ class LogisticaWidget(QWidget):
 
         TABLE_NAME = "SEGUIMIENTO_LOGISTICO"
         HEADERS = ["ID_Seguimiento", "Tipo_Logistica", "Origen", "Destino", "Estado_Actual", "ID_Pedido_OC"]
-        UI_TABLE = self.ui.table_logistica # reemplazado QLabel por QTableWidget en ui_logistica
+        UI_TABLE = self.ui.tableWidget # reemplazado QLabel por QTableWidget en ui_logistica
         
         # Llamada para cargar los datos
         self.load_sector_data(TABLE_NAME, HEADERS, UI_TABLE)

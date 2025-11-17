@@ -20,8 +20,8 @@ class RRHHWidget(QWidget):
         # Carga de imágenes optimizada
         self.ui.label_5.setPixmap(load_pixmap("logo.png"))
         self.ui.label_5.setScaledContents(True)
-        self.ui.label_7.setPixmap(load_pixmap("perfil-de-usuario.png"))
-        self.ui.label_7.setScaledContents(True)
+        self.ui.label_8.setPixmap(load_pixmap("perfil-de-usuario.png"))
+        self.ui.label_8.setScaledContents(True)
         icon_edit = load_pixmap("edit.png")
         self.ui.botonEditar1.setIcon(icon_edit)
         icon_close = load_pixmap("close.png")

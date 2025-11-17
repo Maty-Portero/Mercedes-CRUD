@@ -52,7 +52,7 @@ class E_MovilidadCEOUsuariosAutorizadosWidget(QWidget):
         image_path = os.path.join(script_dir, "edit.png") 
         
         # Carga de imágenes optimizada (reemplazo de pixmap)
-        self.ui.botonVer3.setIcon(load_pixmap("eye.png"))
+        self.ui.botonVer1.setIcon(load_pixmap("eye.png"))
         self.ui.botonAgregar.setIcon(load_pixmap("c.png"))
         self.ui.botonOrdenar1.setIcon(load_pixmap("down_arrow.png"))
 
