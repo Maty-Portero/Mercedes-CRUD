@@ -40,11 +40,10 @@ class MarketingWidget(QWidget):
             self.ui.botonAdmin.clicked.connect(self.admin_view)
             self.ui.botonLogOut.clicked.connect(self.Logout_requested)
 
-            # Comentado temporalmente hasta que se agreguen datos a CAMPANAS_MARKETING
-            # TABLE_NAME = "CAMPANAS_MARKETING"
-            # HEADERS = ["ID_Campana", "Tipo", "Estado", "Fecha_Inicio", "Fecha_Fin"]
-            # UI_TABLE = self.ui.tableWidget
-            # self.load_sector_data(TABLE_NAME, HEADERS, UI_TABLE)
+            TABLE_NAME = "MARKETING"
+            HEADERS = ["ID_Campana", "Nombre", "Tipo", "Estado", "Presupuesto", "Fecha_Inicio", "Fecha_Fin"]
+            UI_TABLE = self.ui.tableWidget
+            self.load_sector_data(TABLE_NAME, HEADERS, UI_TABLE)
 
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión

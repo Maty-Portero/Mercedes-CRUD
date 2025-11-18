@@ -1,6 +1,8 @@
 import sqlite3
+import os
 
-DB_PATH = "../database.db"  # Ajusta el path si es necesario
+# Usar la misma ruta relativa que create_db2_schema.py
+DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "db2.db")
 
 def print_db_schema(db_path):
     conn = sqlite3.connect(db_path)
@@ -19,3 +21,12 @@ def print_db_schema(db_path):
 
 if __name__ == "__main__":
     print_db_schema(DB_PATH)
+    
+    # Guardar en archivo
+    import sys
+    original_stdout = sys.stdout
+    with open("g:/Mercedes-CRUD/MercedesCRUD/reports/db_schema.txt", "w", encoding="utf-8") as f:
+        sys.stdout = f
+        print_db_schema(DB_PATH)
+    sys.stdout = original_stdout
+    print("\nEsquema guardado en reports/db_schema.txt")

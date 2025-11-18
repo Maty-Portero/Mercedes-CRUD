@@ -39,8 +39,8 @@ class MantenimientoWidget(QWidget):
             self.ui.botonAdmin.clicked.connect(self.admin_view)
             self.ui.botonLogOut.clicked.connect(self.Logout_requested)
 
-            TABLE_NAME = "INVENTARIO"
-            HEADERS = ["ID_Inventario", "ID_Producto", "Cantidad_Stock"]
+            TABLE_NAME = "MANTENIMIENTO_EQUIPOS"
+            HEADERS = ["ID_Equipo", "Nombre", "Tipo", "Estado", "Ultima_Revision"]
             UI_TABLE = self.ui.tableWidget
             self.load_sector_data(TABLE_NAME, HEADERS, UI_TABLE)
             
@@ -150,9 +150,13 @@ class MantenimientoWidget(QWidget):
             }
         """)
         print(f"Sector {table_name}: {len(data)} registros cargados.")
+        
+        # Actualizar contador de registros
+        if hasattr(self.ui, 'label_14'):
+            self.ui.label_14.setText(f"Equipos: {len(data)}")
 
     def some_method(self):
-        TABLE_NAME = "EQUIPOS_MANTENIMIENTO"
-        HEADERS = ["ID_Equipo", "Nombre", "Tipo", "Estado", "Fecha_Instalacion", "Ultimo_Mantenimiento"]
+        TABLE_NAME = "MANTENIMIENTO_EQUIPOS"
+        HEADERS = ["ID_Equipo", "Nombre", "Tipo", "Estado", "Ultima_Revision"]
         UI_TABLE = self.ui.tableWidget
         self.load_sector_data(TABLE_NAME, HEADERS, UI_TABLE)

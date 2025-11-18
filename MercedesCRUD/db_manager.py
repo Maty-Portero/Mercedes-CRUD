@@ -1,13 +1,20 @@
 from PySide6.QtSql import QSqlDatabase, QSqlQuery
+import os
 
 _db = None
 
-def get_db_connection(db_name="database.db"):
+def get_db_connection(db_name=None):
     """Establece y devuelve la conexión a la base de datos."""
     global _db
     
     if _db and _db.isOpen():
         return _db
+    
+    # Si no se proporciona nombre, usar ruta absoluta al db2.db correcto
+    if db_name is None:
+        # Obtener el directorio donde está este archivo (db_manager.py)
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        db_name = os.path.join(current_dir, "db2.db")
     
     _db = QSqlDatabase.database()
     if not _db.isValid():
@@ -88,3 +95,47 @@ def get_data_for_sector(table_name, columns):
     
     query = f"SELECT {columns_str} FROM {table_name};"
     return fetch_all_data(query)
+
+def insert_record(table_name, columns, values):
+    """
+    Inserta un nuevo registro en la tabla especificada.
+    :param table_name: Nombre de la tabla
+    :param columns: Lista de nombres de columnas
+    :param values: Lista de valores correspondientes
+    :return: True si fue exitoso, False si hubo error
+    """
+    placeholders = ", ".join(["?" for _ in values])
+    columns_str = ", ".join(columns)
+    query_str = f"INSERT INTO {table_name} ({columns_str}) VALUES ({placeholders})"
+    
+    result = execute_query(query_str, values)
+    return result is not None
+
+def update_record(table_name, columns, values, id_column, id_value):
+    """
+    Actualiza un registro existente en la tabla.
+    :param table_name: Nombre de la tabla
+    :param columns: Lista de nombres de columnas a actualizar
+    :param values: Lista de valores correspondientes
+    :param id_column: Nombre de la columna ID (ej: "ID_Empleado")
+    :param id_value: Valor del ID del registro a actualizar
+    :return: True si fue exitoso, False si hubo error
+    """
+    set_clause = ", ".join([f"{col} = ?" for col in columns])
+    query_str = f"UPDATE {table_name} SET {set_clause} WHERE {id_column} = ?"
+    
+    params = list(values) + [id_value]
+    result = execute_query(query_str, params)
+    return result is not None
+
+def delete_record(table_name, id_column, id_value):
+    """
+    Elimina un registro de la tabla.
+    :param table_name: Nombre de la tabla
+    :param id_column: Nombre de la columna ID
+    :param id_value: Valor del ID del registro a eliminar
+    :return: True si fue exitoso, False si hubo error
+    """
+    query_str = f"DELETE FROM {table_name} WHERE {id_column} = ?"
+    result = execute_query(query_str, [id_value])
+    return result is not None

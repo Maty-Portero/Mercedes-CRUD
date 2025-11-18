@@ -6,6 +6,7 @@ from ui_rrhh import Ui_Widget
 
 # La clase MyWidget es tu vista de RRHH
 class RRHHWidget(QWidget):
+
     # Señal para notificar al manager que el usuario quiere cerrar sesión
     logout_requested = Signal()
     CEO = Signal(str)
@@ -16,7 +17,6 @@ class RRHHWidget(QWidget):
         super().__init__()
         self.ui = Ui_Widget()
         self.ui.setupUi(self)
-
         # Carga de imágenes optimizada
         self.ui.label_5.setPixmap(load_pixmap("logo.png"))
         self.ui.label_5.setScaledContents(True)
@@ -43,8 +43,8 @@ class RRHHWidget(QWidget):
         self.ui.botonLogOut.clicked.connect(self.Logout_requested)
 
         import db_manager
-        TABLE_NAME = "EMPLEADOS"
-        HEADERS = ["ID_Empleado", "Legajo", "CUIL", "Direccion", "Puesto", "Salario", "ID_Sector", "ID_Usuario"]
+        TABLE_NAME = "RRHH"
+        HEADERS = ["ID_RRHH", "ID_Empleado", "Tipo_Evento", "Fecha", "Descripcion"]
         UI_TABLE = self.ui.tableWidget
         self.load_sector_data(TABLE_NAME, HEADERS, UI_TABLE)
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
@@ -64,27 +64,200 @@ class RRHHWidget(QWidget):
 
     @Slot()
     def agregar_empleado(self):
-        QMessageBox.information(self, "RRHH", "Función: Agregar empleado.")
+        from PySide6.QtWidgets import QInputDialog, QDialog, QFormLayout, QLineEdit, QDialogButtonBox
+        import db_manager
+        
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Agregar Evento RRHH")
+        layout = QFormLayout()
+        
+        # Crear campos de entrada para la nueva estructura
+        id_empleado_input = QLineEdit()
+        tipo_evento_input = QLineEdit()
+        fecha_input = QLineEdit()
+        descripcion_input = QLineEdit()
+        
+        layout.addRow("ID Empleado:", id_empleado_input)
+        layout.addRow("Tipo Evento:", tipo_evento_input)
+        layout.addRow("Fecha (YYYY-MM-DD):", fecha_input)
+        layout.addRow("Descripción:", descripcion_input)
+        
+        buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        buttons.accepted.connect(dialog.accept)
+        buttons.rejected.connect(dialog.reject)
+        layout.addWidget(buttons)
+        
+        dialog.setLayout(layout)
+        
+        if dialog.exec() == QDialog.Accepted:
+            try:
+                columns = ["ID_Empleado", "Tipo_Evento", "Fecha", "Descripcion"]
+                values = [
+                    int(id_empleado_input.text()),
+                    tipo_evento_input.text(),
+                    fecha_input.text(),
+                    descripcion_input.text()
+                ]
+                
+                if db_manager.insert_record("RRHH", columns, values):
+                    QMessageBox.information(self, "Éxito", "Evento agregado correctamente.")
+                    # Recargar tabla
+                    TABLE_NAME = "RRHH"
+                    HEADERS = ["ID_RRHH", "ID_Empleado", "Tipo_Evento", "Fecha", "Descripcion"]
+                    self.load_sector_data(TABLE_NAME, HEADERS, self.ui.tableWidget)
+                else:
+                    QMessageBox.critical(self, "Error", "No se pudo agregar el evento.")
+            except ValueError as e:
+                QMessageBox.warning(self, "Error de validación", f"Por favor ingrese valores válidos: {e}")
 
     @Slot()
     def editar_empleado(self):
-        QMessageBox.information(self, "RRHH", "Función: Editar empleado.")
+        import db_manager
+        from PySide6.QtWidgets import QDialog, QFormLayout, QLineEdit, QDialogButtonBox
+        
+        # Obtener fila seleccionada
+        selected_rows = self.ui.tableWidget.selectionModel().selectedRows()
+        if not selected_rows:
+            QMessageBox.warning(self, "Advertencia", "Por favor seleccione un evento para editar.")
+            return
+        
+        row = selected_rows[0].row()
+        
+        # Obtener datos actuales (5 columnas: ID_RRHH, ID_Empleado, Tipo_Evento, Fecha, Descripcion)
+        id_rrhh = self.ui.tableWidget.item(row, 0).text()
+        id_empleado_actual = self.ui.tableWidget.item(row, 1).text()
+        tipo_evento_actual = self.ui.tableWidget.item(row, 2).text()
+        fecha_actual = self.ui.tableWidget.item(row, 3).text()
+        descripcion_actual = self.ui.tableWidget.item(row, 4).text()
+        
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Editar Evento RRHH")
+        layout = QFormLayout()
+        
+        id_empleado_input = QLineEdit(id_empleado_actual)
+        tipo_evento_input = QLineEdit(tipo_evento_actual)
+        fecha_input = QLineEdit(fecha_actual)
+        descripcion_input = QLineEdit(descripcion_actual)
+        
+        layout.addRow("ID Empleado:", id_empleado_input)
+        layout.addRow("Tipo Evento:", tipo_evento_input)
+        layout.addRow("Fecha (YYYY-MM-DD):", fecha_input)
+        layout.addRow("Descripción:", descripcion_input)
+        
+        buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        buttons.accepted.connect(dialog.accept)
+        buttons.rejected.connect(dialog.reject)
+        layout.addWidget(buttons)
+        
+        dialog.setLayout(layout)
+        
+        if dialog.exec() == QDialog.Accepted:
+            try:
+                columns = ["ID_Empleado", "Tipo_Evento", "Fecha", "Descripcion"]
+                values = [
+                    int(id_empleado_input.text()),
+                    tipo_evento_input.text(),
+                    fecha_input.text(),
+                    descripcion_input.text()
+                ]
+                
+                if db_manager.update_record("RRHH", columns, values, "ID_RRHH", int(id_rrhh)):
+                    QMessageBox.information(self, "Éxito", "Evento actualizado correctamente.")
+                    # Recargar tabla
+                    TABLE_NAME = "RRHH"
+                    HEADERS = ["ID_RRHH", "ID_Empleado", "Tipo_Evento", "Fecha", "Descripcion"]
+                    self.load_sector_data(TABLE_NAME, HEADERS, self.ui.tableWidget)
+                else:
+                    QMessageBox.critical(self, "Error", "No se pudo actualizar el evento.")
+            except ValueError as e:
+                QMessageBox.warning(self, "Error de validación", f"Por favor ingrese valores válidos: {e}")
 
     @Slot()
     def eliminar_empleado(self):
-        QMessageBox.information(self, "RRHH", "Función: Eliminar empleado.")
+        import db_manager
+        
+        # Obtener fila seleccionada
+        selected_rows = self.ui.tableWidget.selectionModel().selectedRows()
+        if not selected_rows:
+            QMessageBox.warning(self, "Advertencia", "Por favor seleccione un empleado para eliminar.")
+            return
+        
+        row = selected_rows[0].row()
+        id_rrhh = self.ui.tableWidget.item(row, 0).text()
+        tipo_evento = self.ui.tableWidget.item(row, 2).text()
+        
+        # Confirmar eliminación
+        reply = QMessageBox.question(
+            self, 
+            "Confirmar eliminación",
+            f"¿Está seguro de eliminar el evento {tipo_evento} (ID: {id_rrhh})?",
+            QMessageBox.Yes | QMessageBox.No
+        )
+        
+        if reply == QMessageBox.Yes:
+            if db_manager.delete_record("RRHH", "ID_RRHH", int(id_rrhh)):
+                QMessageBox.information(self, "Éxito", "Evento eliminado correctamente.")
+                # Recargar tabla
+                TABLE_NAME = "RRHH"
+                HEADERS = ["ID_RRHH", "ID_Empleado", "Tipo_Evento", "Fecha", "Descripcion"]
+                self.load_sector_data(TABLE_NAME, HEADERS, self.ui.tableWidget)
+            else:
+                QMessageBox.critical(self, "Error", "No se pudo eliminar el evento.")
         
     @Slot()
     def ver_empleado(self):
-        QMessageBox.information(self, "RRHH", "Función: Ver empleado.")
+        # Obtener fila seleccionada
+        selected_rows = self.ui.tableWidget.selectionModel().selectedRows()
+        if not selected_rows:
+            QMessageBox.warning(self, "Advertencia", "Por favor seleccione un empleado para ver.")
+            return
+        
+        row = selected_rows[0].row()
+        
+        # Obtener todos los datos de la fila
+        detalles = []
+        headers = ["ID_RRHH", "ID_Empleado", "Tipo_Evento", "Fecha", "Descripción"]
+        for col in range(self.ui.tableWidget.columnCount()):
+            valor = self.ui.tableWidget.item(row, col).text()
+            detalles.append(f"{headers[col]}: {valor}")
+        
+        QMessageBox.information(self, "Detalles del Evento", "\n".join(detalles))
 
     @Slot()
     def buscar_empleado(self):
-        QMessageBox.information(self, "Compras", "Función: Buscar empleado.")
+        from PySide6.QtWidgets import QInputDialog
+        
+        texto, ok = QInputDialog.getText(self, "Buscar Evento", "Ingrese tipo de evento, ID o descripción a buscar:")
+        
+        if ok and texto:
+            # Buscar en todas las columnas
+            encontrado = False
+            for row in range(self.ui.tableWidget.rowCount()):
+                match = False
+                for col in range(self.ui.tableWidget.columnCount()):
+                    item = self.ui.tableWidget.item(row, col)
+                    if item and texto.lower() in item.text().lower():
+                        match = True
+                        break
+                
+                # Ocultar/mostrar filas según el criterio
+                self.ui.tableWidget.setRowHidden(row, not match)
+                if match:
+                    encontrado = True
+            
+            if not encontrado:
+                QMessageBox.information(self, "Búsqueda", "No se encontraron resultados.")
     
     @Slot()
     def ordenar_empleado(self):
-        QMessageBox.information(self, "Compras", "Función: Ordenar empleado.")
+        from PySide6.QtWidgets import QInputDialog
+        
+        columnas = ["ID_RRHH", "ID_Empleado", "Tipo_Evento", "Fecha", "Descripción"]
+        columna, ok = QInputDialog.getItem(self, "Ordenar", "Seleccione columna para ordenar:", columnas, 0, False)
+        
+        if ok:
+            col_index = columnas.index(columna)
+            self.ui.tableWidget.sortItems(col_index)
     
     @Slot()
     def admin_view(self):
@@ -121,6 +294,7 @@ class RRHHWidget(QWidget):
         table_widget.setHorizontalHeaderLabels(headers)
         table_widget.setRowCount(0)
         table_widget.setRowCount(len(data))
+
         for row_idx, row_data in enumerate(data):
             for col_idx, item in enumerate(row_data):
                 cell_item = QTableWidgetItem(str(item))
@@ -151,3 +325,7 @@ class RRHHWidget(QWidget):
             }
         """)
         print(f"Sector {table_name}: {len(data)} registros cargados.")
+        
+        # Actualizar contador de registros
+        if hasattr(self.ui, 'label_14'):
+            self.ui.label_14.setText(f"Empleados: {len(data)}")

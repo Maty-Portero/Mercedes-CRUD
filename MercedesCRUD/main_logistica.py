@@ -42,8 +42,8 @@ class LogisticaWidget(QWidget):
         self.ui.botonAdmin.clicked.connect(self.admin_view)
         self.ui.botonLogOut.clicked.connect(self.Logout_requested)
 
-        TABLE_NAME = "SEGUIMIENTO_LOGISTICO"
-        HEADERS = ["ID_Seguimiento", "Tipo_Logistica", "Origen", "Destino", "Estado_Actual", "ID_Pedido_OC"]
+        TABLE_NAME = "LOGISTICA"
+        HEADERS = ["ID_Logistica", "Tipo", "Origen", "Destino", "Estado", "Fecha"]
         UI_TABLE = self.ui.tableWidget # reemplazado QLabel por QTableWidget en ui_logistica
         
         # Llamada para cargar los datos
@@ -126,6 +126,10 @@ class LogisticaWidget(QWidget):
         """)
         
         print(f"Sector {table_name}: {len(data)} registros cargados.")
+        
+        # Actualizar contador de registros
+        if hasattr(self.ui, 'label_14'):
+            self.ui.label_14.setText(f"Pedidos: {len(data)}")
         
     # Método para recibir y establecer el nombre de usuario (Llamado desde AppManager)
     def set_welcome_message(self, username):

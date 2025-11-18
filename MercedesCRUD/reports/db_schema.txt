@@ -1,0 +1,73 @@
+Tablas en la base de datos:
+
+Tabla: RRHH
+  - ID_RRHH (INTEGER)
+  - ID_Empleado (INTEGER)
+  - Tipo_Evento (TEXT)
+  - Fecha (TEXT)
+  - Descripcion (TEXT)
+
+Tabla: sqlite_sequence
+  - name ()
+  - seq ()
+
+Tabla: VENTAS
+  - ID_Venta (INTEGER)
+  - ID_Cliente (INTEGER)
+  - Fecha (TEXT)
+  - Total (REAL)
+  - Estado (TEXT)
+
+Tabla: COMPRAS
+  - ID_Compra (INTEGER)
+  - ID_Proveedor (INTEGER)
+  - Fecha (TEXT)
+  - Total (REAL)
+  - Estado (TEXT)
+
+Tabla: LOGISTICA
+  - ID_Logistica (INTEGER)
+  - Tipo (TEXT)
+  - Origen (TEXT)
+  - Destino (TEXT)
+  - Estado (TEXT)
+  - Fecha (TEXT)
+
+Tabla: PRODUCCION_TAREAS
+  - ID_Tarea (INTEGER)
+  - Descripcion (TEXT)
+  - Responsable (TEXT)
+  - Estado (TEXT)
+  - Fecha_Inicio (TEXT)
+  - Fecha_Fin (TEXT)
+
+Tabla: MANTENIMIENTO_EQUIPOS
+  - ID_Equipo (INTEGER)
+  - Nombre (TEXT)
+  - Tipo (TEXT)
+  - Estado (TEXT)
+  - Ultima_Revision (TEXT)
+
+Tabla: MARKETING
+  - ID_Campana (INTEGER)
+  - Nombre (TEXT)
+  - Tipo (TEXT)
+  - Estado (TEXT)
+  - Presupuesto (REAL)
+  - Fecha_Inicio (TEXT)
+  - Fecha_Fin (TEXT)
+
+Tabla: CAMPANAS_MARKETING
+  - ID_Campana (INTEGER)
+  - Nombre (TEXT)
+  - Tipo (TEXT)
+  - Estado (TEXT)
+  - Fecha_Inicio (TEXT)
+  - Fecha_Fin (TEXT)
+
+Tabla: VENTAS_PEDIDOS
+  - ID_Pedidos (INTEGER)
+  - ID_Cliente (INTEGER)
+  - ID_Usuario_Vendedor (INTEGER)
+  - Estado_Pedido (TEXT)
+  - Monto_Total (REAL)

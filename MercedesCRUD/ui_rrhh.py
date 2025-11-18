@@ -275,6 +275,7 @@ class Ui_Widget(object):
         self.label_5.setText("")
         self.botonAgregar.setText(QCoreApplication.translate("Widget", u" Agregar Empleados", None))
         self.label_12.setText(QCoreApplication.translate("Widget", u"RECURSOS HUMANOS", None))
+        
         self.label_14.setText(QCoreApplication.translate("Widget", u"Empleados: {total}", None))
         self.label.setText("")
         self.label_20.setText("")

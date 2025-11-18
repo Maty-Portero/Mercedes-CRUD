@@ -35,8 +35,8 @@ class VentasWidget(QWidget):
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
         self.ui.botonAgregar.clicked.connect(self.agregar_venta)
         import db_manager
-        TABLE_NAME = "VENTAS_PEDIDOS"
-        HEADERS = ["ID_Pedidos", "ID_Cliente", "ID_Usuario_Vendedor", "Estado_Pedido", "Monto_Total"]
+        TABLE_NAME = "VENTAS"
+        HEADERS = ["ID_Venta", "ID_Cliente", "Fecha", "Total", "Estado"]
         UI_TABLE = self.ui.tableWidget
         self.load_sector_data(TABLE_NAME, HEADERS, UI_TABLE)
         self.ui.botonEditar1.clicked.connect(self.editar_venta)
@@ -150,3 +150,7 @@ class VentasWidget(QWidget):
             }
         """)
         print(f"Sector {table_name}: {len(data)} registros cargados.")
+        
+        # Actualizar contador de registros
+        if hasattr(self.ui, 'label_14'):
+            self.ui.label_14.setText(f"Ventas Registradas: {len(data)}")

@@ -41,8 +41,8 @@ class ProduccionTareasWidget(QWidget):
             self.ui.botonAlmacen.clicked.connect(self.IrAlmacen)
 
             import db_manager
-            TABLE_NAME = "ORDENES_PRODUCCION"
-            HEADERS = ["ID_Orden", "ID_Producto", "Cantidad_A_Producir", "Estado"]
+            TABLE_NAME = "PRODUCCION_TAREAS"
+            HEADERS = ["ID_Tarea", "Descripcion", "Responsable", "Estado", "Fecha_Inicio", "Fecha_Fin"]
             UI_TABLE = self.ui.tableWidget
             self.load_sector_data(TABLE_NAME, HEADERS, UI_TABLE)
             
@@ -162,4 +162,8 @@ class ProduccionTareasWidget(QWidget):
             }
         """)
         print(f"Sector {table_name}: {len(data)} registros cargados.")
+        
+        # Actualizar contador de registros
+        if hasattr(self.ui, 'label_14'):
+            self.ui.label_14.setText(f"Órdenes: {len(data)}")
     
