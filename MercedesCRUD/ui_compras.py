@@ -200,19 +200,6 @@ class Ui_Widget(object):
         icon5.addFile(u"close2.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.botonBorrar.setIcon(icon5)
         self.botonBorrar.setIconSize(QSize(16, 16))
-        self.botonVer1 = QPushButton(Widget)
-        self.botonVer1.setObjectName(u"botonVer1")
-        self.botonVer1.setGeometry(QRect(89, 989, 42, 42))
-        self.botonVer1.setFont(font)
-        self.botonVer1.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        icon6 = QIcon()
-        icon6.addFile(u"eye.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.botonVer1.setIcon(icon6)
-        self.botonVer1.setIconSize(QSize(25, 25))
         self.botonLogOut = QPushButton(Widget)
         self.botonLogOut.setObjectName(u"botonLogOut")
         self.botonLogOut.setGeometry(QRect(1420, 30, 199, 63))
@@ -259,7 +246,6 @@ class Ui_Widget(object):
         self.lineEdit.raise_()
         self.botonBuscar.raise_()
         self.botonBorrar.raise_()
-        self.botonVer1.raise_()
         self.botonLogOut.raise_()
         self.botonAdmin.raise_()
 
@@ -287,7 +273,6 @@ class Ui_Widget(object):
         self.label_23.setText("")
         self.botonBuscar.setText("")
         self.botonBorrar.setText("")
-        self.botonVer1.setText("")
         self.botonLogOut.setText(QCoreApplication.translate("Widget", u"Cerrar Sesi\u00f3n", None))
         self.botonAdmin.setText(QCoreApplication.translate("Widget", u"Administraci\u00f3n", None))
     # retranslateUi

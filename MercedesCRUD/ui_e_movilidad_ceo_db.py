@@ -188,19 +188,6 @@ class Ui_Widget(object):
 "border-radius: 25px; /* Bordes redondeados */\n"
 "padding: 5px;")
         self.label_24.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
-        self.botonVer1 = QPushButton(Widget)
-        self.botonVer1.setObjectName(u"botonVer1")
-        self.botonVer1.setGeometry(QRect(89, 990, 42, 42))
-        self.botonVer1.setFont(font)
-        self.botonVer1.setStyleSheet(u"background-color: black;\n"
-"\n"
-"border: 2px solid black;\n"
-"border-radius: 20px; /* Bordes redondeados */\n"
-"padding: 5px;")
-        icon6 = QIcon()
-        icon6.addFile(u"eye.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.botonVer1.setIcon(icon6)
-        self.botonVer1.setIconSize(QSize(30, 30))
         self.label_8 = QLabel(Widget)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setGeometry(QRect(1836, 34, 56, 56))
@@ -257,7 +244,6 @@ class Ui_Widget(object):
         self.botonBorrar.raise_()
         self.botonBuscar.raise_()
         self.lineEdit.raise_()
-        self.botonVer1.raise_()
         self.label_8.raise_()
         self.botonAdmin.raise_()
         self.label_23.raise_()
@@ -285,7 +271,6 @@ class Ui_Widget(object):
         self.botonOrdenar1.setText(QCoreApplication.translate("Widget", u"Seleccionar", None))
         self.botonBuscar.setText("")
         self.label_24.setText("")
-        self.botonVer1.setText("")
         self.label_8.setText("")
         self.botonAdmin.setText(QCoreApplication.translate("Widget", u"Administraci\u00f3n", None))
         self.label_23.setText(QCoreApplication.translate("Widget", u"Usuario", None))
