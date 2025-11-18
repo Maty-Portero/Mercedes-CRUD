@@ -1,5 +1,5 @@
 import sys, os
-from PySide6.QtWidgets import QWidget, QMessageBox, QTableWidgetItem
+from PySide6.QtWidgets import QWidget, QMessageBox, QTableWidgetItem, QHeaderView
 from PySide6.QtCore import Signal, Slot, Qt
 from PySide6.QtGui import QIcon
 from ui_logistica import Ui_Widget
@@ -31,6 +31,16 @@ class LogisticaWidget(QWidget):
         self.ui.botonVer1.setIcon(icon_eye)
         self.ui.botonAgregar.setIcon(QIcon(load_pixmap("c.png")))
         self.ui.botonOrdenar1.setIcon(QIcon(load_pixmap("down_arrow.png")))
+
+        # Conexión de botones
+        self.ui.botonAgregar.clicked.connect(self.agregar_pedido)
+        self.ui.botonEditar1.clicked.connect(self.editar_pedido)
+        self.ui.botonSacar1.clicked.connect(self.eliminar_pedido)
+        self.ui.botonVer1.clicked.connect(self.ver_pedido)
+        self.ui.botonBuscar.clicked.connect(self.buscar_pedido)
+        self.ui.botonOrdenar1.clicked.connect(self.ordenar_pedido)
+        self.ui.botonAdmin.clicked.connect(self.admin_view)
+        self.ui.botonLogOut.clicked.connect(self.Logout_requested)
 
         TABLE_NAME = "SEGUIMIENTO_LOGISTICO"
         HEADERS = ["ID_Seguimiento", "Tipo_Logistica", "Origen", "Destino", "Estado_Actual", "ID_Pedido_OC"]
@@ -78,25 +88,44 @@ class LogisticaWidget(QWidget):
                 cell_item = QTableWidgetItem(str(item))
                 cell_item.setTextAlignment(Qt.AlignCenter)
                 table_widget.setItem(row_idx, col_idx, cell_item)
-                
-        # Estilo final
-        table_widget.horizontalHeader().setStretchLastSection(True)
-        table_widget.resizeColumnsToContents()
+        
+        # 4. Estilo y configuración de tamaños
+        # Distribuir columnas uniformemente en el espacio disponible
+        header = table_widget.horizontalHeader()
+        header.setStretchLastSection(False)
+        
+        # Hacer que todas las columnas se distribuyan equitativamente
+        header.setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+        
+        # Aumentar altura de filas para mejor legibilidad
+        table_widget.verticalHeader().setDefaultSectionSize(40)
+        
+        # Aumentar altura del header
+        table_widget.horizontalHeader().setMinimumHeight(40)
+        
+        # Estilo CSS para mejorar la apariencia
+        table_widget.setStyleSheet("""
+            QTableWidget {
+
+            }
+            QHeaderView::section {
+                background-color: #002d6b;
+                color: white;
+                padding: 5px;
+                border: 1px solid #002d6b;
+                font-weight: bold;
+                font-size: 20px;
+            }
+            QTableCornerButton::section {
+                background-color: #002d6b;
+            }
+            QTableWidget::item {
+                border: 1px solid #e0e0e0;
+                padding: 5px;
+            }
+        """)
+        
         print(f"Sector {table_name}: {len(data)} registros cargados.")
-
-        # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
-        self.ui.botonAgregar.clicked.connect(self.agregar_pedido)
-        self.ui.botonEditar1.clicked.connect(self.editar_pedido)
-        self.ui.botonSacar1.clicked.connect(self.eliminar_pedido)
-        self.ui.botonVer1.clicked.connect(self.ver_pedido)
-        self.ui.botonBuscar.clicked.connect(self.buscar_pedido)
-        self.ui.botonOrdenar1.clicked.connect(self.ordenar_pedido)
-        self.ui.botonAdmin.clicked.connect(self.admin_view)
-        self.ui.botonLogOut.clicked.connect(self.Logout_requested)
-
-        # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
-        # Asumo que el botón 7 es el de Cerrar Sesión
-        #self.ui.pushButton_7.clicked.connect(self.logout_requested.emit)
         
     # Método para recibir y establecer el nombre de usuario (Llamado desde AppManager)
     def set_welcome_message(self, username):
