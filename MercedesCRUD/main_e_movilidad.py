@@ -26,8 +26,6 @@ class E_MovilidadWidget(QWidget):
             self.ui.botonEditar1.setIcon(icon_edit)
             icon_close = load_pixmap("close.png")
             self.ui.botonSacar1.setIcon(icon_close)
-            icon_eye = load_pixmap("eye.png")
-            self.ui.botonVer1.setIcon(icon_eye)
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
             self.ui.botonAgregar.clicked.connect(self.agregar_equipo)
@@ -36,7 +34,6 @@ class E_MovilidadWidget(QWidget):
             self.ui.botonBuscar.clicked.connect(self.buscar_equipo)
             self.ui.botonBorrar.clicked.connect(self.borrar_busqueda)
             self.ui.botonOrdenar1.clicked.connect(self.ordenar_equipo)
-            self.ui.botonVer1.clicked.connect(self.ver_equipo)
             self.ui.botonAdmin.clicked.connect(self.admin_view)
             self.ui.botonLogOut.clicked.connect(self.Logout_requested)
 

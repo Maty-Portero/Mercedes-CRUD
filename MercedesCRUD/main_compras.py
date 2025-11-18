@@ -27,14 +27,11 @@ class ComprasWidget(QWidget):
         self.ui.botonEditar1.setIcon(icon_edit)
         icon_close = load_pixmap("close.png")
         self.ui.botonSacar1.setIcon(icon_close)
-        icon_eye = load_pixmap("eye.png")
-        self.ui.botonVer1.setIcon(icon_eye)
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
         self.ui.botonAgregar.clicked.connect(self.agregar_orden)
         self.ui.botonEditar1.clicked.connect(self.editar_orden)
         self.ui.botonSacar1.clicked.connect(self.eliminar_orden)
-        self.ui.botonVer1.clicked.connect(self.ver_orden)
         self.ui.botonBuscar.clicked.connect(self.buscar_orden)
         self.ui.botonOrdenar1.clicked.connect(self.ordenar_orden)
         self.ui.botonAdmin.clicked.connect(self.admin_view)

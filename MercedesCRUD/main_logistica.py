@@ -27,8 +27,6 @@ class LogisticaWidget(QWidget):
         self.ui.botonEditar1.setIcon(icon_edit)
         icon_close = QIcon(load_pixmap("close.png"))
         self.ui.botonSacar1.setIcon(icon_close)
-        icon_eye = QIcon(load_pixmap("eye.png"))
-        self.ui.botonVer1.setIcon(icon_eye)
         self.ui.botonAgregar.setIcon(QIcon(load_pixmap("c.png")))
         self.ui.botonOrdenar1.setIcon(QIcon(load_pixmap("down_arrow.png")))
 
@@ -36,7 +34,6 @@ class LogisticaWidget(QWidget):
         self.ui.botonAgregar.clicked.connect(self.agregar_pedido)
         self.ui.botonEditar1.clicked.connect(self.editar_pedido)
         self.ui.botonSacar1.clicked.connect(self.eliminar_pedido)
-        self.ui.botonVer1.clicked.connect(self.ver_pedido)
         self.ui.botonBuscar.clicked.connect(self.buscar_pedido)
         self.ui.botonOrdenar1.clicked.connect(self.ordenar_pedido)
         self.ui.botonAdmin.clicked.connect(self.admin_view)

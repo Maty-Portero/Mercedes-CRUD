@@ -36,7 +36,6 @@ class MarketingWidget(QWidget):
         self.ui.botonBuscar.clicked.connect(self.buscar_campana)
         self.ui.botonBorrar.clicked.connect(self.borrar_busqueda)
         self.ui.botonOrdenar1.clicked.connect(self.ordenar_campana)
-        self.ui.botonVer1.clicked.connect(self.ver_campana)
         self.ui.botonAdmin.clicked.connect(self.admin_view)
         self.ui.botonLogOut.clicked.connect(self.Logout_requested)
 

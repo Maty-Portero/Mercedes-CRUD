@@ -26,8 +26,6 @@ class E_MovilidadCEOUsuariosAutorizadosWidget(QWidget):
         self.ui.botonEditar1.setIcon(icon_edit)
         icon_close = load_pixmap("close.png")
         self.ui.botonSacar1.setIcon(icon_close)
-        icon_eye = load_pixmap("eye.png")
-        self.ui.botonVer1.setIcon(icon_eye)
         icon_c = load_pixmap("c.png")
         self.ui.botonAgregar.setIcon(icon_c)
         icon_down_arrow = load_pixmap("down_arrow.png")
@@ -52,7 +50,6 @@ class E_MovilidadCEOUsuariosAutorizadosWidget(QWidget):
         image_path = os.path.join(script_dir, "edit.png") 
         
         # Carga de imágenes optimizada (reemplazo de pixmap)
-        self.ui.botonVer1.setIcon(load_pixmap("eye.png"))
         self.ui.botonAgregar.setIcon(load_pixmap("c.png"))
         self.ui.botonOrdenar1.setIcon(load_pixmap("down_arrow.png"))
 
@@ -60,7 +57,6 @@ class E_MovilidadCEOUsuariosAutorizadosWidget(QWidget):
         self.ui.botonAgregar.clicked.connect(self.agregar_empleado)
         self.ui.botonEditar1.clicked.connect(self.editar_empleado)
         self.ui.botonSacar1.clicked.connect(self.eliminar_empleado)
-        self.ui.botonVer1.clicked.connect(self.ver_empleado)
         self.ui.botonBuscar.clicked.connect(self.buscar_empleado)
         self.ui.botonOrdenar1.clicked.connect(self.ordenar_empleado)
         self.ui.botonAdmin.clicked.connect(self.admin_view)
