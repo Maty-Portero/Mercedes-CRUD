@@ -222,150 +222,6 @@ padding: 5px;
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>320</y>
-     <width>1920</width>
-     <height>3</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(232, 232, 232);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_10">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>385</y>
-     <width>1920</width>
-     <height>3</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(232, 232, 232);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_11">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>515</y>
-     <width>1920</width>
-     <height>3</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(232, 232, 232);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_9">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>450</y>
-     <width>1920</width>
-     <height>3</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(232, 232, 232);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_15">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>645</y>
-     <width>1920</width>
-     <height>3</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(232, 232, 232);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_16">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>580</y>
-     <width>1920</width>
-     <height>3</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(232, 232, 232);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_17">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>710</y>
-     <width>1920</width>
-     <height>3</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(232, 232, 232);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_18">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>775</y>
-     <width>1920</width>
-     <height>3</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(232, 232, 232);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_19">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>840</y>
-     <width>1920</width>
-     <height>3</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(232, 232, 232);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_20">
    <property name="geometry">
     <rect>
@@ -377,22 +233,6 @@ padding: 5px;
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(0, 45, 107);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_21">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>905</y>
-     <width>1920</width>
-     <height>3</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(232, 232, 232);</string>
    </property>
    <property name="text">
     <string/>
@@ -767,7 +607,7 @@ background-color: #ebebeb;</string>
      <x>60</x>
      <y>256</y>
      <width>1800</width>
-     <height>791</height>
+     <height>711</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -787,17 +627,7 @@ background-color: #ebebeb;</string>
   <zorder>label_7</zorder>
   <zorder>label_14</zorder>
   <zorder>label</zorder>
-  <zorder>label_2</zorder>
-  <zorder>label_10</zorder>
-  <zorder>label_11</zorder>
-  <zorder>label_9</zorder>
-  <zorder>label_15</zorder>
-  <zorder>label_16</zorder>
-  <zorder>label_17</zorder>
-  <zorder>label_18</zorder>
-  <zorder>label_19</zorder>
   <zorder>label_20</zorder>
-  <zorder>label_21</zorder>
   <zorder>botonEditar1</zorder>
   <zorder>botonSacar1</zorder>
   <zorder>label_22</zorder>
