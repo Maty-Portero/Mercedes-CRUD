@@ -1,0 +1,18 @@
+[
+    {
+        "Descuentos": 100000,
+        "Estado_Pago": "Pagado",
+        "ID_Empleado": 1201,
+        "ID_Nomina": 1,
+        "Sueldo_Bruto": 500000,
+        "Sueldo_Neto": 400000
+    },
+    {
+        "Descuentos": 50000,
+        "Estado_Pago": "Pagado",
+        "ID_Empleado": 1202,
+        "ID_Nomina": 2,
+        "Sueldo_Bruto": 250000,
+        "Sueldo_Neto": 200000
+    }
+]

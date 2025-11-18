@@ -1,0 +1,14 @@
+[
+    {
+        "Estado_Aprobacion": "Aprobada",
+        "ID_Empleado": 1201,
+        "ID_Licencia": 1,
+        "Tipo_Licencia": "Vacaciones"
+    },
+    {
+        "Estado_Aprobacion": "Pendiente",
+        "ID_Empleado": 1202,
+        "ID_Licencia": 2,
+        "Tipo_Licencia": "Enfermedad"
+    }
+]

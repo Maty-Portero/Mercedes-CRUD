@@ -1,0 +1,16 @@
+[
+    {
+        "Diagnostico_Fallas": "OK",
+        "ID_Lectura": 1301,
+        "Nivel_Carga_Porc": 85,
+        "SOH": 99.5,
+        "Temperatura": 35
+    },
+    {
+        "Diagnostico_Fallas": "OK",
+        "ID_Lectura": 1302,
+        "Nivel_Carga_Porc": 70,
+        "SOH": 99.4,
+        "Temperatura": 38
+    }
+]

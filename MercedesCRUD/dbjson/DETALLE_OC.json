@@ -1,0 +1,23 @@
+[
+    {
+        "Cantidad": 10,
+        "ID_Detalle_OC": 701,
+        "ID_OC": 601,
+        "ID_Producto": 3,
+        "Precio_Unitario": 15000
+    },
+    {
+        "Cantidad": 100,
+        "ID_Detalle_OC": 702,
+        "ID_OC": 601,
+        "ID_Producto": 5,
+        "Precio_Unitario": 350
+    },
+    {
+        "Cantidad": 4,
+        "ID_Detalle_OC": 703,
+        "ID_OC": 602,
+        "ID_Producto": 4,
+        "Precio_Unitario": 10000
+    }
+]

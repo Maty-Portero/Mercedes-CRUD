@@ -1,0 +1,22 @@
+[
+    {
+        "CUIL": 20301234567,
+        "Direccion": "Av. Central 500",
+        "ID_Empleado": 1201,
+        "ID_Sector": 6,
+        "ID_Usuario": 101,
+        "Legajo": "L-001",
+        "Puesto": "Gerente de Planta",
+        "Salario": 500000
+    },
+    {
+        "CUIL": 20357890123,
+        "Direccion": "Calle Oeste 45",
+        "ID_Empleado": 1202,
+        "ID_Sector": 3,
+        "ID_Usuario": 103,
+        "Legajo": "L-003",
+        "Puesto": "Jefe de Almacén",
+        "Salario": 250000
+    }
+]

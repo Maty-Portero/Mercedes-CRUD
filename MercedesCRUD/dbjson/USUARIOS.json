@@ -1,0 +1,42 @@
+[
+    {
+        "Apellido": "Lopez",
+        "Contrasena": "juancito123",
+        "Email": "j.lopez@mb.com",
+        "ID_Rol": 1,
+        "ID_Sector": 6,
+        "ID_Usuario": 101,
+        "Nombre": "Juan",
+        "Nombre_Usuario": "jlopez"
+    },
+    {
+        "Apellido": "Gonzalez",
+        "Contrasena": "contraseña",
+        "Email": "m.gonzalez@mb.com",
+        "ID_Rol": 2,
+        "ID_Sector": 5,
+        "ID_Usuario": 102,
+        "Nombre": "Maria",
+        "Nombre_Usuario": "mgonzalez"
+    },
+    {
+        "Apellido": "Perez",
+        "Contrasena": "goku123",
+        "Email": "p.perez@mb.com",
+        "ID_Rol": 2,
+        "ID_Sector": 3,
+        "ID_Usuario": 103,
+        "Nombre": "Pedro",
+        "Nombre_Usuario": "pperez"
+    },
+    {
+        "Apellido": "Ramiro",
+        "Contrasena": "2007",
+        "Email": "a.ramiro@mb.com",
+        "ID_Rol": 2,
+        "ID_Sector": 4,
+        "ID_Usuario": 104,
+        "Nombre": "Ana",
+        "Nombre_Usuario": "aramiro"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "Cantidad_A_Producir": 50,
+        "Estado": "En_Curso",
+        "ID_Orden": 401,
+        "ID_Producto": 1
+    },
+    {
+        "Cantidad_A_Producir": 20,
+        "Estado": "Pendiente",
+        "ID_Orden": 402,
+        "ID_Producto": 2
+    }
+]

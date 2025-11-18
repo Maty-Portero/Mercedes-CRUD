@@ -4,6 +4,7 @@ from PySide6.QtWidgets import QWidget, QMessageBox
 from PySide6.QtCore import Signal, Slot
 from image_loader import load_pixmap
 from ui_marketing import Ui_Widget 
+import db_manager
 
 # La clase MyWidget es tu vista de RRHH
 class MarketingWidget(QWidget):
@@ -38,6 +39,12 @@ class MarketingWidget(QWidget):
             self.ui.botonVer1.clicked.connect(self.ver_campana)
             self.ui.botonAdmin.clicked.connect(self.admin_view)
             self.ui.botonLogOut.clicked.connect(self.Logout_requested)
+
+            # Comentado temporalmente hasta que se agreguen datos a CAMPANAS_MARKETING
+            # TABLE_NAME = "CAMPANAS_MARKETING"
+            # HEADERS = ["ID_Campana", "Tipo", "Estado", "Fecha_Inicio", "Fecha_Fin"]
+            # UI_TABLE = self.ui.tableWidget
+            # self.load_sector_data(TABLE_NAME, HEADERS, UI_TABLE)
 
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión
@@ -94,3 +101,28 @@ class MarketingWidget(QWidget):
         
     def Logout_requested(self):
         self.logout_requested.emit()
+        
+    def load_sector_data(self, table_name, headers, table_widget):
+        """
+        Carga datos en el QTableWidget del sector usando db_manager.
+        """
+        try:
+            data = db_manager.get_data_for_sector(table_name, headers)
+            if data is None:
+                QMessageBox.critical(self, "Error de BD", f"La consulta a la tabla '{table_name}' falló o no devolvió datos.")
+                return
+        except Exception as e:
+            QMessageBox.critical(self, "Error de BD", f"Error al cargar datos de {table_name}: {e}")
+            return
+        if not hasattr(table_widget, 'setColumnCount'):
+            print(f"[WARN] El widget proporcionado para mostrar la tabla ('{table_name}') no es una QTableWidget. Saltando carga.")
+            return
+        table_widget.setColumnCount(len(headers))
+        table_widget.setHorizontalHeaderLabels(headers)
+        table_widget.setRowCount(0)
+        table_widget.setRowCount(len(data))
+        for row_idx, row_data in enumerate(data):
+            for col_idx, item in enumerate(row_data):
+                from PySide6.QtWidgets import QTableWidgetItem
+                cell_item = QTableWidgetItem(str(item))
+                table_widget.setItem(row_idx, col_idx, cell_item)

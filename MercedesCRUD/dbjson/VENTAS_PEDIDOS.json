@@ -1,0 +1,16 @@
+[
+    {
+        "Estado_Pedido": "Facturado",
+        "ID_Cliente": 301,
+        "ID_Pedidos": 801,
+        "ID_Usuario_Vendedor": 102,
+        "Monto_Total": 75000000
+    },
+    {
+        "Estado_Pedido": "Pendiente",
+        "ID_Cliente": 302,
+        "ID_Pedidos": 802,
+        "ID_Usuario_Vendedor": 102,
+        "Monto_Total": 165000000
+    }
+]

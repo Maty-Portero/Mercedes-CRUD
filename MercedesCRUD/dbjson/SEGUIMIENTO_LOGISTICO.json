@@ -1,0 +1,18 @@
+[
+    {
+        "Destino": "Concesionario Sur",
+        "Estado_Actual": "En_Tránsito",
+        "ID_Pedido_OC": 701,
+        "ID_Seguimiento": 1101,
+        "Origen": "Fábrica",
+        "Tipo_Logistica": "Distribución"
+    },
+    {
+        "Destino": "Línea de Montaje EV",
+        "Estado_Actual": "Entregado",
+        "ID_Pedido_OC": 702,
+        "ID_Seguimiento": 1102,
+        "Origen": "Almacén",
+        "Tipo_Logistica": "Producción"
+    }
+]

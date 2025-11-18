@@ -1,0 +1,34 @@
+[
+    {
+        "ID_Sector": 1,
+        "Nombre_Sector": "Marketing"
+    },
+    {
+        "ID_Sector": 2,
+        "Nombre_Sector": "Mantenimiento"
+    },
+    {
+        "ID_Sector": 3,
+        "Nombre_Sector": "Logística"
+    },
+    {
+        "ID_Sector": 4,
+        "Nombre_Sector": "Compras"
+    },
+    {
+        "ID_Sector": 5,
+        "Nombre_Sector": "Ventas"
+    },
+    {
+        "ID_Sector": 6,
+        "Nombre_Sector": "Producción"
+    },
+    {
+        "ID_Sector": 7,
+        "Nombre_Sector": "E-Movilidad"
+    },
+    {
+        "ID_Sector": 8,
+        "Nombre_Sector": "RRHH"
+    }
+]

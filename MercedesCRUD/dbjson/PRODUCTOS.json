@@ -1,0 +1,38 @@
+[
+    {
+        "ID_Producto": 1,
+        "Modelo": 1,
+        "Nombre_Producto": "M300",
+        "Precio_Base": 75000000
+    },
+    {
+        "ID_Producto": 2,
+        "Modelo": 1,
+        "Nombre_Producto": "M500",
+        "Precio_Base": 75000000
+    },
+    {
+        "ID_Producto": 3,
+        "Modelo": 1,
+        "Nombre_Producto": "BAT-A01",
+        "Precio_Base": 75000000
+    },
+    {
+        "ID_Producto": 4,
+        "Modelo": 1,
+        "Nombre_Producto": "MOT-G01",
+        "Precio_Base": 75000000
+    },
+    {
+        "ID_Producto": 5,
+        "Modelo": 1,
+        "Nombre_Producto": "LLAN-18",
+        "Precio_Base": 75000000
+    },
+    {
+        "ID_Producto": 6,
+        "Modelo": 1,
+        "Nombre_Producto": "ASI-PIEL",
+        "Precio_Base": 75000000
+    }
+]

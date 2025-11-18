@@ -1,0 +1,22 @@
+[
+    {
+        "Cantidad_Requerida": 50,
+        "ID_Detalle_OP": 501,
+        "ID_Orden": 401
+    },
+    {
+        "Cantidad_Requerida": 200,
+        "ID_Detalle_OP": 502,
+        "ID_Orden": 401
+    },
+    {
+        "Cantidad_Requerida": 20,
+        "ID_Detalle_OP": 503,
+        "ID_Orden": 402
+    },
+    {
+        "Cantidad_Requerida": 80,
+        "ID_Detalle_OP": 504,
+        "ID_Orden": 402
+    }
+]

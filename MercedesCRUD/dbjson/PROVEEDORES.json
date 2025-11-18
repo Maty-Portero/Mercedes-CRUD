@@ -1,0 +1,16 @@
+[
+    {
+        "Direccion": "Calle A 123",
+        "Email": "csolis@lithium.com",
+        "ID_Proveedor": 201,
+        "Nombre_Proveedor": "Lithium Tech S.A.",
+        "Telefono": 1130131818
+    },
+    {
+        "Direccion": "Av B 456",
+        "Email": "lmontes@steel.com",
+        "ID_Proveedor": 202,
+        "Nombre_Proveedor": "Steel Parts Corp.",
+        "Telefono": 1167163816
+    }
+]

@@ -34,6 +34,11 @@ class VentasWidget(QWidget):
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
         self.ui.botonAgregar.clicked.connect(self.agregar_venta)
+        import db_manager
+        TABLE_NAME = "VENTAS_PEDIDOS"
+        HEADERS = ["ID_Pedidos", "ID_Cliente", "ID_Usuario_Vendedor", "Estado_Pedido", "Monto_Total"]
+        UI_TABLE = self.ui.tableWidget
+        self.load_sector_data(TABLE_NAME, HEADERS, UI_TABLE)
         self.ui.botonEditar1.clicked.connect(self.editar_venta)
         self.ui.botonSacar1.clicked.connect(self.eliminar_venta)
         self.ui.botonVer1.clicked.connect(self.ver_venta)
@@ -92,3 +97,56 @@ class VentasWidget(QWidget):
     
     def Logout_requested(self):
         self.logout_requested.emit()
+
+    def load_sector_data(self, table_name, headers, table_widget):
+        """
+        Carga datos en el QTableWidget del sector usando db_manager.
+        """
+        import db_manager
+        from PySide6.QtWidgets import QTableWidgetItem, QHeaderView
+        from PySide6.QtCore import Qt
+        try:
+            data = db_manager.get_data_for_sector(table_name, headers)
+            if data is None:
+                QMessageBox.critical(self, "Error de BD", f"La consulta a la tabla '{table_name}' falló o no devolvió datos.")
+                return
+        except Exception as e:
+            QMessageBox.critical(self, "Error de BD", f"Error al cargar datos de {table_name}: {e}")
+            return
+        if not hasattr(table_widget, 'setColumnCount'):
+            print(f"[WARN] El widget proporcionado para mostrar la tabla ('{table_name}') no es una QTableWidget. Saltando carga.")
+            return
+        table_widget.setColumnCount(len(headers))
+        table_widget.setHorizontalHeaderLabels(headers)
+        table_widget.setRowCount(0)
+        table_widget.setRowCount(len(data))
+        for row_idx, row_data in enumerate(data):
+            for col_idx, item in enumerate(row_data):
+                cell_item = QTableWidgetItem(str(item))
+                cell_item.setTextAlignment(Qt.AlignCenter)
+                table_widget.setItem(row_idx, col_idx, cell_item)
+        
+        # Estilo y configuración de tamaños
+        header = table_widget.horizontalHeader()
+        header.setStretchLastSection(False)
+        header.setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+        table_widget.verticalHeader().setDefaultSectionSize(40)
+        table_widget.horizontalHeader().setMinimumHeight(40)
+        table_widget.setStyleSheet("""
+            QHeaderView::section {
+                background-color: #002d6b;
+                color: white;
+                padding: 5px;
+                border: 1px solid #002d6b;
+                font-weight: bold;
+                font-size: 20px;
+            }
+            QTableCornerButton::section {
+                background-color: #002d6b;
+            }
+            QTableWidget::item {
+                border: 1px solid #e0e0e0;
+                padding: 5px;
+            }
+        """)
+        print(f"Sector {table_name}: {len(data)} registros cargados.")

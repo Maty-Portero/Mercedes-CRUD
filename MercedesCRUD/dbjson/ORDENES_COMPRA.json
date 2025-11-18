@@ -1,0 +1,18 @@
+[
+    {
+        "Estado": "Aprobada",
+        "ID_OC": 601,
+        "ID_Proveedor": 201,
+        "ID_Usuario_Aprobador": 101,
+        "ID_Usuario_Solicitante": 104,
+        "Monto_Total": 1000
+    },
+    {
+        "Estado": "Pendiente",
+        "ID_OC": 602,
+        "ID_Proveedor": 202,
+        "ID_Usuario_Aprobador": 102,
+        "ID_Usuario_Solicitante": 104,
+        "Monto_Total": 2000
+    }
+]

@@ -1,0 +1,78 @@
+[
+    {
+        "name": "PRODUCTOS",
+        "seq": 6
+    },
+    {
+        "name": "INVENTARIO",
+        "seq": 1003
+    },
+    {
+        "name": "ORDENES_PRODUCCION",
+        "seq": 402
+    },
+    {
+        "name": "DETALLE_OP",
+        "seq": 504
+    },
+    {
+        "name": "BATERIAS_EV_MONITOR",
+        "seq": 1302
+    },
+    {
+        "name": "ORDENES_COMPRA",
+        "seq": 602
+    },
+    {
+        "name": "DETALLE_OC",
+        "seq": 703
+    },
+    {
+        "name": "VENTAS_PEDIDOS",
+        "seq": 802
+    },
+    {
+        "name": "SEGUIMIENTO_LOGISTICO",
+        "seq": 1102
+    },
+    {
+        "name": "EMPLEADOS",
+        "seq": 1202
+    },
+    {
+        "name": "NOMINAS",
+        "seq": 2
+    },
+    {
+        "name": "LICENCIAS",
+        "seq": 2
+    },
+    {
+        "name": "RESULTADOS_MARKETING",
+        "seq": 0
+    },
+    {
+        "name": "ALERTAS_SISTEMA",
+        "seq": 0
+    },
+    {
+        "name": "USUARIOS",
+        "seq": 104
+    },
+    {
+        "name": "SECTORES",
+        "seq": 9
+    },
+    {
+        "name": "ROLES",
+        "seq": 2
+    },
+    {
+        "name": "PROVEEDORES",
+        "seq": 202
+    },
+    {
+        "name": "CLIENTES",
+        "seq": 302
+    }
+]

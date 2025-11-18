@@ -1,0 +1,20 @@
+[
+    {
+        "Apellido": "Gimenez",
+        "Direccion": "Calle Falsa 123",
+        "Email": "f.gimenez@mail.com",
+        "ID_Cliente": 301,
+        "Nombre": "Fernando",
+        "Telefono": "5551234",
+        "Tipo_Cliente": "Particular"
+    },
+    {
+        "Apellido": "Acosta",
+        "Direccion": "Av Principal 456",
+        "Email": "m.acosta@rentcar.com",
+        "ID_Cliente": 302,
+        "Nombre": "RentCar S.R.L.",
+        "Telefono": "5554321",
+        "Tipo_Cliente": "Empresa"
+    }
+]
