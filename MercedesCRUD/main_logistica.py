@@ -143,27 +143,182 @@ class LogisticaWidget(QWidget):
 
     @Slot()
     def agregar_pedido(self):
-        QMessageBox.information(self, "Logistica", "Función: Agregar Pedido.")
+        from PySide6.QtWidgets import QDialog, QFormLayout, QLineEdit, QDialogButtonBox
+        import db_manager
+        
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Agregar Registro Logístico")
+        layout = QFormLayout()
+        
+        tipo_input = QLineEdit()
+        origen_input = QLineEdit()
+        destino_input = QLineEdit()
+        estado_input = QLineEdit()
+        fecha_input = QLineEdit()
+        
+        layout.addRow("Tipo:", tipo_input)
+        layout.addRow("Origen:", origen_input)
+        layout.addRow("Destino:", destino_input)
+        layout.addRow("Estado:", estado_input)
+        layout.addRow("Fecha (YYYY-MM-DD):", fecha_input)
+        
+        buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        buttons.accepted.connect(dialog.accept)
+        buttons.rejected.connect(dialog.reject)
+        layout.addWidget(buttons)
+        
+        dialog.setLayout(layout)
+        
+        if dialog.exec() == QDialog.Accepted:
+            try:
+                columns = ["Tipo", "Origen", "Destino", "Estado", "Fecha"]
+                values = [
+                    tipo_input.text(),
+                    origen_input.text(),
+                    destino_input.text(),
+                    estado_input.text(),
+                    fecha_input.text()
+                ]
+                
+                if db_manager.insert_record("LOGISTICA", columns, values):
+                    QMessageBox.information(self, "Éxito", "Registro logístico agregado correctamente.")
+                    TABLE_NAME = "LOGISTICA"
+                    HEADERS = ["ID_Logistica", "Tipo", "Origen", "Destino", "Estado", "Fecha"]
+                    self.load_sector_data(TABLE_NAME, HEADERS, self.ui.tableWidget)
+                else:
+                    QMessageBox.critical(self, "Error", "No se pudo agregar el registro.")
+            except ValueError as e:
+                QMessageBox.warning(self, "Error de validación", f"Por favor ingrese valores válidos: {e}")
 
     @Slot()
     def editar_pedido(self):
-        QMessageBox.information(self, "Logistica", "Función: Editar Pedido.")
+        import db_manager
+        from PySide6.QtWidgets import QDialog, QFormLayout, QLineEdit, QDialogButtonBox
+        
+        selected_rows = self.ui.tableWidget.selectionModel().selectedRows()
+        if not selected_rows:
+            QMessageBox.warning(self, "Advertencia", "Por favor seleccione un registro para editar.")
+            return
+        
+        row = selected_rows[0].row()
+        id_logistica = self.ui.tableWidget.item(row, 0).text()
+        tipo_actual = self.ui.tableWidget.item(row, 1).text()
+        origen_actual = self.ui.tableWidget.item(row, 2).text()
+        destino_actual = self.ui.tableWidget.item(row, 3).text()
+        estado_actual = self.ui.tableWidget.item(row, 4).text()
+        fecha_actual = self.ui.tableWidget.item(row, 5).text()
+        
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Editar Registro Logístico")
+        layout = QFormLayout()
+        
+        tipo_input = QLineEdit(tipo_actual)
+        origen_input = QLineEdit(origen_actual)
+        destino_input = QLineEdit(destino_actual)
+        estado_input = QLineEdit(estado_actual)
+        fecha_input = QLineEdit(fecha_actual)
+        
+        layout.addRow("Tipo:", tipo_input)
+        layout.addRow("Origen:", origen_input)
+        layout.addRow("Destino:", destino_input)
+        layout.addRow("Estado:", estado_input)
+        layout.addRow("Fecha (YYYY-MM-DD):", fecha_input)
+        
+        buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        buttons.accepted.connect(dialog.accept)
+        buttons.rejected.connect(dialog.reject)
+        layout.addWidget(buttons)
+        
+        dialog.setLayout(layout)
+        
+        if dialog.exec() == QDialog.Accepted:
+            try:
+                columns = ["Tipo", "Origen", "Destino", "Estado", "Fecha"]
+                values = [
+                    tipo_input.text(),
+                    origen_input.text(),
+                    destino_input.text(),
+                    estado_input.text(),
+                    fecha_input.text()
+                ]
+                
+                if db_manager.update_record("LOGISTICA", columns, values, "ID_Logistica", int(id_logistica)):
+                    QMessageBox.information(self, "Éxito", "Registro actualizado correctamente.")
+                    TABLE_NAME = "LOGISTICA"
+                    HEADERS = ["ID_Logistica", "Tipo", "Origen", "Destino", "Estado", "Fecha"]
+                    self.load_sector_data(TABLE_NAME, HEADERS, self.ui.tableWidget)
+                else:
+                    QMessageBox.critical(self, "Error", "No se pudo actualizar el registro.")
+            except ValueError as e:
+                QMessageBox.warning(self, "Error de validación", f"Por favor ingrese valores válidos: {e}")
 
     @Slot()
     def eliminar_pedido(self):
-        QMessageBox.information(self, "Logistica", "Función: Eliminar Pedido.")
+        import db_manager
+        
+        selected_rows = self.ui.tableWidget.selectionModel().selectedRows()
+        if not selected_rows:
+            QMessageBox.warning(self, "Advertencia", "Por favor seleccione un registro para eliminar.")
+            return
+        
+        row = selected_rows[0].row()
+        id_logistica = self.ui.tableWidget.item(row, 0).text()
+        destino = self.ui.tableWidget.item(row, 3).text()
+        
+        reply = QMessageBox.question(
+            self, 
+            "Confirmar eliminación",
+            f"¿Está seguro de eliminar el registro logístico con destino {destino} (ID: {id_logistica})?",
+            QMessageBox.Yes | QMessageBox.No
+        )
+        
+        if reply == QMessageBox.Yes:
+            if db_manager.delete_record("LOGISTICA", "ID_Logistica", int(id_logistica)):
+                QMessageBox.information(self, "Éxito", "Registro eliminado correctamente.")
+                TABLE_NAME = "LOGISTICA"
+                HEADERS = ["ID_Logistica", "Tipo", "Origen", "Destino", "Estado", "Fecha"]
+                self.load_sector_data(TABLE_NAME, HEADERS, self.ui.tableWidget)
+            else:
+                QMessageBox.critical(self, "Error", "No se pudo eliminar el registro.")
         
     @Slot()
     def ver_pedido(self):
-        QMessageBox.information(self, "Logistica", "Función: Ver Pedido.")
+        selected_rows = self.ui.tableWidget.selectionModel().selectedRows()
+        if not selected_rows:
+            QMessageBox.warning(self, "Advertencia", "Por favor seleccione un registro para ver.")
+            return
+        
+        row = selected_rows[0].row()
+        detalles = []
+        headers = ["ID_Logistica", "Tipo", "Origen", "Destino", "Estado", "Fecha"]
+        for col in range(self.ui.tableWidget.columnCount()):
+            valor = self.ui.tableWidget.item(row, col).text()
+            detalles.append(f"{headers[col]}: {valor}")
+        
+        QMessageBox.information(self, "Detalles del Registro", "\n".join(detalles))
     
     @Slot()
     def buscar_pedido(self):
-        QMessageBox.information(self, "Compras", "Función: Buscar Pedido.")
+        from PySide6.QtWidgets import QInputDialog
+        texto, ok = QInputDialog.getText(self, "Buscar", "Ingrese tipo, origen, destino o estado a buscar:")
+        if ok and texto:
+            for row in range(self.ui.tableWidget.rowCount()):
+                match = False
+                for col in range(self.ui.tableWidget.columnCount()):
+                    item = self.ui.tableWidget.item(row, col)
+                    if item and texto.lower() in item.text().lower():
+                        match = True
+                        break
+                self.ui.tableWidget.setRowHidden(row, not match)
     
     @Slot()
     def ordenar_pedido(self):
-        QMessageBox.information(self, "Compras", "Función: Ordenar Pedido.")
+        from PySide6.QtWidgets import QInputDialog
+        columnas = ["ID_Logistica", "Tipo", "Origen", "Destino", "Estado", "Fecha"]
+        columna, ok = QInputDialog.getItem(self, "Ordenar", "Seleccione columna:", columnas, 0, False)
+        if ok:
+            col_idx = columnas.index(columna)
+            self.ui.tableWidget.sortItems(col_idx)
     
     @Slot()
     def admin_view(self):

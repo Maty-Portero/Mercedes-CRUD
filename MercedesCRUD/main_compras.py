@@ -63,27 +63,175 @@ class ComprasWidget(QWidget):
 
     @Slot()
     def agregar_orden(self):
-        QMessageBox.information(self, "Compras", "Función: Agregar orden.")
+        from PySide6.QtWidgets import QDialog, QFormLayout, QLineEdit, QDialogButtonBox
+        import db_manager
+        
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Agregar Compra")
+        layout = QFormLayout()
+        
+        id_proveedor_input = QLineEdit()
+        fecha_input = QLineEdit()
+        total_input = QLineEdit()
+        estado_input = QLineEdit()
+        
+        layout.addRow("ID Proveedor:", id_proveedor_input)
+        layout.addRow("Fecha (YYYY-MM-DD):", fecha_input)
+        layout.addRow("Total:", total_input)
+        layout.addRow("Estado:", estado_input)
+        
+        buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        buttons.accepted.connect(dialog.accept)
+        buttons.rejected.connect(dialog.reject)
+        layout.addWidget(buttons)
+        
+        dialog.setLayout(layout)
+        
+        if dialog.exec() == QDialog.Accepted:
+            try:
+                columns = ["ID_Proveedor", "Fecha", "Total", "Estado"]
+                values = [
+                    int(id_proveedor_input.text()),
+                    fecha_input.text(),
+                    float(total_input.text()),
+                    estado_input.text()
+                ]
+                
+                if db_manager.insert_record("COMPRAS", columns, values):
+                    QMessageBox.information(self, "Éxito", "Compra agregada correctamente.")
+                    TABLE_NAME = "COMPRAS"
+                    HEADERS = ["ID_Compra", "ID_Proveedor", "Fecha", "Total", "Estado"]
+                    self.load_sector_data(TABLE_NAME, HEADERS, self.ui.tableWidget)
+                else:
+                    QMessageBox.critical(self, "Error", "No se pudo agregar la compra.")
+            except ValueError as e:
+                QMessageBox.warning(self, "Error de validación", f"Por favor ingrese valores válidos: {e}")
 
     @Slot()
     def editar_orden(self):
-        QMessageBox.information(self, "Compras", "Función: Editar orden.")
+        import db_manager
+        from PySide6.QtWidgets import QDialog, QFormLayout, QLineEdit, QDialogButtonBox
+        
+        selected_rows = self.ui.tableWidget.selectionModel().selectedRows()
+        if not selected_rows:
+            QMessageBox.warning(self, "Advertencia", "Por favor seleccione una compra para editar.")
+            return
+        
+        row = selected_rows[0].row()
+        id_compra = self.ui.tableWidget.item(row, 0).text()
+        id_proveedor_actual = self.ui.tableWidget.item(row, 1).text()
+        fecha_actual = self.ui.tableWidget.item(row, 2).text()
+        total_actual = self.ui.tableWidget.item(row, 3).text()
+        estado_actual = self.ui.tableWidget.item(row, 4).text()
+        
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Editar Compra")
+        layout = QFormLayout()
+        
+        id_proveedor_input = QLineEdit(id_proveedor_actual)
+        fecha_input = QLineEdit(fecha_actual)
+        total_input = QLineEdit(total_actual)
+        estado_input = QLineEdit(estado_actual)
+        
+        layout.addRow("ID Proveedor:", id_proveedor_input)
+        layout.addRow("Fecha (YYYY-MM-DD):", fecha_input)
+        layout.addRow("Total:", total_input)
+        layout.addRow("Estado:", estado_input)
+        
+        buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        buttons.accepted.connect(dialog.accept)
+        buttons.rejected.connect(dialog.reject)
+        layout.addWidget(buttons)
+        
+        dialog.setLayout(layout)
+        
+        if dialog.exec() == QDialog.Accepted:
+            try:
+                columns = ["ID_Proveedor", "Fecha", "Total", "Estado"]
+                values = [
+                    int(id_proveedor_input.text()),
+                    fecha_input.text(),
+                    float(total_input.text()),
+                    estado_input.text()
+                ]
+                
+                if db_manager.update_record("COMPRAS", columns, values, "ID_Compra", int(id_compra)):
+                    QMessageBox.information(self, "Éxito", "Compra actualizada correctamente.")
+                    TABLE_NAME = "COMPRAS"
+                    HEADERS = ["ID_Compra", "ID_Proveedor", "Fecha", "Total", "Estado"]
+                    self.load_sector_data(TABLE_NAME, HEADERS, self.ui.tableWidget)
+                else:
+                    QMessageBox.critical(self, "Error", "No se pudo actualizar la compra.")
+            except ValueError as e:
+                QMessageBox.warning(self, "Error de validación", f"Por favor ingrese valores válidos: {e}")
 
     @Slot()
     def eliminar_orden(self):
-        QMessageBox.information(self, "Compras", "Función: Eliminar orden.")
+        import db_manager
+        
+        selected_rows = self.ui.tableWidget.selectionModel().selectedRows()
+        if not selected_rows:
+            QMessageBox.warning(self, "Advertencia", "Por favor seleccione una compra para eliminar.")
+            return
+        
+        row = selected_rows[0].row()
+        id_compra = self.ui.tableWidget.item(row, 0).text()
+        total = self.ui.tableWidget.item(row, 3).text()
+        
+        reply = QMessageBox.question(
+            self, 
+            "Confirmar eliminación",
+            f"¿Está seguro de eliminar la compra por ${total} (ID: {id_compra})?",
+            QMessageBox.Yes | QMessageBox.No
+        )
+        
+        if reply == QMessageBox.Yes:
+            if db_manager.delete_record("COMPRAS", "ID_Compra", int(id_compra)):
+                QMessageBox.information(self, "Éxito", "Compra eliminada correctamente.")
+                TABLE_NAME = "COMPRAS"
+                HEADERS = ["ID_Compra", "ID_Proveedor", "Fecha", "Total", "Estado"]
+                self.load_sector_data(TABLE_NAME, HEADERS, self.ui.tableWidget)
+            else:
+                QMessageBox.critical(self, "Error", "No se pudo eliminar la compra.")
 
     @Slot()
     def ver_orden(self):
-        QMessageBox.information(self, "Compras", "Función: Ver orden.")
+        selected_rows = self.ui.tableWidget.selectionModel().selectedRows()
+        if not selected_rows:
+            QMessageBox.warning(self, "Advertencia", "Por favor seleccione una compra para ver.")
+            return
+        
+        row = selected_rows[0].row()
+        detalles = []
+        headers = ["ID_Compra", "ID_Proveedor", "Fecha", "Total", "Estado"]
+        for col in range(self.ui.tableWidget.columnCount()):
+            valor = self.ui.tableWidget.item(row, col).text()
+            detalles.append(f"{headers[col]}: {valor}")
+        
+        QMessageBox.information(self, "Detalles de la Compra", "\n".join(detalles))
 
     @Slot()
     def buscar_orden(self):
-        QMessageBox.information(self, "Compras", "Función: Buscar orden.")
+        from PySide6.QtWidgets import QInputDialog
+        texto, ok = QInputDialog.getText(self, "Buscar Compra", "Ingrese ID, proveedor o estado a buscar:")
+        if ok and texto:
+            for row in range(self.ui.tableWidget.rowCount()):
+                match = False
+                for col in range(self.ui.tableWidget.columnCount()):
+                    item = self.ui.tableWidget.item(row, col)
+                    if item and texto.lower() in item.text().lower():
+                        match = True
+                        break
+                self.ui.tableWidget.setRowHidden(row, not match)
     
     @Slot()
     def ordenar_orden(self):
-        QMessageBox.information(self, "Compras", "Función: Ordenar orden.")
+        from PySide6.QtWidgets import QInputDialog
+        columnas = ["ID_Compra", "ID_Proveedor", "Fecha", "Total", "Estado"]
+        columna, ok = QInputDialog.getItem(self, "Ordenar", "Seleccione columna:", columnas, 0, False)
+        if ok:
+            col_idx = columnas.index(columna)
+            self.ui.tableWidget.sortItems(col_idx)
     
     @Slot()
     def admin_view(self):

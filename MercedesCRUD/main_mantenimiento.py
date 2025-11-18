@@ -60,31 +60,180 @@ class MantenimientoWidget(QWidget):
 
     @Slot()
     def agregar_equipo(self):
-        QMessageBox.information(self, "Mantenimiento", "Función: Agregar equipo.")
+        from PySide6.QtWidgets import QDialog, QFormLayout, QLineEdit, QDialogButtonBox
+        import db_manager
+        
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Agregar Equipo de Mantenimiento")
+        layout = QFormLayout()
+        
+        nombre_input = QLineEdit()
+        tipo_input = QLineEdit()
+        estado_input = QLineEdit()
+        ultima_revision_input = QLineEdit()
+        
+        layout.addRow("Nombre:", nombre_input)
+        layout.addRow("Tipo:", tipo_input)
+        layout.addRow("Estado:", estado_input)
+        layout.addRow("Última Revisión (YYYY-MM-DD):", ultima_revision_input)
+        
+        buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        buttons.accepted.connect(dialog.accept)
+        buttons.rejected.connect(dialog.reject)
+        layout.addWidget(buttons)
+        
+        dialog.setLayout(layout)
+        
+        if dialog.exec() == QDialog.Accepted:
+            try:
+                columns = ["Nombre", "Tipo", "Estado", "Ultima_Revision"]
+                values = [
+                    nombre_input.text(),
+                    tipo_input.text(),
+                    estado_input.text(),
+                    ultima_revision_input.text()
+                ]
+                
+                if db_manager.insert_record("MANTENIMIENTO_EQUIPOS", columns, values):
+                    QMessageBox.information(self, "Éxito", "Equipo agregado correctamente.")
+                    TABLE_NAME = "MANTENIMIENTO_EQUIPOS"
+                    HEADERS = ["ID_Equipo", "Nombre", "Tipo", "Estado", "Ultima_Revision"]
+                    self.load_sector_data(TABLE_NAME, HEADERS, self.ui.tableWidget)
+                else:
+                    QMessageBox.critical(self, "Error", "No se pudo agregar el equipo.")
+            except ValueError as e:
+                QMessageBox.warning(self, "Error de validación", f"Por favor ingrese valores válidos: {e}")
 
     @Slot()
     def editar_equipo(self):
-        QMessageBox.information(self, "Mantenimiento", "Función: Editar equipo.")
+        import db_manager
+        from PySide6.QtWidgets import QDialog, QFormLayout, QLineEdit, QDialogButtonBox
+        
+        selected_rows = self.ui.tableWidget.selectionModel().selectedRows()
+        if not selected_rows:
+            QMessageBox.warning(self, "Advertencia", "Por favor seleccione un equipo para editar.")
+            return
+        
+        row = selected_rows[0].row()
+        id_equipo = self.ui.tableWidget.item(row, 0).text()
+        nombre_actual = self.ui.tableWidget.item(row, 1).text()
+        tipo_actual = self.ui.tableWidget.item(row, 2).text()
+        estado_actual = self.ui.tableWidget.item(row, 3).text()
+        revision_actual = self.ui.tableWidget.item(row, 4).text()
+        
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Editar Equipo de Mantenimiento")
+        layout = QFormLayout()
+        
+        nombre_input = QLineEdit(nombre_actual)
+        tipo_input = QLineEdit(tipo_actual)
+        estado_input = QLineEdit(estado_actual)
+        revision_input = QLineEdit(revision_actual)
+        
+        layout.addRow("Nombre:", nombre_input)
+        layout.addRow("Tipo:", tipo_input)
+        layout.addRow("Estado:", estado_input)
+        layout.addRow("Última Revisión (YYYY-MM-DD):", revision_input)
+        
+        buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        buttons.accepted.connect(dialog.accept)
+        buttons.rejected.connect(dialog.reject)
+        layout.addWidget(buttons)
+        
+        dialog.setLayout(layout)
+        
+        if dialog.exec() == QDialog.Accepted:
+            try:
+                columns = ["Nombre", "Tipo", "Estado", "Ultima_Revision"]
+                values = [
+                    nombre_input.text(),
+                    tipo_input.text(),
+                    estado_input.text(),
+                    revision_input.text()
+                ]
+                
+                if db_manager.update_record("MANTENIMIENTO_EQUIPOS", columns, values, "ID_Equipo", int(id_equipo)):
+                    QMessageBox.information(self, "Éxito", "Equipo actualizado correctamente.")
+                    TABLE_NAME = "MANTENIMIENTO_EQUIPOS"
+                    HEADERS = ["ID_Equipo", "Nombre", "Tipo", "Estado", "Ultima_Revision"]
+                    self.load_sector_data(TABLE_NAME, HEADERS, self.ui.tableWidget)
+                else:
+                    QMessageBox.critical(self, "Error", "No se pudo actualizar el equipo.")
+            except ValueError as e:
+                QMessageBox.warning(self, "Error de validación", f"Por favor ingrese valores válidos: {e}")
 
     @Slot()
     def eliminar_equipo(self):
-        QMessageBox.information(self, "Mantenimiento", "Función: Eliminar equipo.")
+        import db_manager
+        
+        selected_rows = self.ui.tableWidget.selectionModel().selectedRows()
+        if not selected_rows:
+            QMessageBox.warning(self, "Advertencia", "Por favor seleccione un equipo para eliminar.")
+            return
+        
+        row = selected_rows[0].row()
+        id_equipo = self.ui.tableWidget.item(row, 0).text()
+        nombre = self.ui.tableWidget.item(row, 1).text()
+        
+        reply = QMessageBox.question(
+            self, 
+            "Confirmar eliminación",
+            f"¿Está seguro de eliminar el equipo '{nombre}' (ID: {id_equipo})?",
+            QMessageBox.Yes | QMessageBox.No
+        )
+        
+        if reply == QMessageBox.Yes:
+            if db_manager.delete_record("MANTENIMIENTO_EQUIPOS", "ID_Equipo", int(id_equipo)):
+                QMessageBox.information(self, "Éxito", "Equipo eliminado correctamente.")
+                TABLE_NAME = "MANTENIMIENTO_EQUIPOS"
+                HEADERS = ["ID_Equipo", "Nombre", "Tipo", "Estado", "Ultima_Revision"]
+                self.load_sector_data(TABLE_NAME, HEADERS, self.ui.tableWidget)
+            else:
+                QMessageBox.critical(self, "Error", "No se pudo eliminar el equipo.")
 
     @Slot()
     def buscar_equipo(self):
-        QMessageBox.information(self, "Mantenimiento", "Función: Buscar equipo.")
+        from PySide6.QtWidgets import QInputDialog
+        texto, ok = QInputDialog.getText(self, "Buscar Equipo", "Ingrese nombre, tipo o estado a buscar:")
+        if ok and texto:
+            for row in range(self.ui.tableWidget.rowCount()):
+                match = False
+                for col in range(self.ui.tableWidget.columnCount()):
+                    item = self.ui.tableWidget.item(row, col)
+                    if item and texto.lower() in item.text().lower():
+                        match = True
+                        break
+                self.ui.tableWidget.setRowHidden(row, not match)
 
     @Slot()
     def estado_equipo(self):
-        QMessageBox.information(self, "Mantenimiento", "Función: Chequear estado del equipo.")
+        selected_rows = self.ui.tableWidget.selectionModel().selectedRows()
+        if not selected_rows:
+            QMessageBox.warning(self, "Advertencia", "Por favor seleccione un equipo para ver el estado.")
+            return
+        
+        row = selected_rows[0].row()
+        detalles = []
+        headers = ["ID_Equipo", "Nombre", "Tipo", "Estado", "Última Revisión"]
+        for col in range(self.ui.tableWidget.columnCount()):
+            valor = self.ui.tableWidget.item(row, col).text()
+            detalles.append(f"{headers[col]}: {valor}")
+        
+        QMessageBox.information(self, "Estado del Equipo", "\n".join(detalles))
 
     @Slot()
     def borrar_busqueda(self):
-        QMessageBox.information(self, "Mantenimiento", "Función: Borrar búsqueda.")
+        for row in range(self.ui.tableWidget.rowCount()):
+            self.ui.tableWidget.setRowHidden(row, False)
 
     @Slot()
     def ordenar_equipo(self):
-        QMessageBox.information(self, "Mantenimiento", "Función: Ordenar equipo.")
+        from PySide6.QtWidgets import QInputDialog
+        columnas = ["ID_Equipo", "Nombre", "Tipo", "Estado", "Ultima_Revision"]
+        columna, ok = QInputDialog.getItem(self, "Ordenar", "Seleccione columna:", columnas, 0, False)
+        if ok:
+            col_idx = columnas.index(columna)
+            self.ui.tableWidget.sortItems(col_idx)
     
     @Slot()
     def admin_view(self):
