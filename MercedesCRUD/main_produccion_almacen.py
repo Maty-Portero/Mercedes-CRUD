@@ -23,9 +23,10 @@ class ProduccionAlmacenWidget(QWidget):
             self.ui.label_5.setScaledContents(True)
             self.ui.label_7.setPixmap(load_pixmap("perfil-de-usuario.png"))
             self.ui.label_7.setScaledContents(True)
-            icon_edit = load_pixmap("edit.png")
+            from PySide6.QtGui import QIcon
+            icon_edit = QIcon(load_pixmap("edit.png"))
             self.ui.botonEditar1.setIcon(icon_edit)
-            icon_close = load_pixmap("close.png")
+            icon_close = QIcon(load_pixmap("close.png"))
             self.ui.botonSacar1.setIcon(icon_close)
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<

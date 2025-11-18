@@ -76,75 +76,65 @@ class AppManager(QMainWindow):
         self.MANTENIMIENTO_INDEX = self.stack.addWidget(self.mantenimiento_view)
         self.E_MOVILIDAD_CEO_USUARIOS_AUTORIZADOS_INDEX = self.stack.addWidget(self.e_movilidad_ceo_usuarios_autorizados_view)
 
-        # 3. Conectar la lógica de navegación
-        for v in (
-            self.rrhh_view, self.ceo_view, self.e_movilidad_view,
-            self.e_movilidad_ceo_db_view, self.e_movilidad_ceo_registro_view,
-            self.e_movilidad_ceo_view, self.compras_view, self.marketing_view,
-            self.produccion_tareas_view, self.produccion_almacen_view,
-            self.ventas_view, self.logistica_view, self.mantenimiento_view,self.e_movilidad_ceo_usuarios_autorizados_view,
-        ):
-            if hasattr(v, "logout_requested"):
-                v.logout_requested.connect(self.show_login_view)
-
-        for v in (
-            self.rrhh_view, self.ceo_view, self.e_movilidad_view,
-            self.e_movilidad_ceo_db_view, self.e_movilidad_ceo_registro_view,
-            self.e_movilidad_ceo_view, self.compras_view, self.marketing_view,
-            self.produccion_tareas_view, self.produccion_almacen_view,
-            self.ventas_view, self.logistica_view, self.mantenimiento_view,self.e_movilidad_ceo_usuarios_autorizados_view,
-        ):
-            if hasattr(v, "CEO"):
-                v.CEO.connect(self.show_ceo_view)
-        
-        self.login_view.RRHH.connect(self.show_rrhh_view)
-
-        self.login_view.Mantenimiento.connect(self.show_mantenimiento_view)
-
-        self.login_view.Ventas.connect(self.show_ventas_view)
-
-        self.login_view.Compras.connect(self.show_compras_view)
-
-        self.login_view.Produccion.connect(self.show_produccion_view)
-
-        self.login_view.E_movilidad.connect(self.show_e_movilidad_view)
-
-        self.login_view.Marketing.connect(self.show_marketing_view)
-
-        self.login_view.Logistica.connect(self.show_logistica_view)
-
-        self.login_view.CEO.connect(self.show_ceo_view)
-        
-        self.ceo_view.Mantenimiento.connect(self.show_mantenimiento_view)
-
-        self.ceo_view.RRHH.connect(self.show_rrhh_view)
-
-        self.ceo_view.Logistica.connect(self.show_logistica_view)
-        
-        self.ceo_view.Compras.connect(self.show_compras_view)
-        
-        self.ceo_view.Ventas.connect(self.show_ventas_view)
-        
-        self.ceo_view.Produccion.connect(self.show_produccion_view)
-        
-        self.ceo_view.Marketing.connect(self.show_marketing_view)
-        
-        self.ceo_view.E_movilidad.connect(self.show_e_movilidad_ceo_view)
-        
-        self.e_movilidad_ceo_view.e_movilidad_ceo_registro.connect(self.show_e_movilidad_ceo_registro_view)
-        
-        self.e_movilidad_ceo_view.e_movilidad_ceo_usuarios_autorizados.connect(self.show_e_movilidad_ceo_usuarios_autorizados_view)
-
-        self.e_movilidad_ceo_view.E_movilidad.connect(self.show_e_movilidad_view)
-
-        self.produccion_tareas_view.produccion_almacen.connect(self.show_produccion_almacen_view)
-
-        self.produccion_almacen_view.produccion_tareas.connect(self.show_produccion_tareas_view)
-        
-
+        # 3. Conectar la lógica de navegación usando helpers
+        self._connect_common_signals()
+        self._connect_login_signals()
+        self._connect_ceo_signals()
+        self._connect_e_movilidad_ceo_signals()
+        self._connect_produccion_signals()
 
         # 4. Iniciar la aplicación en la vista de Login
         self.show_login_view() 
+
+    def _connect_common_signals(self):
+        """Conecta señales comunes como logout y CEO en todas las vistas relevantes."""
+        views = [
+            self.rrhh_view, self.ceo_view, self.e_movilidad_view,
+            self.e_movilidad_ceo_db_view, self.e_movilidad_ceo_registro_view,
+            self.e_movilidad_ceo_view, self.compras_view, self.marketing_view,
+            self.produccion_tareas_view, self.produccion_almacen_view,
+            self.ventas_view, self.logistica_view, self.mantenimiento_view,
+            self.e_movilidad_ceo_usuarios_autorizados_view,
+        ]
+        for v in views:
+            if hasattr(v, "logout_requested"):
+                v.logout_requested.connect(self.show_login_view)
+            if hasattr(v, "CEO"):
+                v.CEO.connect(self.show_ceo_view)
+
+    def _connect_login_signals(self):
+        """Conecta señales de navegación desde la vista de login."""
+        self.login_view.RRHH.connect(self.show_rrhh_view)
+        self.login_view.Mantenimiento.connect(self.show_mantenimiento_view)
+        self.login_view.Ventas.connect(self.show_ventas_view)
+        self.login_view.Compras.connect(self.show_compras_view)
+        self.login_view.Produccion.connect(self.show_produccion_view)
+        self.login_view.E_movilidad.connect(self.show_e_movilidad_view)
+        self.login_view.Marketing.connect(self.show_marketing_view)
+        self.login_view.Logistica.connect(self.show_logistica_view)
+        self.login_view.CEO.connect(self.show_ceo_view)
+
+    def _connect_ceo_signals(self):
+        """Conecta señales de navegación desde la vista de CEO."""
+        self.ceo_view.Mantenimiento.connect(self.show_mantenimiento_view)
+        self.ceo_view.RRHH.connect(self.show_rrhh_view)
+        self.ceo_view.Logistica.connect(self.show_logistica_view)
+        self.ceo_view.Compras.connect(self.show_compras_view)
+        self.ceo_view.Ventas.connect(self.show_ventas_view)
+        self.ceo_view.Produccion.connect(self.show_produccion_view)
+        self.ceo_view.Marketing.connect(self.show_marketing_view)
+        self.ceo_view.E_movilidad.connect(self.show_e_movilidad_ceo_view)
+
+    def _connect_e_movilidad_ceo_signals(self):
+        """Conecta señales específicas de E-Movilidad CEO."""
+        self.e_movilidad_ceo_view.e_movilidad_ceo_registro.connect(self.show_e_movilidad_ceo_registro_view)
+        self.e_movilidad_ceo_view.e_movilidad_ceo_usuarios_autorizados.connect(self.show_e_movilidad_ceo_usuarios_autorizados_view)
+        self.e_movilidad_ceo_view.E_movilidad.connect(self.show_e_movilidad_view)
+
+    def _connect_produccion_signals(self):
+        """Conecta señales entre vistas de producción."""
+        self.produccion_tareas_view.produccion_almacen.connect(self.show_produccion_almacen_view)
+        self.produccion_almacen_view.produccion_tareas.connect(self.show_produccion_tareas_view)
 
     @Slot()
     def show_login_view(self):

@@ -22,14 +22,15 @@ class RRHHWidget(QWidget):
         self.ui.label_5.setScaledContents(True)
         self.ui.label_8.setPixmap(load_pixmap("perfil-de-usuario.png"))
         self.ui.label_8.setScaledContents(True)
-        icon_edit = load_pixmap("edit.png")
+        from PySide6.QtGui import QIcon
+        icon_edit = QIcon(load_pixmap("edit.png"))
         self.ui.botonEditar1.setIcon(icon_edit)
-        icon_close = load_pixmap("close.png")
+        icon_close = QIcon(load_pixmap("close.png"))
         self.ui.botonSacar1.setIcon(icon_close)
-        icon_eye = load_pixmap("eye.png")
+        icon_eye = QIcon(load_pixmap("eye.png"))
         self.ui.botonVer1.setIcon(icon_eye)
-        self.ui.botonAgregar.setIcon(load_pixmap("c.png"))
-        self.ui.botonOrdenar1.setIcon(load_pixmap("down_arrow.png"))
+        self.ui.botonAgregar.setIcon(QIcon(load_pixmap("c.png")))
+        self.ui.botonOrdenar1.setIcon(QIcon(load_pixmap("down_arrow.png")))
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
         self.ui.botonAgregar.clicked.connect(self.agregar_empleado)

@@ -23,15 +23,16 @@ class E_MovilidadCEOregistroWidget(QWidget):
         self.ui.label_5.setScaledContents(True)
         self.ui.label_8.setPixmap(load_pixmap("perfil-de-usuario.png"))
         self.ui.label_8.setScaledContents(True)
-        icon_edit = load_pixmap("edit.png")
+        from PySide6.QtGui import QIcon
+        icon_edit = QIcon(load_pixmap("edit.png"))
         self.ui.botonEditar1.setIcon(icon_edit)
-        icon_close = load_pixmap("close.png")
+        icon_close = QIcon(load_pixmap("close.png"))
         self.ui.botonSacar1.setIcon(icon_close)
-        icon_eye = load_pixmap("eye.png")
+        icon_eye = QIcon(load_pixmap("eye.png"))
         self.ui.botonVer1.setIcon(icon_eye)
-        icon_c = load_pixmap("c.png")
+        icon_c = QIcon(load_pixmap("c.png"))
         self.ui.botonAgregar.setIcon(icon_c)
-        icon_down_arrow = load_pixmap("down_arrow.png")
+        icon_down_arrow = QIcon(load_pixmap("down_arrow.png"))
         self.ui.botonOrdenar1.setIcon(icon_down_arrow)
         
         # 3. Crea el QPixmap
