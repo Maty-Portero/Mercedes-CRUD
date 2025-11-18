@@ -35,6 +35,7 @@ class RRHHWidget(QWidget):
         self.ui.botonEditar1.clicked.connect(self.editar_empleado)
         self.ui.botonSacar1.clicked.connect(self.eliminar_empleado)
         self.ui.botonBuscar.clicked.connect(self.buscar_empleado)
+        self.ui.lineEdit.textChanged.connect(self.buscar_empleado)
         self.ui.botonOrdenar1.clicked.connect(self.ordenar_empleado)
         self.ui.botonAdmin.clicked.connect(self.admin_view)
         self.ui.botonLogOut.clicked.connect(self.Logout_requested)
@@ -222,28 +223,25 @@ class RRHHWidget(QWidget):
 
     @Slot()
     def buscar_empleado(self):
-        from PySide6.QtWidgets import QInputDialog
+        texto = self.ui.lineEdit.text().strip()
         
-        texto, ok = QInputDialog.getText(self, "Buscar Evento", "Ingrese tipo de evento, ID o descripción a buscar:")
-        
-        if ok and texto:
-            # Buscar en todas las columnas
-            encontrado = False
+        if not texto:
+            # Si el campo está vacío, mostrar todas las filas
             for row in range(self.ui.tableWidget.rowCount()):
-                match = False
-                for col in range(self.ui.tableWidget.columnCount()):
-                    item = self.ui.tableWidget.item(row, col)
-                    if item and texto.lower() in item.text().lower():
-                        match = True
-                        break
-                
-                # Ocultar/mostrar filas según el criterio
-                self.ui.tableWidget.setRowHidden(row, not match)
-                if match:
-                    encontrado = True
+                self.ui.tableWidget.setRowHidden(row, False)
+            return
+        
+        # Buscar en todas las columnas
+        for row in range(self.ui.tableWidget.rowCount()):
+            match = False
+            for col in range(self.ui.tableWidget.columnCount()):
+                item = self.ui.tableWidget.item(row, col)
+                if item and texto.lower() in item.text().lower():
+                    match = True
+                    break
             
-            if not encontrado:
-                QMessageBox.information(self, "Búsqueda", "No se encontraron resultados.")
+            # Ocultar/mostrar filas según el criterio
+            self.ui.tableWidget.setRowHidden(row, not match)
     
     @Slot()
     def ordenar_empleado(self):

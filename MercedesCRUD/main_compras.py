@@ -33,6 +33,7 @@ class ComprasWidget(QWidget):
         self.ui.botonEditar1.clicked.connect(self.editar_orden)
         self.ui.botonSacar1.clicked.connect(self.eliminar_orden)
         self.ui.botonBuscar.clicked.connect(self.buscar_orden)
+        self.ui.lineEdit.textChanged.connect(self.buscar_orden)
         self.ui.botonOrdenar1.clicked.connect(self.ordenar_orden)
         self.ui.botonAdmin.clicked.connect(self.admin_view)
         self.ui.botonLogOut.clicked.connect(self.Logout_requested)
@@ -209,17 +210,22 @@ class ComprasWidget(QWidget):
 
     @Slot()
     def buscar_orden(self):
-        from PySide6.QtWidgets import QInputDialog
-        texto, ok = QInputDialog.getText(self, "Buscar Compra", "Ingrese ID, proveedor o estado a buscar:")
-        if ok and texto:
+        texto = self.ui.lineEdit.text().strip()
+        
+        if not texto:
+            # Si el campo está vacío, mostrar todas las filas
             for row in range(self.ui.tableWidget.rowCount()):
-                match = False
-                for col in range(self.ui.tableWidget.columnCount()):
-                    item = self.ui.tableWidget.item(row, col)
-                    if item and texto.lower() in item.text().lower():
-                        match = True
-                        break
-                self.ui.tableWidget.setRowHidden(row, not match)
+                self.ui.tableWidget.setRowHidden(row, False)
+            return
+        
+        for row in range(self.ui.tableWidget.rowCount()):
+            match = False
+            for col in range(self.ui.tableWidget.columnCount()):
+                item = self.ui.tableWidget.item(row, col)
+                if item and texto.lower() in item.text().lower():
+                    match = True
+                    break
+            self.ui.tableWidget.setRowHidden(row, not match)
     
     @Slot()
     def ordenar_orden(self):

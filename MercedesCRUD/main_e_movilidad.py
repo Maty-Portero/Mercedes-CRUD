@@ -32,6 +32,7 @@ class E_MovilidadWidget(QWidget):
             self.ui.botonEditar1.clicked.connect(self.editar_equipo)
             self.ui.botonSacar1.clicked.connect(self.eliminar_equipo)
             self.ui.botonBuscar.clicked.connect(self.buscar_equipo)
+            self.ui.lineEdit.textChanged.connect(self.buscar_equipo)
             self.ui.botonBorrar.clicked.connect(self.borrar_busqueda)
             self.ui.botonOrdenar1.clicked.connect(self.ordenar_equipo)
             self.ui.botonAdmin.clicked.connect(self.admin_view)
@@ -62,7 +63,24 @@ class E_MovilidadWidget(QWidget):
 
     @Slot()
     def buscar_equipo(self):
-        QMessageBox.information(self, "E-Movilidad", "Función: Buscar equipo.")
+        texto = self.ui.lineEdit.text().strip()
+        
+        if not texto:
+            # Si el campo está vacío, mostrar todas las filas
+            if hasattr(self.ui, 'tableWidget'):
+                for row in range(self.ui.tableWidget.rowCount()):
+                    self.ui.tableWidget.setRowHidden(row, False)
+            return
+        
+        if hasattr(self.ui, 'tableWidget'):
+            for row in range(self.ui.tableWidget.rowCount()):
+                match = False
+                for col in range(self.ui.tableWidget.columnCount()):
+                    item = self.ui.tableWidget.item(row, col)
+                    if item and texto.lower() in item.text().lower():
+                        match = True
+                        break
+                self.ui.tableWidget.setRowHidden(row, not match)
 
     @Slot()
     def temperatura_equipo(self):
@@ -78,7 +96,10 @@ class E_MovilidadWidget(QWidget):
 
     @Slot()
     def borrar_busqueda(self):
-        QMessageBox.information(self, "E-Movilidad", "Función: Borrar búsqueda.")
+        self.ui.lineEdit.clear()
+        if hasattr(self.ui, 'tableWidget'):
+            for row in range(self.ui.tableWidget.rowCount()):
+                self.ui.tableWidget.setRowHidden(row, False)
 
     @Slot()
     def ver_equipo(self):

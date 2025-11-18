@@ -34,6 +34,7 @@ class MarketingWidget(QWidget):
         self.ui.botonEditar1.clicked.connect(self.editar_campana)
         self.ui.botonSacar1.clicked.connect(self.eliminar_campana)
         self.ui.botonBuscar.clicked.connect(self.buscar_campana)
+        self.ui.lineEdit.textChanged.connect(self.buscar_campana)
         self.ui.botonBorrar.clicked.connect(self.borrar_busqueda)
         self.ui.botonOrdenar1.clicked.connect(self.ordenar_campana)
         self.ui.botonAdmin.clicked.connect(self.admin_view)
@@ -207,20 +208,26 @@ class MarketingWidget(QWidget):
 
     @Slot()
     def buscar_campana(self):
-        from PySide6.QtWidgets import QInputDialog
-        texto, ok = QInputDialog.getText(self, "Buscar Campaña", "Ingrese nombre, tipo o estado a buscar:")
-        if ok and texto:
+        texto = self.ui.lineEdit.text().strip()
+        
+        if not texto:
+            # Si el campo está vacío, mostrar todas las filas
             for row in range(self.ui.tableWidget.rowCount()):
-                match = False
-                for col in range(self.ui.tableWidget.columnCount()):
-                    item = self.ui.tableWidget.item(row, col)
-                    if item and texto.lower() in item.text().lower():
-                        match = True
-                        break
-                self.ui.tableWidget.setRowHidden(row, not match)
+                self.ui.tableWidget.setRowHidden(row, False)
+            return
+        
+        for row in range(self.ui.tableWidget.rowCount()):
+            match = False
+            for col in range(self.ui.tableWidget.columnCount()):
+                item = self.ui.tableWidget.item(row, col)
+                if item and texto.lower() in item.text().lower():
+                    match = True
+                    break
+            self.ui.tableWidget.setRowHidden(row, not match)
 
     @Slot()
     def borrar_busqueda(self):
+        self.ui.lineEdit.clear()
         for row in range(self.ui.tableWidget.rowCount()):
             self.ui.tableWidget.setRowHidden(row, False)
     

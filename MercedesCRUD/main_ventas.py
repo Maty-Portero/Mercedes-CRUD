@@ -209,17 +209,22 @@ class VentasWidget(QWidget):
 
     @Slot()
     def buscar_venta(self):
-        from PySide6.QtWidgets import QInputDialog
-        texto, ok = QInputDialog.getText(self, "Buscar Venta", "Ingrese ID, cliente o estado a buscar:")
-        if ok and texto:
+        texto = self.ui.lineEdit.text().strip()
+        
+        if not texto:
+            # Si el campo está vacío, mostrar todas las filas
             for row in range(self.ui.tableWidget.rowCount()):
-                match = False
-                for col in range(self.ui.tableWidget.columnCount()):
-                    item = self.ui.tableWidget.item(row, col)
-                    if item and texto.lower() in item.text().lower():
-                        match = True
-                        break
-                self.ui.tableWidget.setRowHidden(row, not match)
+                self.ui.tableWidget.setRowHidden(row, False)
+            return
+        
+        for row in range(self.ui.tableWidget.rowCount()):
+            match = False
+            for col in range(self.ui.tableWidget.columnCount()):
+                item = self.ui.tableWidget.item(row, col)
+                if item and texto.lower() in item.text().lower():
+                    match = True
+                    break
+            self.ui.tableWidget.setRowHidden(row, not match)
     
     @Slot()
     def ordenar_venta(self):

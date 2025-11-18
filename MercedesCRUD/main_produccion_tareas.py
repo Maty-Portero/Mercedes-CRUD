@@ -34,6 +34,7 @@ class ProduccionTareasWidget(QWidget):
             self.ui.botonEditar1.clicked.connect(self.editar_equipo)
             self.ui.botonSacar1.clicked.connect(self.eliminar_equipo)
             self.ui.botonBuscar.clicked.connect(self.buscar_equipo)
+            self.ui.lineEdit.textChanged.connect(self.buscar_equipo)
             self.ui.botonOrdenar1.clicked.connect(self.ordenar_equipo)
             self.ui.botonBorrar.clicked.connect(self.borrar_busqueda)
             self.ui.botonAdmin.clicked.connect(self.admin_view)
@@ -202,17 +203,22 @@ class ProduccionTareasWidget(QWidget):
 
     @Slot()
     def buscar_equipo(self):
-        from PySide6.QtWidgets import QInputDialog
-        texto, ok = QInputDialog.getText(self, "Buscar Tarea", "Ingrese descripción, responsable o estado a buscar:")
-        if ok and texto:
+        texto = self.ui.lineEdit.text().strip()
+        
+        if not texto:
+            # Si el campo está vacío, mostrar todas las filas
             for row in range(self.ui.tableWidget.rowCount()):
-                match = False
-                for col in range(self.ui.tableWidget.columnCount()):
-                    item = self.ui.tableWidget.item(row, col)
-                    if item and texto.lower() in item.text().lower():
-                        match = True
-                        break
-                self.ui.tableWidget.setRowHidden(row, not match)
+                self.ui.tableWidget.setRowHidden(row, False)
+            return
+        
+        for row in range(self.ui.tableWidget.rowCount()):
+            match = False
+            for col in range(self.ui.tableWidget.columnCount()):
+                item = self.ui.tableWidget.item(row, col)
+                if item and texto.lower() in item.text().lower():
+                    match = True
+                    break
+            self.ui.tableWidget.setRowHidden(row, not match)
 
     @Slot()
     def progreso_equipo(self):
@@ -232,6 +238,7 @@ class ProduccionTareasWidget(QWidget):
 
     @Slot()
     def borrar_busqueda(self):
+        self.ui.lineEdit.clear()
         for row in range(self.ui.tableWidget.rowCount()):
             self.ui.tableWidget.setRowHidden(row, False)
 

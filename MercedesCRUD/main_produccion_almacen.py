@@ -34,6 +34,7 @@ class ProduccionAlmacenWidget(QWidget):
             self.ui.botonEditar1.clicked.connect(self.editar_equipo)
             self.ui.botonSacar1.clicked.connect(self.eliminar_equipo)
             self.ui.botonBuscar.clicked.connect(self.buscar_equipo)
+            self.ui.lineEdit.textChanged.connect(self.buscar_equipo)
             self.ui.botonOrdenar1.clicked.connect(self.Ordenar_equipo)
             self.ui.botonBorrar.clicked.connect(self.borrar_busqueda)
             self.ui.botonAdmin.clicked.connect(self.admin_view)
@@ -70,7 +71,24 @@ class ProduccionAlmacenWidget(QWidget):
 
     @Slot()
     def buscar_equipo(self):
-        QMessageBox.information(self, "Produccion", "Función: Buscar equipo.")
+        texto = self.ui.lineEdit.text().strip()
+        
+        if not texto:
+            # Si el campo está vacío, mostrar todas las filas
+            if hasattr(self.ui, 'tableWidget'):
+                for row in range(self.ui.tableWidget.rowCount()):
+                    self.ui.tableWidget.setRowHidden(row, False)
+            return
+        
+        if hasattr(self.ui, 'tableWidget'):
+            for row in range(self.ui.tableWidget.rowCount()):
+                match = False
+                for col in range(self.ui.tableWidget.columnCount()):
+                    item = self.ui.tableWidget.item(row, col)
+                    if item and texto.lower() in item.text().lower():
+                        match = True
+                        break
+                self.ui.tableWidget.setRowHidden(row, not match)
     
     @Slot()
     def Ordenar_equipo(self):
@@ -82,7 +100,10 @@ class ProduccionAlmacenWidget(QWidget):
 
     @Slot()
     def borrar_busqueda(self):
-        QMessageBox.information(self, "Produccion", "Función: Borrar búsqueda.")
+        self.ui.lineEdit.clear()
+        if hasattr(self.ui, 'tableWidget'):
+            for row in range(self.ui.tableWidget.rowCount()):
+                self.ui.tableWidget.setRowHidden(row, False)
 
     @Slot()
     def abrir_alerta(self):

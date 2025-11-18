@@ -58,6 +58,7 @@ class E_MovilidadCEOUsuariosAutorizadosWidget(QWidget):
         self.ui.botonEditar1.clicked.connect(self.editar_empleado)
         self.ui.botonSacar1.clicked.connect(self.eliminar_empleado)
         self.ui.botonBuscar.clicked.connect(self.buscar_empleado)
+        self.ui.lineEdit.textChanged.connect(self.buscar_empleado)
         self.ui.botonOrdenar1.clicked.connect(self.ordenar_empleado)
         self.ui.botonAdmin.clicked.connect(self.admin_view)
         self.ui.botonLogOut.clicked.connect(self.Logout_requested)
@@ -94,7 +95,24 @@ class E_MovilidadCEOUsuariosAutorizadosWidget(QWidget):
 
     @Slot()
     def buscar_empleado(self):
-        QMessageBox.information(self, "Compras", "Función: Buscar empleado.")
+        texto = self.ui.lineEdit.text().strip()
+        
+        if not texto:
+            # Si el campo está vacío, mostrar todas las filas
+            if hasattr(self.ui, 'tableWidget'):
+                for row in range(self.ui.tableWidget.rowCount()):
+                    self.ui.tableWidget.setRowHidden(row, False)
+            return
+        
+        if hasattr(self.ui, 'tableWidget'):
+            for row in range(self.ui.tableWidget.rowCount()):
+                match = False
+                for col in range(self.ui.tableWidget.columnCount()):
+                    item = self.ui.tableWidget.item(row, col)
+                    if item and texto.lower() in item.text().lower():
+                        match = True
+                        break
+                self.ui.tableWidget.setRowHidden(row, not match)
     
     @Slot()
     def ordenar_empleado(self):
