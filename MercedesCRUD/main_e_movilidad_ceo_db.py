@@ -57,7 +57,16 @@ class E_MovilidadCEOdbWidget(QWidget):
         self.current_user = username
         print(f"Usuario {username} ha ingresado a E-Movilidad CEO.") # Impresión de prueba
 
-            
+    def registrar_cambio(self, nombre_cambio):
+        """Registra un cambio en la tabla E_MOVILIDAD_REGISTRO."""
+        import db_manager
+        try:
+            columns = ["Nombre_Cambio"]
+            values = [nombre_cambio]
+            db_manager.insert_record("E_MOVILIDAD_REGISTRO", columns, values)
+            print(f"Cambio registrado: {nombre_cambio}")
+        except Exception as e:
+            print(f"Error al registrar cambio: {e}")
 
     @Slot()
     def agregar_equipo(self):
@@ -93,6 +102,8 @@ class E_MovilidadCEOdbWidget(QWidget):
                 ]
                 
                 if db_manager.insert_record("E_MOVILIDAD_EQUIPOS", columns, values):
+                    # Registrar el cambio en E_MOVILIDAD_REGISTRO
+                    self.registrar_cambio(f"Equipo creado: {nombre_input.text()}")
                     QMessageBox.information(self, "Éxito", "Equipo agregado correctamente.")
                     TABLE_NAME = "E_MOVILIDAD_EQUIPOS"
                     HEADERS = ["ID_Equipos", "Nombre_Equipo", "Progreso_Equipo", "Temperatura_Equipo"]
@@ -146,6 +157,8 @@ class E_MovilidadCEOdbWidget(QWidget):
                 ]
                 
                 if db_manager.update_record("E_MOVILIDAD_EQUIPOS", "ID_Equipos", id_equipo, columns, values):
+                    # Registrar el cambio en E_MOVILIDAD_REGISTRO
+                    self.registrar_cambio(f"Equipo actualizado: {nombre_input.text()}")
                     QMessageBox.information(self, "Éxito", "Equipo actualizado correctamente.")
                     TABLE_NAME = "E_MOVILIDAD_EQUIPOS"
                     HEADERS = ["ID_Equipos", "Nombre_Equipo", "Progreso_Equipo", "Temperatura_Equipo"]
@@ -168,6 +181,7 @@ class E_MovilidadCEOdbWidget(QWidget):
         
         row = selected_rows[0].row()
         id_equipo = int(self.ui.tableWidget.item(row, 0).text())
+        nombre_equipo = self.ui.tableWidget.item(row, 1).text()
         
         reply = QMessageBox.question(self, "Confirmar", 
                                       "¿Está seguro de que desea eliminar este equipo?",
@@ -175,6 +189,8 @@ class E_MovilidadCEOdbWidget(QWidget):
         
         if reply == QMessageBox.Yes:
             if db_manager.delete_record("E_MOVILIDAD_EQUIPOS", "ID_Equipos", id_equipo):
+                # Registrar el cambio en E_MOVILIDAD_REGISTRO
+                self.registrar_cambio(f"Equipo eliminado: {nombre_equipo}")
                 QMessageBox.information(self, "Éxito", "Equipo eliminado correctamente.")
                 TABLE_NAME = "E_MOVILIDAD_EQUIPOS"
                 HEADERS = ["ID_Equipos", "Nombre_Equipo", "Progreso_Equipo", "Temperatura_Equipo"]
@@ -270,6 +286,11 @@ class E_MovilidadCEOdbWidget(QWidget):
         table_widget.setHorizontalHeaderLabels(headers)
         table_widget.setRowCount(0)
         table_widget.setRowCount(len(data))
+        
+        # Configurar tabla como solo lectura y selección por fila completa
+        table_widget.setEditTriggers(table_widget.EditTrigger.NoEditTriggers)
+        table_widget.setSelectionBehavior(table_widget.SelectionBehavior.SelectRows)
+        table_widget.setSelectionMode(table_widget.SelectionMode.SingleSelection)
 
         for row_idx, row_data in enumerate(data):
             for col_idx, item in enumerate(row_data):

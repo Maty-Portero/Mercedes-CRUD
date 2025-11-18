@@ -124,6 +124,7 @@ class AppManager(QMainWindow):
     def _connect_e_movilidad_ceo_signals(self):
         """Conecta señales específicas de E-Movilidad CEO."""
         self.e_movilidad_ceo_view.e_movilidad_ceo_registro.connect(self.show_e_movilidad_ceo_registro_view)
+        self.e_movilidad_ceo_view.e_movilidad_ceo_db.connect(self.show_e_movilidad_ceo_db_view)
         self.e_movilidad_ceo_view.E_movilidad.connect(self.show_e_movilidad_view)
 
     def _connect_produccion_signals(self):
@@ -224,6 +225,12 @@ class AppManager(QMainWindow):
         self.e_movilidad_ceo_registro_view.set_welcome_message(username)
         self.stack.setCurrentIndex(self.E_MOVILIDAD_CEO_REG_INDEX)
         self.setWindowTitle(f"Sistema de Gestión - E-Movilidad CEO Registro ({username})")
+
+    @Slot(str)
+    def show_e_movilidad_ceo_db_view(self, username):
+        self.e_movilidad_ceo_db_view.set_welcome_message(username)
+        self.stack.setCurrentIndex(self.E_MOVILIDAD_CEO_DB_INDEX)
+        self.setWindowTitle(f"Sistema de Gestión - E-Movilidad CEO DB ({username})")
 
 
 if __name__ == "__main__":

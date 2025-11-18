@@ -11,6 +11,7 @@ class E_MovilidadCEOWidget(QWidget):
     # Si no lo tienes, puedes agregarlo en el diseñador de Qt.
     CEO=Signal(str)
     e_movilidad_ceo_registro=Signal(str)
+    e_movilidad_ceo_db=Signal(str)
     logout_requested = Signal()
     E_movilidad = Signal(str)
 
@@ -81,7 +82,7 @@ class E_MovilidadCEOWidget(QWidget):
     @Slot()
     def ir_db(self):
         usuario = getattr(self, "current_user", None)
-        self.E_movilidad.emit(usuario)
+        self.e_movilidad_ceo_db.emit(usuario)
     
     def Logout_requested(self):
         self.logout_requested.emit()

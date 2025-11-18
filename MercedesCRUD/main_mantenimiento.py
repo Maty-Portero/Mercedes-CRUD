@@ -278,6 +278,12 @@ class MantenimientoWidget(QWidget):
         table_widget.setHorizontalHeaderLabels(headers)
         table_widget.setRowCount(0)
         table_widget.setRowCount(len(data))
+        
+        # Configurar tabla como solo lectura y selección por fila completa
+        table_widget.setEditTriggers(table_widget.EditTrigger.NoEditTriggers)
+        table_widget.setSelectionBehavior(table_widget.SelectionBehavior.SelectRows)
+        table_widget.setSelectionMode(table_widget.SelectionMode.SingleSelection)
+        
         for row_idx, row_data in enumerate(data):
             for col_idx, item in enumerate(row_data):
                 cell_item = QTableWidgetItem(str(item))

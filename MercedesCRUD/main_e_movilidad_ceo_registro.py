@@ -56,7 +56,16 @@ class E_MovilidadCEOregistroWidget(QWidget):
         # Si tienes un QLabel con objectName 'label_welcome', lo usarías así:
         # self.ui.label_welcome.setText(f"Bienvenido, {username}")
         self.current_user = username
-        print(f"Usuario {username} ha ingresado a RRHH.") # Impresión de prueba
+        print(f"Usuario {username} ha ingresado a E-Movilidad CEO Registro.") # Impresión de prueba
+        # Recargar datos cada vez que se muestra la vista
+        self.reload_data()
+
+    def reload_data(self):
+        """Recarga los datos de la tabla."""
+        import db_manager
+        TABLE_NAME = "E_MOVILIDAD_REGISTRO"
+        HEADERS = ["ID_Cambios", "Nombre_Cambio"]
+        self.load_sector_data(TABLE_NAME, HEADERS, self.ui.tableWidget)
 
         
 
@@ -232,6 +241,11 @@ class E_MovilidadCEOregistroWidget(QWidget):
         table_widget.setHorizontalHeaderLabels(headers)
         table_widget.setRowCount(0)
         table_widget.setRowCount(len(data))
+        
+        # Configurar tabla como solo lectura y selección por fila completa
+        table_widget.setEditTriggers(table_widget.EditTrigger.NoEditTriggers)
+        table_widget.setSelectionBehavior(table_widget.SelectionBehavior.SelectRows)
+        table_widget.setSelectionMode(table_widget.SelectionMode.SingleSelection)
 
         for row_idx, row_data in enumerate(data):
             for col_idx, item in enumerate(row_data):
