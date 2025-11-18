@@ -77,7 +77,7 @@ class Ui_Widget(object):
 "background-color: #ebebeb;")
         self.label_23 = QLabel(Widget)
         self.label_23.setObjectName(u"label_23")
-        self.label_23.setGeometry(QRect(1617, 41, 209, 41))
+        self.label_23.setGeometry(QRect(1700, 36, 126, 41))
         self.label_23.setFont(font)
         self.label_23.setStyleSheet(u"color: white;")
         self.label_23.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)

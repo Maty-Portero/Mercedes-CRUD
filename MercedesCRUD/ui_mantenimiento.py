@@ -55,7 +55,6 @@ class Ui_Widget(object):
 "padding: 5px;\n"
 "\n"
 "\n"
-"\n"
 "")
         icon = QIcon()
         icon.addFile(u"c.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)

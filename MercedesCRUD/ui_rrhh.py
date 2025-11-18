@@ -203,7 +203,7 @@ class Ui_Widget(object):
         self.botonVer1.setIconSize(QSize(25, 25))
         self.label_24 = QLabel(Widget)
         self.label_24.setObjectName(u"label_24")
-        self.label_24.setGeometry(QRect(1621, 37, 209, 41))
+        self.label_24.setGeometry(QRect(1700, 36, 126, 41))
         self.label_24.setFont(font1)
         self.label_24.setStyleSheet(u"color: white;")
         self.label_24.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
