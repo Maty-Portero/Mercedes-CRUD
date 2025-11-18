@@ -18,22 +18,17 @@ class E_MovilidadCEOregistroWidget(QWidget):
         self.ui.setupUi(self)
 
         # Carga de imágenes optimizada
-        script_dir = os.path.dirname(os.path.abspath(__file__))
         self.ui.label_5.setPixmap(load_pixmap("logo.png"))
         self.ui.label_5.setScaledContents(True)
         self.ui.label_8.setPixmap(load_pixmap("perfil-de-usuario.png"))
         self.ui.label_8.setScaledContents(True)
         from PySide6.QtGui import QIcon
-        icon_edit = QIcon(load_pixmap("edit.png"))
-        self.ui.botonEditar1.setIcon(icon_edit)
-        icon_close = QIcon(load_pixmap("close.png"))
-        self.ui.botonSacar1.setIcon(icon_close)
-        icon_c = QIcon(load_pixmap("c.png"))
-        self.ui.botonAgregar.setIcon(icon_c)
-        icon_down_arrow = QIcon(load_pixmap("down_arrow.png"))
-        self.ui.botonOrdenar1.setIcon(icon_down_arrow)
-        
-        # 3. Crea el QPixmap
+        self.ui.botonEditar1.setIcon(QIcon(load_pixmap("edit.png")))
+        self.ui.botonSacar1.setIcon(QIcon(load_pixmap("close.png")))
+        self.ui.botonAgregar.setIcon(QIcon(load_pixmap("c.png")))
+        self.ui.botonOrdenar1.setIcon(QIcon(load_pixmap("down_arrow.png")))
+        self.ui.botonBuscar.setIcon(QIcon(load_pixmap("search.png")))
+        self.ui.botonBorrar.setIcon(QIcon(load_pixmap("delete.png")))
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
         self.ui.botonAgregar.clicked.connect(self.agregar_empleado)
@@ -44,6 +39,12 @@ class E_MovilidadCEOregistroWidget(QWidget):
         self.ui.botonOrdenar1.clicked.connect(self.ordenar_empleado)
         self.ui.botonAdmin.clicked.connect(self.admin_view)
         self.ui.botonLogOut.clicked.connect(self.Logout_requested)
+
+        import db_manager
+        TABLE_NAME = "E_MOVILIDAD_REGISTRO"
+        HEADERS = ["ID_Cambios", "Nombre_Cambio"]
+        UI_TABLE = self.ui.tableWidget
+        self.load_sector_data(TABLE_NAME, HEADERS, UI_TABLE)
 
         # Conexión CLAVE: El botón que hace de "Cerrar Sesión"
         # Asumo que el botón 7 es el de Cerrar Sesión
@@ -61,15 +62,106 @@ class E_MovilidadCEOregistroWidget(QWidget):
 
     @Slot()
     def agregar_empleado(self):
-        QMessageBox.information(self, "RRHH", "Función: Agregar empleado.")
+        from PySide6.QtWidgets import QDialog, QFormLayout, QLineEdit, QDialogButtonBox
+        import db_manager
+        
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Agregar Registro")
+        layout = QFormLayout()
+        
+        nombre_cambio_input = QLineEdit()
+        
+        layout.addRow("Nombre Cambio:", nombre_cambio_input)
+        
+        buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        buttons.accepted.connect(dialog.accept)
+        buttons.rejected.connect(dialog.reject)
+        layout.addWidget(buttons)
+        
+        dialog.setLayout(layout)
+        
+        if dialog.exec() == QDialog.Accepted:
+            try:
+                columns = ["Nombre_Cambio"]
+                values = [nombre_cambio_input.text()]
+                
+                if db_manager.insert_record("E_MOVILIDAD_REGISTRO", columns, values):
+                    QMessageBox.information(self, "Éxito", "Registro agregado correctamente.")
+                    TABLE_NAME = "E_MOVILIDAD_REGISTRO"
+                    HEADERS = ["ID_Cambios", "Nombre_Cambio"]
+                    self.load_sector_data(TABLE_NAME, HEADERS, self.ui.tableWidget)
+                else:
+                    QMessageBox.critical(self, "Error", "No se pudo agregar el registro.")
+            except Exception as e:
+                QMessageBox.critical(self, "Error", f"Error inesperado: {e}")
 
     @Slot()
     def editar_empleado(self):
-        QMessageBox.information(self, "RRHH", "Función: Editar empleado.")
+        from PySide6.QtWidgets import QDialog, QFormLayout, QLineEdit, QDialogButtonBox
+        import db_manager
+        
+        selected_rows = self.ui.tableWidget.selectionModel().selectedRows()
+        if not selected_rows:
+            QMessageBox.warning(self, "Advertencia", "Por favor seleccione un registro para editar.")
+            return
+        
+        row = selected_rows[0].row()
+        id_cambio = int(self.ui.tableWidget.item(row, 0).text())
+        
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Editar Registro")
+        layout = QFormLayout()
+        
+        nombre_cambio_input = QLineEdit(self.ui.tableWidget.item(row, 1).text())
+        
+        layout.addRow("Nombre Cambio:", nombre_cambio_input)
+        
+        buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        buttons.accepted.connect(dialog.accept)
+        buttons.rejected.connect(dialog.reject)
+        layout.addWidget(buttons)
+        
+        dialog.setLayout(layout)
+        
+        if dialog.exec() == QDialog.Accepted:
+            try:
+                columns = ["Nombre_Cambio"]
+                values = [nombre_cambio_input.text()]
+                
+                if db_manager.update_record("E_MOVILIDAD_REGISTRO", "ID_Cambios", id_cambio, columns, values):
+                    QMessageBox.information(self, "Éxito", "Registro actualizado correctamente.")
+                    TABLE_NAME = "E_MOVILIDAD_REGISTRO"
+                    HEADERS = ["ID_Cambios", "Nombre_Cambio"]
+                    self.load_sector_data(TABLE_NAME, HEADERS, self.ui.tableWidget)
+                else:
+                    QMessageBox.critical(self, "Error", "No se pudo actualizar el registro.")
+            except Exception as e:
+                QMessageBox.critical(self, "Error", f"Error inesperado: {e}")
 
     @Slot()
     def eliminar_empleado(self):
-        QMessageBox.information(self, "RRHH", "Función: Eliminar empleado.")
+        import db_manager
+        
+        selected_rows = self.ui.tableWidget.selectionModel().selectedRows()
+        if not selected_rows:
+            QMessageBox.warning(self, "Advertencia", "Por favor seleccione un registro para eliminar.")
+            return
+        
+        row = selected_rows[0].row()
+        id_cambio = int(self.ui.tableWidget.item(row, 0).text())
+        
+        reply = QMessageBox.question(self, "Confirmar", 
+                                      "¿Está seguro de que desea eliminar este registro?",
+                                      QMessageBox.Yes | QMessageBox.No)
+        
+        if reply == QMessageBox.Yes:
+            if db_manager.delete_record("E_MOVILIDAD_REGISTRO", "ID_Cambios", id_cambio):
+                QMessageBox.information(self, "Éxito", "Registro eliminado correctamente.")
+                TABLE_NAME = "E_MOVILIDAD_REGISTRO"
+                HEADERS = ["ID_Cambios", "Nombre_Cambio"]
+                self.load_sector_data(TABLE_NAME, HEADERS, self.ui.tableWidget)
+            else:
+                QMessageBox.critical(self, "Error", "No se pudo eliminar el registro.")
         
     @Slot()
     def ver_empleado(self):
@@ -98,7 +190,12 @@ class E_MovilidadCEOregistroWidget(QWidget):
     
     @Slot()
     def ordenar_empleado(self):
-        QMessageBox.information(self, "Compras", "Función: Ordenar empleado.")
+        from PySide6.QtWidgets import QInputDialog
+        columnas = ["ID_Cambios", "Nombre_Cambio"]
+        columna, ok = QInputDialog.getItem(self, "Ordenar", "Seleccione columna:", columnas, 0, False)
+        if ok:
+            col_idx = columnas.index(columna)
+            self.ui.tableWidget.sortItems(col_idx)
     
     @Slot()
     def admin_view(self):
@@ -112,3 +209,61 @@ class E_MovilidadCEOregistroWidget(QWidget):
     
     def Logout_requested(self):
         self.logout_requested.emit()
+
+    def load_sector_data(self, table_name, headers, table_widget):
+        """
+        Carga datos en el QTableWidget del sector usando db_manager.
+        """
+        import db_manager
+        from PySide6.QtWidgets import QTableWidgetItem, QHeaderView
+        from PySide6.QtCore import Qt
+        try:
+            data = db_manager.get_data_for_sector(table_name, headers)
+            if data is None:
+                QMessageBox.critical(self, "Error de BD", f"La consulta a la tabla '{table_name}' falló o no devolvió datos.")
+                return
+        except Exception as e:
+            QMessageBox.critical(self, "Error de BD", f"Error al cargar datos de {table_name}: {e}")
+            return
+        if not hasattr(table_widget, 'setColumnCount'):
+            print(f"[WARN] El widget proporcionado para mostrar la tabla ('{table_name}') no es una QTableWidget. Saltando carga.")
+            return
+        table_widget.setColumnCount(len(headers))
+        table_widget.setHorizontalHeaderLabels(headers)
+        table_widget.setRowCount(0)
+        table_widget.setRowCount(len(data))
+
+        for row_idx, row_data in enumerate(data):
+            for col_idx, item in enumerate(row_data):
+                cell_item = QTableWidgetItem(str(item))
+                cell_item.setTextAlignment(Qt.AlignCenter)
+                table_widget.setItem(row_idx, col_idx, cell_item)
+        
+        # Estilo y configuración de tamaños
+        header = table_widget.horizontalHeader()
+        header.setStretchLastSection(False)
+        header.setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+        table_widget.verticalHeader().setDefaultSectionSize(40)
+        table_widget.horizontalHeader().setMinimumHeight(40)
+        table_widget.setStyleSheet("""
+            QHeaderView::section {
+                background-color: #002d6b;
+                color: white;
+                padding: 5px;
+                border: 1px solid #002d6b;
+                font-weight: bold;
+                font-size: 20px;
+            }
+            QTableCornerButton::section {
+                background-color: #002d6b;
+            }
+            QTableWidget::item {
+                border: 1px solid #e0e0e0;
+                padding: 5px;
+            }
+        """)
+        print(f"Sector {table_name}: {len(data)} registros cargados.")
+        
+        # Actualizar contador de registros
+        if hasattr(self.ui, 'label_14'):
+            self.ui.label_14.setText(f"Registros: {len(data)}")

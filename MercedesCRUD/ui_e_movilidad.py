@@ -98,6 +98,18 @@ class Ui_Widget(object):
         self.label_20.setObjectName(u"label_20")
         self.label_20.setGeometry(QRect(60, 970, 1920, 3))
         self.label_20.setStyleSheet(u"background-color: rgb(0, 45, 107);")
+        self.botonVer1 = QPushButton(Widget)
+        self.botonVer1.setObjectName(u"botonVer1")
+        self.botonVer1.setGeometry(QRect(99, 990, 42, 42))
+        self.botonVer1.setFont(font)
+        self.botonVer1.setStyleSheet(u"background-color: black;\n"
+"\n"
+"border: 2px solid black;\n"
+"border-radius: 20px; /* Bordes redondeados */\n"
+"padding: 5px;")
+        icon_ver = QIcon()
+        icon_ver.addFile(u"view.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.botonVer1.setIcon(icon_ver)
         self.botonEditar1 = QPushButton(Widget)
         self.botonEditar1.setObjectName(u"botonEditar1")
         self.botonEditar1.setGeometry(QRect(163, 990, 42, 42))

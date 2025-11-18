@@ -23,10 +23,13 @@ class ComprasWidget(QWidget):
         self.ui.label_5.setScaledContents(True)
         self.ui.label_7.setPixmap(load_pixmap("perfil-de-usuario.png"))
         self.ui.label_7.setScaledContents(True)
-        icon_edit = load_pixmap("edit.png")
-        self.ui.botonEditar1.setIcon(icon_edit)
-        icon_close = load_pixmap("close.png")
-        self.ui.botonSacar1.setIcon(icon_close)
+        from PySide6.QtGui import QIcon
+        self.ui.botonEditar1.setIcon(QIcon(load_pixmap("edit.png")))
+        self.ui.botonSacar1.setIcon(QIcon(load_pixmap("close.png")))
+        self.ui.botonAgregar.setIcon(QIcon(load_pixmap("c.png")))
+        self.ui.botonOrdenar1.setIcon(QIcon(load_pixmap("down_arrow.png")))
+        self.ui.botonBuscar.setIcon(QIcon(load_pixmap("search.png")))
+        self.ui.botonBorrar.setIcon(QIcon(load_pixmap("delete.png")))
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
         self.ui.botonAgregar.clicked.connect(self.agregar_orden)

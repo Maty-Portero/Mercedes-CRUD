@@ -11,7 +11,6 @@ class E_MovilidadCEOWidget(QWidget):
     # Si no lo tienes, puedes agregarlo en el diseñador de Qt.
     CEO=Signal(str)
     e_movilidad_ceo_registro=Signal(str)
-    e_movilidad_ceo_usuarios_autorizados=Signal(str)
     logout_requested = Signal()
     E_movilidad = Signal(str)
 
@@ -38,8 +37,20 @@ class E_MovilidadCEOWidget(QWidget):
         self.ui.botonAdmin.clicked.connect(self.admin_view)
         self.ui.botonLogOut.clicked.connect(self.Logout_requested)
         self.ui.botonRegistro.clicked.connect(self.ir_registro)
-        self.ui.botonUsuarioAutorizados.clicked.connect(self.ir_usuarios_autorizados)
         self.ui.botonDB.clicked.connect(self.ir_db)
+        
+        # Ocultar botón de Usuarios Autorizados (funcionalidad eliminada)
+        self.ui.botonUsuarioAutorizados.setVisible(False)
+        
+        # Centrar los dos botones restantes
+        # Ancho de pantalla aproximado: 1920, ancho de botón: 500
+        # Para centrar 2 botones: espaciarlos equitativamente
+        screen_width = 1920
+        button_width = 500
+        spacing = (screen_width - (2 * button_width)) / 3  # 3 espacios: izq, medio, der
+        
+        self.ui.botonDB.setGeometry(int(spacing), 347, button_width, 500)
+        self.ui.botonRegistro.setGeometry(int(2 * spacing + button_width), 347, button_width, 500)
         
     # Método para recibir y establecer el nombre de usuario (Llamado desde AppManager)
     def set_welcome_message(self, username):
@@ -66,11 +77,6 @@ class E_MovilidadCEOWidget(QWidget):
     def ir_registro(self):
         usuario = getattr(self, "current_user", None)
         self.e_movilidad_ceo_registro.emit(usuario)
-    
-    @Slot()
-    def ir_usuarios_autorizados(self):
-        usuario = getattr(self, "current_user", None)
-        self.e_movilidad_ceo_usuarios_autorizados.emit(usuario)
     
     @Slot()
     def ir_db(self):

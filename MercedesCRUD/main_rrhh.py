@@ -29,6 +29,8 @@ class RRHHWidget(QWidget):
         self.ui.botonSacar1.setIcon(icon_close)
         self.ui.botonAgregar.setIcon(QIcon(load_pixmap("c.png")))
         self.ui.botonOrdenar1.setIcon(QIcon(load_pixmap("down_arrow.png")))
+        self.ui.botonBuscar.setIcon(QIcon(load_pixmap("search.png")))
+        self.ui.botonBorrar.setIcon(QIcon(load_pixmap("delete.png")))
 
         # >>> LÓGICA DE CONEXIÓN DE BOTONES ORIGINALES <<<
         self.ui.botonAgregar.clicked.connect(self.agregar_empleado)
